@@ -16,6 +16,15 @@ windows: cr + lf
 
 linux: lf
 
+## 分工進行的方式（螢幕錄影）
+
+[連結在此](https://youtu.be/jjz4Y8o871U)
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/jjz4Y8o871U/0.jpg)](http://www.youtube.com/watch?v=jjz4Y8o871U)
+
+---
+---
+
 ## Available Scripts
 
 In the project directory, you can run:

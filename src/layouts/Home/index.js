@@ -15,7 +15,7 @@ const Home = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        This is Home page
+        首頁的內容 更動2
       </div>
     </Fragment>
   );
