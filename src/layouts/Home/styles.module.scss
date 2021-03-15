@@ -1,5 +1,7 @@
+@import '../../styles/color.scss';
 .container {
   height: 100vh;
   width: 100vw;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: $dtd-main-bg-color;
+  padding: 0 10%;
 }
