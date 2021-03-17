@@ -1,6 +1,63 @@
 @import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/media.scss';
+
 .container {
   width: 100vw;
   background-color: $dtd-main-bg-color;
   padding: 0 10%;
+}
+.section {
+  width: 100%;
+  margin-top: $dtd-main-spcing;
+  &.section_news {
+    display: flex;
+  }
+  &.section_link {
+    margin-bottom: $dtd-main-spcing;
+  }
+}
+.newsContent {
+  width: 50%;
+}
+h1 {
+  font-size: $dtd-h1-size;
+  color: $dtd-text-color;
+}
+hr {
+  border-top: 1px solid #e8e8e8;
+  margin-bottom: 30px;
+}
+.link {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.link_img {
+  display: flex;
+  justify-content: center;
+}
+.link_img__size {
+  width: 100%;
+}
+.link_p {
+  font-size: $dtd-p-size;
+  color: $dtd-text-color;
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 575px) {
+  .news {
+    flex-direction: column;
+  }
+  .newsContent {
+    width: 100%;
+  }
+  .admissionContent {
+    padding: 3% 10%;
+  }
 }
