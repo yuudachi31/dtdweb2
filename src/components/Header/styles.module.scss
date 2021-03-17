@@ -1,10 +1,11 @@
 @import '../../styles/color.scss';
+@import '../../styles/font.scss';
 
-.container {
+.header {
   height: 10vh;
   display: flex;
   // padding-left: 3vw;
   align-items: center;
-  font-size: 1.5em;
+  font-size: $dtd-p-size;
   background-color: $dtd-main-bg-color;
 }
