@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import styles from './styles.module.scss';
-import bannerUrl from './banner.json';
+import bannerUrl from '../../assets/json/banner.json';
 /* react-Bootstrap */
 import Carousel from 'react-bootstrap/Carousel';
 import Row from 'react-bootstrap/Row';
@@ -31,7 +31,7 @@ const Home = () => {
       </Helmet>
       <Header />
       <div>
-        <Carousel>
+        <Carousel indicators={false}>
           <Carousel.Item interval={5000}>
             <img
               className="d-block w-100"
@@ -61,7 +61,7 @@ const Home = () => {
           <div className={styles.newsContent}>
             <h1>系務公告 / Announcement</h1>
             <div className={`${styles.news} ${styles.news_top}`}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -70,7 +70,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -79,7 +79,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -88,7 +88,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -97,7 +97,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -115,7 +115,7 @@ const Home = () => {
           <div className={styles.newsContent}>
             <h1>師生榮譽榜 / Achievement</h1>
             <div className={`${styles.news} ${styles.news_top}`}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -124,7 +124,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -133,7 +133,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -142,7 +142,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -151,7 +151,7 @@ const Home = () => {
               <span className={styles.news_span}>5&ensp;2月,2021</span>
             </div>
             <div className={styles.news}>
-              <Link>
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
                   110學年度碩士班考試入學面試地點公告
                 </p>
@@ -171,7 +171,7 @@ const Home = () => {
           <hr></hr>
           <Row className={styles.link}>
             <Col sm={3} xs={12}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={about} alt="" className={styles.link_img__size} />
                 </div>
@@ -181,7 +181,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={3} xs={12}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={works} alt="" className={styles.link_img__size} />
                 </div>
@@ -191,7 +191,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={3} xs={12}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={senior} alt="" className={styles.link_img__size} />
                 </div>
@@ -201,7 +201,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={3} xs={12}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img
                     src={classroom}
@@ -220,7 +220,7 @@ const Home = () => {
           <hr></hr>
           <Row className={styles.link}>
             <Col sm={2} xs={6}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={Job} alt="" />
                 </div>
@@ -230,7 +230,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={StudyGroup} alt="" />
                 </div>
@@ -240,7 +240,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={Fan} alt="" />
                 </div>
@@ -250,7 +250,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={TeachGroup} alt="" />
                 </div>
@@ -260,7 +260,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={WebGroup} alt="" />
                 </div>
@@ -270,7 +270,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link>
+              <Link to="/">
                 <div className={styles.link_img}>
                   <img src={Ntue} alt="" />
                 </div>
