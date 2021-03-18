@@ -19,6 +19,8 @@
 .pageNumber_number {
   font-size: $dtd-hint-size;
   padding: 0 12px;
+  border: none;
+  background-color: $dtd-main-bg-color;
   color: $dtd-submenu-text-color;
 }
 
@@ -28,6 +30,8 @@
   background-size: contain;
   height: 12px;
   padding: 0 12px;
+  border: none;
+  background-color: $dtd-main-bg-color;
   margin-top: 5px;
 }
 

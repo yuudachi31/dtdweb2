@@ -4,15 +4,15 @@ const PageNumber = () => {
   return (
     <div className={styles.container}>
       <div className={styles.pageNumber_box}>
-        <div
+        <button
           className={`${styles.pageNumber_arrow} ${styles.pageNumber_arrow__leftArrowImg}`}
-        ></div>
-        <div className={styles.pageNumber_number}>1</div>
-        <div className={styles.pageNumber_number}>2</div>
-        <div className={styles.pageNumber_number}>3</div>
-        <div
+        ></button>
+        <button className={styles.pageNumber_number}>1</button>
+        <button className={styles.pageNumber_number}>2</button>
+        <button className={styles.pageNumber_number}>3</button>
+        <button
           className={`${styles.pageNumber_arrow} ${styles.pageNumber_arrow__rightArrowImg}`}
-        ></div>
+        ></button>
       </div>
     </div>
   );
