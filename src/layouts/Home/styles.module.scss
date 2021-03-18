@@ -13,21 +13,55 @@
   margin-top: $dtd-main-spcing;
   &.section_news {
     display: flex;
+    justify-content: space-between;
   }
   &.section_link {
     margin-bottom: $dtd-main-spcing;
   }
 }
-.newsContent {
-  width: 50%;
-}
 h1 {
   font-size: $dtd-h1-size;
+  color: $dtd-text-color;
+}
+p {
+  font-size: $dtd-p-size;
   color: $dtd-text-color;
 }
 hr {
   border-top: 1px solid #e8e8e8;
   margin-bottom: 30px;
+}
+span {
+  font-size: $dtd-hint-size;
+  color: $dtd-submenu-text-color;
+}
+.newsContent {
+  width: 45%;
+}
+.news {
+  margin-bottom: $dtd-secondary-spacing;
+}
+.news_top {
+  margin-top: 15px;
+}
+.news_p {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 5px;
+}
+.news_span {
+  margin-top: 20px;
+}
+.news_button {
+  border: none;
+  color: #fff;
+  background-color: #85b6dd;
+  border-radius: 5px;
+  padding: 5px 20px;
+}
+.news_button:hover {
+  background-color: $dtd-main-color;
 }
 .link {
   width: 100%;
@@ -44,18 +78,20 @@ hr {
   width: 100%;
 }
 .link_p {
-  font-size: $dtd-p-size;
-  color: $dtd-text-color;
   text-align: center;
   margin-top: 10px;
 }
 
 @media (max-width: 575px) {
-  .news {
+  .section_news {
+    display: flex;
     flex-direction: column;
   }
   .newsContent {
     width: 100%;
+  }
+  .news_button_mb {
+    margin-bottom: $dtd-secondary-spacing;
   }
   .admissionContent {
     padding: 3% 10%;

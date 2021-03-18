@@ -7,13 +7,15 @@
   // height: 160px;
   display: flex;
   justify-content: center;
-  font-size: $dtd-hint-size;
   background-color: $dtd-footer-bg-color;
-  color: $dtd-hint-text-color;
   .footer_content {
     width: 45%;
-    margin: 40px 4%;
+    margin: 50px 4% 30px 4%;
     .footer_p__font {
+      font-size: $dtd-hint-size;
+      color: $dtd-hint-text-color;
+    }
+    .footer_p__lineheight {
       line-height: 22px;
     }
   }
