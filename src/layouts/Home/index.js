@@ -23,7 +23,7 @@ import Ntue from '../../assets/images/index/Ntue.png';
 
 const Home = () => {
   return (
-    <Fragment>
+    <Fragment className={styles.homePage_bgc}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>數位科技設計學系-國立臺北教育大學</title>
