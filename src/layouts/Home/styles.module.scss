@@ -4,9 +4,11 @@
 @import '../../styles/media.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.homePage_bgc {
+  background-color: $dtd-main-bg-color;
+}
 .container {
   width: 100vw;
-  background-color: $dtd-main-bg-color;
   padding: 0 10%;
 }
 .section {
