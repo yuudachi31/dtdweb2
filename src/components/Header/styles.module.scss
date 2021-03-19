@@ -1,10 +1,186 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
+@import '../../styles/font.scss';
 
 .container {
+  // <<<<<<< HEAD
   height: 10vh;
   background-color: $dtd-main-bg-color;
+  // width: 100vw;
+  // height: 90px;
+  // background-color: rgb(255, 255, 255);
+  // >>>>>>> f38d787980a0293533212e90c4148c1d423ab05a
   display: flex;
-  padding-left: 3vw;
+  padding: 0 10vw;
   align-items: center;
-  font-size: 1.5em;
+  justify-content: space-between;
 }
+
+.logo {
+  width: 243px;
+  height: 85px;
+  background-image: url(../../assets/images/logo/DTD.png);
+  background-position: center;
+  background-size: contain;
+}
+
+.nav {
+  display: flex;
+  font-size: 16px;
+}
+
+.nav_dropdown {
+  position: relative;
+  text-align: center;
+  height: 90px;
+  padding: 0;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+
+  & .nav_title {
+    width: 100%;
+    padding: 0 32px;
+    line-height: 48px;
+    border-right: 1px rgb(221, 221, 221) solid;
+  }
+
+  & .nav_drop {
+    display: none;
+  }
+
+  &:hover {
+    color: rgb(65, 155, 215);
+
+    & .nav_drop {
+      display: block;
+      position: absolute;
+      width: 192px;
+      left: 0;
+      top: 90px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: rgb(242, 242, 242);
+      border-radius: 6px;
+      z-index: 1;
+
+      & .nav_linkBox {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+
+        & .nav_link {
+          color: rgb(0, 0, 0);
+          padding: 16px 32px;
+          display: inline-block;
+          width: 100%;
+        }
+
+        &:hover {
+          .nav_link {
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lastnav_dropdown {
+  position: relative;
+  text-align: center;
+  height: 90px;
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+
+  & .lastnav_title {
+    width: 100%;
+    padding: 0 32px;
+    line-height: 48px;
+  }
+
+  & .lastnav_drop {
+    display: none;
+  }
+
+  &:hover {
+    color: rgb(65, 155, 215);
+    z-index: 1;
+
+    & .lastnav_drop {
+      display: block;
+      position: absolute;
+      width: 192px;
+      left: 0;
+      top: 90px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: rgb(242, 242, 242);
+      border-radius: 6px;
+
+      & .lastnav_linkBox {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+
+        & .lastnav_link {
+          color: rgb(0, 0, 0);
+          padding: 16px 32px;
+          display: inline-block;
+          width: 100%;
+        }
+
+        &:hover {
+          .lastnav_link {
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+// .nav_drop_open {
+//   display: block;
+//   position: absolute;
+//   width: 192px;
+//   top: 0;
+//   left: 0;
+//   padding: 0;
+//   margin: 0;
+//   margin-top: 68px;
+//   list-style: none;
+//   background-color: rgb(242, 242, 242);
+//   border-radius: 6px;
+
+//   .nav_linkBox {
+//     margin: 0;
+//     padding: 0;
+//     text-align: left;
+//     width: 100%;
+
+//     .nav_link {
+//       color: rgb(0, 0, 0);
+//       padding: 16px 32px;
+//       display: inline-block;
+//       width: 100%;
+//     }
+
+//     &:hover {
+//       .nav_link {
+//         background-color: rgb(255, 255, 255);
+//         border-radius: 6px;
+//       }
+//     }
+//   }
+// }
