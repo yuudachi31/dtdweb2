@@ -103,16 +103,16 @@ const Header = () => {
             </li>
           </ul>
         </button>
-        <button className={styles.lastnav_dropdown}>
-          <div className={styles.lastnav_title}>下載專區</div>
-          <ul className={styles.lastnav_drop}>
-            <li className={styles.lastnav_linkBox}>
-              <Link to="/rules" className={styles.lastnav_link}>
+        <button className={styles.nav_dropdown}>
+          <div className={styles.nav_title}>下載專區</div>
+          <ul className={styles.nav_dropmenu}>
+            <li className={styles.nav_linkBox}>
+              <Link to="/rules" className={styles.nav_link}>
                 規章辦法
               </Link>
             </li>
-            <li className={styles.lastnav_linkBox}>
-              <Link to="/download" className={styles.lastnav_link}>
+            <li className={styles.nav_linkBox}>
+              <Link to="/download" className={styles.nav_link}>
                 表格下載
               </Link>
             </li>
