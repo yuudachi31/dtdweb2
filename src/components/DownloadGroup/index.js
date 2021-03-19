@@ -22,7 +22,9 @@ const downloadGroup = () => {
                   key={download.docname}
                   className={styles.downloadbar_downloadbox}
                 >
-                  <a href={download.docurl}>{download.docname}</a>
+                  <a href={download.docurl} target="_blank" rel="noreferrer">
+                    {download.docname}
+                  </a>
                   {download.remarks != '' ? (
                     <div className={styles.downloadbar_downloadbox__remarks}>
                       （{download.remarks}）
@@ -36,17 +38,30 @@ const downloadGroup = () => {
                   key={download.docname}
                   className={styles.downloadbar_downloadbox}
                 >
-                  <a href={download.docurl}>{download.docname}</a>／
-                  <a href={download.docurl2}>{download.docname2}</a>
+                  <a href={download.docurl} target="_blank" rel="noreferrer">
+                    {download.docname}
+                  </a>
+                  ／
+                  <a href={download.docurl2} target="_blank" rel="noreferrer">
+                    {download.docname2}
+                  </a>
                 </div>
               ) : (
                 <div
                   key={download.docname}
                   className={styles.downloadbar_downloadbox}
                 >
-                  <a href={download.docurl}>{download.docname}</a>／
-                  <a href={download.docurl2}>{download.docname2}</a>／
-                  <a href={download.docurl3}>{download.docname3}</a>
+                  <a href={download.docurl} target="_blank" rel="noreferrer">
+                    {download.docname}
+                  </a>
+                  ／
+                  <a href={download.docurl2} target="_blank" rel="noreferrer">
+                    {download.docname2}
+                  </a>
+                  ／
+                  <a href={download.docurl3} target="_blank" rel="noreferrer">
+                    {download.docname3}
+                  </a>
                 </div>
               ),
             )}

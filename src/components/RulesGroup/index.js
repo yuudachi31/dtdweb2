@@ -19,12 +19,19 @@ const RulesGroup = () => {
             {group.list.map((rule) =>
               !rule.docname2 ? (
                 <div key={rule.docname} className={styles.rulebar_rulebox}>
-                  <a href={rule.docurl}>{rule.docname}</a>
+                  <a href={rule.docurl} target="_blank" rel="noreferrer">
+                    {rule.docname}
+                  </a>
                 </div>
               ) : (
                 <div key={rule.docname} className={styles.rulebar_rulebox}>
-                  <a href={rule.docurl}>{rule.docname}</a>／
-                  <a href={rule.docurl2}>{rule.docname2}</a>
+                  <a href={rule.docurl} target="_blank" rel="noreferrer">
+                    {rule.docname}
+                  </a>
+                  ／
+                  <a href={rule.docurl2} target="_blank" rel="noreferrer">
+                    {rule.docname2}
+                  </a>
                 </div>
               ),
             )}

@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
+import * as Scroll from 'react-scroll';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -17,6 +18,9 @@ import emailIcon from '../../assets/images/icons/icon_email.png';
 
 const TeachDetail = () => {
   const location = useLocation();
+  useEffect(() => {
+    Scroll.scroller.scrollTo('top');
+  }, []);
   const {
     teachername,
     title,
@@ -37,7 +41,7 @@ const TeachDetail = () => {
         <title>{teachername}-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的教室團隊" />
       </Helmet>
-      <div className={styles.container}>
+      <div className={styles.container} id="top">
         <Header />
         <div className={styles.teachdetail}>
           <Row className={styles.teachdetail_titlebar}>
