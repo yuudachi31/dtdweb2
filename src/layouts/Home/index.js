@@ -171,7 +171,7 @@ const Home = () => {
           <hr></hr>
           <Row className={styles.link}>
             <Col sm={3} xs={12}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={about} alt="" className={styles.link_img__size} />
                 </div>
@@ -181,7 +181,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={3} xs={12}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={works} alt="" className={styles.link_img__size} />
                 </div>
@@ -191,7 +191,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={3} xs={12}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={senior} alt="" className={styles.link_img__size} />
                 </div>
@@ -201,7 +201,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={3} xs={12}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img
                     src={classroom}
@@ -220,7 +220,7 @@ const Home = () => {
           <hr></hr>
           <Row className={styles.link}>
             <Col sm={2} xs={6}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={Job} alt="" />
                 </div>
@@ -230,7 +230,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={StudyGroup} alt="" />
                 </div>
@@ -240,7 +240,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={Fan} alt="" />
                 </div>
@@ -250,7 +250,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={TeachGroup} alt="" />
                 </div>
@@ -260,7 +260,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={WebGroup} alt="" />
                 </div>
@@ -270,7 +270,7 @@ const Home = () => {
               </Link>
             </Col>
             <Col sm={2} xs={6}>
-              <Link to="/">
+              <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={Ntue} alt="" />
                 </div>
