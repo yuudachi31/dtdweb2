@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.module.scss';
@@ -6,9 +6,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // import TeachBox from '../TeacherBox';
 import { Col, Row } from 'react-bootstrap';
 
-import teadetail from '../../assets/json/teachers.json';
+import teadetailjson from '../../assets/json/teachers.json';
 
 const TeachGroup = () => {
+  const [teadetail, setteadetail] = useState([]);
+  useEffect(() => {
+    setteadetail(teadetailjson);
+  }, []);
   return (
     <div className={styles.containertg}>
       {teadetail.map((group) => (

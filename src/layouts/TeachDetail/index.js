@@ -51,14 +51,10 @@ const TeachDetail = () => {
             </div>
           </Row>
           <Row className={styles.teachdetail_contentbar}>
-            <Col
-              lg={3}
-              md={4}
-              sm={12}
-              xs={12}
-              className={styles.teachdetail_contentbar__img}
-            >
-              <img src={'../' + imgurl} />
+            <Col lg={3} md={4} sm={12} xs={12}>
+              <div className={styles.teachdetail_contentbar__img}>
+                <img src={'../' + imgurl} />
+              </div>
             </Col>
             <Col
               lg={9}

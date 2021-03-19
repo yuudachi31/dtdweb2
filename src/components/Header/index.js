@@ -16,7 +16,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
+              <Link to="/teacher" className={styles.nav_link}>
                 教學團隊
               </Link>
             </li>

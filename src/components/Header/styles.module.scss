@@ -11,16 +11,22 @@
   // height: 90px;
   // background-color: rgb(255, 255, 255);
   // >>>>>>> f38d787980a0293533212e90c4148c1d423ab05a
+  // =======
+  // .container {
+  //   width: 100vw;
+  //   height: 90px;
+  //   background-color: rgb(255, 255, 255);
+  // >>>>>>> teacher_0315
   display: flex;
   padding: 0 10vw;
   align-items: center;
   justify-content: space-between;
 }
-
 .logo {
   width: 243px;
   height: 85px;
   background-image: url(../../assets/images/logo/DTD.png);
+  background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
@@ -111,7 +117,6 @@
 
   &:hover {
     color: rgb(65, 155, 215);
-    z-index: 1;
 
     & .lastnav_drop {
       display: block;
@@ -124,6 +129,7 @@
       list-style: none;
       background-color: rgb(242, 242, 242);
       border-radius: 6px;
+      z-index: 1;
 
       & .lastnav_linkBox {
         margin: 0;
@@ -149,7 +155,6 @@
     }
   }
 }
-
 // .nav_drop_open {
 //   display: block;
 //   position: absolute;
