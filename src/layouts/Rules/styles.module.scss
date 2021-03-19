@@ -22,19 +22,19 @@
   }
 }
 
-//teacherContainer
-.teacherContainer {
-  margin: 0 10%;
+//rulesContainer
+.rulesContainer {
+  margin: 0 10% $dtd-secondary-spacing;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.teacherContainer_teacherTitle {
+.rulesContainer_rulesTitle {
   padding-top: $dtd-main-spcing;
   padding-bottom: $dtd-secondary-spacing;
   font-weight: 700;
 }
-.teacherContainer_titleLine {
+.rulesContainer_titleLine {
   width: 100%;
   height: 1px;
   background-color: $dtd-hint-text-color;

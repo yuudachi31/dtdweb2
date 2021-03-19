@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 import styles from './styles.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -33,7 +34,7 @@ const TeachDetail = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>教學團隊-國立臺北教育大學</title>
+        <title>{teachername}-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的教室團隊" />
       </Helmet>
       <div className={styles.container}>
@@ -127,6 +128,7 @@ const TeachDetail = () => {
           </Row>
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 };

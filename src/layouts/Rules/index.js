@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import RulesGroup from '../../components/RulesGroup';
 
 import styles from './styles.module.scss';
@@ -21,12 +22,13 @@ const Rules = () => {
         <div className={styles.banner}>
           <img src={banner} className={styles.banner_img} />
         </div>
-        <div className={styles.teacherContainer}>
-          <h1 className={styles.teacherContainer_teacherTitle}>辦法規章</h1>
-          <div className={styles.teacherContainer_titleLine}></div>
+        <div className={styles.rulesContainer}>
+          <h1 className={styles.rulesContainer_rulesTitle}>辦法規章</h1>
+          <div className={styles.rulesContainer_titleLine}></div>
           <RulesGroup />
         </div>
       </div>
+      <Footer />
     </Fragment>
   );
 };

@@ -84,6 +84,11 @@ span {
   text-align: center;
   margin-top: 10px;
 }
+.link_a__textdecnone {
+  &:hover {
+    text-decoration: none;
+  }
+}
 
 @media (max-width: 575px) {
   .section_news {

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import TreachGroup from '../../components/TeachGroup';
 
 import styles from './styles.module.scss';
@@ -26,6 +27,7 @@ const Teacher = () => {
           <div className={styles.teacherContainer_titleLine}></div>
           <TreachGroup />
         </div>
+        <Footer />
       </div>
     </Fragment>
   );

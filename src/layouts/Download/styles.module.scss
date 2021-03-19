@@ -22,19 +22,19 @@
   }
 }
 
-//teacherContainer
-.teacherContainer {
-  margin: 0 10%;
+//downloadContainer
+.downloadContainer {
+  margin: 0 10% $dtd-secondary-spacing;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.teacherContainer_teacherTitle {
+.downloadContainer_downloadTitle {
   padding-top: $dtd-main-spcing;
   padding-bottom: $dtd-secondary-spacing;
   font-weight: 700;
 }
-.teacherContainer_titleLine {
+.downloadContainer_titleLine {
   width: 100%;
   height: 1px;
   background-color: $dtd-hint-text-color;

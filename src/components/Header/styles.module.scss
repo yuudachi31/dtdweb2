@@ -4,19 +4,10 @@
 @import '../../styles/font.scss';
 
 .container {
-  // <<<<<<< HEAD
-  height: 10vh;
-  background-color: $dtd-main-bg-color;
-  // width: 100vw;
-  // height: 90px;
-  // background-color: rgb(255, 255, 255);
-  // >>>>>>> f38d787980a0293533212e90c4148c1d423ab05a
-  // =======
-  // .container {
-  //   width: 100vw;
-  //   height: 90px;
-  //   background-color: rgb(255, 255, 255);
-  // >>>>>>> teacher_0315
+  // background-color: $dtd-main-bg-color;
+  width: 100vw;
+  height: 90px;
+  background-color: rgb(255, 255, 255);
   display: flex;
   padding: 0 10vw;
   align-items: center;
