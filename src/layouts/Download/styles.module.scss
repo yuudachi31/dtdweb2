@@ -1,0 +1,42 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  // min-height: 100vh;
+  width: 100vw;
+  background-color: $dtd-main-bg-color;
+}
+
+// banner
+.banner {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+@media (max-width: $dtd-media-desktop) {
+  .banner_img {
+    width: 150%;
+  }
+}
+
+//downloadContainer
+.downloadContainer {
+  margin: 0 10% $dtd-secondary-spacing;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.downloadContainer_downloadTitle {
+  padding-top: $dtd-main-spcing;
+  padding-bottom: $dtd-secondary-spacing;
+  font-weight: 700;
+}
+.downloadContainer_titleLine {
+  width: 100%;
+  height: 1px;
+  background-color: $dtd-hint-text-color;
+  margin-bottom: $dtd-secondary-spacing;
+}

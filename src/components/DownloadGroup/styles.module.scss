@@ -1,0 +1,43 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.containerrg {
+  width: 100%;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
+}
+.downloadGroupName {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: $dtd-secondary-color;
+  display: flex;
+  align-items: center;
+  padding-left: $dtd-secondary-spacing;
+  font-size: $dtd-h2-size;
+}
+.downloadbar {
+  font-size: $dtd-p-size;
+  margin-top: $dtd-section-spacing;
+  margin-bottom: $dtd-section-spacing;
+  padding: 0 $dtd-secondary-spacing;
+  & .downloadbar_downloadbox {
+    display: flex;
+    margin-bottom: 18px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & .downloadbar_downloadbox__remarks {
+    color: $dtd-submenu-text-color;
+  }
+  & a {
+    color: $dtd-text-color;
+    &:hover {
+      color: $dtd-main-color;
+      text-decoration: none;
+    }
+  }
+}

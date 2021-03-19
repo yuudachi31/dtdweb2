@@ -1,21 +1,23 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
-@import '../../styles/spacing.scss';
 
 .container {
+  background-color: #fff;
   width: 100vw;
   height: 90px;
-  background-color: $dtd-main-bg-color;
+  // background-color: $dtd-main-bg-color;
   display: flex;
   padding: 0 10vw;
   align-items: center;
   justify-content: space-between;
 }
-
 .logo {
   width: 243px;
   height: 85px;
   background-image: url(../../assets/images/logo/DTD.png);
+  background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
@@ -88,7 +90,6 @@
     }
   }
 }
-
 // .nav_drop_open {
 //   display: block;
 //   position: absolute;

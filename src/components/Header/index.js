@@ -20,7 +20,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
+              <Link to="/teacher" className={styles.nav_link}>
                 教學團隊
               </Link>
             </li>
@@ -30,7 +30,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
+              <Link to="/" className={styles.nav_link}>
                 未來發展
               </Link>
             </li>
@@ -44,23 +44,13 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                本系簡介
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
               <Link to="/news" className={styles.nav_link}>
-                教學團隊
+                系所公告
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
-                系上活動
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                未來發展
+                師生榮譽榜
               </Link>
             </li>
           </ul>
@@ -74,22 +64,17 @@ const Header = () => {
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
-                本系簡介
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                教學團隊
+                學士班
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
-                系上活動
+                碩士班
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                未來發展
+              <Link to="/" className={styles.nav_link}>
+                在職專班
               </Link>
             </li>
           </ul>
@@ -103,22 +88,17 @@ const Header = () => {
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
-                本系簡介
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                教學團隊
+                畢業專題
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
-                系上活動
+                課程作品
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                未來發展
+              <Link to="/" className={styles.nav_link}>
+                合作成果
               </Link>
             </li>
           </ul>
@@ -127,23 +107,13 @@ const Header = () => {
           <div className={styles.nav_title}>下載專區</div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                本系簡介
+              <Link to="/rules" className={styles.nav_link}>
+                規章辦法
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                教學團隊
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                系上活動
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
-                未來發展
+              <Link to="/download" className={styles.nav_link}>
+                表格下載
               </Link>
             </li>
           </ul>

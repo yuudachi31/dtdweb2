@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 
 import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 import Announcement from '../../components/Announcement';
 import PageNumber from '../../components/PageNumber';
 
@@ -19,6 +20,7 @@ const News = () => {
         <Header />
         <Announcement />
         <PageNumber />
+        <Footer />
       </div>
     </Fragment>
   );
