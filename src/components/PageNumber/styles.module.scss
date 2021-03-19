@@ -1,0 +1,44 @@
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 124px;
+  background-color: $dtd-main-bg-color;
+}
+
+.pageNumber_box {
+  position: absolute;
+  left: 50%;
+  top: 28px;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.pageNumber_number {
+  font-size: $dtd-hint-size;
+  padding: 0 12px;
+  border: none;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-submenu-text-color;
+}
+
+.pageNumber_arrow {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 12px;
+  padding: 0 12px;
+  border: none;
+  background-color: $dtd-main-bg-color;
+  margin-top: 5px;
+}
+
+.pageNumber_arrow__leftArrowImg {
+  background-image: url(../../assets/images/announcement/leftArrow.png);
+}
+
+.pageNumber_arrow__rightArrowImg {
+  background-image: url(../../assets/images/announcement/rightArrow.png);
+}

@@ -7,7 +7,7 @@
   // background-color: $dtd-main-bg-color;
   width: 100vw;
   height: 90px;
-  background-color: rgb(255, 255, 255);
+  background-color: $dtd-main-bg-color;
   display: flex;
   padding: 0 10vw;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .nav {
   display: flex;
-  font-size: 16px;
+  font-size: $dtd-p-size;
 }
 
 .nav_dropdown {
@@ -33,24 +33,27 @@
   height: 90px;
   padding: 0;
   border: none;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
+  background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
 
   & .nav_title {
     width: 100%;
-    padding: 0 32px;
+    padding: 0 $dtd-secondary-spacing;
     line-height: 48px;
-    border-right: 1px rgb(221, 221, 221) solid;
   }
 
-  & .nav_drop {
+  & .nav_title__borderRight {
+    border-right: 1px $dtd-hint-text-color solid;
+  }
+
+  & .nav_dropmenu {
     display: none;
   }
 
   &:hover {
-    color: rgb(65, 155, 215);
+    color: $dtd-main-color;
 
-    & .nav_drop {
+    & .nav_dropmenu {
       display: block;
       position: absolute;
       width: 192px;
@@ -59,7 +62,7 @@
       padding: 0;
       margin: 0;
       list-style: none;
-      background-color: rgb(242, 242, 242);
+      background-color: $dtd-submenu-bg-color;
       border-radius: 6px;
       z-index: 1;
 
@@ -70,74 +73,15 @@
         width: 100%;
 
         & .nav_link {
-          color: rgb(0, 0, 0);
-          padding: 16px 32px;
+          color: $dtd-text-color;
+          padding: 16px $dtd-secondary-spacing;
           display: inline-block;
           width: 100%;
         }
 
         &:hover {
           .nav_link {
-            background-color: rgb(255, 255, 255);
-            border-radius: 6px;
-            text-decoration: none;
-          }
-        }
-      }
-    }
-  }
-}
-
-.lastnav_dropdown {
-  position: relative;
-  text-align: center;
-  height: 90px;
-  border: none;
-  background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
-
-  & .lastnav_title {
-    width: 100%;
-    padding: 0 32px;
-    line-height: 48px;
-  }
-
-  & .lastnav_drop {
-    display: none;
-  }
-
-  &:hover {
-    color: rgb(65, 155, 215);
-
-    & .lastnav_drop {
-      display: block;
-      position: absolute;
-      width: 192px;
-      left: 0;
-      top: 90px;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-      background-color: rgb(242, 242, 242);
-      border-radius: 6px;
-      z-index: 1;
-
-      & .lastnav_linkBox {
-        margin: 0;
-        padding: 0;
-        text-align: left;
-        width: 100%;
-
-        & .lastnav_link {
-          color: rgb(0, 0, 0);
-          padding: 16px 32px;
-          display: inline-block;
-          width: 100%;
-        }
-
-        &:hover {
-          .lastnav_link {
-            background-color: rgb(255, 255, 255);
+            background-color: $dtd-hint-text-color;
             border-radius: 6px;
             text-decoration: none;
           }

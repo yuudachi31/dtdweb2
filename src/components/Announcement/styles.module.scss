@@ -1,0 +1,55 @@
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/spacing.scss';
+
+.container {
+  width: 100vw;
+}
+
+.banner {
+  width: 100vw;
+  height: 400px;
+  background-image: url(../../assets/images/banners/banner_4.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.board {
+  width: 100vw;
+  padding: $dtd-secondary-spacing 0;
+  background-color: $dtd-main-bg-color;
+}
+
+.board_title {
+  width: 100vw;
+  font-size: $dtd-h1-size;
+  font-weight: bold;
+  text-align: center;
+  padding: $dtd-secondary-spacing 0;
+}
+
+.announcement {
+  position: relative;
+  border-top: 1px $dtd-hint-text-color solid;
+  padding: $dtd-secondary-spacing;
+  width: 80vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.announcement_box {
+  padding: 10px 0;
+}
+
+.announcement_title {
+  padding: 6px 0;
+  font-size: 20px;
+  color: $dtd-text-color;
+}
+
+.announcement_content {
+  padding: 6px 0;
+  font-size: $dtd-hint-size;
+  color: $dtd-submenu-text-color;
+}

@@ -8,8 +8,12 @@ const Header = () => {
       <Link to="/" className={styles.logo}></Link>
       <div className={styles.nav}>
         <button className={styles.nav_dropdown}>
-          <div className={styles.nav_title}>關於數位</div>
-          <ul className={styles.nav_drop}>
+          <div
+            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
+          >
+            關於數位
+          </div>
+          <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
                 本系簡介
@@ -33,8 +37,12 @@ const Header = () => {
           </ul>
         </button>
         <button className={styles.nav_dropdown}>
-          <div className={styles.nav_title}>最新消息</div>
-          <ul className={styles.nav_drop}>
+          <div
+            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
+          >
+            最新消息
+          </div>
+          <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to="/news" className={styles.nav_link}>
                 系所公告
@@ -48,8 +56,12 @@ const Header = () => {
           </ul>
         </button>
         <button className={styles.nav_dropdown}>
-          <div className={styles.nav_title}>招生資訊</div>
-          <ul className={styles.nav_drop}>
+          <div
+            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
+          >
+            招生資訊
+          </div>
+          <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
                 學士班
@@ -68,8 +80,12 @@ const Header = () => {
           </ul>
         </button>
         <button className={styles.nav_dropdown}>
-          <div className={styles.nav_title}>作品展示</div>
-          <ul className={styles.nav_drop}>
+          <div
+            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
+          >
+            作品展示
+          </div>
+          <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to="/" className={styles.nav_link}>
                 畢業專題
