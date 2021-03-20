@@ -27,8 +27,8 @@ const Rules = () => {
           <div className={styles.rulesContainer_titleLine}></div>
           <RulesGroup />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </Fragment>
   );
 };
