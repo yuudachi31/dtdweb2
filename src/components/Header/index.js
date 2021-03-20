@@ -49,7 +49,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to="/honors" className={styles.nav_link}>
                 師生榮譽榜
               </Link>
             </li>

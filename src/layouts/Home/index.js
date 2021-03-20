@@ -31,7 +31,7 @@ const Home = () => {
       </Helmet>
       <Header />
       <div>
-        <Carousel indicators={false}>
+        <Carousel indicators={false} controls={false}>
           <Carousel.Item interval={5000}>
             <img
               className="d-block w-100"

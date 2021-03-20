@@ -9,19 +9,19 @@ import PageNumber from '../../components/PageNumber';
 
 import styles from './styles.module.scss';
 
-const News = () => {
+const Honors = () => {
   return (
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
         <title>數位科技設計學系-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的公告事項" />
+        <meta name="description" content="數位科技設計學系的師生榮譽榜" />
       </Helmet>
       <div className={styles.container}>
         <Header />
         <Banner />
         <div className={styles.board}>
-          <div className={styles.board_title}>公告事項</div>
+          <div className={styles.board_title}>師生榮譽榜</div>
           <Announcement />
         </div>
         <PageNumber />
@@ -31,4 +31,4 @@ const News = () => {
   );
 };
 
-export default News;
+export default Honors;
