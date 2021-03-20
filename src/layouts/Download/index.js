@@ -27,8 +27,8 @@ const Download = () => {
           <div className={styles.downloadContainer_titleLine}></div>
           <DownloadGroup />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </Fragment>
   );
 };
