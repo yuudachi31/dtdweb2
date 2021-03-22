@@ -21,6 +21,9 @@ import TeachGroup from '../../assets/images/index/TeachGroup.png';
 import WebGroup from '../../assets/images/index/WebGroup.png';
 import Ntue from '../../assets/images/index/Ntue.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock } from '@fortawesome/free-solid-svg-icons';
+
 const Home = () => {
   return (
     <Fragment className={styles.homePage_bgc}>
@@ -60,6 +63,7 @@ const Home = () => {
         <div className={`${styles.section} ${styles.section_news}`} id="news">
           <div className={styles.newsContent}>
             <h1>系務公告 / Announcement</h1>
+            <FontAwesomeIcon icon={faClock} />
             <div className={`${styles.news} ${styles.news_top}`}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
