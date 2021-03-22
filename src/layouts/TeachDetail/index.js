@@ -52,7 +52,9 @@ const TeachDetail = () => {
               <img src={leftArrow} />
             </Link>
             <div className={styles.teachdetail_titlebar__name}>
-              {teachername}
+              {teachername.search(/（/i) == -1
+                ? teachername
+                : teachername.substring(0, teachername.search(/（/i))}
             </div>
           </Row>
           <Row className={styles.teachdetail_contentbar}>
@@ -79,7 +81,14 @@ const TeachDetail = () => {
                 >
                   <img src={phoneIcon} />
                   {phone != '' ? (
-                    <a href={'tel:+886-2-2732-1104' + { phone }}>
+                    <a
+                      href={
+                        'tel:+886-2-2732-1104' +
+                        (phone.search(/、/i) == -1
+                          ? phone
+                          : phone.substring(0, phone.search(/、/i)))
+                      }
+                    >
                       校內分機：{phone}
                     </a>
                   ) : (

@@ -18,7 +18,7 @@ const Routes = () => {
         <Route exact path="/" component={HomePage} />
         {/* 關於數位 */}
         <Route exact path="/teacher" component={TeacherPage} />
-        <Route exact path="/teacher/tea" component={TreachdetailPage} />
+        <Route exact path="/teacher/:tea" component={TreachdetailPage} />
         {/* 最新消息 */}
         <Route exact path="/news" component={NewsPage} />
         <Route exact path="/honors" component={HonorsPage} />

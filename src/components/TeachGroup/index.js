@@ -29,7 +29,9 @@ const TeachGroup = () => {
               >
                 <Link
                   to={
-                    '/teacher/tea?teachername=' +
+                    '/teacher/' +
+                    tea.id +
+                    '?teachername=' +
                     tea.teachername +
                     '&title=' +
                     tea.title +
