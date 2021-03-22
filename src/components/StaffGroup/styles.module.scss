@@ -3,7 +3,7 @@
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
 
-.containertg {
+.container {
   width: 100%;
   // height: 10vh;
   background-color: $dtd-main-bg-color;
@@ -14,7 +14,7 @@
   // align-items: center;
   // font-size: 1.5em;
 }
-.tesGroupName {
+.staffGroupName {
   width: 100%;
   height: 54px;
   border-radius: 5px;
@@ -24,17 +24,17 @@
   padding-left: $dtd-secondary-spacing;
   font-size: $dtd-h2-size;
 }
-.teachbar {
+.staffBar {
   font-size: $dtd-p-size;
   margin-top: $dtd-section-spacing;
   margin-bottom: $dtd-section-spacing;
 }
-.teachbar_teachbox {
+.staffBar_staffBox {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.teachbar_teachbox__img {
+.staffBar_staffBox__img {
   border: 8px solid #f8f8f8;
   margin-bottom: 15px;
   overflow: hidden;
@@ -56,7 +56,7 @@
     opacity: 0.6;
   }
 }
-.teachbar_teachbox__content {
+.staffBar_staffBox__content {
   text-align: center;
   width: 100%;
   margin-bottom: 15px;

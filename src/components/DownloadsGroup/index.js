@@ -3,30 +3,30 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import downloadjson from '../../assets/json/download.json';
+import downloadsjson from '../../assets/json/downloads.json';
 
 const downloadGroup = () => {
   const [downloaddetail, setdownloaddetail] = useState([]);
   useEffect(() => {
-    setdownloaddetail(downloadjson);
+    setdownloaddetail(downloadsjson);
   }, []);
   return (
-    <div className={styles.containerrg}>
+    <div className={styles.container}>
       {downloaddetail.map((group) => (
-        <div className={styles.containerrg} key={group.title}>
+        <div className={styles.container} key={group.title}>
           <div className={styles.downloadGroupName}>{group.title}</div>
-          <div className={styles.downloadbar}>
+          <div className={styles.downloadBar}>
             {group.list.map((download) =>
               !download.docname2 ? (
                 <div
                   key={download.docname}
-                  className={styles.downloadbar_downloadbox}
+                  className={styles.downloadBar_downloadBox}
                 >
                   <a href={download.docurl} target="_blank" rel="noreferrer">
                     {download.docname}
                   </a>
                   {download.remarks != '' ? (
-                    <div className={styles.downloadbar_downloadbox__remarks}>
+                    <div className={styles.downloadBar_downloadBox__remarks}>
                       （{download.remarks}）
                     </div>
                   ) : (
@@ -36,7 +36,7 @@ const downloadGroup = () => {
               ) : !download.docname3 ? (
                 <div
                   key={download.docname}
-                  className={styles.downloadbar_downloadbox}
+                  className={styles.downloadBar_downloadBox}
                 >
                   <a href={download.docurl} target="_blank" rel="noreferrer">
                     {download.docname}
@@ -49,7 +49,7 @@ const downloadGroup = () => {
               ) : (
                 <div
                   key={download.docname}
-                  className={styles.downloadbar_downloadbox}
+                  className={styles.downloadBar_downloadBox}
                 >
                   <a href={download.docurl} target="_blank" rel="noreferrer">
                     {download.docname}

@@ -3,7 +3,7 @@
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
 
-.containerrg {
+.container {
   width: 100%;
   background-color: $dtd-main-bg-color;
   color: $dtd-text-color;
@@ -31,6 +31,7 @@
   }
   & a {
     color: $dtd-text-color;
+    display: inline;
     &:hover {
       color: $dtd-main-color;
       text-decoration: none;

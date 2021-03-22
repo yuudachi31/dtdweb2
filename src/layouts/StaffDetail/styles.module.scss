@@ -8,16 +8,16 @@
   background-color: $dtd-main-bg-color;
   color: $dtd-text-color;
 }
-.teachdetail {
+.staffDetail {
   margin: 0 10% $dtd-secondary-spacing;
   padding-top: $dtd-main-spcing;
   padding-bottom: $dtd-main-spcing;
 }
-.teachdetail_titlebar {
+.staffDetail_titleBar {
   align-items: center;
   height: 65px;
 }
-.teachdetail_titlebar__backbtn {
+.staffDetail_titleBar__backBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,7 +27,7 @@
     height: 30px;
   }
 }
-.teachdetail_titlebar__name {
+.staffDetail_titleBar__name {
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   height: 48px;
   display: flex;
@@ -35,10 +35,10 @@
   padding-left: $dtd-secondary-spacing;
   font-size: $dtd-h1-size;
 }
-.teachdetail_contentbar {
+.staffDetail_contentBar {
   margin-top: $dtd-section-spacing;
 }
-.teachdetail_contentbar__img {
+.staffDetail_contentBar__img {
   border: 8px solid #f8f8f8;
   overflow: hidden;
   display: flex;
@@ -52,14 +52,14 @@
     height: auto;
   }
 }
-.teachdetail_contentbar__content {
+.staffDetail_contentBar__content {
   height: 100%;
 }
-.contactbar {
+.contactBar {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.contactbar_contactbox {
+.contactBar_contactBox {
   display: flex;
   align-items: center;
   height: 30px;
@@ -69,22 +69,22 @@
     height: 16px;
   }
 }
-.contactbar_contactbox__hint {
+.contactBar_contactBox__hint {
   color: $dtd-main-color;
 }
-.contactline {
+.contactLine {
   height: 1px;
   background-color: $dtd-main-color;
 }
-.contactdetail {
+.contactDetail {
   margin-top: 20px;
   font-size: $dtd-p-size;
   & div {
     margin: 10px 0;
   }
 }
-.contactdetail,
-.contactbar_contactbox {
+.contactDetail,
+.contactBar_contactBox {
   & a {
     color: $dtd-main-color;
     &:hover {

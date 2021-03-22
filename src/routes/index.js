@@ -5,12 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import path from '../utils/path';
 
 import HomePage from '../layouts/Home';
-import StaffPage from '../layouts/Teacher';
-import StaffDetailPage from '../layouts/TeachDetail';
+import StaffPage from '../layouts/Staff';
+import StaffDetailPage from '../layouts/StaffDetail';
 import NewsPage from '../layouts/News';
 import HonorsPage from '../layouts/Honors';
 import RulesPage from '../layouts/Rules';
-import DownloadPage from '../layouts/Download';
+import DownloadsPage from '../layouts/Downloads';
 
 const Routes = () => {
   return (
@@ -27,7 +27,7 @@ const Routes = () => {
         {/* 作品展示 */}
         {/* 下載專區 */}
         <Route exact path={path.rules} component={RulesPage} />
-        <Route exact path={path.downloads} component={DownloadPage} />
+        <Route exact path={path.downloads} component={DownloadsPage} />
       </Switch>
     </Router>
   );
