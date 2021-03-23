@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
+import path from '../../utils/path';
+
 import styles from './styles.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 
 import teadetailjson from '../../assets/json/teachers.json';
 
-const TeachGroup = () => {
+const StaffGroup = () => {
   const [teadetail, setteadetail] = useState([]);
   useEffect(() => {
     setteadetail(teadetailjson);
   }, []);
   return (
-    <div className={styles.containertg}>
+    <div className={styles.container}>
       {teadetail.map((group) => (
-        <div className={styles.containertg} key={group.title}>
-          <div className={styles.tesGroupName}>{group.title}</div>
-          <Row className={styles.teachbar}>
+        <div className={styles.container} key={group.title}>
+          <div className={styles.staffGroupName}>{group.title}</div>
+          <Row className={styles.staffBar}>
             {group.list.map((tea) => (
               <Col
-                key={tea.img}
-                className={styles.teachbar_teachbox}
+                key={tea.id}
+                className={styles.staffBar_staffBox}
                 xl={3}
                 lg={6}
                 md={6}
@@ -29,7 +31,8 @@ const TeachGroup = () => {
               >
                 <Link
                   to={
-                    '/teacher/' +
+                    path.staff +
+                    '/' +
                     tea.id +
                     '?teachername=' +
                     tea.teachername +
@@ -52,14 +55,14 @@ const TeachGroup = () => {
                     '&groupname=' +
                     group.title
                   }
-                  className={styles.teachbar_teachbox__img}
+                  className={styles.staffBar_staffBox__img}
                 >
                   <img src={tea.imgurl} />
                 </Link>
-                <div className={styles.teachbar_teachbox__content}>
+                <div className={styles.staffBar_staffBox__content}>
                   {tea.title}
                 </div>
-                <div className={styles.teachbar_teachbox__content}>
+                <div className={styles.staffBar_staffBox__content}>
                   {tea.teachername}
                 </div>
               </Col>
@@ -71,4 +74,4 @@ const TeachGroup = () => {
   );
 };
 
-export default TeachGroup;
+export default StaffGroup;

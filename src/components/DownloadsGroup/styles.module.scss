@@ -3,7 +3,7 @@
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
 
-.containerrg {
+.container {
   width: 100%;
   background-color: $dtd-main-bg-color;
   color: $dtd-text-color;
@@ -18,23 +18,25 @@
   padding-left: $dtd-secondary-spacing;
   font-size: $dtd-h2-size;
 }
-.downloadbar {
+.downloadBar {
   font-size: $dtd-p-size;
   margin-top: $dtd-section-spacing;
   margin-bottom: $dtd-section-spacing;
   padding: 0 $dtd-secondary-spacing;
-  & .downloadbar_downloadbox {
-    display: flex;
+  & .downloadBar_downloadBox {
+    // display: inline;
     margin-bottom: 18px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  & .downloadbar_downloadbox__remarks {
+  & .downloadBar_downloadBox__remarks {
+    display: inline;
     color: $dtd-submenu-text-color;
   }
   & a {
     color: $dtd-text-color;
+    display: inline;
     &:hover {
       color: $dtd-main-color;
       text-decoration: none;

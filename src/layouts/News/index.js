@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
+import PageTitle from '../../components/PageTitle';
 import Announcement from '../../components/Announcement';
 import PageNumber from '../../components/PageNumber';
 
@@ -21,7 +22,7 @@ const News = () => {
         <Header />
         <Banner />
         <div className={styles.board}>
-          <div className={styles.board_title}>公告事項</div>
+          <PageTitle title="公告事項" />
           <Announcement />
         </div>
         <PageNumber />
