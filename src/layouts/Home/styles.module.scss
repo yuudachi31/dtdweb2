@@ -13,13 +13,14 @@
 }
 .section {
   width: 100%;
-  margin-top: $dtd-main-spcing;
+  margin-top: $dtd-index-main-spacing;
   &.section_news {
     display: flex;
     justify-content: space-between;
+    margin-top: $dtd-main-spcing;
   }
   &.section_link {
-    margin-bottom: $dtd-main-spcing;
+    margin-bottom: $dtd-index-main-spacing;
   }
 }
 h1 {
@@ -79,6 +80,7 @@ span {
 }
 .link_img__size {
   width: 100%;
+  border-radius: 5px;
 }
 .link_p {
   text-align: center;
@@ -89,28 +91,25 @@ span {
 }
 
 @media (max-width: $dtd-media-tablet) {
+  .container {
+    padding: 0 4.8%;
+  }
   .carousel_img__rwdHeight {
     height: 30vh;
     object-fit: cover;
   }
+  .link_img__size {
+    width: 85%;
+  }
 }
 @media (max-width: $dtd-media-phone) {
+  .container {
+    padding: 0 6%;
+  }
   .carousel_img__rwdHeight {
     height: 25vh;
     object-fit: cover;
   }
-}
-@media (max-width: $dtd-media-tablet) {
-  .carousel_img img {
-    height: 30vh;
-  }
-}
-@media (max-width: $dtd-media-phone) {
-  .carousel_img {
-    height: 25vh;
-  }
-}
-@media (max-width: 575px) {
   .section_news {
     display: flex;
     flex-direction: column;
@@ -119,9 +118,12 @@ span {
     width: 100%;
   }
   .news_button_mb {
-    margin-bottom: $dtd-secondary-spacing;
+    margin-bottom: 40px;
   }
   .admissionContent {
     padding: 3% 10%;
+  }
+  .link_img__size {
+    width: 70%;
   }
 }
