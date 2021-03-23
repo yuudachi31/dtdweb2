@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
+import PageTitle from '../../components/PageTitle';
 import Announcement from '../../components/Announcement';
 import PageNumber from '../../components/PageNumber';
 
@@ -21,7 +22,8 @@ const Honors = () => {
         <Header />
         <Banner />
         <div className={styles.board}>
-          <div className={styles.board_title}>師生榮譽榜</div>
+          <PageTitle title="師生榮譽榜" />
+          {/* <div className={styles.board_title}></div> */}
           <Announcement />
         </div>
         <PageNumber />

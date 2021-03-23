@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
+import path from '../../utils/path';
 
 const Header = () => {
   return (
     <div className={styles.container}>
-      <Link to="/" className={styles.logo}></Link>
+      <Link to={path.home} className={styles.logo}></Link>
       <div className={styles.nav}>
         <button className={styles.nav_dropdown}>
           <div
@@ -20,7 +21,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/teacher" className={styles.nav_link}>
+              <Link to={path.staff} className={styles.nav_link}>
                 教學團隊
               </Link>
             </li>
@@ -44,12 +45,12 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/news" className={styles.nav_link}>
+              <Link to={path.news} className={styles.nav_link}>
                 系所公告
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/honors" className={styles.nav_link}>
+              <Link to={path.honors} className={styles.nav_link}>
                 師生榮譽榜
               </Link>
             </li>
@@ -107,12 +108,12 @@ const Header = () => {
           <div className={styles.nav_title}>下載專區</div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/rules" className={styles.nav_link}>
-                規章辦法
+              <Link to={path.rules} className={styles.nav_link}>
+                辦法規章
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/download" className={styles.nav_link}>
+              <Link to={path.downloads} className={styles.nav_link}>
                 表格下載
               </Link>
             </li>

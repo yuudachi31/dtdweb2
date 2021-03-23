@@ -11,9 +11,9 @@ const RulesGroup = () => {
     setrulesdetail(rulesjson);
   }, []);
   return (
-    <div className={styles.containerrg}>
+    <div className={styles.container}>
       {rulesdetail.map((group) => (
-        <div className={styles.containerrg} key={group.title}>
+        <div className={styles.container} key={group.title}>
           <div className={styles.rulesGroupName}>{group.title}</div>
           <div className={styles.rulebar}>
             {group.list.map((rule) =>

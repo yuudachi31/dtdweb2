@@ -3,6 +3,7 @@
         "title": "專任教師／互動科技領域",
         "list": [
             {
+                "id":1,
                 "teachername": "范丙林",
                 "title": "教授兼研發長及北師美術館代理館長",
                 "phone": "52472",
@@ -15,6 +16,7 @@
                 "img": "tea1_1"
             },
             {
+                "id":2,
                 "teachername": "巴白山",
                 "title": "教授兼教務長及通識中心主任",
                 "phone": "52470",
@@ -27,6 +29,7 @@
                 "img": "tea1_6"
             },
             {
+                "id":3,
                 "teachername": "俞齊山",
                 "title": "教授",
                 "phone": "55528",
@@ -39,6 +42,7 @@
                 "img": "tea1_7"
             },
             {
+                "id":4,
                 "teachername": "陳友倫",
                 "title": "教授",
                 "phone": "55526",
@@ -56,6 +60,7 @@
         "title": "專任教師／遊戲設計領域",
         "list": [
             {
+                "id":5,
                 "teachername": "林仁智",
                 "title": "教授",
                 "phone": "55529",
@@ -68,6 +73,7 @@
                 "img": "tea1_13"
             },
             {
+                "id":6,
                 "teachername": "王學武（本系職涯導師）",
                 "title": "教授兼系主任",
                 "phone": "55527、63432",
@@ -80,6 +86,7 @@
                 "img": "tea1_10"
             },
             {
+                "id":7,
                 "teachername": "許一珍（本系職涯導師）",
                 "title": "副教授",
                 "phone": "55232",
@@ -97,6 +104,7 @@
         "title": "專任教師／創意設計領域",
         "list": [
             {
+                "id":8,
                 "teachername": "莊淇銘",
                 "title": "教授",
                 "phone": "52461",
@@ -109,6 +117,7 @@
                 "img": "tea1_3"
             },
             {
+                "id":9,
                 "teachername": "盧姝如",
                 "title": "副教授",
                 "phone": "55525",
@@ -121,6 +130,7 @@
                 "img": "tea1_12"
             },
             {
+                "id":10,
                 "teachername": "楊孟哲",
                 "title": "教授",
                 "phone": "52317",
@@ -138,6 +148,7 @@
         "title": "兼任教師",
         "list": [
             {
+                "id":11,
                 "teachername": "陳鎂鋆",
                 "title": "講師",
                 "phone": "",
@@ -150,6 +161,7 @@
                 "img": "MaS"
             },
             {
+                "id":12,
                 "teachername": "陳治臻",
                 "title": "副教授",
                 "phone": "",
@@ -162,6 +174,7 @@
                 "img": "ZhiZhen"
             },
             {
+                "id":13,
                 "teachername": "蕭雅真",
                 "title": "講師",
                 "phone": "",
@@ -174,6 +187,7 @@
                 "img": "ShaTrue"
             },
             {
+                "id":14,
                 "teachername": "陳彥欽(夢德)",
                 "title": "講師",
                 "phone": "",
@@ -186,6 +200,7 @@
                 "img": "DreamDa"
             },
             {
+                "id":15,
                 "teachername": "洪茂盛",
                 "title": "副教授",
                 "phone": "53323",
@@ -203,6 +218,7 @@
         "title": "行政人員",
         "list": [
             {
+                "id":16,
                 "teachername": "陳珮如",
                 "title": "助教",
                 "phone": "63533",
@@ -215,6 +231,7 @@
                 "img": "PadRoot"
             },
             {
+                "id":17,
                 "teachername": "許文怡",
                 "title": "助教",
                 "phone": "62478",

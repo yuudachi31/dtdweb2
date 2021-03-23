@@ -8,20 +8,20 @@
   width: 100vw;
   background-color: $dtd-main-bg-color;
 }
-//rulesContainer
-.rulesContainer {
-  margin: 0 10% $dtd-secondary-spacing;
+//staffContainer
+.staffContainer {
+  margin: 0 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (max-width: $dtd-media-desktop) {
-  .rulesContainer {
+  .staffContainer {
     margin: 0 4.8% $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .rulesContainer {
+  .staffContainer {
     margin: 0 6% $dtd-secondary-spacing;
   }
 }

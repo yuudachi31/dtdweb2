@@ -3,13 +3,13 @@ import { Helmet } from 'react-helmet';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import TreachGroup from '../../components/TeachGroup';
+import Banner from '../../components/Banner';
+import PageTitle from '../../components/PageTitle';
+import TreachGroup from '../../components/StaffGroup';
 
 import styles from './styles.module.scss';
 
-import banner from '../../assets/images/banners/banner_4.jpg';
-
-const Teacher = () => {
+const Staff = () => {
   return (
     <Fragment>
       <Helmet>
@@ -19,12 +19,9 @@ const Teacher = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <div className={styles.banner}>
-          <img src={banner} className={styles.banner_img} />
-        </div>
-        <div className={styles.teacherContainer}>
-          <h1 className={styles.teacherContainer_teacherTitle}>教學團隊</h1>
-          <div className={styles.teacherContainer_titleLine}></div>
+        <Banner />
+        <div className={styles.staffContainer}>
+          <PageTitle title="教學團隊" />
           <TreachGroup />
         </div>
         <Footer />
@@ -33,4 +30,4 @@ const Teacher = () => {
   );
 };
 
-export default Teacher;
+export default Staff;
