@@ -61,7 +61,7 @@ span {
   color: #fff;
   background-color: #85b6dd;
   border-radius: 5px;
-  padding: 5px 20px;
+  padding: 8px 25px;
 }
 .news_button:hover {
   background-color: $dtd-main-color;
@@ -88,6 +88,28 @@ span {
   text-decoration: none;
 }
 
+@media (max-width: $dtd-media-tablet) {
+  .carousel_img__rwdHeight {
+    height: 30vh;
+    object-fit: cover;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .carousel_img__rwdHeight {
+    height: 25vh;
+    object-fit: cover;
+  }
+}
+@media (max-width: $dtd-media-tablet) {
+  .carousel_img img {
+    height: 30vh;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .carousel_img {
+    height: 25vh;
+  }
+}
 @media (max-width: 575px) {
   .section_news {
     display: flex;
