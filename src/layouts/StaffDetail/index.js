@@ -45,6 +45,7 @@ const StaffDetail = () => {
       <div className={styles.container} id="top">
         <Header />
         <div className={styles.staffDetail}>
+          {/* 教師名字 */}
           <Row className={styles.staffDetail_titleBar}>
             <Link
               to={path.staff}
@@ -58,7 +59,9 @@ const StaffDetail = () => {
                 : teachername.substring(0, teachername.search(/（/i))}
             </div>
           </Row>
+          {/* 教師資訊 */}
           <Row className={styles.staffDetail_contentBar}>
+            {/* 教師頭像 */}
             <Col lg={3} md={4} sm={12} xs={12}>
               <div className={styles.staffDetail_contentBar__img}>
                 <img src={'../' + imgurl} />
@@ -70,9 +73,11 @@ const StaffDetail = () => {
               sm={12}
               className={styles.staffDetail_contentBar__content}
             >
+              {/* 職稱 */}
               <div>
                 職稱：{groupname != '兼任教師' ? title : '兼任' + title}
               </div>
+              {/* 電話與email */}
               <Row className={styles.contactBar}>
                 <Col
                   xl={3}
@@ -111,10 +116,12 @@ const StaffDetail = () => {
               </Row>
               <div className={styles.contactLine}></div>
               <div className={styles.contactDetail}>
+                {/* 辦公室or研究室 */}
                 <div>
                   <strong>{title != '助教' ? '研究室' : '辦公室'}：</strong>
                   {room != '' ? room : '無'}
                 </div>
+                {/* 個人網站（助教為工作職掌）*/}
                 <div>
                   <strong>{title != '助教' ? '個人網站' : '工作職掌'}：</strong>
                   {title != '助教' ? (
@@ -129,10 +136,12 @@ const StaffDetail = () => {
                     skill
                   )}
                 </div>
+                {/* 學歷（助教除外） */}
                 <div>
                   <strong>{title != '助教' ? '學歷：' : ''}</strong>
                   {education}
                 </div>
+                {/* 專長（助教除外） */}
                 <div>
                   <strong>{title != '助教' ? '專長：' : ''}</strong>
                   {title != '助教' ? (skill != '' ? skill : '無') : ''}

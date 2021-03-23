@@ -8,11 +8,24 @@
   background-color: $dtd-main-bg-color;
   color: $dtd-text-color;
 }
+
 .staffDetail {
   margin: 0 10% $dtd-secondary-spacing;
   padding-top: $dtd-main-spcing;
   padding-bottom: $dtd-main-spcing;
 }
+@media (max-width: $dtd-media-desktop) {
+  .staffDetail {
+    margin: 0 4.8% $dtd-secondary-spacing;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .staffDetail {
+    margin: 0 6% $dtd-secondary-spacing;
+  }
+}
+
+//名稱與返回鍵
 .staffDetail_titleBar {
   align-items: center;
   height: 65px;
@@ -35,9 +48,12 @@
   padding-left: $dtd-secondary-spacing;
   font-size: $dtd-h1-size;
 }
+
+//教師資訊
 .staffDetail_contentBar {
   margin-top: $dtd-section-spacing;
 }
+//教師人像
 .staffDetail_contentBar__img {
   border: 8px solid #f8f8f8;
   overflow: hidden;
@@ -52,9 +68,16 @@
     height: auto;
   }
 }
+//教師資料內容
 .staffDetail_contentBar__content {
   height: 100%;
 }
+@media (max-width: 768px) {
+  .staffDetail_contentBar__content {
+    margin-top: $dtd-secondary-spacing;
+  }
+}
+//聯絡資訊
 .contactBar {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -76,6 +99,7 @@
   height: 1px;
   background-color: $dtd-main-color;
 }
+//詳細資訊
 .contactDetail {
   margin-top: 20px;
   font-size: $dtd-p-size;

@@ -33,13 +33,13 @@
   height: 90px;
   padding: 0;
   border: none;
-  background-color: $dtd-main-bg-color;
+  background-color: #fff;
   color: $dtd-text-color;
 
   & .nav_title {
     width: 100%;
     padding: 0 $dtd-secondary-spacing;
-    line-height: 48px;
+    // line-height: 48px;
   }
 
   & .nav_title__borderRight {
