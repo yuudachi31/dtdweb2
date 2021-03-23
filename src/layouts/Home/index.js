@@ -23,6 +23,7 @@ import Ntue from '../../assets/images/index/Ntue.png';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   return (
@@ -37,21 +38,21 @@ const Home = () => {
         <Carousel indicators={false} controls={false}>
           <Carousel.Item interval={5000}>
             <img
-              className="d-block w-100"
+              className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
               src={bannerUrl.banner_1}
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item interval={5000}>
             <img
-              className="d-block w-100"
+              className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
               src={bannerUrl.banner_2}
               alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item interval={5000}>
             <img
-              className="d-block w-100"
+              className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
               src={bannerUrl.banner_4}
               alt="Third slide"
             />
@@ -63,7 +64,6 @@ const Home = () => {
         <div className={`${styles.section} ${styles.section_news}`} id="news">
           <div className={styles.newsContent}>
             <h1>系務公告 / Announcement</h1>
-            <FontAwesomeIcon icon={faClock} />
             <div className={`${styles.news} ${styles.news_top}`}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <p className={styles.news_p}>
@@ -71,7 +71,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -80,7 +83,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -89,7 +95,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -98,7 +107,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -107,12 +119,16 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <button
               className={`${styles.news_button} ${styles.news_button_mb}`}
             >
-              More
+              <FontAwesomeIcon icon={faAngleRight} />
+              &ensp;&ensp;&ensp;More
             </button>
           </div>
 
@@ -125,7 +141,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -134,7 +153,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -143,7 +165,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -152,7 +177,10 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
             <div className={styles.news}>
               <Link to="/" className={styles.link_a__textdecnone}>
@@ -161,9 +189,15 @@ const Home = () => {
                 </p>
               </Link>
               <hr className={styles.news_p}></hr>
-              <span className={styles.news_span}>5&ensp;2月,2021</span>
+              <span className={styles.news_span}>
+                <FontAwesomeIcon icon={faClock} />
+                &ensp;5&ensp;2月,2021
+              </span>
             </div>
-            <button className={styles.news_button}>More</button>
+            <button className={styles.news_button}>
+              <FontAwesomeIcon icon={faAngleRight} />
+              &ensp;&ensp;&ensp;More
+            </button>
           </div>
         </div>
         <div className={styles.section} id="event">
@@ -174,7 +208,7 @@ const Home = () => {
           <h1>新生快報 / Admission Information </h1>
           <hr></hr>
           <Row className={styles.link}>
-            <Col sm={3} xs={12}>
+            <Col lg={3} sm={6} xs={12}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={about} alt="" className={styles.link_img__size} />
@@ -184,7 +218,7 @@ const Home = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={3} xs={12}>
+            <Col lg={3} sm={6} xs={12}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={works} alt="" className={styles.link_img__size} />
@@ -194,7 +228,7 @@ const Home = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={3} xs={12}>
+            <Col lg={3} sm={6} xs={12}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={senior} alt="" className={styles.link_img__size} />
@@ -204,7 +238,7 @@ const Home = () => {
                 </div>
               </Link>
             </Col>
-            <Col sm={3} xs={12}>
+            <Col lg={3} sm={6} xs={12}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img
