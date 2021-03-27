@@ -1,3 +1,4 @@
+@import '../../styles/media.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
@@ -8,7 +9,7 @@
 
 .board {
   width: 100vw;
-  padding: 0 10%;
+  padding: 0 10vw;
   background-color: $dtd-main-bg-color;
 }
 
@@ -18,4 +19,16 @@
   font-weight: bold;
   text-align: center;
   padding: $dtd-secondary-spacing 0;
+}
+
+@media (max-width: $dtd-media-desktop) {
+  .board {
+    padding: 0 4.8vw;
+  }
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .board {
+    padding: 0 7vw;
+  }
 }
