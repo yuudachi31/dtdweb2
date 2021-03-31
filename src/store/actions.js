@@ -10,6 +10,8 @@ import {
 
 const BASE_URL = '';
 
+import staffjson from '../assets/json/teachers.json';
+
 export const getNews = async (dispatch, options) => {
   const { perPage = 5, page = 1 } = options;
 
@@ -68,12 +70,15 @@ export const getHonorDetail = async (dispatch, options) => {
   });
 };
 
-export const getStaff = async (dispatch, options) => {
-  const { perPage = 5, page = 1 } = options;
+export const getStaff = async (dispatch) => {
+  //從後台取資料
+  // const url = `${BASE_URL}?perPage=${perPage}&page=${page}`;
+  // const response = await axios.get(url);
+  // const staff = response.data;
 
-  const url = `${BASE_URL}?perPage=${perPage}&page=${page}`;
-  const response = await axios.get(url);
-  const staff = response.data;
+  //從json取資料
+  const staff = staffjson;
+  console.log(staff);
 
   dispatch({
     type: SET_STAFF,
@@ -82,14 +87,18 @@ export const getStaff = async (dispatch, options) => {
 };
 
 export const getStaffDetail = async (dispatch, options) => {
-  const { id } = options;
-  if (!id) {
-    throw new Error('No id.');
-  }
+  const { groupid2 = 0, teacherid2 = 0 } = options;
+  // if (!id) {
+  //   throw new Error('No id.');
+  // }
 
-  const url = `${BASE_URL}/${id}`;
-  const response = await axios.get(url);
-  const staffDetail = response.data;
+  //從後台取資料
+  // const url = `${BASE_URL}/${id}`;
+  // const response = await axios.get(url);
+  // const staffDetail = response.data;
+
+  //從json取資料
+  const staffDetail = staffjson[groupid2].list[teacherid2];
 
   dispatch({
     type: SET_STAFF_DETAIL,

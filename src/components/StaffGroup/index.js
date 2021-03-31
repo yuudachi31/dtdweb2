@@ -1,23 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
+import React, { useEffect, useContext } from 'react';
+//路徑
 import path from '../../utils/path';
-
+//設計
 import styles from './styles.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
-
-import teadetailjson from '../../assets/json/teachers.json';
+import { Link } from 'react-router-dom';
+//取職員資料
+import { getStaff } from '../../store/actions';
+import { StoreContext } from '../../store/reducer';
 
 const StaffGroup = () => {
-  const [teadetail, setteadetail] = useState([]);
+  const { state, dispatch } = useContext(StoreContext);
   useEffect(() => {
-    setteadetail(teadetailjson);
+    getStaff(dispatch);
   }, []);
   return (
     <div className={styles.container}>
-      {teadetail.map((group) => (
-        <div className={styles.container} key={group.title}>
+      {state.staff.map((group) => (
+        <div
+          className={styles.container}
+          key={group.groupid}
+          id={'group' + group.groupid}
+        >
           <div className={styles.staffGroupName}>{group.title}</div>
           <Row className={styles.staffBar}>
             {group.list.map((tea) => (
@@ -33,27 +38,11 @@ const StaffGroup = () => {
                   to={
                     path.staff +
                     '/' +
-                    tea.id +
-                    '?teachername=' +
-                    tea.teachername +
-                    '&title=' +
-                    tea.title +
-                    '&phone=' +
-                    tea.phone +
-                    '&room=' +
-                    tea.room +
-                    '&website=' +
-                    tea.website +
-                    '&education=' +
-                    tea.education +
-                    '&skill=' +
-                    tea.skill +
-                    '&email=' +
-                    tea.email +
-                    '&imgurl=' +
-                    tea.imgurl +
-                    '&groupname=' +
-                    group.title
+                    tea.englishname +
+                    '?groupid=' +
+                    group.groupid +
+                    '&teacherid=' +
+                    tea.id
                   }
                   className={styles.staffBar_staffBox__img}
                 >

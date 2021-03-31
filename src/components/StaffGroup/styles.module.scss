@@ -29,6 +29,12 @@
   margin-top: $dtd-section-spacing;
   margin-bottom: $dtd-section-spacing;
 }
+@media (max-width: $dtd-media-desktop) {
+  .staffBar {
+    margin-right: $dtd-staff-rwd-spacing;
+    margin-left: $dtd-staff-rwd-spacing;
+  }
+}
 .staffBar_staffBox {
   display: flex;
   flex-direction: column;

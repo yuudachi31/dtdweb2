@@ -58,10 +58,10 @@ input {
     margin: 0;
   }
 
-  &:-webkit-autofill {
-    /* stylelint-disable-next-line property-no-vendor-prefix */
-    -webkit-box-shadow: 0 0 0 30px white inset;
-  }
+  // &:-webkit-autofill {
+  /* stylelint-disable-next-line property-no-vendor-prefix */
+  // -webkit-box-shadow: 0 0 0 30px white inset;
+  // }
 
   &[type='number'] {
     /* stylelint-disable-next-line property-no-vendor-prefix */

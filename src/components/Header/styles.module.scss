@@ -144,10 +144,6 @@
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .container {
-    padding: 0 7vw;
-  }
-
   .nav_dropdown {
     display: none;
   }
@@ -222,5 +218,10 @@
         }
       }
     }
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .container {
+    padding: 0 7vw;
   }
 }

@@ -1,10 +1,12 @@
 [
     {
+        "groupid":0,
         "title": "專任教師／互動科技領域",
         "list": [
             {
-                "id":1,
+                "id":0,
                 "teachername": "范丙林",
+                "englishname": "plfan",
                 "title": "教授兼研發長及北師美術館代理館長",
                 "phone": "52472",
                 "room": "文薈樓R205室",
@@ -16,8 +18,9 @@
                 "img": "tea1_1"
             },
             {
-                "id":2,
+                "id":1,
                 "teachername": "巴白山",
+                "englishname": "bsba",
                 "title": "教授兼教務長及通識中心主任",
                 "phone": "52470",
                 "room": "文薈樓R203室",
@@ -29,8 +32,9 @@
                 "img": "tea1_6"
             },
             {
-                "id":3,
+                "id":2,
                 "teachername": "俞齊山",
+                "englishname": "chsyu",
                 "title": "教授",
                 "phone": "55528",
                 "room": "篤行樓Y528室",
@@ -42,8 +46,9 @@
                 "img": "tea1_7"
             },
             {
-                "id":4,
+                "id":3,
                 "teachername": "陳友倫",
+                "englishname": "ylchen",
                 "title": "教授",
                 "phone": "55526",
                 "room": "篤行樓Y526室",
@@ -57,11 +62,13 @@
         ]
     },
     {
+        "groupid":1,
         "title": "專任教師／遊戲設計領域",
         "list": [
             {
-                "id":5,
+                "id":0,
                 "teachername": "林仁智",
+                "englishname": "ychlin",
                 "title": "教授",
                 "phone": "55529",
                 "room": "篤行樓Y529室",
@@ -73,8 +80,9 @@
                 "img": "tea1_13"
             },
             {
-                "id":6,
+                "id":1,
                 "teachername": "王學武（本系職涯導師）",
+                "englishname": "hwwang",
                 "title": "教授兼系主任",
                 "phone": "55527、63432",
                 "room": "篤行樓Y527室",
@@ -86,8 +94,9 @@
                 "img": "tea1_10"
             },
             {
-                "id":7,
+                "id":2,
                 "teachername": "許一珍（本系職涯導師）",
+                "englishname": "yichen",
                 "title": "副教授",
                 "phone": "55232",
                 "room": "篤行樓Y232室",
@@ -101,11 +110,13 @@
         ]
     },
     {
+        "groupid":2,
         "title": "專任教師／創意設計領域",
         "list": [
             {
-                "id":8,
+                "id":0,
                 "teachername": "莊淇銘",
+                "englishname": "cmchung",
                 "title": "教授",
                 "phone": "52461",
                 "room": "文薈樓R102室",
@@ -117,8 +128,9 @@
                 "img": "tea1_3"
             },
             {
-                "id":9,
+                "id":1,
                 "teachername": "盧姝如",
+                "englishname": "srlu",
                 "title": "副教授",
                 "phone": "55525",
                 "room": "篤行樓Y525室",
@@ -130,8 +142,9 @@
                 "img": "tea1_12"
             },
             {
-                "id":10,
+                "id":2,
                 "teachername": "楊孟哲",
+                "englishname": "mjyang",
                 "title": "教授",
                 "phone": "52317",
                 "room": "眷舍134-19室",
@@ -145,11 +158,13 @@
         ]
     },
     {
+        "groupid":3,
         "title": "兼任教師",
         "list": [
             {
-                "id":11,
+                "id":0,
                 "teachername": "陳鎂鋆",
+                "englishname": "mychen",
                 "title": "講師",
                 "phone": "",
                 "room": "",
@@ -161,8 +176,9 @@
                 "img": "MaS"
             },
             {
-                "id":12,
+                "id":1,
                 "teachername": "陳治臻",
+                "englishname": "chchchen",
                 "title": "副教授",
                 "phone": "",
                 "room": "",
@@ -174,8 +190,9 @@
                 "img": "ZhiZhen"
             },
             {
-                "id":13,
+                "id":2,
                 "teachername": "蕭雅真",
+                "englishname": "yjhsiao",
                 "title": "講師",
                 "phone": "",
                 "room": "",
@@ -187,8 +204,9 @@
                 "img": "ShaTrue"
             },
             {
-                "id":14,
+                "id":3,
                 "teachername": "陳彥欽(夢德)",
+                "englishname": "ycchen",
                 "title": "講師",
                 "phone": "",
                 "room": "",
@@ -200,8 +218,9 @@
                 "img": "DreamDa"
             },
             {
-                "id":15,
+                "id":4,
                 "teachername": "洪茂盛",
+                "englishname": "mshhong",
                 "title": "副教授",
                 "phone": "53323",
                 "room": "眷舍134-30室",
@@ -215,11 +234,13 @@
         ]
     },
     {
+        "groupid":4,
         "title": "行政人員",
         "list": [
             {
-                "id":16,
+                "id":0,
                 "teachername": "陳珮如",
+                "englishname": "prchen",
                 "title": "助教",
                 "phone": "63533",
                 "room": "科學館B507室",
@@ -231,8 +252,9 @@
                 "img": "PadRoot"
             },
             {
-                "id":17,
+                "id":1,
                 "teachername": "許文怡",
+                "englishname": "wihsu",
                 "title": "助教",
                 "phone": "62478",
                 "room": "科學館B507室",

@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: $dtd-media-desktop) {
+@media (max-width: $dtd-media-tablet) {
   .staffContainer {
     margin: 0 4.8% $dtd-secondary-spacing;
   }
