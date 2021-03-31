@@ -6,12 +6,16 @@ import path from '../../utils/path';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-import constants from '../../utils/constants';
-import { StateContext, DispatchContext } from '../../context/context';
+import {
+  clickHamburgerMenu,
+  clickHamburgerTitle,
+  clickHamburgerLink,
+} from '../../uiStore/actions';
+
+import { UIStoreContext } from '../../uiStore/reducer';
 
 const Header = () => {
-  const state = useContext(StateContext);
-  const dispatch = useContext(DispatchContext);
+  const { state, dispatch } = useContext(UIStoreContext);
 
   return (
     <div className={styles.container}>
@@ -24,7 +28,7 @@ const Header = () => {
               ? `${styles.nav_hamMenu} ${styles.nav_hamMenu__color}`
               : styles.nav_hamMenu
           }
-          onClick={() => dispatch({ type: constants.CLICK_HAMBURGERMENU })}
+          onClick={() => clickHamburgerMenu(dispatch)}
         >
           <FontAwesomeIcon className={styles.nav_hamMenu__size} icon={faBars} />
         </button>
@@ -38,14 +42,12 @@ const Header = () => {
           <li>
             <button
               className={styles.nav_hamTitle}
-              onClick={() =>
-                dispatch({ type: constants.CLICK_HAMBURGERTITLE_1 })
-              }
+              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 0 })}
             >
               <p>關於數位</p>
               <ul
                 className={
-                  state.hamburgerTitle.title_1
+                  state.hamburgerTitle[0]
                     ? styles.nav_hamTitleDropdown
                     : styles.nav_hamTitleDropdown__close
                 }
@@ -54,9 +56,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     本系簡介
                   </Link>
@@ -65,9 +65,7 @@ const Header = () => {
                   <Link
                     to={path.staff}
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     教學團隊
                   </Link>
@@ -76,9 +74,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     系上活動
                   </Link>
@@ -87,9 +83,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     未來發展
                   </Link>
@@ -101,14 +95,12 @@ const Header = () => {
           <li>
             <button
               className={styles.nav_hamTitle}
-              onClick={() =>
-                dispatch({ type: constants.CLICK_HAMBURGERTITLE_2 })
-              }
+              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 1 })}
             >
               <p>最新消息</p>
               <ul
                 className={
-                  state.hamburgerTitle.title_2
+                  state.hamburgerTitle[1]
                     ? styles.nav_hamTitleDropdown
                     : styles.nav_hamTitleDropdown__close
                 }
@@ -117,9 +109,7 @@ const Header = () => {
                   <Link
                     to={path.news}
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     系所公告
                   </Link>
@@ -128,9 +118,7 @@ const Header = () => {
                   <Link
                     to={path.honors}
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     師生榮譽榜
                   </Link>
@@ -142,14 +130,12 @@ const Header = () => {
           <li>
             <button
               className={styles.nav_hamTitle}
-              onClick={() =>
-                dispatch({ type: constants.CLICK_HAMBURGERTITLE_3 })
-              }
+              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 2 })}
             >
               <p>招生資訊</p>
               <ul
                 className={
-                  state.hamburgerTitle.title_3
+                  state.hamburgerTitle[2]
                     ? styles.nav_hamTitleDropdown
                     : styles.nav_hamTitleDropdown__close
                 }
@@ -158,9 +144,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     學士班
                   </Link>
@@ -169,9 +153,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     碩士班
                   </Link>
@@ -180,9 +162,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     在職專班
                   </Link>
@@ -194,14 +174,12 @@ const Header = () => {
           <li>
             <button
               className={styles.nav_hamTitle}
-              onClick={() =>
-                dispatch({ type: constants.CLICK_HAMBURGERTITLE_4 })
-              }
+              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 3 })}
             >
               <p>作品展示</p>
               <ul
                 className={
-                  state.hamburgerTitle.title_4
+                  state.hamburgerTitle[3]
                     ? styles.nav_hamTitleDropdown
                     : styles.nav_hamTitleDropdown__close
                 }
@@ -210,9 +188,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     畢業專題
                   </Link>
@@ -221,9 +197,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     課程作品
                   </Link>
@@ -232,9 +206,7 @@ const Header = () => {
                   <Link
                     to="/"
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     合作成果
                   </Link>
@@ -246,14 +218,12 @@ const Header = () => {
           <li>
             <button
               className={styles.nav_hamTitle}
-              onClick={() =>
-                dispatch({ type: constants.CLICK_HAMBURGERTITLE_5 })
-              }
+              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 4 })}
             >
               <p>下載專區</p>
               <ul
                 className={
-                  state.hamburgerTitle.title_5
+                  state.hamburgerTitle[4]
                     ? styles.nav_hamTitleDropdown
                     : styles.nav_hamTitleDropdown__close
                 }
@@ -262,9 +232,7 @@ const Header = () => {
                   <Link
                     to={path.rules}
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     辦法規章
                   </Link>
@@ -273,9 +241,7 @@ const Header = () => {
                   <Link
                     to={path.downloads}
                     className={styles.nav_hamLink}
-                    onClick={() =>
-                      dispatch({ type: constants.CLICK_HAMBURGERLINK })
-                    }
+                    onClick={() => clickHamburgerLink(dispatch)}
                   >
                     表格下載
                   </Link>
