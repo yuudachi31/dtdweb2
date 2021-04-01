@@ -10,19 +10,20 @@
 }
 
 .staffDetail {
-  margin: 12px 10vw $dtd-secondary-spacing;
+  margin: 12px 10vw 0;
   padding-top: $dtd-main-spcing;
-  padding-bottom: $dtd-main-spcing;
+  padding-bottom: 142px;
 }
 @media (max-width: $dtd-media-tablet) {
   .staffDetail {
-    margin: 0 4.8vw $dtd-secondary-spacing 4.8vw;
+    margin: 0 4.8vw;
     padding-top: 27px;
+    padding-bottom: 80px;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .staffDetail {
-    margin: 0 7vw $dtd-secondary-spacing;
+    margin: 0 7vw 0;
   }
 }
 
