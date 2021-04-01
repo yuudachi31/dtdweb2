@@ -35,6 +35,12 @@
     margin-left: $dtd-staff-rwd-spacing;
   }
 }
+@media (max-width: $dtd-media-phone) {
+  .staffBar {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
 .staffBar_staffBox {
   display: flex;
   flex-direction: column;

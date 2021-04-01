@@ -10,12 +10,13 @@
 }
 //staffContainer
 .staffContainer {
+  min-height: 100vh;
   margin: 0 10%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: $dtd-media-tablet) {
+@media (max-width: $dtd-media-desktop) {
   .staffContainer {
     margin: 0 4.8% $dtd-secondary-spacing;
   }

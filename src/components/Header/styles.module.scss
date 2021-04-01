@@ -144,6 +144,9 @@
 }
 
 @media (max-width: $dtd-media-tablet) {
+  .container {
+    padding: 0 7vw;
+  }
   .nav_dropdown {
     display: none;
   }
