@@ -1,10 +1,226 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
+@import '../../styles/font.scss';
 
 .container {
-  height: 10vh;
-  background-color: $background;
+  background-color: #fff;
+  width: 100vw;
+  height: 90px;
   display: flex;
-  padding-left: 3vw;
+  padding: 0 10vw;
   align-items: center;
-  font-size: 1.5em;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 243px;
+  height: 85px;
+  background-image: url(../../assets/images/logo/DTD.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.nav {
+  display: flex;
+  font-size: $dtd-p-size;
+}
+
+.nav_hamMenu {
+  display: none;
+}
+
+.nav_hamMenuDropdown {
+  display: none;
+}
+
+.nav_hamMenuDropdown__close {
+  display: none;
+}
+
+.nav_dropdown {
+  position: relative;
+  text-align: center;
+  height: 90px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  color: $dtd-text-color;
+
+  & .nav_title {
+    width: 100%;
+    padding: 0 $dtd-secondary-spacing;
+    // line-height: 48px;
+  }
+
+  & .nav_title__borderRight {
+    border-right: 1px $dtd-hint-text-color solid;
+  }
+
+  & .nav_dropmenu {
+    display: none;
+  }
+
+  &:hover {
+    color: $dtd-main-color;
+
+    & .nav_dropmenu {
+      display: block;
+      position: absolute;
+      width: 192px;
+      left: 0;
+      top: 90px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: $dtd-submenu-bg-color;
+      border-radius: 6px;
+      z-index: 1;
+
+      & .nav_linkBox {
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        width: 100%;
+
+        & .nav_link {
+          color: $dtd-text-color;
+          padding: 16px $dtd-secondary-spacing;
+          display: inline-block;
+          width: 100%;
+        }
+
+        &:hover {
+          .nav_link {
+            background-color: $dtd-hint-text-color;
+            border-radius: 6px;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
+// .nav_drop_open {
+//   display: block;
+//   position: absolute;
+//   width: 192px;
+//   top: 0;
+//   left: 0;
+//   padding: 0;
+//   margin: 0;
+//   margin-top: 68px;
+//   list-style: none;
+//   background-color: rgb(242, 242, 242);
+//   border-radius: 6px;
+
+//   .nav_linkBox {
+//     margin: 0;
+//     padding: 0;
+//     text-align: left;
+//     width: 100%;
+
+//     .nav_link {
+//       color: rgb(0, 0, 0);
+//       padding: 16px 32px;
+//       display: inline-block;
+//       width: 100%;
+//     }
+
+//     &:hover {
+//       .nav_link {
+//         background-color: rgb(255, 255, 255);
+//         border-radius: 6px;
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: $dtd-media-desktop) {
+  .container {
+    padding: 0 4.8vw;
+  }
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .container {
+    padding: 0 7vw;
+  }
+
+  .nav_dropdown {
+    display: none;
+  }
+
+  .nav_hamMenu {
+    display: flex;
+    padding: 0 4vw;
+    border: none;
+    background-color: #fff;
+    color: $dtd-text-color;
+
+    & .nav_hamMenu__size {
+      font-size: $dtd-h1-size;
+    }
+  }
+
+  .nav_hamMenu__color {
+    color: $dtd-main-color;
+  }
+
+  .nav_hamMenuDropdown__close {
+    display: none;
+  }
+
+  .nav_hamMenuDropdown {
+    display: block;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    z-index: 2;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: $dtd-submenu-bg-color;
+
+    & .nav_hamTitle {
+      width: 100%;
+      padding: 0;
+      border: none;
+      color: $dtd-text-color;
+
+      & p {
+        padding: 16px;
+        margin: 0;
+      }
+
+      & .nav_hamTitleDropdown__close {
+        display: none;
+      }
+
+      & .nav_hamTitleDropdown {
+        z-index: 2;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        & .nav_hamLinkBox {
+          padding: 0;
+          margin: 0;
+          width: 100%;
+
+          & .nav_hamLink {
+            display: inline-block;
+            padding: 16px;
+            text-decoration: none;
+            color: $dtd-text-color;
+            background-color: $dtd-hint-text-color;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
 }
