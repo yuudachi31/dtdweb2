@@ -27,6 +27,16 @@
 }
 @media (max-width: $dtd-media-desktop) {
   .banner_img {
-    width: 150%;
+    height: 400px;
+  }
+}
+@media (max-width: $dtd-media-tablet) {
+  .banner_img {
+    height: 276px;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .banner_img {
+    height: 160px;
   }
 }

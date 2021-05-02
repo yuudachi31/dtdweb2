@@ -6,6 +6,9 @@ import {
   SET_HONORS,
   SET_STAFF,
   SET_STAFF_DETAIL,
+  BEGIN_DATA_REQUEST,
+  SUCCESS_DATA_REQUEST,
+  FAIL_DATA_REQUEST,
 } from './actionTypes';
 
 const BASE_URL = '';
@@ -71,6 +74,7 @@ export const getHonorDetail = async (dispatch, options) => {
 };
 
 export const getStaff = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
   //從後台取資料
   // const url = `${BASE_URL}?perPage=${perPage}&page=${page}`;
   // const response = await axios.get(url);
@@ -78,30 +82,32 @@ export const getStaff = async (dispatch) => {
 
   //從json取資料
   const staff = staffjson;
-  console.log(staff);
 
   dispatch({
     type: SET_STAFF,
     payload: staff,
   });
+  dispatch({ type: SUCCESS_DATA_REQUEST });
 };
 
 export const getStaffDetail = async (dispatch, options) => {
   const { groupid2 = 0, teacherid2 = 0 } = options;
-  // if (!id) {
-  //   throw new Error('No id.');
-  // }
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    // const url = `${BASE_URL}/${id}`;
+    // const response = await axios.get(url);
+    // const staffDetail = response.data;
 
-  //從後台取資料
-  // const url = `${BASE_URL}/${id}`;
-  // const response = await axios.get(url);
-  // const staffDetail = response.data;
+    //從json取資料
+    const staffDetail = staffjson[groupid2].list[teacherid2];
 
-  //從json取資料
-  const staffDetail = staffjson[groupid2].list[teacherid2];
-
-  dispatch({
-    type: SET_STAFF_DETAIL,
-    payload: staffDetail,
-  });
+    dispatch({
+      type: SET_STAFF_DETAIL,
+      payload: staffDetail,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
 };

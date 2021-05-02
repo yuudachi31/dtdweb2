@@ -8,6 +8,9 @@ import {
   SET_HONORS,
   SET_STAFF,
   SET_STAFF_DETAIL,
+  BEGIN_DATA_REQUEST,
+  SUCCESS_DATA_REQUEST,
+  FAIL_DATA_REQUEST,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -19,6 +22,7 @@ const initialState = {
   honorDetail: {},
   staff: [],
   staffDetail: {},
+  requestdata: { loading: false, error: null },
 };
 
 function reducer(state, action) {
@@ -52,6 +56,25 @@ function reducer(state, action) {
       return {
         ...state,
         staffDetail: action.payload,
+      };
+    case BEGIN_DATA_REQUEST:
+      return {
+        ...state,
+        requestdata: { ...state.requestdata, loading: true },
+      };
+    case SUCCESS_DATA_REQUEST:
+      return {
+        ...state,
+        requestdata: { ...state.requestdata, loading: false },
+      };
+    case FAIL_DATA_REQUEST:
+      return {
+        ...state,
+        requestdata: {
+          ...state.requestdata,
+          loading: false,
+          error: action.payload,
+        },
       };
     default:
       return state;
