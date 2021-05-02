@@ -10,18 +10,20 @@
 }
 
 .staffDetail {
-  margin: 0 10% $dtd-secondary-spacing;
+  margin: 12px 10vw 0;
   padding-top: $dtd-main-spcing;
-  padding-bottom: $dtd-main-spcing;
+  padding-bottom: 142px;
 }
-@media (max-width: $dtd-media-desktop) {
+@media (max-width: $dtd-media-tablet) {
   .staffDetail {
-    margin: 0 4.8% $dtd-secondary-spacing;
+    margin: 0 4.8vw;
+    padding-top: 27px;
+    padding-bottom: 80px;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .staffDetail {
-    margin: 0 6% $dtd-secondary-spacing;
+    margin: 0 7vw 0;
   }
 }
 
@@ -53,7 +55,16 @@
 .staffDetail_contentBar {
   margin-top: $dtd-section-spacing;
 }
+@media (max-width: $dtd-media-desktop) {
+  .staffDetail_contentBar {
+    margin-top: 40px;
+  }
+}
 //教師人像
+.staffDetail_contentBar__box {
+  display: flex;
+  justify-content: center;
+}
 .staffDetail_contentBar__img {
   border: 8px solid #f8f8f8;
   overflow: hidden;
@@ -72,9 +83,18 @@
 .staffDetail_contentBar__content {
   height: 100%;
 }
-@media (max-width: 768px) {
+@media (max-width: $dtd-media-tablet) {
   .staffDetail_contentBar__content {
-    margin-top: $dtd-secondary-spacing;
+    padding: 24px 15.2% 0 15.2%;
+  }
+  .staffDetail_contentBar__img {
+    height: 240px;
+    width: 240px;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .staffDetail_contentBar__content {
+    padding: 24px 15px 0 15px;
   }
 }
 //聯絡資訊
