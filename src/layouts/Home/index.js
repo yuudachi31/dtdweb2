@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import styles from './styles.module.scss';
-import bannerUrl from '../../assets/json/banner.json';
 /* react-Bootstrap */
-import Carousel from 'react-bootstrap/Carousel';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 /* images */
@@ -25,6 +23,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
+import IndexBanner from '../../components/IndexBanner';
+
 const Home = () => {
   return (
     <Fragment className={styles.homePage_bgc}>
@@ -34,31 +34,7 @@ const Home = () => {
         <meta name="description" content="數位科技設計學系的首頁" />
       </Helmet>
       <Header />
-      <div>
-        <Carousel indicators={false} controls={false}>
-          <Carousel.Item interval={5000}>
-            <img
-              className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
-              src={bannerUrl.banner_1}
-              alt="First slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item interval={5000}>
-            <img
-              className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
-              src={bannerUrl.banner_2}
-              alt="Second slide"
-            />
-          </Carousel.Item>
-          <Carousel.Item interval={5000}>
-            <img
-              className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
-              src={bannerUrl.banner_4}
-              alt="Third slide"
-            />
-          </Carousel.Item>
-        </Carousel>
-      </div>
+      <IndexBanner />
 
       <div className={styles.container}>
         <div className={`${styles.section} ${styles.section_news}`} id="news">

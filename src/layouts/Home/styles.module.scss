@@ -94,10 +94,6 @@ span {
   .container {
     padding: 0 4.8%;
   }
-  .carousel_img__rwdHeight {
-    height: 30vh;
-    object-fit: cover;
-  }
   .link_img__size {
     width: 85%;
   }
@@ -105,10 +101,6 @@ span {
 @media (max-width: $dtd-media-phone) {
   .container {
     padding: 0 6%;
-  }
-  .carousel_img__rwdHeight {
-    height: 25vh;
-    object-fit: cover;
   }
   .section_news {
     display: flex;
