@@ -28,6 +28,8 @@
   font-size: $dtd-p-size;
   margin-top: $dtd-section-spacing;
   margin-bottom: $dtd-section-spacing;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
 }
 @media (max-width: $dtd-media-desktop) {
   .staffBar {
