@@ -34,27 +34,27 @@
       if($mainQuery->post_count > 1){
          
          $results = array(
-            'group0' => array(
+            array(
                'groupid' => 0,
-               'title' => "專任教師／互動科技領域",
+               'title' => "專任教師/互動科技領域",
                'list' => array(),
             ),
-            'group1' => array(
+            array(
                'groupid' => 1,
-               'title' => "專任教師／遊戲設計領域",
+               'title' => "專任教師/遊戲設計領域",
                'list' => array(),
             ),
-            'group2' => array(
+            array(
                'groupid' => 2,
-               'title' => "專任教師／創意設計領域",
+               'title' => "專任教師/創意設計領域",
                'list' => array(),
             ),
-            'group3' => array(
+            array(
                'groupid' => 3,
                'title' => "兼任老師",
                'list' => array(),
             ),
-            'group4' => array(
+            array(
                'groupid' => 4,
                'title' => "行政人員",
                'list' => array(),
@@ -64,21 +64,21 @@
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
    
-            $groupName = '';
+            $groupID = 0;
             switch(get_field('grouptitle')){
                case "互動科技領域":
-                  $groupName = 'group0'; break;
+                  $groupID = 0; break;
                case "遊戲設計領域":
-                  $groupName = 'group1'; break;
+                  $groupID = 1; break;
                case "創意設計領域            ":
-                  $groupName = 'group2'; break;
+                  $groupID = 2; break;
                case "兼任老師":
-                  $groupName = 'group3'; break;
+                  $groupID = 3; break;
                case "行政人員":
-                  $groupName = 'group4'; break;
+                  $groupID = 4; break;
             }
    
-            array_push($results[$groupName]['list'], array(
+            array_push($results[$groupID]['list'], array(
                'id' => get_the_ID(),
                'teachername' => get_field('teachername'),
                'englishname' => get_field('englishname'),
