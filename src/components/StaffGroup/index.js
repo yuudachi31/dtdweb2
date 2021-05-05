@@ -23,7 +23,6 @@ const StaffGroup = () => {
   useEffect(() => {
     getStaff(dispatch);
     if (geturlid.search(/#/i) != -1) {
-      console.log(geturlid.slice(geturlid.search(/#/i) + 1));
       Scroll.scroller.scrollTo(geturlid.slice(geturlid.search(/#/i) + 1));
     }
   }, []);
@@ -57,8 +56,8 @@ const StaffGroup = () => {
                         tea.englishname +
                         '?groupid=' +
                         group.groupid +
-                        '&teacherid=' +
-                        tea.id
+                        '&staffpath=' +
+                        tea.teachername
                       }
                       className={styles.staffBar_staffBox__img}
                     >
