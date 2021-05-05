@@ -5,4 +5,5 @@ export default {
   honors: '/honors',
   rules: '/rules',
   downloads: '/downloads',
+  future: '/future',
 };
