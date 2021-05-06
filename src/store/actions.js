@@ -78,24 +78,10 @@ export const getStaff = async (dispatch) => {
   //從後台取資料
   const url = `${BASE_URL}/staff`;
   const response = await axios.get(url);
-  const staffArray = [
-    response.data.group0,
-    response.data.group1,
-    response.data.group2,
-    response.data.group3,
-    response.data.group4,
-  ];
-  // const staff = response.data;
+  const staff = response.data;
 
   //從json取資料
-  // const staffArray = [
-  //   staffjson.group0,
-  //   staffjson.group1,
-  //   staffjson.group2,
-  //   staffjson.group3,
-  //   staffjson.group4,
-  // ];
-  const staff = staffArray;
+  // const staff = staffjson;
 
   dispatch({
     type: SET_STAFF,
@@ -106,8 +92,9 @@ export const getStaff = async (dispatch) => {
 
 export const getStaffDetail = async (dispatch, options) => {
   //從後台取資料
-  //從json取資料
   const { staffpath = '范丙林' } = options;
+  //從json取資料
+  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -116,7 +103,7 @@ export const getStaffDetail = async (dispatch, options) => {
     const response = await axios.get(url);
     const staffDetail = response.data;
     // //從json取資料
-    // const staffDetail = staffArray[groupid2].list[teacherid2];
+    // const staffDetail = staffjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_STAFF_DETAIL,
