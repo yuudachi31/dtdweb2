@@ -1,0 +1,270 @@
+[
+    {
+        "groupid":0,
+        "title": "專任教師／互動科技領域",
+        "list": [
+            {
+                "id":0,
+                "teachername": "范丙林",
+                "englishname": "plfan",
+                "title": "教授兼研發長及北師美術館代理館長",
+                "phone": "52472",
+                "room": "文薈樓R205室",
+                "website": "https://dtd.ntue.edu.tw/gdlab/",
+                "education": "國立中央大學光電科學博士",
+                "skill": "桌遊設計、2D與3D遊戲程式設計、多媒體互動裝置研究與開發、AR/VR/MR應用設計",
+                "email": "plfan@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-1.png",
+                "img": "tea1_1"
+            },
+            {
+                "id":1,
+                "teachername": "巴白山",
+                "englishname": "bsba",
+                "title": "教授兼教務長及通識中心主任",
+                "phone": "52470",
+                "room": "文薈樓R203室",
+                "website": "https://dtd.ntue.edu.tw/itcd/index.php",
+                "education": "國立清華大學動力機械所設計製造博士",
+                "skill": "互動科技與創意設計研究、數位玩具與教具設計、遊戲設計、數位教材研發、遊戲企劃與動畫美術、桌上遊戲設計、數位行動裝置之設計、遊戲機與遊戲裝置設計、數位機器人、電子玩具、綠能玩具、中大型遊教具之設計、工商產品商品化設計製造、文化創意產業之加值設計、動力機構與數位多媒體之整合設計、數位行銷企劃與設計管理、數位典藏",
+                "email": "myhow@seed.net.tw",
+                "imgurl": "assets/images/teachers/1-6.png",
+                "img": "tea1_6"
+            },
+            {
+                "id":2,
+                "teachername": "俞齊山",
+                "englishname": "chsyu",
+                "title": "教授",
+                "phone": "55528",
+                "room": "篤行樓Y528室",
+                "website": "https://dtd.ntue.edu.tw/chsyu/",
+                "education": "國立台灣大學電機工程博士",
+                "skill": "行動裝置應用、互動裝置設計、互動媒體設計、人機介面設計、擴增實境應用",
+                "email": "chsyu@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-7.png",
+                "img": "tea1_7"
+            },
+            {
+                "id":3,
+                "teachername": "陳友倫",
+                "englishname": "ylchen",
+                "title": "教授",
+                "phone": "55526",
+                "room": "篤行樓Y526室",
+                "website": "http://allen.ntue.edu.tw/",
+                "education": "國立台灣大學電機工程博士",
+                "skill": "計算機軟硬體應用、醫學資訊系統、智慧型資料庫系統、電腦遊戲醫學復健訓練系統",
+                "email": "allen@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-4.png",
+                "img": "tea1_4"
+            }
+        ]
+    },
+    {
+        "groupid":1,
+        "title": "專任教師／遊戲設計領域",
+        "list": [
+            {
+                "id":0,
+                "teachername": "林仁智",
+                "englishname": "ychlin",
+                "title": "教授",
+                "phone": "55529",
+                "room": "篤行樓Y529室",
+                "website": "https://www.facebook.com/thinkabitlab/",
+                "education": "淡江大學資訊工程所博士",
+                "skill": "科技與工程教育、網路行銷、行動裝置應用、遊戲化設計、巨量資料分析、虛擬實境/擴增實境設計",
+                "email": "yachih@mail.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-13.png",
+                "img": "tea1_13"
+            },
+            {
+                "id":1,
+                "teachername": "王學武（本系職涯導師）",
+                "englishname": "hwwang",
+                "title": "教授兼系主任",
+                "phone": "55527、63432",
+                "room": "篤行樓Y527室",
+                "website": "http://tea.ntue.edu.tw/~hwwang/",
+                "education": "國立交通大學資訊科學博士",
+                "skill": "數位遊戲式學習、資訊科技融入教學、計算機圖學、數位遊戲設計與開發、數位教材設計與開發、觸控裝置之 APP 開發、電腦動畫、企劃案分析規劃與撰寫",
+                "email": "hwwang@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-10.jpg",
+                "img": "tea1_10"
+            },
+            {
+                "id":2,
+                "teachername": "許一珍（本系職涯導師）",
+                "englishname": "yichen",
+                "title": "副教授",
+                "phone": "55232",
+                "room": "篤行樓Y232室",
+                "website": "https://www.facebook.com/thinkabitlab/",
+                "education": "澳洲新南威爾斯大學設計學系博士",
+                "skill": "圖形介面設計、使用者經驗設計、感性工程、電子書設計、概念產品設計、娛樂工程",
+                "email": "yichen@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-11.png",
+                "img": "tea1_11"
+            }
+        ]
+    },
+    {
+        "groupid":2,
+        "title": "專任教師／創意設計領域",
+        "list": [
+            {
+                "id":0,
+                "teachername": "莊淇銘",
+                "englishname": "cmchung",
+                "title": "教授",
+                "phone": "52461",
+                "room": "文薈樓R102室",
+                "website": "",
+                "education": "美國路易士安娜大學資訊工程研究所博士",
+                "skill": "資訊科學、創意學",
+                "email": "cmchung@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-3.png",
+                "img": "tea1_3"
+            },
+            {
+                "id":1,
+                "teachername": "盧姝如",
+                "englishname": "srlu",
+                "title": "副教授",
+                "phone": "55525",
+                "room": "篤行樓Y525室",
+                "website": "",
+                "education": "英國雪菲爾大學建築所博士",
+                "skill": "設計美學、視覺傳達設計、設計思考、文化創意與設計、互動多媒體設計、互動展示設計、數位兒童教育用品設計與開發、擴增實境應用、資訊科技融入教學、行動學習、e-Learning 數位學習",
+                "email": "lu@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/1-12.png",
+                "img": "tea1_12"
+            },
+            {
+                "id":2,
+                "teachername": "楊孟哲",
+                "englishname": "mjyang",
+                "title": "教授",
+                "phone": "52317",
+                "room": "眷舍134-19室",
+                "website": "https://dtd.ntue.edu.tw/atetsutaiwanart/",
+                "education": "日本國立山口大學東亞比較文化博士",
+                "skill": "影像與數位藝術、微電影製作、文創設計與規劃、創意廣告設計、殖民建築與美術史、日本創意文化研究",
+                "email": "who779779@yahoo.com.tw",
+                "imgurl": "assets/images/teachers/1-8.png",
+                "img": "tea1_8"
+            }
+        ]
+    },
+    {
+        "groupid":3,
+        "title": "兼任教師",
+        "list": [
+            {
+                "id":0,
+                "teachername": "陳鎂鋆",
+                "englishname": "mychen",
+                "title": "講師",
+                "phone": "",
+                "room": "",
+                "website": "",
+                "education": "國立台灣藝術大學多媒體動畫藝術學系研究所碩士",
+                "skill": "電腦動畫、動畫後製、多媒體設計",
+                "email": "mchun.chen@gmail.com",
+                "imgurl": "assets/images/teachers/MaS.png",
+                "img": "MaS"
+            },
+            {
+                "id":1,
+                "teachername": "陳治臻",
+                "englishname": "chchchen",
+                "title": "副教授",
+                "phone": "",
+                "room": "",
+                "website": "",
+                "education": "台灣科技大學電機工程研究所碩士",
+                "skill": "",
+                "email": "wei@cc.hwh.edu.tw",
+                "imgurl": "assets/images/teachers/ZhiZhen.png",
+                "img": "ZhiZhen"
+            },
+            {
+                "id":2,
+                "teachername": "蕭雅真",
+                "englishname": "yjhsiao",
+                "title": "講師",
+                "phone": "",
+                "room": "",
+                "website": "",
+                "education": "國立臺北教育大學玩具與遊戲設計研究所碩士",
+                "skill": "人機介面、數位行銷、視覺設計",
+                "email": "belle1214@gmail.com",
+                "imgurl": "assets/images/teachers/ShaTrue.png",
+                "img": "ShaTrue"
+            },
+            {
+                "id":3,
+                "teachername": "陳彥欽(夢德)",
+                "englishname": "ycchen",
+                "title": "講師",
+                "phone": "",
+                "room": "",
+                "website": "",
+                "education": "國立臺北教育大學玩具與遊戲設計研究所碩士",
+                "skill": "3D、多媒體企劃設計、多媒體技術開發、多媒體影像處理、動畫人物故事流程製作、多媒體簡報製作、電腦動畫設計、設計表現能力、電腦排版設計、電腦繪圖軟體操作、廣告設計概念、繪圖工具與軟體操作、插畫表現技巧、色彩調配設計、各式封面設計、平面設計理論、電腦印前設計、視覺設計相關知識、CIS企畫設計",
+                "email": "coneydj@gmail.com",
+                "imgurl": "assets/images/teachers/DreamDa.png",
+                "img": "DreamDa"
+            },
+            {
+                "id":4,
+                "teachername": "洪茂盛",
+                "englishname": "mshhong",
+                "title": "副教授",
+                "phone": "53323",
+                "room": "眷舍134-30室",
+                "website": "",
+                "education": "國立交通大學資訊工程研究所博士",
+                "skill": "資訊科學、計算機網路、資料結構、資料庫系統",
+                "email": "",
+                "imgurl": "assets/images/teachers/1-9.png",
+                "img": "tea1_9"
+            }
+        ]
+    },
+    {
+        "groupid":4,
+        "title": "行政人員",
+        "list": [
+            {
+                "id":0,
+                "teachername": "陳珮如",
+                "englishname": "prchen",
+                "title": "助教",
+                "phone": "63533",
+                "room": "科學館B507室",
+                "website": "",
+                "education": "",
+                "skill": "研究所業務、人事（系務會議、系教評會）、學務（工讀生、獎學金）、總務（公文、設備、場地）、資訊中心（系網、系伺服器）、會計、評鑑、其他交辦業務",
+                "email": "dtd@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/PadRoot.png",
+                "img": "PadRoot"
+            },
+            {
+                "id":1,
+                "teachername": "許文怡",
+                "englishname": "wihsu",
+                "title": "助教",
+                "phone": "62478",
+                "room": "科學館B507室",
+                "website": "",
+                "education": "",
+                "skill": "大學部業務、教務（系課程會議、教師鐘點核對）、研發（教育部、國科會）、評鑑（聯絡窗口、系自評會議）、進修學院、校友、研討會、其他交辦業務",
+                "email": "toygame@tea.ntue.edu.tw",
+                "imgurl": "assets/images/teachers/Wen1.png",
+                "img": "Wen1"
+            }
+        ]
+    }
+]

@@ -1,0 +1,140 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
+}
+
+.staffDetail {
+  margin: 12px 10vw 0;
+  padding-top: $dtd-main-spcing;
+  padding-bottom: 142px;
+}
+@media (max-width: $dtd-media-tablet) {
+  .staffDetail {
+    margin: 0 4.8vw;
+    padding-top: 27px;
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .staffDetail {
+    margin: 0 7vw 0;
+  }
+}
+
+//名稱與返回鍵
+.staffDetail_titleBar {
+  align-items: center;
+  height: 65px;
+}
+.staffDetail_titleBar__backBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 $dtd-secondary-spacing;
+  & img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.staffDetail_titleBar__name {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  padding-left: $dtd-secondary-spacing;
+  font-size: $dtd-h1-size;
+}
+
+//教師資訊
+.staffDetail_contentBar {
+  margin-top: $dtd-section-spacing;
+}
+@media (max-width: $dtd-media-desktop) {
+  .staffDetail_contentBar {
+    margin-top: 40px;
+  }
+}
+//教師人像
+.staffDetail_contentBar__box {
+  display: flex;
+  justify-content: center;
+}
+.staffDetail_contentBar__img {
+  border: 8px solid #f8f8f8;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  height: 240px;
+  width: 100%;
+  background-color: #fff;
+  align-items: center;
+  & img {
+    width: 210px;
+    height: auto;
+  }
+}
+//教師資料內容
+.staffDetail_contentBar__content {
+  height: 100%;
+}
+@media (max-width: $dtd-media-tablet) {
+  .staffDetail_contentBar__content {
+    padding: 24px 15.2% 0 15.2%;
+  }
+  .staffDetail_contentBar__img {
+    height: 240px;
+    width: 240px;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .staffDetail_contentBar__content {
+    padding: 24px 15px 0 15px;
+  }
+}
+//聯絡資訊
+.contactBar {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.contactBar_contactBox {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  & img {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+  }
+}
+.contactBar_contactBox__hint {
+  color: $dtd-main-color;
+}
+.contactLine {
+  height: 1px;
+  background-color: $dtd-main-color;
+}
+//詳細資訊
+.contactDetail {
+  margin-top: 20px;
+  font-size: $dtd-p-size;
+  & div {
+    margin: 10px 0;
+  }
+}
+.contactDetail,
+.contactBar_contactBox {
+  & a {
+    color: $dtd-main-color;
+    &:hover {
+      color: $dtd-main-color;
+      text-decoration: none;
+      box-shadow: 0 1px $dtd-main-color;
+    }
+  }
+}

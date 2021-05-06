@@ -1,0 +1,40 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  width: 100%;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
+}
+.rulesGroupName {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: $dtd-secondary-color;
+  display: flex;
+  align-items: center;
+  padding-left: $dtd-secondary-spacing;
+  font-size: $dtd-h2-size;
+}
+.rulebar {
+  font-size: $dtd-p-size;
+  margin-top: $dtd-section-spacing;
+  margin-bottom: $dtd-section-spacing;
+  padding: 0 $dtd-secondary-spacing;
+  & .rulebar_rulebox {
+    margin-bottom: 18px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  & a {
+    color: $dtd-text-color;
+    display: inline;
+    &:hover {
+      color: $dtd-main-color;
+      text-decoration: none;
+    }
+  }
+}

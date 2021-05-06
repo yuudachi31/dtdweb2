@@ -1,0 +1,28 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  // min-height: 100vh;
+  width: 100vw;
+  background-color: $dtd-main-bg-color;
+}
+//staffContainer
+.staffContainer {
+  min-height: 100vh;
+  margin: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: $dtd-media-desktop) {
+  .staffContainer {
+    margin: 0 4.8% $dtd-secondary-spacing;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .staffContainer {
+    margin: 0 6% $dtd-secondary-spacing;
+  }
+}
