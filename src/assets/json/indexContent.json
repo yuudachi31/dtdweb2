@@ -1,0 +1,57 @@
+{
+    "event":[
+        {
+            "title": "活動公告 / Event"
+        }
+    ],
+    "admission":[
+        {
+            "title": "新生快報 / Admission Information",
+            "list":[
+                {
+                    "imgUrl":"assets/images/index/about.png",
+                    "title":"關於數位"
+                },
+                {
+                    "imgUrl":"assets/images/index/works.png",
+                    "title":"作品展示"
+                },
+                {
+                    "imgUrl":"assets/images/index/senior.png",
+                    "title":"招生資訊"
+                },
+                {
+                    "imgUrl":"assets/images/index/classroom.png",
+                    "title":"教室導覽"
+                }
+            ]
+        }
+    ],
+    "link":[
+        {
+            "imgUrl":"assets/images/index/Job.png",
+            "title":"就業分析"
+        },
+        {
+            "imgUrl":"assets/images/index/StudyGroup.png",
+            "title":"讀書會"
+        },
+        {
+            "imgUrl":"assets/images/index/Fan.png",
+            "title":"粉絲團"
+        },
+        {
+            "imgUrl":"assets/images/index/TeachGroup.png",
+            "title":"教學團隊"
+        },
+        {
+            "imgUrl":"assets/images/index/WebGroup.png",
+            "title":"系網團隊"
+        },
+        {
+            "imgUrl":"assets/images/index/Ntue.png",
+            "title":"國北教大"
+        }
+    ]
+
+}
