@@ -66,11 +66,11 @@
    
             $groupID = 0;
             switch(get_field('grouptitle')){
-               case "互動科技領域":
+               case "專任老師/互動科技領域":
                   $groupID = 0; break;
-               case "遊戲設計領域":
+               case "專任老師/遊戲設計領域":
                   $groupID = 1; break;
-               case "創意設計領域":
+               case "專任老師/創意設計領域":
                   $groupID = 2; break;
                case "兼任老師":
                   $groupID = 3; break;
