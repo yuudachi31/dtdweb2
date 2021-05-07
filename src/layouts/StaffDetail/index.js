@@ -21,7 +21,10 @@ import emailIcon from '../../assets/images/icons/icon_email.png';
 
 const StaffDetail = () => {
   const location = useLocation();
-  const { groupid, teacherid } = QueryString.parse(location.search);
+  // const { groupid, teacherid, staffpath } = QueryString.parse(
+  //   location.search,
+  // );
+  const { groupid, staffpath } = QueryString.parse(location.search);
   const {
     state: {
       staffDetail,
@@ -31,12 +34,13 @@ const StaffDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    console.log('useEffect work');
-    const groupid2 = parseInt(groupid);
-    const teacherid2 = parseInt(teacherid);
-    getStaffDetail(dispatch, { groupid2, teacherid2 });
+    // const groupid2 = parseInt(groupid);
+    // const teacherid2 = parseInt(teacherid);
+    // getStaffDetail(dispatch, { groupid2, teacherid2 });
+    // getStaffDetail(dispatch, { groupid2, teacherid2, teacherpath });
+    getStaffDetail(dispatch, { staffpath });
     Scroll.scroller.scrollTo('top');
-  }, [loading]);
+  }, []);
 
   return (
     <>
@@ -91,7 +95,7 @@ const StaffDetail = () => {
                   className={styles.staffDetail_contentBar__box}
                 >
                   <div className={styles.staffDetail_contentBar__img}>
-                    <img src={'../' + staffDetail.imgurl} />
+                    <img src={staffDetail.imgurl} />
                   </div>
                 </Col>
                 <Col
