@@ -1,11 +1,11 @@
 <?php
 
-function dtd_post_types() {
+function prefix_register_dtd_routes_projects() {
    register_post_type('staff', array(
       'show_in_rest' => true,
       'rewrite' => array('slug' => 'staff'),
       'has_archive' => true,
-      'supports' => array('title', 'editor', 'thumbnail'),
+      'supports' => array('title', 'thumbnail'),  #發文資料欄位
       'public' => true,
       'labels' => array(
             'name' => 'Staff',
@@ -21,7 +21,7 @@ function dtd_post_types() {
       'show_in_rest' => true,
       'rewrite' => array('slug' => 'projects'),
       'has_archive' => true,
-      'supports' => array('title', 'thumbnail'),
+      'supports' => array('title', 'editor','thumbnail'),
       'public' => true,
       'labels' => array(
             'name' => 'Projects',
@@ -34,4 +34,4 @@ function dtd_post_types() {
    ));   
 }
 
-add_action('init', 'dtd_post_types');
+add_action('init', 'prefix_register_dtd_routes_projects');
