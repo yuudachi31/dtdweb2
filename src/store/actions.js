@@ -11,9 +11,9 @@ import {
   FAIL_DATA_REQUEST,
 } from './actionTypes';
 
-const BASE_URL = '';
+const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 
-import staffjson from '../assets/json/teachers.json';
+// import staffjson from '../assets/json/test.json';
 
 export const getNews = async (dispatch, options) => {
   const { perPage = 5, page = 1 } = options;
@@ -76,12 +76,12 @@ export const getHonorDetail = async (dispatch, options) => {
 export const getStaff = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   //從後台取資料
-  // const url = `${BASE_URL}?perPage=${perPage}&page=${page}`;
-  // const response = await axios.get(url);
-  // const staff = response.data;
+  const url = `${BASE_URL}/staff`;
+  const response = await axios.get(url);
+  const staff = response.data;
 
   //從json取資料
-  const staff = staffjson;
+  // const staff = staffjson;
 
   dispatch({
     type: SET_STAFF,
@@ -91,16 +91,19 @@ export const getStaff = async (dispatch) => {
 };
 
 export const getStaffDetail = async (dispatch, options) => {
-  const { groupid2 = 0, teacherid2 = 0 } = options;
+  //從後台取資料
+  const { staffpath = '范丙林' } = options;
+  //從json取資料
+  // const { groupid = 0, teacherid2 = 0 } = options;
+
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     //從後台取資料
-    // const url = `${BASE_URL}/${id}`;
-    // const response = await axios.get(url);
-    // const staffDetail = response.data;
-
-    //從json取資料
-    const staffDetail = staffjson[groupid2].list[teacherid2];
+    const url = `${BASE_URL}/staff?term=${staffpath}`;
+    const response = await axios.get(url);
+    const staffDetail = response.data;
+    // //從json取資料
+    // const staffDetail = staffjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_STAFF_DETAIL,
