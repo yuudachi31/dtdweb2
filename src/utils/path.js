@@ -6,4 +6,5 @@ export default {
   rules: '/rules',
   downloads: '/downloads',
   future: '/future',
+  activities: '/activities',
 };

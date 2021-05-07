@@ -15,6 +15,7 @@ import HonorsPage from '../layouts/Honors';
 import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
 import FuturePage from '../layouts/Future';
+import ActivitiesPage from '../layouts/Activities';
 
 const Routes = () => {
   return (
@@ -40,6 +41,8 @@ const Routes = () => {
             <Route exact path={path.downloads} component={DownloadsPage} />
             {/* 未來發展 */}
             <Route exact path={path.future} component={FuturePage} />
+            {/* 系上活動 */}
+            <Route exact path={path.activities} component={ActivitiesPage} />
           </Switch>
         </Router>
       </StoreProvider>
