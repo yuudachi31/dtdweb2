@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
+import FutureContent from '../../components/FutureContent';
 
 import styles from './styles.module.scss';
 
@@ -21,6 +22,7 @@ const Future = () => {
         <Banner />
         <div className={styles.futureContainer}>
           <PageTitle title="未來出路" />
+          <FutureContent />
         </div>
         <Footer />
       </div>
