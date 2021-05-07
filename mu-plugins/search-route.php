@@ -70,7 +70,7 @@
                   $groupID = 0; break;
                case "遊戲設計領域":
                   $groupID = 1; break;
-               case "創意設計領域            ":
+               case "創意設計領域":
                   $groupID = 2; break;
                case "兼任老師":
                   $groupID = 3; break;
