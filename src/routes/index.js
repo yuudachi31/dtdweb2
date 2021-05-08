@@ -12,6 +12,9 @@ import StaffPage from '../layouts/Staff';
 import StaffDetailPage from '../layouts/StaffDetail';
 import NewsPage from '../layouts/News';
 import HonorsPage from '../layouts/Honors';
+import CollegePage from '../layouts/College';
+import MasterPage from '../layouts/Master';
+import InservicePage from '../layouts/Inservice';
 import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
 
@@ -33,7 +36,10 @@ const Routes = () => {
             {/* 最新消息 */}
             <Route exact path={path.news} component={NewsPage} />
             <Route exact path={path.honors} component={HonorsPage} />
-            {/* 作品展示 */}
+            {/* 招生資訊 */}
+            <Route exact path={path.college} component={CollegePage} />
+            <Route exact path={path.master} component={MasterPage} />
+            <Route exact path={path.inservice} component={InservicePage} />
             {/* 下載專區 */}
             <Route exact path={path.rules} component={RulesPage} />
             <Route exact path={path.downloads} component={DownloadsPage} />
