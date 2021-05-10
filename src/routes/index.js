@@ -14,6 +14,7 @@ import NewsPage from '../layouts/News';
 import HonorsPage from '../layouts/Honors';
 import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
+import GraduationWorksPage from '../layouts/GraduationWorks';
 
 const Routes = () => {
   return (
@@ -34,6 +35,11 @@ const Routes = () => {
             <Route exact path={path.news} component={NewsPage} />
             <Route exact path={path.honors} component={HonorsPage} />
             {/* 作品展示 */}
+            <Route
+              exact
+              path={path.graduationWorks}
+              component={GraduationWorksPage}
+            />
             {/* 下載專區 */}
             <Route exact path={path.rules} component={RulesPage} />
             <Route exact path={path.downloads} component={DownloadsPage} />
