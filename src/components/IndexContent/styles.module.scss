@@ -49,6 +49,10 @@ hr {
 }
 
 @media (max-width: $dtd-media-tablet) {
+  .admissionBlock:nth-child(1),
+  .admissionBlock:nth-child(2) {
+    margin-bottom: $dtd-secondary-spacing;
+  }
   .link_img__size {
     width: 85%;
   }
@@ -56,6 +60,16 @@ hr {
 @media (max-width: $dtd-media-phone) {
   .admissionContent {
     padding: 3% 10%;
+  }
+  .admissionBlock:nth-child(3) {
+    margin-bottom: $dtd-secondary-spacing;
+  }
+  .linkBlock {
+    margin-bottom: 40px;
+  }
+  .linkBlock:nth-child(5),
+  .linkBlock:nth-child(6) {
+    margin-bottom: 0;
   }
   .link_img__size {
     width: 70%;

@@ -26,7 +26,13 @@ const IndexContent = () => {
           <hr></hr>
           <Row className={styles.link}>
             {admission.list.map((list) => (
-              <Col lg={3} sm={6} xs={12} key={list.title}>
+              <Col
+                lg={3}
+                sm={6}
+                xs={12}
+                key={list.title}
+                className={styles.admissionBlock}
+              >
                 <Link to="/" className={styles.link_a__textdecnone}>
                   <div className={styles.link_img}>
                     <img
@@ -46,7 +52,7 @@ const IndexContent = () => {
         <hr></hr>
         <Row className={styles.link}>
           {indexContent.link.map((link) => (
-            <Col sm={2} xs={6} key={link.title}>
+            <Col sm={2} xs={6} key={link.title} className={styles.linkBlock}>
               <Link to="/" className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={link.imgUrl} alt="" />
