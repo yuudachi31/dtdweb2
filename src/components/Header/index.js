@@ -142,7 +142,7 @@ const Header = () => {
               >
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.college}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -151,7 +151,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.master}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -160,11 +160,11 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.inservice}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
-                    在職專班
+                    在職碩士班
                   </Link>
                 </li>
               </ul>
@@ -307,18 +307,18 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.college} className={styles.nav_link}>
                 學士班
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.master} className={styles.nav_link}>
                 碩士班
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                在職專班
+              <Link to={path.inservice} className={styles.nav_link}>
+                在職碩士班
               </Link>
             </li>
           </ul>

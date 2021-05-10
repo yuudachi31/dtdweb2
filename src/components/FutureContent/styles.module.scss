@@ -1,0 +1,65 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  width: 100%;
+  color: $dtd-text-color;
+  margin-bottom: $dtd-index-main-spacing;
+}
+.titleBar {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: $dtd-secondary-color;
+  display: flex;
+  align-items: center;
+  padding-left: $dtd-secondary-spacing;
+  font-size: $dtd-h2-size;
+}
+.section {
+  margin: 0 55px $dtd-section-spacing 55px;
+}
+.content {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: $dtd-section-spacing;
+  .content_img {
+    margin-right: 104px;
+  }
+}
+
+.description {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .description_h2 {
+    font-size: $dtd-h2-size;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+
+  .description_spanContent {
+    display: flex;
+    flex-direction: column;
+    font-size: $dtd-p-size;
+    color: $dtd-text-color;
+  }
+
+  .description_span {
+    margin-top: 16px;
+  }
+}
+
+.explain {
+  display: flex;
+  font-size: $dtd-p-size;
+
+  .explain_p_red {
+    color: #ed1313;
+  }
+}
