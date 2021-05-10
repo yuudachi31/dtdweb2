@@ -22,7 +22,7 @@ const reducer = (state, action) => {
       const hamburgerTitleState = [];
       for (let i = 0; i < 5; i++) {
         if (i == action.payload) {
-          hamburgerTitleState.push(true);
+          hamburgerTitleState.push(!state.hamburgerTitle[i]);
         } else {
           hamburgerTitleState.push(false);
         }
