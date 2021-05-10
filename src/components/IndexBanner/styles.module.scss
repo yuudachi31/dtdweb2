@@ -1,25 +1,17 @@
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
-@import '../../styles/spacing.scss';
 @import '../../styles/media.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
-.homePage_bgc {
-  background-color: $dtd-main-bg-color;
-}
-.container {
-  width: 100vw;
-  padding: 0 10%;
-}
-
 @media (max-width: $dtd-media-tablet) {
-  .container {
-    padding: 0 4.8%;
+  .carousel_img__rwdHeight {
+    height: 30vh;
+    object-fit: cover;
   }
 }
-
 @media (max-width: $dtd-media-phone) {
-  .container {
-    padding: 0 6%;
+  .carousel_img__rwdHeight {
+    height: 25vh;
+    object-fit: cover;
   }
 }

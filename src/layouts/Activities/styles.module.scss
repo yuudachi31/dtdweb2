@@ -1,0 +1,23 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  width: 100vw;
+  background-color: $dtd-main-bg-color;
+}
+.activityContainer {
+  min-height: 100vh;
+  margin: 0 10%;
+}
+@media (max-width: $dtd-media-desktop) {
+  .activityContainer {
+    margin: 0 4.8% $dtd-secondary-spacing;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .activityContainer {
+    margin: 0 6% $dtd-secondary-spacing;
+  }
+}

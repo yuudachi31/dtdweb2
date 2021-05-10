@@ -11,6 +11,7 @@ import {
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
+  SET_BANNER,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -23,6 +24,7 @@ const initialState = {
   staff: [],
   staffDetail: {},
   requestdata: { loading: false, error: null },
+  banner: [],
 };
 
 function reducer(state, action) {
@@ -75,6 +77,11 @@ function reducer(state, action) {
           loading: false,
           error: action.payload,
         },
+      };
+    case SET_BANNER:
+      return {
+        ...state,
+        banner: action.payload,
       };
     default:
       return state;

@@ -8,4 +8,6 @@ export default {
   inservice: '/inservice',
   rules: '/rules',
   downloads: '/downloads',
+  future: '/future',
+  activities: '/activities',
 };
