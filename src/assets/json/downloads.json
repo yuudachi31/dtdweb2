@@ -1,35 +1,11 @@
 [
     {
-        "title": "系上服務申請",
-        "list": [
-            {
-                "docname": "系辦公室助學工讀申請書",
-                "docurl": "",
-                "remarks": ""
-            },
-            {
-                "docname": "學生校外獲獎登記表(.doc)",
-                "docurl": "",
-                "docname2": "學生校外獲獎登記表(.odt)",
-                "docurl2": "",
-                "remarks": ""
-            },
-            {
-                "docname": "研究生獎學金申請表(.doc)",
-                "docurl": "",
-                "docname2": "研究生獎學金申請表(.odt)",
-                "docurl2": "",
-                "remarks": ""
-            }
-        ]
-    },
-    {
         "title": "學生學習表格",
         "list": [
             {
                 "docname": "學生報告書(.doc)",
                 "docurl": "",
-                "docname2": "學生報告書(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
@@ -39,48 +15,15 @@
                 "remarks": ""
             },
             {
-                "docname": "學習預警單(.xls)",
-                "docurl": "",
-                "docname2": "學習預警單(.ods)",
-                "docurl2": "",
-                "remarks": ""
-            },
-            {
                 "docname": "期末專題展分組名單評分表-範例檔案(.xlsx)",
                 "docurl": "",
-                "docname2": "期末專題展分組名單評分表-範例檔案(.ods)",
+                "docname2": "(.ods)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "期末專題展覽位置圖與投票單-範例檔案",
                 "docurl": "",
-                "remarks": ""
-            }
-        ]
-    },
-    {
-        "title": "教師相關表格",
-        "list": [
-            {
-                "docname": "專任教師申請表(101學年度第1學期)(.doc)",
-                "docurl": "",
-                "docname2": "專任教師申請表(101學年度第1學期)(.odt)",
-                "docurl2": "",
-                "remarks": ""
-            },
-            {
-                "docname": "專任教師申請表(校內轉任專用)(.doc)",
-                "docurl": "",
-                "docname2": "專任教師申請表(校內轉任專用)(.odt)",
-                "docurl2": "",
-                "remarks": ""
-            },
-            {
-                "docname": "兼任教師申請表(.doc)",
-                "docurl": "",
-                "docname2": "兼任教師申請表(.odt)",
-                "docurl2": "",
                 "remarks": ""
             }
         ]
@@ -108,9 +51,9 @@
                 "remarks": ""
             },
             {
-                "docname": "學生學術參與表現考核點數表 (.doc)",
+                "docname": "學生學術參與表現考核點數表(.doc)",
                 "docurl": "",
-                "docname2": "學生學術參與表現考核點數表(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": "日間碩士班適用"
             },
@@ -127,7 +70,7 @@
             {
                 "docname": "封面格式(.doc)",
                 "docurl": "",
-                "docname2": "封面格式(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
@@ -139,56 +82,56 @@
             {
                 "docname": "申請口試同意書(.doc)",
                 "docurl": "",
-                "docname2": "申請口試同意書(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "口試委員建議名單(.doc)",
                 "docurl": "",
-                "docname2": "口試委員建議名單(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "時地通知書(.doc)",
                 "docurl": "",
-                "docname2": " 時地通知書(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "器材借用單(.doc)",
                 "docurl": "",
-                "docname2": "器材借用單(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "口試評分表(.doc)",
                 "docurl": "",
-                "docname2": "口試評分表(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "口試審查總表(.doc)",
                 "docurl": "",
-                "docname2": "口試審查總表(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "口試紀錄表(.doc)",
                 "docurl": "",
-                "docname2": "口試紀錄表(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "口試委員會審定書(.doc)",
                 "docurl": "",
-                "docname2": "口試委員會審定書(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "docname3": "審定書範例",
                 "docurl3": "",
@@ -197,14 +140,14 @@
             {
                 "docname": "修正確認書(.doc)",
                 "docurl": "",
-                "docname2": "修正確認書(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
             {
                 "docname": "更換論文題目申請書(.doc)",
                 "docurl": "",
-                "docname2": "更換論文題目申請書(.odt)",
+                "docname2": "(.odt)",
                 "docurl2": "",
                 "remarks": ""
             },
