@@ -72,7 +72,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.activities}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -81,7 +81,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.future}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -269,12 +269,12 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.activities} className={styles.nav_link}>
                 系上活動
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.future} className={styles.nav_link}>
                 未來發展
               </Link>
             </li>
