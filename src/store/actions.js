@@ -14,9 +14,7 @@ import {
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 
-import staffjson from '../assets/json/teachers.json';
 import bannerjson from '../assets/json/banner.json';
-// import staffjson from '../assets/json/test.json';
 
 export const getNews = async (dispatch, options) => {
   const { perPage = 5, page = 1 } = options;
