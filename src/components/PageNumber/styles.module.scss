@@ -4,14 +4,14 @@
 .container {
   position: relative;
   width: 100vw;
-  height: 124px;
+  height: 162px;
   background-color: $dtd-main-bg-color;
 }
 
 .pageNumber_box {
   position: absolute;
   left: 50%;
-  top: 28px;
+  top: 64px;
   transform: translateX(-50%);
   display: flex;
 }

@@ -23,7 +23,6 @@ const Honors = () => {
         <Banner />
         <div className={styles.board}>
           <PageTitle title="師生榮譽榜" />
-          {/* <div className={styles.board_title}></div> */}
           <Announcement />
         </div>
         <PageNumber />
