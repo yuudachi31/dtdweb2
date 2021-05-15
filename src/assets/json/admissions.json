@@ -25,6 +25,7 @@
             {
                 "regulations_documentTitle": "課程計畫表",
                 "regulations_documentName": "下載課程計畫表",
+                "regulations_documentType": 0,
                 "regulations_documentURL": ""
             }
         ],
@@ -52,11 +53,13 @@
             {
                 "regulations_documentTitle": "應修科目表",
                 "regulations_documentName": "請至教務處依入學年度查詢",
+                "regulations_documentType": 0,
                 "regulations_documentURL": ""
             },
             {
                 "regulations_documentTitle": "學生手冊",
                 "regulations_documentName": "研究所（109）入學學生手冊",
+                "regulations_documentType": 1,
                 "regulations_documentURL": ""
             }
         ],
@@ -84,6 +87,7 @@
             {
                 "regulations_documentTitle": "應修科目表與學生手冊",
                 "regulations_documentName": "在職碩士班（109）入學學生手冊",
+                "regulations_documentType": 1,
                 "regulations_documentURL": ""
             }
         ],
