@@ -75,7 +75,7 @@
             }
          }
 
-         array_push($results[$sortTitle - $gradRange[0]]['sortList'], $collection);
+         array_push($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
       }
 
       for($i = $gradRange[1] - $gradRange[0]; $i >= 0; $i--){
