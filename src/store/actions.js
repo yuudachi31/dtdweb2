@@ -14,7 +14,7 @@ import {
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 
-import bannerjson from '../assets/json/banner.json';
+// import bannerjson from '../assets/json/banner.json';
 
 export const getNews = async (dispatch, options) => {
   const { perPage = 5, page = 1 } = options;
@@ -119,8 +119,12 @@ export const getStaffDetail = async (dispatch, options) => {
 export const getBanner = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
+    //從後台取資料
+    const url = `${BASE_URL}/banner`;
+    const response = await axios.get(url);
+    const banner = response.data;
     //從json取資料
-    const banner = bannerjson;
+    // const banner = bannerjson;
     dispatch({
       type: SET_BANNER,
       payload: banner,
