@@ -54,7 +54,7 @@ const Header = () => {
               >
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.intro}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -259,7 +259,7 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.intro} className={styles.nav_link}>
                 本系簡介
               </Link>
             </li>

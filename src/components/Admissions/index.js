@@ -14,18 +14,13 @@ import admissionsjson from '../../assets/json/admissions.json';
 
 const Admissions = (prop) => {
   const [admissiondetail, setadmissiondetail] = useState([]);
-  const [admissiondetail2, setadmissiondetail2] = useState([]);
-  const [admissiondetail3, setadmissiondetail3] = useState([]);
   useEffect(() => {
     setadmissiondetail(admissionsjson[prop.number]);
   }, []);
-  useEffect(() => {
-    setadmissiondetail2(admissiondetail.regulations_content);
-    setadmissiondetail3(admissiondetail.regulations_document);
-  }, [admissiondetail]);
   return (
     <div className={styles.container}>
-      {admissiondetail2 && admissiondetail3 ? (
+      {admissiondetail.regulations_content &&
+      admissiondetail.regulations_document ? (
         <div className={styles.container}>
           <div className={styles.admissionGroupName}>入學資訊</div>
           <div className={styles.info_bar}>
@@ -123,7 +118,7 @@ const Admissions = (prop) => {
           <div className={styles.admissionGroupName}>修課規定</div>
           <div className={styles.regulations_bar}>
             <div className={styles.regulations_box}>
-              {admissiondetail2.map((regulationsContent) => (
+              {admissiondetail.regulations_content.map((regulationsContent) => (
                 <div
                   className={styles.regulations_documentBox}
                   key={regulationsContent.regulations_title}
@@ -143,36 +138,38 @@ const Admissions = (prop) => {
             </div>
             <div className={styles.titleLine}></div>
             <div className={styles.regulations_box}>
-              {admissiondetail3.map((regulationsDocument) => (
-                <div
-                  className={styles.regulations_documentBox}
-                  key={regulationsDocument.regulations_title}
-                >
+              {admissiondetail.regulations_document.map(
+                (regulationsDocument) => (
                   <div
-                    className={`${styles.regulations_title_bold} ${styles.admission_content_p} ${styles.regulations_contentRow_marginBottom}`}
+                    className={styles.regulations_documentBox}
+                    key={regulationsDocument.regulations_title}
                   >
-                    {regulationsDocument.regulations_documentTitle}
-                  </div>
-                  <a
-                    className={`${styles.regulations_content_marginLeft} ${styles.regulations_document}`}
-                    href={regulationsDocument.regulations_documentURL}
-                  >
-                    <FontAwesomeIcon
-                      className={styles.regulations_documentIcon_marginTop}
-                      icon={
-                        regulationsDocument.regulations_documentType == '0'
-                          ? faExternalLinkAlt
-                          : faDownload
-                      }
-                    />
                     <div
-                      className={`${styles.regulations_documentName_marginLeft} ${styles.admission_content_p}`}
+                      className={`${styles.regulations_title_bold} ${styles.admission_content_p} ${styles.regulations_contentRow_marginBottom}`}
                     >
-                      {regulationsDocument.regulations_documentName}
+                      {regulationsDocument.regulations_documentTitle}
                     </div>
-                  </a>
-                </div>
-              ))}
+                    <a
+                      className={`${styles.regulations_content_marginLeft} ${styles.regulations_document}`}
+                      href={regulationsDocument.regulations_documentURL}
+                    >
+                      <FontAwesomeIcon
+                        className={styles.regulations_documentIcon_marginTop}
+                        icon={
+                          regulationsDocument.regulations_documentType == '0'
+                            ? faExternalLinkAlt
+                            : faDownload
+                        }
+                      />
+                      <div
+                        className={`${styles.regulations_documentName_marginLeft} ${styles.admission_content_p}`}
+                      >
+                        {regulationsDocument.regulations_documentName}
+                      </div>
+                    </a>
+                  </div>
+                ),
+              )}
             </div>
           </div>
           <div className={styles.admissionGroupName}>修業地圖</div>
