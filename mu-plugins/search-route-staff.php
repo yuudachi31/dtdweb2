@@ -1,24 +1,4 @@
 <?php
-
-   function bannerSearchResults($data) {
-      $mainQuery = new WP_Query(array(
-         'post_type' => 'banners'
-      ));
-
-      $results = array();
-
-      while($mainQuery->have_posts()) {
-         $mainQuery->the_post();
-
-         array_push($results, array(
-            'id' => get_the_ID(),
-            'bannerUrl' => get_field('bannerUrl')['url'],
-         ));
-      }
-
-      return $results;
-   }
-
   
    function staffSearchResults($data) {
       $mainQuery = new WP_Query(array(
@@ -111,28 +91,4 @@
             'imgurl' => get_field('imgurl')['url'],);
          return $results;
       }
-   }
-
-   function postSearchResults($data) {
-      $mainQuery = new WP_Query(array(
-         'post_type' => 'post',
-         's' => sanitize_text_field($data['term'])
-      ));
-
-      $results = array(
-         'posts' => array(),
-      );
-
-      while($mainQuery->have_posts()) {
-         $mainQuery->the_post();
-
-         array_push($results['posts'], array(
-            'id' => get_the_ID(),
-            'title' => get_the_title(),
-            'content' => get_the_content(),
-            'permalink' => get_the_permalink()
-         ));
-      }
-
-      return $results;
    }
