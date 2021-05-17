@@ -14,7 +14,7 @@ const College = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>辦法規章-國立臺北教育大學</title>
+        <title>學士班-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的學士班" />
       </Helmet>
       <div className={styles.container}>

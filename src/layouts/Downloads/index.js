@@ -15,7 +15,7 @@ const Download = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>表格下載-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的教室團隊" />
+        <meta name="description" content="數位科技設計學系的表格下載" />
       </Helmet>
       <div className={styles.container}>
         <Header />

@@ -15,7 +15,7 @@ const Intro = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>數位科技設計學系-國立臺北教育大學</title>
+        <title>本系簡介-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的本系簡介" />
       </Helmet>
       <div className={styles.container}>

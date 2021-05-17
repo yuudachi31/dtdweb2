@@ -49,7 +49,7 @@ const StaffDetail = () => {
           <Helmet>
             <meta charSet="utf-8" />
             <title>教學團隊-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的教室團隊" />
+            <meta name="description" content="數位科技設計學系的教學團隊" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
@@ -62,7 +62,7 @@ const StaffDetail = () => {
           <Helmet>
             <meta charSet="utf-8" />
             <title>{staffDetail.teachername}-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的教室團隊" />
+            <meta name="description" content="數位科技設計學系的教學團隊" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
