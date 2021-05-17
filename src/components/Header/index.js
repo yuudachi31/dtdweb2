@@ -19,7 +19,9 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <Link to={path.home} className={styles.logo}></Link>
+      <Link to={path.home}>
+        <img className={styles.logo} src="assets/images/header/DTD.png"></img>
+      </Link>
       <div className={styles.nav}>
         {/* hamburgerMenu */}
         <button
