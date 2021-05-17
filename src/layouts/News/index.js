@@ -15,14 +15,14 @@ const News = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>數位科技設計學系-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的公告事項" />
+        <title>系務公告-國立臺北教育大學</title>
+        <meta name="description" content="數位科技設計學系的系務公告" />
       </Helmet>
       <div className={styles.container}>
         <Header />
         <Banner />
         <div className={styles.board}>
-          <PageTitle title="公告事項" />
+          <PageTitle title="系務公告" />
           <Announcement />
         </div>
         <PageNumber />

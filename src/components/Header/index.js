@@ -111,7 +111,7 @@ const Header = () => {
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
-                    系所公告
+                    系務公告
                   </Link>
                 </li>
                 <li className={styles.nav_hamLinkBox}>
@@ -289,7 +289,7 @@ const Header = () => {
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
               <Link to={path.news} className={styles.nav_link}>
-                系所公告
+                系務公告
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
