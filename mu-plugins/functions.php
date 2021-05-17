@@ -1,6 +1,7 @@
 <?php
 
     require ('search-route.php');
+    require ('search-route-graduateProjects.php');
     
     function dtd_custom_route() {
         register_rest_route('dtd/v1', 'banner', array(
