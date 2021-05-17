@@ -43,7 +43,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'category' => '系務公告',
+         'category_name' => 'announcement',
          'ignore_sticky_posts' => true,
          'posts_per_page' => $postPerGroup,
       ));
@@ -60,7 +60,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'category' => '師生榮譽榜',
+         'category_name' => 'achievement',
          'ignore_sticky_posts' => true,
          'posts_per_page' => $postPerGroup,
       ));
@@ -85,7 +85,7 @@
       $mainQuery = new WP_Query(array(
          
          'post_type' => 'post',
-         'category' => '師生榮譽榜',
+         'category_name' => 'achievement',
          'ignore_sticky_posts' => true,
          'posts_per_page' => $postPerPage,
          'paged' => $page
@@ -112,7 +112,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'category' => '系務公告',
+         'category_name' => 'announcement',
          'ignore_sticky_posts' => true,
          'posts_per_page' => $postPerPage,
          'paged' => $page
