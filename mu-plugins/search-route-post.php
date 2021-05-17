@@ -43,7 +43,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'meta_value' => '系務公告',
+         'category' => '系務公告',
          'posts_per_page' => $postPerGroup,
       ));
 
@@ -59,7 +59,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'meta_value' => '師生榮譽榜',
+         'category' => '師生榮譽榜',
          'posts_per_page' => $postPerGroup,
       ));
 
@@ -82,7 +82,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'meta_value' => '師生榮譽榜',
+         'category' => '師生榮譽榜',
          'posts_per_page' => $postPerPage,
          'paged' => $page
       ));
@@ -108,7 +108,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
-         'meta_value' => '系務公告',
+         'category' => '系務公告',
          'posts_per_page' => $postPerPage,
          'paged' => $page
       ));
