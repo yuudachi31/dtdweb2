@@ -5,8 +5,6 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-//import Announcement from '../../components/Announcement';
-//import PageNumber from '../../components/PageNumber';
 
 import styles from './styles.module.scss';
 
@@ -58,7 +56,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/1-1-e1456160019995.png"
+                  src="assets/images/intro/foresight.png"
                 ></img>
                 <div className={styles.ideaBox_title}>前瞻</div>
                 <div className={styles.intro_content_p}>
@@ -68,7 +66,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/2-1-e1456160003331.png"
+                  src="assets/images/intro/open.png"
                 ></img>
                 <div className={styles.ideaBox_title}>開放</div>
                 <div className={styles.intro_content_p}>
@@ -78,7 +76,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/3-1-e1456160042916.png"
+                  src="assets/images/intro/integration.png"
                 ></img>
                 <div className={styles.ideaBox_title}>跨領域整合</div>
                 <div className={styles.intro_content_p}>
@@ -88,7 +86,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/4-1-e1456160030298.png"
+                  src="assets/images/intro/resource.png"
                 ></img>
                 <div className={styles.ideaBox_title}>資源</div>
                 <div className={styles.intro_content_p}>

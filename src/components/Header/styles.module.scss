@@ -15,11 +15,6 @@
 
 .logo {
   width: 243px;
-  height: 85px;
-  background-image: url(../../assets/images/logo/DTD.png);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
 }
 
 .nav {
@@ -51,7 +46,6 @@
   & .nav_title {
     width: 100%;
     padding: 0 $dtd-secondary-spacing;
-    // line-height: 48px;
   }
 
   & .nav_title__borderRight {
@@ -102,40 +96,6 @@
     }
   }
 }
-// .nav_drop_open {
-//   display: block;
-//   position: absolute;
-//   width: 192px;
-//   top: 0;
-//   left: 0;
-//   padding: 0;
-//   margin: 0;
-//   margin-top: 68px;
-//   list-style: none;
-//   background-color: rgb(242, 242, 242);
-//   border-radius: 6px;
-
-//   .nav_linkBox {
-//     margin: 0;
-//     padding: 0;
-//     text-align: left;
-//     width: 100%;
-
-//     .nav_link {
-//       color: rgb(0, 0, 0);
-//       padding: 16px 32px;
-//       display: inline-block;
-//       width: 100%;
-//     }
-
-//     &:hover {
-//       .nav_link {
-//         background-color: rgb(255, 255, 255);
-//         border-radius: 6px;
-//       }
-//     }
-//   }
-// }
 
 @media (max-width: $dtd-media-desktop) {
   .container {
@@ -226,5 +186,8 @@
 @media (max-width: $dtd-media-phone) {
   .container {
     padding: 0 7vw;
+  }
+  .logo {
+    width: 220px;
   }
 }
