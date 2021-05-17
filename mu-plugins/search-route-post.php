@@ -80,7 +80,7 @@
 
    function postHonorPageSearchResults($data) {
       $page = ( $data['page'] ) ? $data['page'] : 1;
-      $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 10;
+      $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 20;
 
       $mainQuery = new WP_Query(array(
          
@@ -108,7 +108,7 @@
 
    function postAnnouncementPageSearchResults($data) {
       $page = ( $data['page'] ) ? $data['page'] : 1;
-      $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 10;
+      $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 20;
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
