@@ -62,10 +62,11 @@
   height: 398px;
   object-fit: cover;
 }
-.classBox_carouselArrow_bg {
+.classBox_carouselChevron {
   & a {
     background-color: $dtd-text-color;
     opacity: 0.6;
+    width: 64px;
   }
 }
 .classInfo {
@@ -135,6 +136,11 @@
   .classBox_carousel_img {
     height: 310px;
   }
+  .classBox_carouselChevron {
+    & a {
+      width: 50px;
+    }
+  }
 }
 
 @media (max-width: $dtd-media-phone) {
@@ -166,5 +172,10 @@
   }
   .classInfo_Content {
     width: 60%;
+  }
+  .classBox_carouselChevron {
+    & a {
+      width: 40px;
+    }
   }
 }
