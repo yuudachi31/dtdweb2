@@ -6,7 +6,7 @@ export default {
   activities: '/activities',
   future: '/future',
   // 最新消息
-  news: '/news',
+  announcements: '/announcements',
   honors: '/honors',
   // 招生資訊
   college: '/college',

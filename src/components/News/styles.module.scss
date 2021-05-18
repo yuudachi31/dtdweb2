@@ -7,32 +7,28 @@
   width: 100%;
 }
 
-.announcement {
-  // position: relative;
+.new {
   padding: 0 $dtd-secondary-spacing;
-  // width: 80vw;
-  // left: 50%;
-  // transform: translateX(-50%);
 }
 
-.announcement_box {
+.new_box {
   padding: 10px 0;
 }
 
-.announcement_title {
+.new_title {
   padding: 6px 0;
   font-size: 20px;
   color: $dtd-text-color;
 }
 
-.announcement_content {
+.new_content {
   padding: 6px 0;
   font-size: $dtd-hint-size;
   color: $dtd-submenu-text-color;
 }
 
 @media (max-width: $dtd-media-phone) {
-  .announcement {
+  .new {
     padding: 0;
   }
 }

@@ -36,12 +36,21 @@
 
 .pageNumber_hover:hover {
   color: $dtd-main-color;
+  text-decoration: none;
 }
 
 .pageNumber_number_selected {
   color: $dtd-main-color;
+  &:hover {
+    color: $dtd-main-color;
+    text-decoration: none;
+  }
 }
 
 .pageNumber_chevron_unclicked {
   color: $dtd-hint-text-color;
+  &:hover {
+    color: $dtd-hint-text-color;
+    text-decoration: none;
+  }
 }

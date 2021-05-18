@@ -1,9 +1,6 @@
 import axios from 'axios';
 import {
   SET_NEWS,
-  SET_NEWS_DETAIL,
-  SET_HONOR_DETAIL,
-  SET_HONORS,
   SET_STAFF,
   SET_STAFF_DETAIL,
   BEGIN_DATA_REQUEST,
@@ -17,61 +14,22 @@ const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 import bannerjson from '../assets/json/banner.json';
 
 export const getNews = async (dispatch, options) => {
-  const { perPage = 5, page = 1 } = options;
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  const { clickNumber = 1, pageStyle } = options;
 
-  const url = `${BASE_URL}?perPage=${perPage}&page=${page}`;
-  const response = await axios.get(url);
-  const news = response.data;
+  try {
+    const url = `${BASE_URL}/post/${pageStyle}?page=${clickNumber}`;
+    const response = await axios.get(url);
+    const news = response.data;
 
-  dispatch({
-    type: SET_NEWS,
-    payload: news,
-  });
-};
-
-export const getNewsDetail = async (dispatch, options) => {
-  const { id } = options;
-  if (!id) {
-    throw new Error('No id.');
+    dispatch({
+      type: SET_NEWS,
+      payload: news,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
   }
-
-  const url = `${BASE_URL}/${id}`;
-  const response = await axios.get(url);
-  const newsDetail = response.data;
-
-  dispatch({
-    type: SET_NEWS_DETAIL,
-    payload: newsDetail,
-  });
-};
-
-export const getHonors = async (dispatch, options) => {
-  const { perPage = 5, page = 1 } = options;
-
-  const url = `${BASE_URL}?perPage=${perPage}&page=${page}`;
-  const response = await axios.get(url);
-  const honors = response.data;
-
-  dispatch({
-    type: SET_HONORS,
-    payload: honors,
-  });
-};
-
-export const getHonorDetail = async (dispatch, options) => {
-  const { id } = options;
-  if (!id) {
-    throw new Error('No id.');
-  }
-
-  const url = `${BASE_URL}/${id}`;
-  const response = await axios.get(url);
-  const honorDetail = response.data;
-
-  dispatch({
-    type: SET_HONOR_DETAIL,
-    payload: honorDetail,
-  });
 };
 
 export const getStaff = async (dispatch) => {

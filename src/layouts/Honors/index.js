@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-import Announcement from '../../components/Announcement';
+import News from '../../components/News';
 import PageNumber from '../../components/PageNumber';
 
 import styles from './styles.module.scss';
@@ -23,9 +23,9 @@ const Honors = () => {
         <Banner />
         <div className={styles.board}>
           <PageTitle title="師生榮譽榜" />
-          <Announcement />
+          <News pageStyle="honorPage" />
         </div>
-        <PageNumber />
+        <PageNumber pageNumber="1,2,3" />
         <Footer />
       </div>
     </Fragment>
