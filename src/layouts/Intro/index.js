@@ -131,14 +131,26 @@ const Intro = () => {
                 <div className={styles.classInfo}>
                   <div className={styles.classInfo_name}>數位娛樂實驗室</div>
                   <div className={styles.classInfoRow}>
-                    <div className={styles.classInfo_Title}>教室地點：</div>
-                    <div className={styles.classInfo_Content}>
+                    <div
+                      className={`${styles.classInfo_Title} ${styles.classInfo__p}`}
+                    >
+                      教室地點：
+                    </div>
+                    <div
+                      className={`${styles.classInfo_Content} ${styles.classInfo__p}`}
+                    >
                       創意館 1F E812
                     </div>
                   </div>
                   <div className={styles.classInfoRow}>
-                    <div className={styles.classInfo_Title}>教室簡介：</div>
-                    <div className={styles.classInfo_Content}>
+                    <div
+                      className={`${styles.classInfo_Title} ${styles.classInfo__p}`}
+                    >
+                      教室簡介：
+                    </div>
+                    <div
+                      className={`${styles.classInfo_Content} ${styles.classInfo__p}`}
+                    >
                       此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ
                     </div>
                   </div>
