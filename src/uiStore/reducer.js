@@ -37,6 +37,7 @@ const reducer = (state, action) => {
     }
     case constants.CLICK_HAMBURGERLINK: {
       return {
+        ...state,
         hamburgerMenu: false,
         hamburgerTitle: [false, false, false, false, false],
       };
