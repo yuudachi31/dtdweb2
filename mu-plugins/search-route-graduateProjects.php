@@ -3,7 +3,7 @@
    function graduateProjectSearchResults($data) {
       
       $mainQuery = new WP_Query(array(
-         'post_type' => 'graduateProjects',
+         'post_type' => 'graduate_projects',
          'p' => $data['postID'],  //用PostID搜尋特定文章
          'meta_value' => $data['graduateYear'], //當request帶有graduateYear=XXX，只顯示XXX學年組的文章
       ));
@@ -26,39 +26,7 @@
 
             $sortTitle = get_field('sortTitle');
 
-            $collection = array(
-               'id' => get_the_ID(),
-               'workTitle' => get_field('workTitle'),
-               'workImgUrl' => get_field('workImgUrl')['url'],
-               'introduction' => get_field('introduction'),
-               'author' => get_field('author'),
-               'instructor' => get_field('instructor'),
-               'honor' => get_field('honor'),
-               'relatedLinks' => array(
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link1']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link1']['linkUrl'],
-                  ),  
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link2']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link2']['linkUrl'],
-                  ),  
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link3']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link3']['linkUrl'],
-                  ),  
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link4']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link4']['linkUrl'],
-                  ),  
-               )
-            );
-            //消除該筆資料relatedLinks中空白的項目
-            for($i = count($collection['relatedLinks']) - 1; $i >= 0; $i--){
-               if($collection['relatedLinks'][$i]['linkUrl'] == ''){
-                  unset($collection['relatedLinks'][$i]);
-               }
-            }
+            $collection = ReturnGraduateProjectCollection();
 
             array_push($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
          }
@@ -76,41 +44,48 @@
 
             $mainQuery->the_post();
 
-            $results = array(
-               'id' => get_the_ID(),
-               'workTitle' => get_field('workTitle'),
-               'workImgUrl' => get_field('workImgUrl')['url'],
-               'introduction' => get_field('introduction'),
-               'author' => get_field('author'),
-               'instructor' => get_field('instructor'),
-               'honor' => get_field('honor'),
-               'relatedLinks' => array(
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link1']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link1']['linkUrl'],
-                  ),  
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link2']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link2']['linkUrl'],
-                  ),  
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link3']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link3']['linkUrl'],
-                  ),  
-                  array(
-                     'linkTitle' => get_field('relatedLinks')['link4']['linkTitle'],
-                     'linkUrl' => get_field('relatedLinks')['link4']['linkUrl'],
-                  ),  
-               )
-            );
-
-            for($i = count($results['relatedLinks']) - 1; $i >= 0; $i--){
-               if($results['relatedLinks'][$i]['linkUrl'] == ''){
-                  unset($results['relatedLinks'][$i]);
-               }
-            }
+            $results = ReturnGraduateProjectCollection();
          }
       }
       
       return $results;
+   }
+
+   //統整作品輸出格式
+   function ReturnGraduateProjectCollection(){
+      $collection = array(
+         'id' => get_the_ID(),
+         'workTitle' => get_field('workTitle'),
+         'workImgUrl' => get_field('workImgUrl')['url'],
+         'introduction' => get_field('introduction'),
+         'author' => get_field('author'),
+         'instructor' => get_field('instructor'),
+         'honor' => get_field('honor'),
+         'relatedLinks' => array(
+            array(
+               'linkTitle' => get_field('relatedLinks')['link1']['linkTitle'],
+               'linkUrl' => get_field('relatedLinks')['link1']['linkUrl'],
+            ),  
+            array(
+               'linkTitle' => get_field('relatedLinks')['link2']['linkTitle'],
+               'linkUrl' => get_field('relatedLinks')['link2']['linkUrl'],
+            ),  
+            array(
+               'linkTitle' => get_field('relatedLinks')['link3']['linkTitle'],
+               'linkUrl' => get_field('relatedLinks')['link3']['linkUrl'],
+            ),  
+            array(
+               'linkTitle' => get_field('relatedLinks')['link4']['linkTitle'],
+               'linkUrl' => get_field('relatedLinks')['link4']['linkUrl'],
+            ),  
+         )
+      );
+
+      for($i = count($collection['relatedLinks']) - 1; $i >= 0; $i--){
+         if($collection['relatedLinks'][$i]['linkUrl'] == ''){
+            unset($collectiony['relatedLinks'][$i]);
+         }
+      }
+
+      return $collection;
    }
