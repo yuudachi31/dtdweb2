@@ -31,7 +31,7 @@ const PageNumber = (porp) => {
 
   return (
     <>
-      {pageNumberNames && pageNumber ? (
+      {pageNumberNames && pageNumber.length != 0 ? (
         <div className={styles.container}>
           <div className={styles.pageNumber_box}>
             <button
@@ -42,7 +42,7 @@ const PageNumber = (porp) => {
               }
               onClick={
                 pageNumber[0]
-                  ? ''
+                  ? () => {}
                   : () => clickPageChevron(dispatch, { clickState: -1 })
               }
             >
@@ -73,7 +73,7 @@ const PageNumber = (porp) => {
               }
               onClick={
                 pageNumber[pageNumber.length - 1]
-                  ? ''
+                  ? () => {}
                   : () => clickPageChevron(dispatch, { clickState: 1 })
               }
             >
