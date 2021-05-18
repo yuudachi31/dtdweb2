@@ -69,7 +69,7 @@
     width: 64px;
   }
 }
-.classInfo {
+.classBoxInfo {
   position: absolute;
   bottom: 0;
   left: calc(50% - 206px);
@@ -79,23 +79,27 @@
   color: white;
   padding: 16px $dtd-secondary-spacing 0 $dtd-secondary-spacing;
 }
-.classInfo_name {
+.classBoxInfo_name {
   font-size: $dtd-h2-size;
   text-align: center;
   margin-bottom: 24px;
 }
-.classInfoRow {
+.classBoxInfo_row {
   display: flex;
   margin-bottom: 16px;
 }
-.classInfo__p {
+.classBoxInfo__p {
   font-size: $dtd-hint-size;
 }
-.classInfo_Title {
+.classBoxInfo_title {
   width: 30%;
 }
-.classInfo_Content {
+.classBoxInfo_content {
   width: 70%;
+}
+
+.classBoxPhone {
+  display: none;
 }
 
 @media (max-width: $dtd-media-tablet) {
@@ -165,20 +169,41 @@
     margin-right: 15%;
   }
 
-  .classInfo {
-    left: calc(50% - 141px);
-    width: 282px;
-    padding: 16px 16px 0 16px;
+  .classBox {
+    display: none;
   }
-  .classInfo_Title {
-    width: 32%;
+  .classBoxPhone {
+    width: 100%;
+    display: block;
+    margin-bottom: $dtd-section-spacing;
   }
-  .classInfo_Content {
-    width: 68%;
-  }
-  .classBox_carouselChevron {
-    & a {
-      width: 40px;
-    }
-  }
+}
+
+.classBoxPhone_img {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+}
+.classBoxPhoneInfo {
+  width: 100%;
+  background-color: $dtd-text-color;
+  opacity: 0.9;
+  color: white;
+  padding: 16px 24px 4px 24px;
+  margin-bottom: $dtd-secondary-spacing;
+}
+.classBoxPhoneInfo_name {
+  font-size: $dtd-h2-size;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.classBoxPhoneInfo_row {
+  display: flex;
+  margin-bottom: 12px;
+}
+.classBoxPhoneInfo_title {
+  width: 86px;
+}
+.classBoxPhoneInfo_content {
+  width: calc(100% - 86px);
 }

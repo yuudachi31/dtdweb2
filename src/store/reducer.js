@@ -3,9 +3,6 @@ import PropTypes from 'prop-types';
 
 import {
   SET_NEWS,
-  SET_NEWS_DETAIL,
-  SET_HONOR_DETAIL,
-  SET_HONORS,
   SET_STAFF,
   SET_STAFF_DETAIL,
   BEGIN_DATA_REQUEST,
@@ -18,9 +15,6 @@ export const StoreContext = createContext();
 
 const initialState = {
   news: [],
-  newsDetail: {},
-  honors: [],
-  honorDetail: {},
   staff: [],
   staffDetail: {},
   requestdata: { loading: false, error: null },
@@ -29,25 +23,15 @@ const initialState = {
 
 function reducer(state, action) {
   switch (action.type) {
+    case SET_BANNER:
+      return {
+        ...state,
+        banner: action.payload,
+      };
     case SET_NEWS:
       return {
         ...state,
         news: action.payload,
-      };
-    case SET_NEWS_DETAIL:
-      return {
-        ...state,
-        newsDetail: action.payload,
-      };
-    case SET_HONORS:
-      return {
-        ...state,
-        honors: action.payload,
-      };
-    case SET_HONOR_DETAIL:
-      return {
-        ...state,
-        honorDetail: action.payload,
       };
     case SET_STAFF:
       return {
@@ -59,6 +43,7 @@ function reducer(state, action) {
         ...state,
         staffDetail: action.payload,
       };
+
     case BEGIN_DATA_REQUEST:
       return {
         ...state,
@@ -77,11 +62,6 @@ function reducer(state, action) {
           loading: false,
           error: action.payload,
         },
-      };
-    case SET_BANNER:
-      return {
-        ...state,
-        banner: action.payload,
       };
     default:
       return state;

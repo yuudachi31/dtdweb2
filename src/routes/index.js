@@ -15,7 +15,7 @@ import StaffDetailPage from '../layouts/StaffDetail';
 import ActivitiesPage from '../layouts/Activities';
 import FuturePage from '../layouts/Future';
 // 最新消息
-import NewsPage from '../layouts/News';
+import AnnouncementsPage from '../layouts/Announcements';
 import HonorsPage from '../layouts/Honors';
 // 招生資訊
 import CollegePage from '../layouts/College';
@@ -45,7 +45,11 @@ const Routes = () => {
             <Route exact path={path.activities} component={ActivitiesPage} />
             <Route exact path={path.future} component={FuturePage} />
             {/* 最新消息 */}
-            <Route exact path={path.news} component={NewsPage} />
+            <Route
+              exact
+              path={path.announcements}
+              component={AnnouncementsPage}
+            />
             <Route exact path={path.honors} component={HonorsPage} />
             {/* 招生資訊 */}
             <Route exact path={path.college} component={CollegePage} />
