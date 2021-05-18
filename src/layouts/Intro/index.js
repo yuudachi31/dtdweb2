@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -8,8 +8,14 @@ import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 
 import styles from './styles.module.scss';
+import classjson from '../../assets/json/class.json';
 
 const Intro = () => {
+  const [classdetail, setclassdetail] = useState([]);
+  useEffect(() => {
+    setclassdetail(classjson);
+  }, []);
+
   return (
     <Fragment>
       <Helmet>
@@ -104,57 +110,83 @@ const Intro = () => {
                   indicators={false}
                   className={styles.classBox_carouselChevron}
                 >
-                  {/* {banner.map((bannerImg) => (
-                    <Carousel.Item interval={5000} key={bannerImg.id}>
+                  {classdetail.map((classInfo) => (
+                    <Carousel.Item interval={5000} key={classInfo.id}>
                       <img
-                        className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
-                        src={bannerImg.bannerUrl}
-                        alt="First slide"
+                        className={styles.classBox_carousel_img}
+                        src={classInfo.classUrl}
                       />
+                      <div className={styles.classBoxInfo}>
+                        <div className={styles.classBoxInfo_name}>
+                          {classInfo.name}
+                        </div>
+                        <div className={styles.classBoxInfo_row}>
+                          <div
+                            className={`${styles.classBoxInfo_title} ${styles.classBoxInfo__p}`}
+                          >
+                            教室地點：
+                          </div>
+                          <div
+                            className={`${styles.classBoxInfo_content} ${styles.classBoxInfo__p}`}
+                          >
+                            {classInfo.location}
+                          </div>
+                        </div>
+                        <div className={styles.classBoxInfo_row}>
+                          <div
+                            className={`${styles.classBoxInfo_title} ${styles.classBoxInfo__p}`}
+                          >
+                            教室簡介：
+                          </div>
+                          <div
+                            className={`${styles.classBoxInfo_content} ${styles.classBoxInfo__p}`}
+                          >
+                            {classInfo.intro}
+                          </div>
+                        </div>
+                      </div>
                     </Carousel.Item>
-                  ))} */}
-                  <Carousel.Item interval={5000}>
-                    <img
-                      className={styles.classBox_carousel_img}
-                      src="assets/images/banners/banner_3.png"
-                      alt="First slide"
-                    />
-                  </Carousel.Item>
-                  <Carousel.Item interval={5000}>
-                    <img
-                      className={styles.classBox_carousel_img}
-                      src="assets/images/banners/banner_2.jpg"
-                      alt="Second slide"
-                    />
-                  </Carousel.Item>
+                  ))}
                 </Carousel>
-                <div className={styles.classInfo}>
-                  <div className={styles.classInfo_name}>數位娛樂實驗室</div>
-                  <div className={styles.classInfoRow}>
-                    <div
-                      className={`${styles.classInfo_Title} ${styles.classInfo__p}`}
-                    >
-                      教室地點：
-                    </div>
-                    <div
-                      className={`${styles.classInfo_Content} ${styles.classInfo__p}`}
-                    >
-                      創意館 1F E812
+              </div>
+              <div className={styles.classBoxPhone}>
+                {classdetail.map((classInfo) => (
+                  <div key={classInfo.id}>
+                    <img
+                      src={classInfo.classUrl}
+                      className={styles.classBoxPhone_img}
+                    />
+                    <div className={styles.classBoxPhoneInfo}>
+                      <div className={styles.classBoxPhoneInfo_name}>
+                        {classInfo.name}
+                      </div>
+                      <div className={styles.classBoxPhoneInfo_row}>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_title} ${styles.classBoxInfo__p}`}
+                        >
+                          教室地點：
+                        </div>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_content} ${styles.classBoxInfo__p}`}
+                        >
+                          {classInfo.location}
+                        </div>
+                      </div>
+                      <div className={styles.classBoxPhoneInfo_row}>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_title} ${styles.classBoxInfo__p}`}
+                        >
+                          教室簡介：
+                        </div>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_content} ${styles.classBoxInfo__p}`}
+                        >
+                          {classInfo.intro}
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className={styles.classInfoRow}>
-                    <div
-                      className={`${styles.classInfo_Title} ${styles.classInfo__p}`}
-                    >
-                      教室簡介：
-                    </div>
-                    <div
-                      className={`${styles.classInfo_Content} ${styles.classInfo__p}`}
-                    >
-                      此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

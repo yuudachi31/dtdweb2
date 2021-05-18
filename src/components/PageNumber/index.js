@@ -31,7 +31,7 @@ const PageNumber = (porp) => {
 
   return (
     <>
-      {pageNumberNames && pageNumber.length != 0 ? (
+      {pageNumberNames && pageNumber ? (
         <div className={styles.container}>
           <div className={styles.pageNumber_box}>
             <button
