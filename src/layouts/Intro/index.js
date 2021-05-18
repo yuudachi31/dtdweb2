@@ -102,7 +102,7 @@ const Intro = () => {
               <div className={styles.classBox}>
                 <Carousel
                   indicators={false}
-                  className={styles.classBox_carouselArrow_bg}
+                  className={styles.classBox_carouselChevron}
                 >
                   {/* {banner.map((bannerImg) => (
                     <Carousel.Item interval={5000} key={bannerImg.id}>
