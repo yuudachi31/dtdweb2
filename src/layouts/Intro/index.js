@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
+import Carousel from 'react-bootstrap/Carousel';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-//import Announcement from '../../components/Announcement';
-//import PageNumber from '../../components/PageNumber';
 
 import styles from './styles.module.scss';
 
@@ -58,7 +57,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/1-1-e1456160019995.png"
+                  src="assets/images/intro/foresight.png"
                 ></img>
                 <div className={styles.ideaBox_title}>前瞻</div>
                 <div className={styles.intro_content_p}>
@@ -68,7 +67,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/2-1-e1456160003331.png"
+                  src="assets/images/intro/open.png"
                 ></img>
                 <div className={styles.ideaBox_title}>開放</div>
                 <div className={styles.intro_content_p}>
@@ -78,7 +77,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/3-1-e1456160042916.png"
+                  src="assets/images/intro/integration.png"
                 ></img>
                 <div className={styles.ideaBox_title}>跨領域整合</div>
                 <div className={styles.intro_content_p}>
@@ -88,7 +87,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/4-1-e1456160030298.png"
+                  src="assets/images/intro/resource.png"
                 ></img>
                 <div className={styles.ideaBox_title}>資源</div>
                 <div className={styles.intro_content_p}>
@@ -100,7 +99,63 @@ const Intro = () => {
           <div className={styles.pageTitle__marginTop}>
             <PageTitle title="教室導覽" />
             <div className={styles.contentBox__marginTop}>
-              <div className={styles.classBox}></div>
+              <div className={styles.classBox}>
+                <Carousel
+                  indicators={false}
+                  className={styles.classBox_carouselChevron}
+                >
+                  {/* {banner.map((bannerImg) => (
+                    <Carousel.Item interval={5000} key={bannerImg.id}>
+                      <img
+                        className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
+                        src={bannerImg.bannerUrl}
+                        alt="First slide"
+                      />
+                    </Carousel.Item>
+                  ))} */}
+                  <Carousel.Item interval={5000}>
+                    <img
+                      className={styles.classBox_carousel_img}
+                      src="assets/images/banners/banner_3.png"
+                      alt="First slide"
+                    />
+                  </Carousel.Item>
+                  <Carousel.Item interval={5000}>
+                    <img
+                      className={styles.classBox_carousel_img}
+                      src="assets/images/banners/banner_2.jpg"
+                      alt="Second slide"
+                    />
+                  </Carousel.Item>
+                </Carousel>
+                <div className={styles.classInfo}>
+                  <div className={styles.classInfo_name}>數位娛樂實驗室</div>
+                  <div className={styles.classInfoRow}>
+                    <div
+                      className={`${styles.classInfo_Title} ${styles.classInfo__p}`}
+                    >
+                      教室地點：
+                    </div>
+                    <div
+                      className={`${styles.classInfo_Content} ${styles.classInfo__p}`}
+                    >
+                      創意館 1F E812
+                    </div>
+                  </div>
+                  <div className={styles.classInfoRow}>
+                    <div
+                      className={`${styles.classInfo_Title} ${styles.classInfo__p}`}
+                    >
+                      教室簡介：
+                    </div>
+                    <div
+                      className={`${styles.classInfo_Content} ${styles.classInfo__p}`}
+                    >
+                      此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
