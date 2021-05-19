@@ -49,7 +49,7 @@ function prefix_register_dtd_routes_projects() {
       ),
       'menu_icon' => 'dashicons-welcome-learn-more'
    ));   
-
+  
    register_post_type('class_projects', array(
       'show_in_rest' => true,
       'rewrite' => array('slug' => 'class_projects'),
@@ -65,6 +65,7 @@ function prefix_register_dtd_routes_projects() {
       ),
       'menu_icon' => 'dashicons-archive'
    ));     
+}
 
    register_post_type('cooperation_projects', array(
       'show_in_rest' => true,
@@ -84,8 +85,6 @@ function prefix_register_dtd_routes_projects() {
 }
 add_action('init', 'prefix_register_dtd_routes_projects');
 
-
-//建立custom post-type中的分類
 function create_taxonomies() 
 {
   register_taxonomy('taxonomy_className','class_projects', array(

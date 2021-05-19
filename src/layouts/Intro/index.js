@@ -1,16 +1,21 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
+import Carousel from 'react-bootstrap/Carousel';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-//import Announcement from '../../components/Announcement';
-//import PageNumber from '../../components/PageNumber';
 
 import styles from './styles.module.scss';
+import classjson from '../../assets/json/class.json';
 
 const Intro = () => {
+  const [classdetail, setclassdetail] = useState([]);
+  useEffect(() => {
+    setclassdetail(classjson);
+  }, []);
+
   return (
     <Fragment>
       <Helmet>
@@ -58,7 +63,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/1-1-e1456160019995.png"
+                  src="assets/images/intro/foresight.png"
                 ></img>
                 <div className={styles.ideaBox_title}>前瞻</div>
                 <div className={styles.intro_content_p}>
@@ -68,7 +73,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/2-1-e1456160003331.png"
+                  src="assets/images/intro/open.png"
                 ></img>
                 <div className={styles.ideaBox_title}>開放</div>
                 <div className={styles.intro_content_p}>
@@ -78,7 +83,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/3-1-e1456160042916.png"
+                  src="assets/images/intro/integration.png"
                 ></img>
                 <div className={styles.ideaBox_title}>跨領域整合</div>
                 <div className={styles.intro_content_p}>
@@ -88,7 +93,7 @@ const Intro = () => {
               <div className={styles.ideaBox}>
                 <img
                   className={styles.ideaBox_img}
-                  src="https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/4-1-e1456160030298.png"
+                  src="assets/images/intro/resource.png"
                 ></img>
                 <div className={styles.ideaBox_title}>資源</div>
                 <div className={styles.intro_content_p}>
@@ -100,7 +105,89 @@ const Intro = () => {
           <div className={styles.pageTitle__marginTop}>
             <PageTitle title="教室導覽" />
             <div className={styles.contentBox__marginTop}>
-              <div className={styles.classBox}></div>
+              <div className={styles.classBox}>
+                <Carousel
+                  indicators={false}
+                  className={styles.classBox_carouselChevron}
+                >
+                  {classdetail.map((classInfo) => (
+                    <Carousel.Item interval={5000} key={classInfo.id}>
+                      <img
+                        className={styles.classBox_carousel_img}
+                        src={classInfo.classUrl}
+                      />
+                      <div className={styles.classBoxInfo}>
+                        <div className={styles.classBoxInfo_name}>
+                          {classInfo.name}
+                        </div>
+                        <div className={styles.classBoxInfo_row}>
+                          <div
+                            className={`${styles.classBoxInfo_title} ${styles.classBoxInfo__p}`}
+                          >
+                            教室地點：
+                          </div>
+                          <div
+                            className={`${styles.classBoxInfo_content} ${styles.classBoxInfo__p}`}
+                          >
+                            {classInfo.location}
+                          </div>
+                        </div>
+                        <div className={styles.classBoxInfo_row}>
+                          <div
+                            className={`${styles.classBoxInfo_title} ${styles.classBoxInfo__p}`}
+                          >
+                            教室簡介：
+                          </div>
+                          <div
+                            className={`${styles.classBoxInfo_content} ${styles.classBoxInfo__p}`}
+                          >
+                            {classInfo.intro}
+                          </div>
+                        </div>
+                      </div>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+              </div>
+              <div className={styles.classBoxPhone}>
+                {classdetail.map((classInfo) => (
+                  <div key={classInfo.id}>
+                    <img
+                      src={classInfo.classUrl}
+                      className={styles.classBoxPhone_img}
+                    />
+                    <div className={styles.classBoxPhoneInfo}>
+                      <div className={styles.classBoxPhoneInfo_name}>
+                        {classInfo.name}
+                      </div>
+                      <div className={styles.classBoxPhoneInfo_row}>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_title} ${styles.classBoxInfo__p}`}
+                        >
+                          教室地點：
+                        </div>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_content} ${styles.classBoxInfo__p}`}
+                        >
+                          {classInfo.location}
+                        </div>
+                      </div>
+                      <div className={styles.classBoxPhoneInfo_row}>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_title} ${styles.classBoxInfo__p}`}
+                        >
+                          教室簡介：
+                        </div>
+                        <div
+                          className={`${styles.classBoxPhoneInfo_content} ${styles.classBoxInfo__p}`}
+                        >
+                          {classInfo.intro}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

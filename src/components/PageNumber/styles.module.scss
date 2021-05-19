@@ -18,27 +18,39 @@
 
 .pageNumber_number {
   font-size: $dtd-hint-size;
-  padding: 0 12px;
+  font-weight: bold;
+  margin: 0 6px;
+  padding: 0 6px;
   border: none;
   background-color: $dtd-main-bg-color;
   color: $dtd-submenu-text-color;
 }
 
-.pageNumber_arrow {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 12px;
-  padding: 0 12px;
+.pageNumber_chevron {
+  margin: 1px 6px 0 6px;
+  padding: 0 6px;
   border: none;
   background-color: $dtd-main-bg-color;
-  margin-top: 5px;
+  color: $dtd-submenu-text-color;
 }
 
-.pageNumber_arrow__leftArrowImg {
-  background-image: url(../../assets/images/announcement/leftArrow.png);
+.pageNumber_hover:hover {
+  color: $dtd-main-color;
+  text-decoration: none;
 }
 
-.pageNumber_arrow__rightArrowImg {
-  background-image: url(../../assets/images/announcement/rightArrow.png);
+.pageNumber_number_selected {
+  color: $dtd-main-color;
+  &:hover {
+    color: $dtd-main-color;
+    text-decoration: none;
+  }
+}
+
+.pageNumber_chevron_unclicked {
+  color: $dtd-hint-text-color;
+  &:hover {
+    color: $dtd-hint-text-color;
+    text-decoration: none;
+  }
 }

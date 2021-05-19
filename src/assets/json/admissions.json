@@ -1,6 +1,6 @@
 [
     {
-        "info_img": "https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/collegeIcon-150x150.png",
+        "info_img": "assets/images/admissions/collegeIcon.png",
         "info_departmentName": "數位科技設計學系",
         "info_studuntNumber": "1班43人",
         "info_admission": "繁星推甄 / 個人申請 / 考試分發 / 特殊選材",
@@ -29,10 +29,10 @@
                 "regulations_documentURL": ""
             }
         ],
-        "classMap": "https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/2-3-1-1.jpg"
+        "classMap": "assets/images/admissions/collegeMap.jpg"
     },
     {
-        "info_img": "https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/masterIcon-150x150.png",
+        "info_img": "assets/images/admissions/masterIcon.png",
         "info_departmentName": "玩具與遊戲設計碩士班",
         "info_studuntNumber": "1班27人",
         "info_admission": "推薦甄試 / 招生考試",
@@ -63,10 +63,10 @@
                 "regulations_documentURL": ""
             }
         ],
-        "classMap": "https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/2-3-1-1_1010626.jpg"
+        "classMap": "assets/images/admissions/masterMap.jpg"
     },
     {
-        "info_img": "https://dtd.ntue.edu.tw/wp-content/uploads/2016/02/InserveIcon-150x150.png",
+        "info_img": "assets/images/admissions/inserveIcon.png",
         "info_departmentName": "玩具與遊戲設計碩士在職專班(周末假日班)",
         "info_studuntNumber": "依各學年簡章為準",
         "info_admission": "一、國內外大學校院畢業獲有學士學位或合於「入學大學同等學力認定標準」有關碩士班報考資格者。 \n\n二、具備至少1個月以上現仍在職工作年資（檢附服務年資證明書，工作年資計算至報名截止日止。） \n\n或具有1 年（含）以上服務年資（檢附服務年資證明書，依證明書起訖日期計算）。在學期間之兼職、工讀、鐘點計時之工作，不計入年資。",

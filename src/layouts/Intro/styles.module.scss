@@ -52,10 +52,54 @@
 }
 
 .classBox {
+  position: relative;
   width: 100%;
-  height: 310px;
+  height: 398px;
   margin-bottom: 80px;
-  background-color: gray;
+}
+.classBox_carousel_img {
+  width: 100%;
+  height: 398px;
+  object-fit: cover;
+}
+.classBox_carouselChevron {
+  & a {
+    background-color: $dtd-text-color;
+    opacity: 0.6;
+    width: 64px;
+  }
+}
+.classBoxInfo {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 206px);
+  width: 412px;
+  background-color: $dtd-text-color;
+  opacity: 0.9;
+  color: white;
+  padding: 16px $dtd-secondary-spacing 0 $dtd-secondary-spacing;
+}
+.classBoxInfo_name {
+  font-size: $dtd-h2-size;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.classBoxInfo_row {
+  display: flex;
+  margin-bottom: 16px;
+}
+.classBoxInfo__p {
+  font-size: $dtd-hint-size;
+}
+.classBoxInfo_title {
+  width: 30%;
+}
+.classBoxInfo_content {
+  width: 70%;
+}
+
+.classBoxPhone {
+  display: none;
 }
 
 @media (max-width: $dtd-media-tablet) {
@@ -92,6 +136,18 @@
     margin-right: 4%;
     margin-bottom: $dtd-secondary-spacing;
   }
+
+  .classBox {
+    height: 310px;
+  }
+  .classBox_carousel_img {
+    height: 310px;
+  }
+  .classBox_carouselChevron {
+    & a {
+      width: 50px;
+    }
+  }
 }
 
 @media (max-width: $dtd-media-phone) {
@@ -112,4 +168,42 @@
     margin-left: 15%;
     margin-right: 15%;
   }
+
+  .classBox {
+    display: none;
+  }
+  .classBoxPhone {
+    width: 100%;
+    display: block;
+    margin-bottom: $dtd-section-spacing;
+  }
+}
+
+.classBoxPhone_img {
+  width: 100%;
+  height: 256px;
+  object-fit: cover;
+}
+.classBoxPhoneInfo {
+  width: 100%;
+  background-color: $dtd-text-color;
+  opacity: 0.9;
+  color: white;
+  padding: 16px 24px 4px 24px;
+  margin-bottom: $dtd-secondary-spacing;
+}
+.classBoxPhoneInfo_name {
+  font-size: $dtd-h2-size;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.classBoxPhoneInfo_row {
+  display: flex;
+  margin-bottom: 12px;
+}
+.classBoxPhoneInfo_title {
+  width: 86px;
+}
+.classBoxPhoneInfo_content {
+  width: calc(100% - 86px);
 }

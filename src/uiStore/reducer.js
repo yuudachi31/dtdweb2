@@ -8,12 +8,15 @@ export const UIStoreContext = createContext();
 const initialState = {
   hamburgerMenu: false,
   hamburgerTitle: [false, false, false, false, false],
+  pageNumber: [],
+  pageSeletedNumber: 1,
 };
 const reducer = (state, action) => {
   switch (action.type) {
     case constants.CLICK_HAMBURGERMENU: {
       const hamburgerMenuState = !state.hamburgerMenu;
       return {
+        ...state,
         hamburgerMenu: hamburgerMenuState,
         hamburgerTitle: [false, false, false, false, false],
       };
@@ -34,8 +37,63 @@ const reducer = (state, action) => {
     }
     case constants.CLICK_HAMBURGERLINK: {
       return {
+        ...state,
         hamburgerMenu: false,
         hamburgerTitle: [false, false, false, false, false],
+      };
+    }
+
+    case constants.SET_PAGENUMBERSTATE: {
+      const pageNumberState = [];
+      for (let i = 0; i < action.payload; i++) {
+        if (i == 0) {
+          pageNumberState.push(true);
+        } else {
+          pageNumberState.push(false);
+        }
+      }
+      return {
+        ...state,
+        pageNumber: pageNumberState,
+        pageSeletedNumber: 1,
+      };
+    }
+
+    case constants.CLICK_PAGENUMBER: {
+      const pageNumberState = [];
+      for (let i = 0; i < state.pageNumber.length; i++) {
+        if (i == action.payload) {
+          pageNumberState.push(true);
+        } else {
+          pageNumberState.push(false);
+        }
+      }
+      return {
+        ...state,
+        pageNumber: pageNumberState,
+        pageSeletedNumber: action.payload + 1,
+      };
+    }
+
+    case constants.CLICK_PAGECHEVRON: {
+      const pageNumberState = [];
+      var selectedNumber = 0;
+      for (let i = 0; i < state.pageNumber.length; i++) {
+        if (state.pageNumber[i] == true) {
+          selectedNumber = i + action.payload;
+        }
+      }
+      for (let i = 0; i < state.pageNumber.length; i++) {
+        if (i == selectedNumber) {
+          pageNumberState.push(true);
+        } else {
+          pageNumberState.push(false);
+        }
+      }
+      return {
+        ...state,
+        pageNumber: pageNumberState,
+        pageSeletedNumber: selectedNumber + 1,
       };
     }
   }

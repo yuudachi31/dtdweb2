@@ -1,20 +1,90 @@
+import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.scss';
 
-const PageNumber = () => {
+import {
+  setPageNumberState,
+  clickPageNumber,
+  clickPageChevron,
+} from '../../uiStore/actions';
+import { UIStoreContext } from '../../uiStore/reducer';
+
+/*icon*/
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faChevronLeft,
+  faChevronRight,
+} from '@fortawesome/free-solid-svg-icons';
+
+const PageNumber = (porp) => {
+  const {
+    state: { pageNumber },
+    dispatch,
+  } = useContext(UIStoreContext);
+
+  const pageNumberNames = porp.pageNumber.split(',');
+
+  useEffect(() => {
+    setPageNumberState(dispatch, {
+      numberCount: pageNumberNames.length,
+    });
+  }, []);
+
   return (
-    <div className={styles.container}>
-      <div className={styles.pageNumber_box}>
-        <button
-          className={`${styles.pageNumber_arrow} ${styles.pageNumber_arrow__leftArrowImg}`}
-        ></button>
-        <button className={styles.pageNumber_number}>1</button>
-        <button className={styles.pageNumber_number}>2</button>
-        <button className={styles.pageNumber_number}>3</button>
-        <button
-          className={`${styles.pageNumber_arrow} ${styles.pageNumber_arrow__rightArrowImg}`}
-        ></button>
-      </div>
-    </div>
+    <>
+      {pageNumberNames && pageNumber.length != 0 ? (
+        <div className={styles.container}>
+          <div className={styles.pageNumber_box}>
+            <button
+              className={
+                pageNumber[0]
+                  ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
+                  : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
+              }
+              onClick={
+                pageNumber[0]
+                  ? () => {}
+                  : () => clickPageChevron(dispatch, { clickState: -1 })
+              }
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            {pageNumberNames.map((pageNumberName, pageNumberIndex) => (
+              <button
+                key={pageNumberName}
+                className={
+                  pageNumber[pageNumberIndex]
+                    ? `${styles.pageNumber_number} ${styles.pageNumber_number_selected}`
+                    : `${styles.pageNumber_number} ${styles.pageNumber_hover}`
+                }
+                onClick={() => {
+                  clickPageNumber(dispatch, {
+                    clickNumber: pageNumberIndex,
+                  });
+                }}
+              >
+                {pageNumberName}
+              </button>
+            ))}
+            <button
+              className={
+                pageNumber[pageNumber.length - 1]
+                  ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
+                  : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
+              }
+              onClick={
+                pageNumber[pageNumber.length - 1]
+                  ? () => {}
+                  : () => clickPageChevron(dispatch, { clickState: 1 })
+              }
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
+          </div>
+        </div>
+      ) : (
+        <div className={styles.container}></div>
+      )}
+    </>
   );
 };
 

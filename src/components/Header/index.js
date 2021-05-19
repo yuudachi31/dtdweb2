@@ -19,7 +19,9 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <Link to={path.home} className={styles.logo}></Link>
+      <Link to={path.home}>
+        <img className={styles.logo} src="assets/images/header/DTD.png"></img>
+      </Link>
       <div className={styles.nav}>
         {/* hamburgerMenu */}
         <button
@@ -107,7 +109,7 @@ const Header = () => {
               >
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to={path.news}
+                    to={path.announcements}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -288,7 +290,7 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to={path.news} className={styles.nav_link}>
+              <Link to={path.announcements} className={styles.nav_link}>
                 系務公告
               </Link>
             </li>
