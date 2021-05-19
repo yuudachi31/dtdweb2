@@ -1,41 +1,23 @@
 <?php
 
-   function graduateProjectSearchResults($data) {
+   function cooperateProjectSearchResults($data) {
       
       $mainQuery = new WP_Query(array(
-         'post_type' => 'graduate_projects',
+         'post_type' => 'cooperation_projects',
          'p' => $data['postID'],  //用PostID搜尋特定文章
-         'meta_value' => $data['graduateYear'], //當request帶有graduateYear=XXX，只顯示XXX學年組的文章
       ));
 
       //如果沒有要求特定文章，就回傳全部文章或是單獨某個學年組的文章
       if($data['postID'] == null){
 
-         $gradRange = [100, 150];
-
          $results = array();
-         for($i = $gradRange[1]; $i >= $gradRange[0]; $i--){
-            array_push($results,array(
-               'sortTitle' => $i,
-               'sortList' => array()
-            ));
-         }
-
+         
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
 
-            $sortTitle = get_field('sortTitle');
-
-            $collection = ReturnGraduateProjectCollection();
-
-            array_push($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
-         }
-         //刪除空白沒有資料的年份
-         for($i = $gradRange[1] - $gradRange[0]; $i >= 0; $i--){
-            if(count($results[$i]['sortList']) == 0){
-               unset($results[$i]);
-               $results = array_values($results);
-            }
+            $collection = ReturnCooperateProjectCollection();
+            
+            array_push($results, $collection);
          }
       }
       //要求回傳單一筆文章
@@ -44,7 +26,7 @@
 
             $mainQuery->the_post();
 
-            $results = ReturnGraduateProjectCollection();
+            $results = ReturnCooperateProjectCollection();
          }
       }
       
@@ -52,7 +34,8 @@
    }
 
    //統整作品輸出格式
-   function ReturnGraduateProjectCollection(){
+   function ReturnCooperateProjectCollection(){
+
       $collection = array(
          'id' => get_the_ID(),
          'workTitle' => get_field('workTitle'),
@@ -86,6 +69,5 @@
             unset($collection['relatedLinks'][$i]);
          }
       }
-
       return $collection;
    }

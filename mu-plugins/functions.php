@@ -4,6 +4,8 @@
     require ('search-route-banner.php');
     require ('search-route-staff.php');
     require ('search-route-graduateProjects.php');
+    require ('search-route-classProjects.php');
+    require ('search-route-cooperateProject.php');
     
     function dtd_custom_route() {
         register_rest_route('dtd/v1', 'banner', array(
@@ -33,6 +35,14 @@
         register_rest_route('dtd/v1', 'graduateProject', array(
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'graduateProjectSearchResults'
+        ));
+        register_rest_route('dtd/v1', 'classProject', array(
+            'methods' => WP_REST_SERVER::READABLE,
+            'callback' => 'classProjectSearchResults'
+        ));
+        register_rest_route('dtd/v1', 'cooperateProject', array(
+            'methods' => WP_REST_SERVER::READABLE,
+            'callback' => 'cooperateProjectSearchResults'
         ));
     }
 

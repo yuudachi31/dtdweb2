@@ -10,7 +10,7 @@ function prefix_register_dtd_routes_projects() {
       'public' => true,
       'labels' => array(
             'name' => '首頁輪播圖',
-            'add_new_item' => '新增',
+            'add_new' => '新增',
             'edit_item' => '編輯',
             'all_items' => '全部',
             'singular_name' => 'Banners'
@@ -26,7 +26,7 @@ function prefix_register_dtd_routes_projects() {
       'public' => true,
       'labels' => array(
             'name' => '教職員',
-            'add_new_item' => '新增',
+            'add_new' => '新增',
             'edit_item' => '編輯',
             'all_items' => '全部',
             'singular_name' => 'Staff'
@@ -34,21 +34,75 @@ function prefix_register_dtd_routes_projects() {
       'menu_icon' => 'dashicons-admin-users'
    ));
 
-   register_post_type('graduateProjects', array(
+   register_post_type('graduate_projects', array(
       'show_in_rest' => true,
-      'rewrite' => array('slug' => 'graduateProjects'),
+      'rewrite' => array('slug' => 'graduate_projects'),
       'has_archive' => true,
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
             'name' => '畢業專題',
-            'add_new_item' => '新增',
-            'edit_item' => '編輯',
-            'all_items' => '全部',
-            'singular_name' => 'GraduateProjects'
+            'add_new' => '新增專題',
+            'edit_item' => '編輯專題',
+            'all_items' => '全部專題',
+            'singular_name' => 'graduate_projects'
       ),
       'menu_icon' => 'dashicons-welcome-learn-more'
    ));   
-}
 
+   register_post_type('class_projects', array(
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'class_projects'),
+      'has_archive' => true,
+      'supports' => array('title', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
+            'name' => '課程專題',
+            'add_new' => '新增專題',
+            'edit_item' => '編輯專題',
+            'all_items' => '全部專題',
+            'singular_name' => 'class_projects'
+      ),
+      'menu_icon' => 'dashicons-archive'
+   ));     
+
+   register_post_type('cooperation_projects', array(
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'cooperation_projects'),
+      'has_archive' => true,
+      'supports' => array('title', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
+            'name' => '合作成果',
+            'add_new' => '新增成果',
+            'edit_item' => '編輯成果',
+            'all_items' => '全部成果',
+            'singular_name' => 'cooperation_projects'
+      ),
+      'menu_icon' => 'dashicons-image-filter'
+   ));     
+}
 add_action('init', 'prefix_register_dtd_routes_projects');
+
+
+//建立custom post-type中的分類
+function create_taxonomies() 
+{
+  register_taxonomy('taxonomy_className','class_projects', array(
+    'hierarchical' => true,
+    'labels' => array(
+      'name' => '課程清單',
+      'all_items' => '全部',
+      'edit_item' => '編輯', 
+    ),
+    'show_in_rest' => true,
+    'show_admin_column' => true,
+    'show_ui' => true,
+    'public' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'taxonomy_className' ),
+  ));
+}
+add_action( 'init', 'create_taxonomies');
+
+

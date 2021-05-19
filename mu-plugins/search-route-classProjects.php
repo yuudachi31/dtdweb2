@@ -1,58 +1,82 @@
 <?php
 
-   function graduateProjectSearchResults($data) {
+   function classProjectSearchResults($data) {
       
+      $classGroup = ($data['classGroup']) ;
+
       $mainQuery = new WP_Query(array(
-         'post_type' => 'graduate_projects',
+         'post_type' => 'class_projects',
          'p' => $data['postID'],  //用PostID搜尋特定文章
-         'meta_value' => $data['graduateYear'], //當request帶有graduateYear=XXX，只顯示XXX學年組的文章
       ));
-
-      //如果沒有要求特定文章，就回傳全部文章或是單獨某個學年組的文章
-      if($data['postID'] == null){
-
-         $gradRange = [100, 150];
-
-         $results = array();
-         for($i = $gradRange[1]; $i >= $gradRange[0]; $i--){
-            array_push($results,array(
-               'sortTitle' => $i,
-               'sortList' => array()
-            ));
+      
+      //如果要求特定文章
+      if($data['postID'] != null){
+         while($mainQuery->have_posts()) {
+            $mainQuery->the_post();
+            $collection = ReturnClassProjectCollection();
          }
+         return $collection;
+      }
+      //如果要求特定課程
+      else if($classGroup != null){
+
+         $results = array(
+            'sortTitle' => $classGroup,
+            'sortList' => array()
+         );
 
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
 
-            $sortTitle = get_field('sortTitle');
+            //取出所屬課程分類名
+            $sortTitle = get_the_terms(get_the_ID(),'taxonomy_className')[0]->name;
 
-            $collection = ReturnGraduateProjectCollection();
+            if($sortTitle == $classGroup){
+               $collection = ReturnClassProjectCollection();
 
-            array_push($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
-         }
-         //刪除空白沒有資料的年份
-         for($i = $gradRange[1] - $gradRange[0]; $i >= 0; $i--){
-            if(count($results[$i]['sortList']) == 0){
-               unset($results[$i]);
-               $results = array_values($results);
+               array_push($results['sortList'], $collection);
             }
          }
+         return $results;
       }
-      //要求回傳單一筆文章
+      //全部文章
       else{
-         while($mainQuery->have_posts()) {
-
-            $mainQuery->the_post();
-
-            $results = ReturnGraduateProjectCollection();
+         $taxonomy = get_terms([
+            'taxonomy' => 'taxonomy_className',
+            'hide_empty' => false,
+         ]);
+   
+         $results = array();
+   
+         for($i = 0; $i < count($taxonomy); $i++){
+           array_push($results, array(
+            'sortId' => $taxonomy[$i]->term_id,
+            'sortTitle' => $taxonomy[$i]->name,
+            'sortList' => array()
+           ));
          }
+   
+         while($mainQuery->have_posts()) {
+            $mainQuery->the_post();
+   
+            $collection = ReturnClassProjectCollection();
+   
+            //取出所屬課程分類名
+            $sortTitle = get_the_terms(get_the_ID(),'taxonomy_className')[0]->name;
+   
+            for($i = 0; $i < count($results); $i++){
+               if($results[$i]['sortTitle'] == $sortTitle){
+                  array_push($results[$i]['sortList'], $collection);
+               }
+            }
+         }
+
+         return $results;
       }
-      
-      return $results;
    }
 
    //統整作品輸出格式
-   function ReturnGraduateProjectCollection(){
+   function ReturnClassProjectCollection(){
       $collection = array(
          'id' => get_the_ID(),
          'workTitle' => get_field('workTitle'),
