@@ -84,7 +84,6 @@
       for($i = count($collection['relatedLinks']) - 1; $i >= 0; $i--){
          if($collection['relatedLinks'][$i]['linkUrl'] == ''){
             unset($collection['relatedLinks'][$i]);
-
          }
       }
 

@@ -6,7 +6,6 @@
     require ('search-route-graduateProjects.php');
     require ('search-route-classProjects.php');
     require ('search-route-cooperateProject.php');
-
     
     function dtd_custom_route() {
         register_rest_route('dtd/v1', 'banner', array(
