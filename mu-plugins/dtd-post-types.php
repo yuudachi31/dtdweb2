@@ -49,7 +49,7 @@ function prefix_register_dtd_routes_projects() {
       ),
       'menu_icon' => 'dashicons-welcome-learn-more'
    ));   
-
+  
    register_post_type('class_projects', array(
       'show_in_rest' => true,
       'rewrite' => array('slug' => 'class_projects'),
@@ -67,11 +67,24 @@ function prefix_register_dtd_routes_projects() {
    ));     
 }
 
+   register_post_type('cooperation_projects', array(
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'cooperation_projects'),
+      'has_archive' => true,
+      'supports' => array('title', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
+            'name' => '合作成果',
+            'add_new' => '新增成果',
+            'edit_item' => '編輯成果',
+            'all_items' => '全部成果',
+            'singular_name' => 'cooperation_projects'
+      ),
+      'menu_icon' => 'dashicons-image-filter'
+   ));     
+}
 add_action('init', 'prefix_register_dtd_routes_projects');
 
-
-
-//建立post-type中的分類
 function create_taxonomies() 
 {
   register_taxonomy('taxonomy_className','class_projects', array(
@@ -89,7 +102,6 @@ function create_taxonomies()
     'rewrite' => array( 'slug' => 'taxonomy_className' ),
   ));
 }
-
 add_action( 'init', 'create_taxonomies');
 
 

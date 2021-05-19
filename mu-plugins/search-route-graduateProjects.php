@@ -80,10 +80,11 @@
             ),  
          )
       );
-
+      //消除該筆資料relatedLinks中空白的項目
       for($i = count($collection['relatedLinks']) - 1; $i >= 0; $i--){
          if($collection['relatedLinks'][$i]['linkUrl'] == ''){
-            unset($collectiony['relatedLinks'][$i]);
+            unset($collection['relatedLinks'][$i]);
+
          }
       }
 
