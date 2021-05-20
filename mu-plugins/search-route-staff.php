@@ -53,9 +53,10 @@
                case "行政人員":
                   $groupID = 4; break;
             }
-   
-            array_push($results[$groupID]['list'], array(
+
+            $collection = array(
                'id' => get_the_ID(),
+               'sort_wright'  => get_field('sort_weight'),
                'teachername' => get_field('teachername'),
                'englishname' => get_field('englishname'),
                'title' => get_field('title'),
@@ -67,9 +68,25 @@
                'skill' => get_field('skill'),
                'email' => get_field('email'),
                'imgurl' => get_field('imgurl')['url'],
-            ));
+            );
+
+            array_push($results[$groupID]['list'], $collection);
+
+            //增加教師後，依據sort_wright排序
+            for($i = 0; $i < count($results[$groupID]['list']); $i++){
+               $top_sort_index = $i;
+               $t = array();
+               for($j = $i + 1; $j < count($results[$groupID]['list']); $j++){
+                  if($results[$groupID]['list'][$j]['sort_wright'] > $results[$groupID]['list'][$top_sort_index]['sort_wright']){
+                     $top_sort_index = $j;
+                  }
+               }
+               $t = $results[$groupID]['list'][$top_sort_index];
+               $results[$groupID]['list'][$top_sort_index] = $results[$groupID]['list'][$i];
+               $results[$groupID]['list'][$i] = $t;
+            }
          }
-   
+
          return $results;
       }
       //單獨一筆老師資料
