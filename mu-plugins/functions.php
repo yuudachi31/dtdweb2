@@ -3,8 +3,8 @@
     require ('search-route-post.php');
     require ('search-route-banner.php');
     require ('search-route-staff.php');
-    require ('search-route-graduateProjects.php');
-    require ('search-route-classProjects.php');
+    require ('search-route-graduateProject.php');
+    require ('search-route-classProject.php');
     require ('search-route-cooperateProject.php');
     
     function dtd_custom_route() {
@@ -20,13 +20,13 @@
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'postHomePageSearchResults'
         ));
-        register_rest_route('dtd/v1', 'post/honorPage', array(
+        register_rest_route('dtd/v1', 'post/achievementsPage', array(
             'methods' => WP_REST_SERVER::READABLE,
-            'callback' => 'postHonorPageSearchResults'
+            'callback' => 'postAchievementsPageSearchResults'
         ));
-        register_rest_route('dtd/v1', 'post/announcementPage', array(
+        register_rest_route('dtd/v1', 'post/announcementsPage', array(
             'methods' => WP_REST_SERVER::READABLE,
-            'callback' => 'postAnnouncementPageSearchResults'
+            'callback' => 'postAnnouncementsPageSearchResults'
         ));
         register_rest_route('dtd/v1', 'staff', array(
             'methods' => WP_REST_SERVER::READABLE,
