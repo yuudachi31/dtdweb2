@@ -63,3 +63,13 @@
     color: #ed1313;
   }
 }
+
+@media (max-width: $dtd-media-phone) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    .content_img {
+      margin-right: 0;
+    }
+  }
+}
