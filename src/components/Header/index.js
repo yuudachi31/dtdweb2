@@ -118,7 +118,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to={path.honors}
+                    to={path.achievements}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -295,7 +295,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to={path.honors} className={styles.nav_link}>
+              <Link to={path.achievements} className={styles.nav_link}>
                 師生榮譽榜
               </Link>
             </li>
