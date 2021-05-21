@@ -25,7 +25,7 @@ const Announcements = () => {
           <PageTitle title="系務公告" />
           <News pageStyle="announcementsPage" />
         </div>
-        <PageNumber pageNumber="1,2,3" />
+        <PageNumber pageCount="3" />
         <Footer />
       </div>
     </Fragment>

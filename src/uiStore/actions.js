@@ -14,8 +14,8 @@ export const clickHamburgerLink = (dispatch) => {
 };
 
 export const setPageNumberState = (dispatch, options) => {
-  const { numberCount } = options;
-  dispatch({ type: constants.SET_PAGENUMBERSTATE, payload: numberCount });
+  const { pageCount } = options;
+  dispatch({ type: constants.SET_PAGENUMBERSTATE, payload: pageCount });
 };
 
 export const clickPageNumber = (dispatch, options) => {
@@ -24,6 +24,6 @@ export const clickPageNumber = (dispatch, options) => {
 };
 
 export const clickPageChevron = (dispatch, options) => {
-  const { clickState } = options;
-  dispatch({ type: constants.CLICK_PAGECHEVRON, payload: clickState });
+  const { clickChevron } = options;
+  dispatch({ type: constants.CLICK_PAGECHEVRON, payload: clickChevron });
 };

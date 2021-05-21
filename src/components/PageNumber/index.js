@@ -17,74 +17,71 @@ import {
 
 const PageNumber = (porp) => {
   const {
-    state: { pageNumber },
+    state: { pageNumberState },
     dispatch,
   } = useContext(UIStoreContext);
 
-  const pageNumberNames = porp.pageNumber.split(',');
-
   useEffect(() => {
     setPageNumberState(dispatch, {
-      numberCount: pageNumberNames.length,
+      pageCount: Number(porp.pageCount),
     });
   }, []);
 
+  const pageNumberArr = [];
+  for (var i = 1; i <= porp.pageCount; i++) {
+    pageNumberArr.push(i);
+  }
+
   return (
-    <>
-      {pageNumberNames && pageNumber.length != 0 ? (
-        <div className={styles.container}>
-          <div className={styles.pageNumber_box}>
-            <button
-              className={
-                pageNumber[0]
-                  ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
-                  : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
-              }
-              onClick={
-                pageNumber[0]
-                  ? () => {}
-                  : () => clickPageChevron(dispatch, { clickState: -1 })
-              }
-            >
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-            {pageNumberNames.map((pageNumberName, pageNumberIndex) => (
-              <button
-                key={pageNumberName}
-                className={
-                  pageNumber[pageNumberIndex]
-                    ? `${styles.pageNumber_number} ${styles.pageNumber_number_selected}`
-                    : `${styles.pageNumber_number} ${styles.pageNumber_hover}`
-                }
-                onClick={() => {
-                  clickPageNumber(dispatch, {
-                    clickNumber: pageNumberIndex,
-                  });
-                }}
-              >
-                {pageNumberName}
-              </button>
-            ))}
-            <button
-              className={
-                pageNumber[pageNumber.length - 1]
-                  ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
-                  : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
-              }
-              onClick={
-                pageNumber[pageNumber.length - 1]
-                  ? () => {}
-                  : () => clickPageChevron(dispatch, { clickState: 1 })
-              }
-            >
-              <FontAwesomeIcon icon={faChevronRight} />
-            </button>
-          </div>
-        </div>
-      ) : (
-        <div className={styles.container}></div>
-      )}
-    </>
+    <div className={styles.container}>
+      <div className={styles.pageNumber_box}>
+        <button
+          className={
+            pageNumberState[0]
+              ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
+              : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
+          }
+          onClick={
+            pageNumberState[0]
+              ? () => {}
+              : () => clickPageChevron(dispatch, { clickChevron: -1 })
+          }
+        >
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        {pageNumberArr.map((pageNumber) => (
+          <button
+            key={pageNumber}
+            className={
+              pageNumberState[pageNumber - 1]
+                ? `${styles.pageNumber_number} ${styles.pageNumber_number_selected}`
+                : `${styles.pageNumber_number} ${styles.pageNumber_hover}`
+            }
+            onClick={() => {
+              clickPageNumber(dispatch, {
+                clickNumber: pageNumber,
+              });
+            }}
+          >
+            {pageNumber}
+          </button>
+        ))}
+        <button
+          className={
+            pageNumberState[pageNumberState.length - 1]
+              ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
+              : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
+          }
+          onClick={
+            pageNumberState[pageNumberState.length - 1]
+              ? () => {}
+              : () => clickPageChevron(dispatch, { clickChevron: 1 })
+          }
+        >
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+      </div>
+    </div>
   );
 };
 

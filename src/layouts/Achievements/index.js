@@ -25,7 +25,7 @@ const Achievements = () => {
           <PageTitle title="師生榮譽榜" />
           <News pageStyle="achievementsPage" />
         </div>
-        <PageNumber pageNumber="1,2,3" />
+        <PageNumber pageCount="3" />
         <Footer />
       </div>
     </Fragment>

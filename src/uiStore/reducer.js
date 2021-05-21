@@ -8,7 +8,7 @@ export const UIStoreContext = createContext();
 const initialState = {
   hamburgerMenu: false,
   hamburgerTitle: [false, false, false, false, false],
-  pageNumber: [],
+  pageNumberState: [],
   pageSeletedNumber: 1,
 };
 const reducer = (state, action) => {
@@ -44,56 +44,56 @@ const reducer = (state, action) => {
     }
 
     case constants.SET_PAGENUMBERSTATE: {
-      const pageNumberState = [];
-      for (let i = 0; i < action.payload; i++) {
-        if (i == 0) {
-          pageNumberState.push(true);
+      const pageNumberStateArr = [];
+      for (let i = 1; i <= action.payload; i++) {
+        if (i == 1) {
+          pageNumberStateArr.push(true);
         } else {
-          pageNumberState.push(false);
+          pageNumberStateArr.push(false);
         }
       }
       return {
         ...state,
-        pageNumber: pageNumberState,
+        pageNumberState: pageNumberStateArr,
         pageSeletedNumber: 1,
       };
     }
 
     case constants.CLICK_PAGENUMBER: {
-      const pageNumberState = [];
-      for (let i = 0; i < state.pageNumber.length; i++) {
+      const pageNumberStateArr = [];
+      for (let i = 1; i <= state.pageNumberState.length; i++) {
         if (i == action.payload) {
-          pageNumberState.push(true);
+          pageNumberStateArr.push(true);
         } else {
-          pageNumberState.push(false);
+          pageNumberStateArr.push(false);
         }
       }
       return {
         ...state,
-        pageNumber: pageNumberState,
-        pageSeletedNumber: action.payload + 1,
+        pageNumberState: pageNumberStateArr,
+        pageSeletedNumber: action.payload,
       };
     }
 
     case constants.CLICK_PAGECHEVRON: {
-      const pageNumberState = [];
-      var selectedNumber = 0;
-      for (let i = 0; i < state.pageNumber.length; i++) {
-        if (state.pageNumber[i] == true) {
+      const pageNumberStateArr = [];
+      var selectedNumber = 1;
+      for (let i = 1; i <= state.pageNumberState.length; i++) {
+        if (state.pageNumberState[i - 1] == true) {
           selectedNumber = i + action.payload;
         }
       }
-      for (let i = 0; i < state.pageNumber.length; i++) {
+      for (let i = 1; i <= state.pageNumberState.length; i++) {
         if (i == selectedNumber) {
-          pageNumberState.push(true);
+          pageNumberStateArr.push(true);
         } else {
-          pageNumberState.push(false);
+          pageNumberStateArr.push(false);
         }
       }
       return {
         ...state,
-        pageNumber: pageNumberState,
-        pageSeletedNumber: selectedNumber + 1,
+        pageNumberState: pageNumberStateArr,
+        pageSeletedNumber: selectedNumber,
       };
     }
   }
