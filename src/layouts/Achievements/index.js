@@ -10,7 +10,7 @@ import PageNumber from '../../components/PageNumber';
 
 import styles from './styles.module.scss';
 
-const Honors = () => {
+const Achievements = () => {
   return (
     <Fragment>
       <Helmet>
@@ -23,7 +23,7 @@ const Honors = () => {
         <Banner />
         <div className={styles.board}>
           <PageTitle title="師生榮譽榜" />
-          <News pageStyle="honorPage" />
+          <News pageStyle="achievementsPage" />
         </div>
         <PageNumber pageNumber="1,2,3" />
         <Footer />
@@ -32,4 +32,4 @@ const Honors = () => {
   );
 };
 
-export default Honors;
+export default Achievements;

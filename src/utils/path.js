@@ -7,7 +7,7 @@ export default {
   future: '/future',
   // 最新消息
   announcements: '/announcements',
-  honors: '/honors',
+  achievements: '/achievements',
   // 招生資訊
   college: '/college',
   master: '/master',

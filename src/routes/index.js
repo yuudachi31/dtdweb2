@@ -16,7 +16,7 @@ import ActivitiesPage from '../layouts/Activities';
 import FuturePage from '../layouts/Future';
 // 最新消息
 import AnnouncementsPage from '../layouts/Announcements';
-import HonorsPage from '../layouts/Honors';
+import AchievementsPage from '../layouts/Achievements';
 // 招生資訊
 import CollegePage from '../layouts/College';
 import MasterPage from '../layouts/Master';
@@ -50,7 +50,11 @@ const Routes = () => {
               path={path.announcements}
               component={AnnouncementsPage}
             />
-            <Route exact path={path.honors} component={HonorsPage} />
+            <Route
+              exact
+              path={path.achievements}
+              component={AchievementsPage}
+            />
             {/* 招生資訊 */}
             <Route exact path={path.college} component={CollegePage} />
             <Route exact path={path.master} component={MasterPage} />
