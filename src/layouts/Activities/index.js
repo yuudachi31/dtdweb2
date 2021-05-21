@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
+import ActivitiesContent from '../../components/ActivitiesContent';
 
 import styles from './styles.module.scss';
 
@@ -21,6 +22,7 @@ const Activities = () => {
         <Banner />
         <div className={styles.activityContainer}>
           <PageTitle title="系上活動" />
+          <ActivitiesContent />
         </div>
         <Footer />
       </div>
