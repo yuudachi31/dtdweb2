@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import path from '../../utils/path';
 
+//圖片匯入
+import logo from '../../assets/images/header/DTD.png';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -20,7 +23,7 @@ const Header = () => {
   return (
     <div className={styles.container}>
       <Link to={path.home}>
-        <img className={styles.logo} src="assets/images/header/DTD.png"></img>
+        <img className={styles.logo} src={logo}></img>
       </Link>
       <div className={styles.nav}>
         {/* hamburgerMenu */}
