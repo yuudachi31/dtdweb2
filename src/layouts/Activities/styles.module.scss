@@ -6,10 +6,37 @@
 .container {
   width: 100vw;
   background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
 }
 .activityContainer {
   min-height: 100vh;
   margin: 0 10%;
+  margin-bottom: $dtd-index-main-spacing;
+}
+a:hover {
+  text-decoration: none;
+}
+.activitiesBox {
+  margin-bottom: $dtd-secondary-spacing;
+}
+.activitiesBox_img {
+  width: 100%;
+  height: 250px;
+}
+.activitiesBox_img__size {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.activitiesBoxBottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+}
+.activitiesBoxBottom_more {
+  color: #85b6dd;
 }
 @media (max-width: $dtd-media-desktop) {
   .activityContainer {

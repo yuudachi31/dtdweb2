@@ -1,0 +1,26 @@
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/media.scss';
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: $dtd-main-spcing;
+  margin-top: 20px;
+  .navItem {
+    font-size: $dtd-p-size;
+    text-align: center;
+    cursor: pointer;
+    color: $dtd-text-color;
+    padding: 10px 15px;
+    margin: 0 10px;
+    &:hover {
+      border-bottom: 2px solid #85b6dd;
+    }
+    &.navItem_active {
+      border-bottom: 2px solid $dtd-main-color;
+    }
+  }
+}

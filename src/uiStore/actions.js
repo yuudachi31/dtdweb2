@@ -27,3 +27,17 @@ export const clickPageChevron = (dispatch, options) => {
   const { clickChevron } = options;
   dispatch({ type: constants.CLICK_PAGECHEVRON, payload: clickChevron });
 };
+
+export const setPageContent = (dispatch, activitiesCategory) => {
+  dispatch({
+    type: constants.SET_PAGE_CONTENT,
+    payload: activitiesCategory,
+  });
+};
+
+export const setActiveNavItem = (dispatch, activeItem) => {
+  dispatch({
+    type: constants.SET_NAVBAR_ACTIVEITEM,
+    payload: activeItem,
+  });
+};

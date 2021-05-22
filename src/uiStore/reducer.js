@@ -1,7 +1,7 @@
 import { createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-
 import constants from './actionTypes';
+import activitiesCategory from '../assets/json/DTDActivities.json';
 
 export const UIStoreContext = createContext();
 
@@ -10,6 +10,12 @@ const initialState = {
   hamburgerTitle: [false, false, false, false, false],
   pageNumberState: [],
   pageSeletedNumber: 1,
+  activitiesPage: {
+    activitiesCategory,
+  },
+  activitiesNavBar: {
+    activeItem: '/activities',
+  },
 };
 const reducer = (state, action) => {
   switch (action.type) {
@@ -96,6 +102,22 @@ const reducer = (state, action) => {
         pageSeletedNumber: selectedNumber,
       };
     }
+    case constants.SET_PAGE_CONTENT:
+      return {
+        ...state,
+        activitiesPage: {
+          activitiesCategory: action.payload,
+        },
+      };
+    case constants.SET_NAVBAR_ACTIVEITEM:
+      return {
+        ...state,
+        activitiesNavBar: {
+          activeItem: action.payload,
+        },
+      };
+    default:
+      return state;
   }
 };
 

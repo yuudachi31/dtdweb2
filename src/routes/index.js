@@ -43,6 +43,11 @@ const Routes = () => {
               component={StaffDetailPage}
             />
             <Route exact path={path.activities} component={ActivitiesPage} />
+            <Route
+              exact
+              path={`${path.activities}/:category`}
+              component={ActivitiesPage}
+            />
             <Route exact path={path.future} component={FuturePage} />
             {/* 最新消息 */}
             <Route
