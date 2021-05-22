@@ -37,7 +37,11 @@ const News = (prop) => {
         <div className={styles.container}>
           <div className={styles.new}>
             {news.map((newContent, newIndex) => (
-              <Link to={`/${page}/${newIndex}`} key={newContent.id}>
+              <Link
+                to={`/${page}/${newIndex}`}
+                key={newContent.id}
+                className={styles.new_link}
+              >
                 <div className={styles.new_box}>
                   <div className={styles.new_title}>{newContent.title}</div>
                   <div className={styles.new_content}>
