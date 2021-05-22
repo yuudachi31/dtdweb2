@@ -16,7 +16,9 @@ import ActivitiesPage from '../layouts/Activities';
 import FuturePage from '../layouts/Future';
 // 最新消息
 import AnnouncementsPage from '../layouts/Announcements';
+import AnnouncementDetailPage from '../layouts/AnnouncementDetail';
 import AchievementsPage from '../layouts/Achievements';
+import AchievementDetailPage from '../layouts/AchievementDetail';
 // 招生資訊
 import CollegePage from '../layouts/College';
 import MasterPage from '../layouts/Master';
@@ -52,9 +54,19 @@ const Routes = () => {
             />
             <Route
               exact
+              path={`${path.announcements}/:newIndex`}
+              component={AnnouncementDetailPage}
+            ></Route>
+            <Route
+              exact
               path={path.achievements}
               component={AchievementsPage}
             />
+            <Route
+              exact
+              path={`${path.achievements}/:newIndex`}
+              component={AchievementDetailPage}
+            ></Route>
             {/* 招生資訊 */}
             <Route exact path={path.college} component={CollegePage} />
             <Route exact path={path.master} component={MasterPage} />
