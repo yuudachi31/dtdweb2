@@ -6,10 +6,7 @@ import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Navbar from '../../components/ActivitiesNavbar';
-// import ActivitiesContent from '../../components/ActivitiesContent';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-// import DTDActivities from '../../assets/json/DTDActivities.json';
+import ActivitiesContent from '../../components/ActivitiesContent';
 
 import { UIStoreContext } from '../../uiStore/reducer';
 
@@ -35,32 +32,7 @@ const Activities = () => {
         <div className={styles.activityContainer}>
           <PageTitle title="系上活動" />
           <Navbar />
-          <Row>
-            {activitiesCategory.map((activities) => (
-              <Col
-                lg={4}
-                sm={6}
-                xs={12}
-                className={styles.activitiesBox}
-                key={activities.id}
-              >
-                <div className={styles.activitiesBox_img}>
-                  <img
-                    src={activities.photo}
-                    className={styles.activitiesBox_img__size}
-                  />
-                </div>
-                <div className={styles.activitiesBoxBottom}>
-                  <div className={styles.activitiesBoxBottom_title}>
-                    {activities.title}
-                  </div>
-                  <div className={styles.activitiesBoxBottom_more}>
-                    &gt; More
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
+          <ActivitiesContent activitiesCategory={activitiesCategory} />
         </div>
         <Footer />
       </div>
