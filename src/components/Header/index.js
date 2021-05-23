@@ -191,7 +191,7 @@ const Header = () => {
               >
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.graduationWorks}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -209,7 +209,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.cooperationWorks}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -336,7 +336,7 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.graduationWorks} className={styles.nav_link}>
                 畢業專題
               </Link>
             </li>
@@ -346,7 +346,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.cooperationWorks} className={styles.nav_link}>
                 合作成果
               </Link>
             </li>
