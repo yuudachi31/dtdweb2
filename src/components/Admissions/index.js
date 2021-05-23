@@ -34,7 +34,7 @@ const Admissions = (prop) => {
                   {admissiondetail.info_departmentName}
                 </div>
               </div>
-              <div className={styles.info_insideBox_marginBottom}>
+              <div className={styles.info_insideBox}>
                 <div className={styles.info_rowBox}>
                   <div
                     className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
