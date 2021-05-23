@@ -13,6 +13,7 @@ import IntroPage from '../layouts/Intro';
 import StaffPage from '../layouts/Staff';
 import StaffDetailPage from '../layouts/StaffDetail';
 import ActivitiesPage from '../layouts/Activities';
+import ActivityDetailPage from '../layouts/ActivityDetail';
 import FuturePage from '../layouts/Future';
 // 最新消息
 import AnnouncementsPage from '../layouts/Announcements';
@@ -49,6 +50,16 @@ const Routes = () => {
               component={StaffDetailPage}
             />
             <Route exact path={path.activities} component={ActivitiesPage} />
+            <Route
+              exact
+              path={`${path.activities}/:category`}
+              component={ActivitiesPage}
+            />
+            <Route
+              exact
+              path={`${path.activities}/:category/:activityId`}
+              component={ActivityDetailPage}
+            />
             <Route exact path={path.future} component={FuturePage} />
             {/* 最新消息 */}
             <Route

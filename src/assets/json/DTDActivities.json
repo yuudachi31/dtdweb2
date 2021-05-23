@@ -1,0 +1,30 @@
+[
+    {
+        "id":"djisl3",
+        "category":"DTDActivities",
+        "title":"窮嘶盃",
+        "photo":"/assets/images/activities/poor.jpg",
+        "description":"窮嘶盃為本系一年一度舉辦的盛大活動，系上每年都會提供豐富的獎金鼓勵同學參加，不管是歌唱或各式才藝，只要準備好了就來吧！這是展現自己魅力的最佳舞台。"
+    },
+    {
+        "id":"sjoie9",
+        "category":"DTDActivities",
+        "title":"聖誕週-交換禮物",
+        "photo":"/assets/images/activities/eyepatch.jpg",
+        "description":"交換禮物為系上的傳統活動，為了維持系上優良傳統，每年都會有同學使出渾身解數準備廢到爆的交換禮物。"
+    },
+    {
+        "id":"9elhse",
+        "category":"DTDActivities",
+        "title":"聖誕週-數位大亂鬥",
+        "photo":"/assets/images/activities/fight.jpg",
+        "description":"本系一定要有的電競比賽，為了刺激參賽者的求勝慾望，系學會準備了豐富獎金，現場除了會提供超大螢幕給觀賽者外，還會舉辦線上直播，讓系上全體學生能一同欣賞。"
+    },
+    {
+        "id":"bjo03a",
+        "category":"DTDActivities",
+        "title":"窮嘶盃",
+        "photo":"/assets/images/activities/poor.jpg",
+        "description":"窮嘶盃為本系一年一度舉辦的盛大活動，系上每年都會提供豐富的獎金鼓勵同學參加，不管是歌唱或各式才藝，只要準備好了就來吧！這是展現自己魅力的最佳舞台。"
+    }
+]

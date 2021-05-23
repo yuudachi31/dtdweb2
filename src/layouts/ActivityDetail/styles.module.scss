@@ -1,0 +1,97 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  width: 100vw;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
+}
+.activityDetailContainer {
+  min-height: calc(100vh - 90px - 250px);
+  margin: 0 10%;
+  margin-bottom: $dtd-index-main-spacing;
+}
+a:hover {
+  text-decoration: none;
+}
+.titileBar {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-top: $dtd-secondary-spacing;
+  margin-bottom: $dtd-section-spacing;
+  .titileBar_img {
+    width: 30px;
+  }
+  .titileBar_img__size {
+    width: 100%;
+  }
+  .titileBar_title {
+    height: 100%;
+    font-size: $dtd-h1-size;
+    padding-left: $dtd-secondary-spacing;
+    border-left: 1px solid $dtd-hint-text-color;
+    margin-left: 24px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.activityContent {
+  display: flex;
+  .activityContent_img {
+    width: 360px;
+    .activityContent_img__size {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+  .descriptionSection {
+    width: calc(100% - 360px);
+    padding: 23px 54px;
+    font-size: $dtd-p-size;
+    color: $dtd-submenu-text-color;
+    .descriptionSection_title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: $dtd-media-desktop) {
+  .activityDetailContainer {
+    margin: 0 4.8% $dtd-secondary-spacing 4.8%;
+  }
+  .activityContent {
+    flex-direction: column;
+    align-items: center;
+    .activityContent_img {
+      margin-bottom: 24px;
+      width: 80%;
+    }
+    .descriptionSection {
+      width: 100%;
+      padding: 0 15.2%;
+    }
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .activityDetailContainer {
+    margin: 0 6% $dtd-secondary-spacing 6%;
+  }
+  .activityContent {
+    .descriptionSection {
+      padding: 0;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .activityDetailContainer {
+    margin: 0 20px $dtd-secondary-spacing 20px;
+  }
+}

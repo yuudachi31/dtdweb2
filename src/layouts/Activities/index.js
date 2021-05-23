@@ -1,14 +1,39 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-
+import styles from './styles.module.scss';
+/*component*/
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
+import Navbar from '../../components/ActivitiesNavbar';
+import ActivitiesContent from '../../components/ActivitiesContent';
+/*uiStore*/
+import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
+import { UIStoreContext } from '../../uiStore/reducer';
 
-import styles from './styles.module.scss';
+import path from '../../utils/path';
+import DTDActivities from '../../assets/json/DTDActivities.json';
+import * as Scroll from 'react-scroll';
 
 const Activities = () => {
+  const {
+    state: {
+      activitiesPage: { activitiesCategory },
+    },
+    dispatch,
+  } = useContext(UIStoreContext);
+
+  const geturlid = window.location.href;
+  useEffect(() => {
+    if (geturlid.search(/#/i) !== -1) {
+      Scroll.scroller.scrollTo('content');
+    } else {
+      setPageContent(dispatch, DTDActivities);
+      setActiveNavItem(dispatch, path.activities);
+    }
+  }, []);
+
   return (
     <Fragment>
       <Helmet>
@@ -19,8 +44,10 @@ const Activities = () => {
       <div className={styles.container}>
         <Header />
         <Banner />
-        <div className={styles.activityContainer}>
+        <div className={styles.activityContainer} id="content">
           <PageTitle title="系上活動" />
+          <Navbar />
+          <ActivitiesContent activitiesCategory={activitiesCategory} />
         </div>
         <Footer />
       </div>

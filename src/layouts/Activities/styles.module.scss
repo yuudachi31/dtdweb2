@@ -6,10 +6,15 @@
 .container {
   width: 100vw;
   background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
 }
 .activityContainer {
   min-height: 100vh;
   margin: 0 10vw;
+  margin-bottom: $dtd-index-main-spacing;
+}
+a:hover {
+  text-decoration: none;
 }
 @media (max-width: $dtd-media-desktop) {
   .activityContainer {
