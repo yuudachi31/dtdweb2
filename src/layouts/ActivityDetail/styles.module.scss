@@ -2,6 +2,7 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
 
 .container {
   width: 100vw;
@@ -10,7 +11,7 @@
 }
 .activityDetailContainer {
   min-height: calc(100vh - 90px - 250px);
-  margin: 0 10%;
+  margin: 0 $dtd-margin-desktop;
   margin-bottom: $dtd-index-main-spacing;
 }
 a:hover {
@@ -62,9 +63,9 @@ a:hover {
   }
 }
 
-@media (max-width: $dtd-media-desktop) {
+@media (max-width: $dtd-media-tablet) {
   .activityDetailContainer {
-    margin: 0 4.8% $dtd-secondary-spacing 4.8%;
+    margin: 0 $dtd-margin-tablet $dtd-secondary-spacing;
   }
   .activityContent {
     flex-direction: column;
@@ -81,7 +82,7 @@ a:hover {
 }
 @media (max-width: $dtd-media-phone) {
   .activityDetailContainer {
-    margin: 0 6% $dtd-secondary-spacing 6%;
+    margin: 0 $dtd-margin-phone $dtd-secondary-spacing;
   }
   .activityContent {
     .descriptionSection {
@@ -90,8 +91,8 @@ a:hover {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: $dtd-media-phone-small) {
   .activityDetailContainer {
-    margin: 0 20px $dtd-secondary-spacing 20px;
+    margin: 0 $dtd-margin-phone-small $dtd-secondary-spacing;
   }
 }
