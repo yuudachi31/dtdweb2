@@ -10,8 +10,9 @@
 }
 
 .staffDetail {
-  margin: 12px 10vw 0;
-  padding-top: $dtd-main-spcing;
+  margin: 0 10vw;
+  padding-top: 30px;
+  //padding-top: $dtd-main-spcing;
   padding-bottom: 142px;
 }
 @media (max-width: $dtd-media-tablet) {
@@ -125,6 +126,7 @@
   font-size: $dtd-p-size;
   & div {
     margin: 10px 0;
+    color: $dtd-submenu-text-color;
   }
 }
 .contactDetail,

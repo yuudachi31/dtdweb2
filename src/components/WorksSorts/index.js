@@ -1,20 +1,26 @@
 import { useEffect, useState } from 'react';
 import styles from './styles.module.scss';
 
-const PageTitle = (props) => {
+const SortsList = (props) => {
   const [sortslist, setsortslist] = useState({});
   useEffect(() => {
     setsortslist(props);
-  }, []);
+  }, [sortslist]);
   return (
-    <div className={styles.container}>
-      {sortslist.sortsList.map((sort) => (
-        <div className={styles.title} key={sort}>
-          {sort}
+    <>
+      {sortslist.sortsList !== undefined ? (
+        <div className={styles.container}>
+          {sortslist.sortsList.map((sort) => (
+            <button className={styles.sorttitle} key={sort}>
+              {sort}
+            </button>
+          ))}
         </div>
-      ))}
-    </div>
+      ) : (
+        <div className={styles.container}></div>
+      )}
+    </>
   );
 };
 
-export default PageTitle;
+export default SortsList;

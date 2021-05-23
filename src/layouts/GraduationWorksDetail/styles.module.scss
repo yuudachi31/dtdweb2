@@ -2,6 +2,11 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
 .container {
   width: 100vw;
   min-height: 100vh;
@@ -9,30 +14,30 @@
   color: $dtd-text-color;
 }
 
-.staffDetail {
-  margin: 12px 10vw 0;
-  padding-top: $dtd-main-spcing;
-  padding-bottom: 142px;
+.gwDetail {
+  margin: 0 10vw;
+  padding-top: 30px;
+  //padding-top: $dtd-main-spcing;
+  padding-bottom: $dtd-index-main-spacing;
 }
 @media (max-width: $dtd-media-tablet) {
-  .staffDetail {
+  .gwDetail {
     margin: 0 4.8vw;
     padding-top: 27px;
-    padding-bottom: 80px;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .staffDetail {
+  .gwDetail {
     margin: 0 7vw 0;
   }
 }
 
 //名稱與返回鍵
-.staffDetail_titleBar {
+.gwDetail_titleBar {
   align-items: center;
   height: 65px;
 }
-.staffDetail_titleBar__backBtn {
+.gwDetail_titleBar__backBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +47,7 @@
     height: 30px;
   }
 }
-.staffDetail_titleBar__name {
+.gwDetail_titleBar__name {
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   height: 48px;
   display: flex;
@@ -51,89 +56,96 @@
   font-size: $dtd-h1-size;
 }
 
-//教師資訊
-.staffDetail_contentBar {
-  margin-top: $dtd-section-spacing;
+//作品資訊
+.gwDetail_contentBar {
+  margin-top: 40px;
+  margin-left: 3vw;
+  margin-right: 0;
 }
-@media (max-width: $dtd-media-desktop) {
-  .staffDetail_contentBar {
-    margin-top: 40px;
-  }
-}
-//教師人像
-.staffDetail_contentBar__box {
+//作品圖片
+.gwDetail_contentBar__img {
   display: flex;
-  justify-content: center;
-}
-.staffDetail_contentBar__img {
-  border: 8px solid #f8f8f8;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  height: 240px;
+  // justify-content: center;
+  height: auto;
   width: 100%;
-  background-color: #fff;
-  align-items: center;
+  align-items: flex-start;
   & img {
-    width: 210px;
+    width: 100%;
     height: auto;
+    border-radius: 5px;
   }
 }
-//教師資料內容
-.staffDetail_contentBar__content {
+//作品資料內容
+.gwDetail_contentBar__content {
   height: 100%;
+  padding-left: 39px;
 }
 @media (max-width: $dtd-media-tablet) {
-  .staffDetail_contentBar__content {
+  .gwDetail_contentBar {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .gwDetail_contentBar__content {
     padding: 24px 15.2% 0 15.2%;
   }
-  .staffDetail_contentBar__img {
-    height: 240px;
-    width: 240px;
+  .gwDetail_contentBar__img {
+    padding: 0 15.2%;
+    height: auto;
+    justify-content: center;
+    & img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .staffDetail_contentBar__content {
+  .gwDetail_contentBar {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .gwDetail_contentBar__content {
     padding: 24px 15px 0 15px;
   }
-}
-//聯絡資訊
-.contactBar {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.contactBar_contactBox {
-  display: flex;
-  align-items: center;
-  height: 30px;
-  & img {
-    margin-right: 8px;
-    width: 16px;
-    height: 16px;
+  .gwDetail_contentBar__img {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
-.contactBar_contactBox__hint {
-  color: $dtd-main-color;
-}
-.contactLine {
-  height: 1px;
-  background-color: $dtd-main-color;
-}
+
 //詳細資訊
-.contactDetail {
-  margin-top: 20px;
+.contentDetail {
+  margin-top: 14px;
   font-size: $dtd-p-size;
   & div {
-    margin: 10px 0;
+    // margin: 10px 0;
+    color: $dtd-submenu-text-color;
+  }
+  & div:last-child {
+    margin-top: 16px;
   }
 }
-.contactDetail,
-.contactBar_contactBox {
+.contentDetail_intro {
+  white-space: pre-wrap;
+  margin-bottom: $dtd-section-spacing;
+  line-height: 30px;
+  text-align: justify;
+}
+
+//相關連結
+.contentLine {
+  height: 1px;
+  background-color: $dtd-main-color;
+  margin-top: $dtd-section-spacing;
+}
+.relatedBar {
+  margin-top: 42px;
+  color: $dtd-submenu-text-color;
   & a {
+    margin-left: 16px;
     color: $dtd-main-color;
     &:hover {
       color: $dtd-main-color;
-      text-decoration: none;
       box-shadow: 0 1px $dtd-main-color;
     }
   }

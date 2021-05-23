@@ -8,6 +8,9 @@ import {
   SET_HONORS,
   SET_STAFF,
   SET_STAFF_DETAIL,
+  SET_GRADUATONWORKS,
+  SET_GRADUATONWORKS_SORT,
+  SET_GRADUATONWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
@@ -22,6 +25,9 @@ const initialState = {
   honorDetail: {},
   staff: [],
   staffDetail: {},
+  graduationWorks: [],
+  graduationWorksSort: [],
+  graduationWorksDetail: {},
   requestdata: { loading: false, error: null },
 };
 
@@ -56,6 +62,21 @@ function reducer(state, action) {
       return {
         ...state,
         staffDetail: action.payload,
+      };
+    case SET_GRADUATONWORKS:
+      return {
+        ...state,
+        graduationWorks: action.payload,
+      };
+    case SET_GRADUATONWORKS_SORT:
+      return {
+        ...state,
+        graduationWorksSort: action.payload,
+      };
+    case SET_GRADUATONWORKS_DETAIL:
+      return {
+        ...state,
+        graduationWorksDetail: action.payload,
       };
     case BEGIN_DATA_REQUEST:
       return {
