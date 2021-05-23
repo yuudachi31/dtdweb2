@@ -36,9 +36,6 @@
   display: flex;
   width: 100%;
 }
-.info_department {
-  margin-right: 144px;
-}
 .info_img {
   height: 160px;
   width: 160px;
@@ -47,19 +44,22 @@
   font-size: $dtd-h2-size;
   margin-top: $dtd-secondary-spacing;
 }
-.info_insideBox_marginBottom {
+.info_insideBox {
+  width: calc(100% - 304px);
+  margin-left: 144px;
   margin-bottom: -$dtd-p-size;
 }
 .info_rowBox {
+  width: 100%;
   display: flex;
   margin-bottom: $dtd-p-size;
 }
 .info_contentTitle {
   width: 112px;
-  margin-right: 4.2%;
 }
 .info_contentData {
-  width: calc(100% - 144px);
+  width: calc(100% - 112px);
+  padding-left: 6.1%;
 }
 .info_documentURL {
   color: $dtd-main-color;
@@ -131,11 +131,12 @@
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .info_department {
-    margin-right: $dtd-staff-rwd-spacing;
+  .info_insideBox {
+    width: calc(88.5% - 160px);
+    margin-left: 11.5%;
   }
-  .info_contentTitle {
-    margin-right: 5.3%;
+  .info_contentData {
+    padding-left: 8.3%;
   }
 
   .regulations_box {
@@ -164,12 +165,15 @@
     width: 100%;
   }
   .info_department {
-    margin-right: 0;
     text-align: center;
     margin-bottom: $dtd-main-spcing;
   }
-  .info_contentTitle {
-    margin-right: 6.3%;
+  .info_insideBox {
+    width: 100%;
+    margin: 0;
+  }
+  .info_contentData {
+    padding-left: 6.7%;
   }
   // .info_insideBox_marginBottom {
   //   margin-bottom: 0;
