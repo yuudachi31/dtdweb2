@@ -36,6 +36,10 @@
   display: flex;
   width: 100%;
 }
+.info_department {
+  text-align: center;
+  width: 206px;
+}
 .info_img {
   height: 160px;
   width: 160px;
@@ -46,7 +50,7 @@
 }
 .info_insideBox {
   width: calc(100% - 304px);
-  margin-left: 144px;
+  margin-left: 113px;
   margin-bottom: -$dtd-p-size;
 }
 .info_rowBox {
@@ -132,8 +136,8 @@
 
 @media (max-width: $dtd-media-tablet) {
   .info_insideBox {
-    width: calc(88.5% - 160px);
-    margin-left: 11.5%;
+    width: calc(92.2% - 206px);
+    margin-left: 7.8%;
   }
   .info_contentData {
     padding-left: 8.3%;
@@ -156,16 +160,16 @@
   }
 }
 
-@media (max-width: $dtd-media-phone) {
+@media (max-width: 767px) {
   .info_bar {
-    padding: 0 16px;
+    padding: 0 32px;
   }
   .info_contentBox {
     display: block;
     width: 100%;
   }
   .info_department {
-    text-align: center;
+    width: 100%;
     margin-bottom: $dtd-main-spcing;
   }
   .info_insideBox {
@@ -173,7 +177,7 @@
     margin: 0;
   }
   .info_contentData {
-    padding-left: 6.7%;
+    padding-left: 7%;
   }
   // .info_insideBox_marginBottom {
   //   margin-bottom: 0;
@@ -203,5 +207,30 @@
   .regulations_documentBox {
     margin-right: 0;
     margin-bottom: 32px;
+  }
+}
+
+@media (max-width: $dtd-media-phone) {
+  .info_bar {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 320px) {
+  .info_insideBox_marginBottom {
+    margin-bottom: 0;
+  }
+  .info_rowBox {
+    display: block;
+    width: 100%;
+    margin-bottom: $dtd-secondary-spacing;
+  }
+  .info_contentTitle {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: $dtd-p-size;
+  }
+  .info_contentData {
+    width: 100%;
   }
 }
