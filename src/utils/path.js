@@ -6,4 +6,5 @@ export default {
   rules: '/rules',
   downloads: '/downloads',
   graduationWorks: '/graduationWorks',
+  cooperationWorks: '/cooperationWorks',
 };

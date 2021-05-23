@@ -16,6 +16,8 @@ import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
 import GraduationWorksPage from '../layouts/GraduationWorks';
 import GraduationWorksDetailPage from '../layouts/GraduationWorksDetail';
+import CooperationWorksPage from '../layouts/CooperationWorks';
+import CooperationWorksDetailPage from '../layouts/CooperationWorksDetail';
 
 const Routes = () => {
   return (
@@ -45,6 +47,16 @@ const Routes = () => {
               exact
               path={`${path.graduationWorks}/:works`}
               component={GraduationWorksDetailPage}
+            />
+            <Route
+              exact
+              path={path.cooperationWorks}
+              component={CooperationWorksPage}
+            />
+            <Route
+              exact
+              path={`${path.cooperationWorks}/:works`}
+              component={CooperationWorksDetailPage}
             />
             {/* 下載專區 */}
             <Route exact path={path.rules} component={RulesPage} />

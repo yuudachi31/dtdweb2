@@ -11,6 +11,8 @@ import {
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
+  SET_COOPERATIONWORKS,
+  SET_COOPERATIONWORKS_DETAIL,
 } from './actionTypes';
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
@@ -146,9 +148,9 @@ export const getGraduationWorks = async (dispatch) => {
 
 export const getGraduationWorksDetail = async (dispatch, options) => {
   //從後台取資料
-  // const { staffpath = '范丙林' } = options;
-  //從json取資料
   const { workId = 0 } = options;
+  //從json取資料
+  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -161,6 +163,51 @@ export const getGraduationWorksDetail = async (dispatch, options) => {
 
     dispatch({
       type: SET_GRADUATONWORKS_DETAIL,
+      payload: worksDetail,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+
+export const getCooperationWorks = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/cooperateProject`;
+    const response = await axios.get(url);
+    const works = response.data;
+    //從json取資料
+    // const works = gwjson;
+    dispatch({
+      type: SET_COOPERATIONWORKS,
+      payload: works,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+
+export const getCooperationWorksDetail = async (dispatch, options) => {
+  //從後台取資料
+  const { workId = 0 } = options;
+  //從json取資料
+  // const { groupid = 0, teacherid2 = 0 } = options;
+
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/cooperateProject?postID=${workId}`;
+    const response = await axios.get(url);
+    const worksDetail = response.data;
+    // //從json取資料
+    //const worksDetail = gwjson[groupid2].list[teacherid2];
+
+    dispatch({
+      type: SET_COOPERATIONWORKS_DETAIL,
       payload: worksDetail,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });

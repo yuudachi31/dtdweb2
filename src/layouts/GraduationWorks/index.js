@@ -26,10 +26,15 @@ const GraduationWorks = () => {
     },
     dispatch,
   } = useContext(StoreContext);
-  var worksSortArray = ['所有'];
+  const breakPoint = {
+    default: 3,
+    991: 2,
+    575: 1,
+  };
   useEffect(() => {
     getGraduationWorks(dispatch);
   }, []);
+  var worksSortArray = ['所有'];
   useEffect(() => {
     graduationWorks.map((work) => worksSortArray.push(work.sortTitle));
   }, [loading]);
@@ -55,7 +60,7 @@ const GraduationWorks = () => {
             <Masonry
               className={styles.worksArea}
               columnClassName={styles.worksArea_column}
-              breakpointCols={3}
+              breakpointCols={breakPoint}
             >
               {graduationWorks.map((workslist) =>
                 workslist.sortList.map((work) => (

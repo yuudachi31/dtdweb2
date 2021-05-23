@@ -13,8 +13,8 @@ a {
   width: 100vw;
   background-color: $dtd-main-bg-color;
 }
-//graduationWorksContainer
-.graduationWorksContainer {
+//cooperationWorksContainer
+.cooperationWorksContainer {
   min-height: 100vh;
   margin: 0 10% $dtd-section-spacing;
   display: flex;
@@ -22,12 +22,12 @@ a {
   align-items: center;
 }
 @media (max-width: $dtd-media-desktop) {
-  .graduationWorksContainer {
+  .cooperationWorksContainer {
     margin: 0 4.8% $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .graduationWorksContainer {
+  .cooperationWorksContainer {
     margin: 0 6% $dtd-secondary-spacing;
   }
 }
