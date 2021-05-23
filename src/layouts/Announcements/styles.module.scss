@@ -21,6 +21,12 @@
 
 @media (max-width: $dtd-media-phone) {
   .board {
-    padding: 0 7vw;
+    padding: 0 6.9vw;
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .board {
+    padding: 0 6.25vw;
   }
 }

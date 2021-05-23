@@ -16,19 +16,24 @@ a {
 //graduationWorksContainer
 .graduationWorksContainer {
   min-height: 100vh;
-  margin: 0 10% $dtd-section-spacing;
+  margin: 0 10vw $dtd-section-spacing;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 @media (max-width: $dtd-media-desktop) {
   .graduationWorksContainer {
-    margin: 0 4.8% $dtd-secondary-spacing;
+    margin: 0 4.8vw $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .graduationWorksContainer {
-    margin: 0 6% $dtd-secondary-spacing;
+    margin: 0 6.9vw $dtd-secondary-spacing;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .graduationWorksContainer {
+    margin: 0 6.25vw $dtd-secondary-spacing;
   }
 }
 .worksArea {

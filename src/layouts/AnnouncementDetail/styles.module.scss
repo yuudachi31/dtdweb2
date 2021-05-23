@@ -4,22 +4,27 @@
 @import '../../styles/font.scss';
 
 .container {
-  width: 100%;
+  width: 100vw;
   background-color: $dtd-main-bg-color;
 }
 
 .announcementDetail {
-  margin: 27px 10% 80px 12%;
+  margin: 27px 10vw 80px 12vw;
 }
 
 @media (max-width: $dtd-media-tablet) {
   .announcementDetail {
-    margin: 27px 6.8% 80px 6.8%;
+    margin: 27px 6.8vw 80px 6.8vw;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .announcementDetail {
-    margin: 27px 7% 80px 7%;
+    margin: 27px 6.9vw 80px 6.9vw;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .announcementDetail {
+    margin: 27px 6.25vw 80px 6.25vw;
   }
 }
 

@@ -25,7 +25,7 @@
     margin: 0 6.9vw $dtd-secondary-spacing;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: $dtd-media-phone-small) {
   .downloadContainer {
     margin: 0 6.25vw $dtd-secondary-spacing;
   }
