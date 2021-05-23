@@ -152,7 +152,7 @@
 
 @media (max-width: $dtd-media-phone) {
   .board {
-    padding: 0 7vw;
+    padding: 0 6.9vw;
   }
   .introBox_video {
     width: 100%;
@@ -206,4 +206,10 @@
 }
 .classBoxPhoneInfo_content {
   width: calc(100% - 86px);
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .board {
+    padding: 0 6.25vw;
+  }
 }

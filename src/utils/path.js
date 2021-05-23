@@ -16,4 +16,6 @@ export default {
   // 下載專區
   rules: '/rules',
   downloads: '/downloads',
+  graduationWorks: '/graduationWorks',
+  cooperationWorks: '/cooperationWorks',
 };

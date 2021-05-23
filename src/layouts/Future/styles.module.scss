@@ -11,15 +11,20 @@
 //staffContainer
 .futureContainer {
   min-height: 100vh;
-  margin: 0 10%;
+  margin: 0 10vw;
 }
 @media (max-width: $dtd-media-desktop) {
   .futureContainer {
-    margin: 0 4.8% $dtd-secondary-spacing;
+    margin: 0 4.8vw $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .futureContainer {
-    margin: 0 6% $dtd-secondary-spacing;
+    margin: 0 6.9vw $dtd-secondary-spacing;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .futureContainer {
+    margin: 0 6.25vw $dtd-secondary-spacing;
   }
 }

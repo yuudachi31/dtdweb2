@@ -9,17 +9,23 @@
 }
 .container {
   width: 100vw;
-  padding: 0 10%;
+  padding: 0 10vw;
 }
 
 @media (max-width: $dtd-media-tablet) {
   .container {
-    padding: 0 4.8%;
+    padding: 0 4.8vw;
   }
 }
 
 @media (max-width: $dtd-media-phone) {
   .container {
-    padding: 0 6%;
+    padding: 0 6.9vw;
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .container {
+    padding: 0 6.25vw;
   }
 }

@@ -78,7 +78,7 @@
       return $results;
    }
 
-   function postHonorPageSearchResults($data) {
+   function postAchievementsPageSearchResults($data) {
       $page = ( $data['page'] ) ? $data['page'] : 1;
       $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 20;
 
@@ -106,7 +106,7 @@
       return $results;
    }
 
-   function postAnnouncementPageSearchResults($data) {
+   function postAnnouncementsPageSearchResults($data) {
       $page = ( $data['page'] ) ? $data['page'] : 1;
       $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 20;
 

@@ -1,9 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.scss';
-
-// import '@wordpress/block-library/build-style/style.css';
-// import '@wordpress/block-library/build-style/style.css';
-// import '@wordpress/block-library/build-style/style.css';
+import { Link } from 'react-router-dom';
 
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
@@ -30,6 +27,8 @@ const News = (prop) => {
     });
   }, [pageSeletedNumber]);
 
+  const page = prop.pageStyle.substring(0, prop.pageStyle.length - 4);
+
   return (
     <>
       {loading ? (
@@ -37,13 +36,19 @@ const News = (prop) => {
       ) : (
         <div className={styles.container}>
           <div className={styles.new}>
-            {news.map((newContent) => (
-              <div key={newContent.id} className={styles.new_box}>
-                <div className={styles.new_title}>{newContent.title}</div>
-                <div className={styles.new_content}>
-                  面試時間表經公告後不予調整順序。 考生報到及應試時請 […]
+            {news.map((newContent, newIndex) => (
+              <Link
+                to={`/${page}/${newIndex}`}
+                key={newContent.id}
+                className={styles.new_link}
+              >
+                <div className={styles.new_box}>
+                  <div className={styles.new_title}>{newContent.title}</div>
+                  <div className={styles.new_content}>
+                    面試時間表經公告後不予調整順序。 考生報到及應試時請 […]
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

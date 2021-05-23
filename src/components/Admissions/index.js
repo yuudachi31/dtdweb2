@@ -30,11 +30,13 @@ const Admissions = (prop) => {
                   src={admissiondetail.info_img}
                   className={styles.info_img}
                 ></img>
-                <div className={styles.info_departmentName}>
+                <div
+                  className={`${styles.info_departmentName} ${styles.admission_content_enter}`}
+                >
                   {admissiondetail.info_departmentName}
                 </div>
               </div>
-              <div className={styles.info_insideBox_marginBottom}>
+              <div className={styles.info_insideBox}>
                 <div className={styles.info_rowBox}>
                   <div
                     className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
