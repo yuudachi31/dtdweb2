@@ -14,7 +14,7 @@ const Activities = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>系上活動-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的未來發展" />
+        <meta name="description" content="數位科技設計學系的系上活動" />
       </Helmet>
       <div className={styles.container}>
         <Header />

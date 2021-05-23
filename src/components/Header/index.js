@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
 import path from '../../utils/path';
 
+//圖片匯入
+import logo from '../../assets/images/header/DTD.png';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 
@@ -19,7 +22,9 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <Link to={path.home} className={styles.logo}></Link>
+      <Link to={path.home}>
+        <img className={styles.logo} src={logo}></img>
+      </Link>
       <div className={styles.nav}>
         {/* hamburgerMenu */}
         <button
@@ -54,7 +59,7 @@ const Header = () => {
               >
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.intro}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -72,7 +77,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.activities}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -81,7 +86,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.future}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -107,16 +112,16 @@ const Header = () => {
               >
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to={path.news}
+                    to={path.announcements}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
-                    系所公告
+                    系務公告
                   </Link>
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to={path.honors}
+                    to={path.achievements}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -259,7 +264,7 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.intro} className={styles.nav_link}>
                 本系簡介
               </Link>
             </li>
@@ -269,12 +274,12 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.activities} className={styles.nav_link}>
                 系上活動
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.future} className={styles.nav_link}>
                 未來發展
               </Link>
             </li>
@@ -288,12 +293,12 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to={path.news} className={styles.nav_link}>
-                系所公告
+              <Link to={path.announcements} className={styles.nav_link}>
+                系務公告
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to={path.honors} className={styles.nav_link}>
+              <Link to={path.achievements} className={styles.nav_link}>
                 師生榮譽榜
               </Link>
             </li>

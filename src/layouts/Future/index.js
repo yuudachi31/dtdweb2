@@ -21,7 +21,7 @@ const Future = () => {
         <Header />
         <Banner />
         <div className={styles.futureContainer}>
-          <PageTitle title="未來出路" />
+          <PageTitle title="未來發展" />
           <FutureContent />
         </div>
         <Footer />

@@ -14,8 +14,8 @@ const Inservice = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>辦法規章-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的教室團隊" />
+        <title>在職碩士班-國立臺北教育大學</title>
+        <meta name="description" content="數位科技設計學系的在職碩士班" />
       </Helmet>
       <div className={styles.container}>
         <Header />

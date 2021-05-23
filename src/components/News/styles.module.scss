@@ -1,0 +1,44 @@
+@import '../../styles/media.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/spacing.scss';
+
+.container {
+  width: 100%;
+}
+
+.new {
+  padding: 0 $dtd-secondary-spacing;
+}
+
+.new_link {
+  .new_box {
+    padding: 10px 0;
+  }
+
+  .new_title {
+    padding: 6px 0;
+    font-size: 20px;
+    color: $dtd-text-color;
+  }
+
+  .new_content {
+    padding: 6px 0;
+    font-size: $dtd-hint-size;
+    color: $dtd-submenu-text-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    & .new_title {
+      color: $dtd-main-color;
+    }
+  }
+}
+
+@media (max-width: $dtd-media-phone) {
+  .new {
+    padding: 0;
+  }
+}

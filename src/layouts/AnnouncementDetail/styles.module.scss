@@ -1,0 +1,48 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  width: 100%;
+  background-color: $dtd-main-bg-color;
+}
+
+.announcementDetail {
+  margin: 27px 10% 80px 12%;
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .announcementDetail {
+    margin: 27px 6.8% 80px 6.8%;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .announcementDetail {
+    margin: 27px 7% 80px 7%;
+  }
+}
+
+.announcementDetail_titleBar {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: center;
+}
+.announcementDetail_titleBar__backBtn {
+  padding: 9px 22px 9px 0;
+}
+.announcementDetail_titleBar__img {
+  width: 30px;
+  height: 30px;
+}
+.announcementDetail_titleBar__title {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 9px 0 9px 36px;
+  font-size: $dtd-h1-size;
+  font-weight: bold;
+}
+
+.announcementDetail_content {
+  width: 100%;
+  height: auto;
+}

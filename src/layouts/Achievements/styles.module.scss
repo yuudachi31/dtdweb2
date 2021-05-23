@@ -13,21 +13,13 @@
   background-color: $dtd-main-bg-color;
 }
 
-.board_title {
-  width: 100vw;
-  font-size: $dtd-h1-size;
-  font-weight: bold;
-  text-align: center;
-  padding: $dtd-secondary-spacing 0;
-}
-
-@media (max-width: $dtd-media-desktop) {
+@media (max-width: $dtd-media-tablet) {
   .board {
     padding: 0 4.8vw;
   }
 }
 
-@media (max-width: $dtd-media-tablet) {
+@media (max-width: $dtd-media-phone) {
   .board {
     padding: 0 7vw;
   }
