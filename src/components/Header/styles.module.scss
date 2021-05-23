@@ -105,7 +105,7 @@
 
 @media (max-width: $dtd-media-tablet) {
   .container {
-    padding: 0 7vw;
+    padding: 0 6.9vw;
   }
   .nav_dropdown {
     display: none;
@@ -184,10 +184,12 @@
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .container {
-    padding: 0 7vw;
-  }
   .logo {
     width: 220px;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .container {
+    padding: 0 6.25vw;
   }
 }
