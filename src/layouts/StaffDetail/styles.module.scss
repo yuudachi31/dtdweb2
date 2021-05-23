@@ -24,7 +24,12 @@
 }
 @media (max-width: $dtd-media-phone) {
   .staffDetail {
-    margin: 0 7vw 0;
+    margin: 0 6.9vw 0;
+  }
+}
+@media (max-width: 320px) {
+  .staffDetail {
+    margin: 0 6.25vw 0;
   }
 }
 
