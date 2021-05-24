@@ -1,17 +1,13 @@
-import React, {
-  Fragment,
-  useContext,
-  useState,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
+
 import { Helmet } from 'react-helmet';
-import { useParams, Link } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import * as QueryString from 'query-string';
 
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import NewDetail from '../../components/NewDetail';
 
-import path from '../../utils/path';
+import { getNewInfo } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 import styles from './styles.module.scss';
@@ -19,20 +15,21 @@ import '@wordpress/block-library/build-style/style.css';
 import '@wordpress/block-library/build-style/style.css';
 import '@wordpress/block-library/build-style/style.css';
 
-//圖片匯入
-import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
-
 const AnnouncementDetail = () => {
-  let { newIndex } = useParams();
+  const location = useLocation();
+  const { id } = QueryString.parse(location.search);
   const {
-    state: { news },
+    state: {
+      newInfo,
+      requestdata: { loading },
+    },
+    dispatch,
   } = useContext(StoreContext);
 
-  const [height, setHeight] = useState(0);
-  const ref = useRef(null);
-
   useEffect(() => {
-    setHeight(ref.current.clientHeight);
+    getNewInfo(dispatch, {
+      newID: id,
+    });
   }, []);
 
   return (
@@ -44,27 +41,13 @@ const AnnouncementDetail = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <div className={styles.announcementDetail}>
-          <div className={styles.announcementDetail_titleBar}>
-            <div className={styles.announcementDetail_titleBar__backBtn}>
-              <Link to={path.announcements}>
-                <img
-                  className={styles.announcementDetail_titleBar__img}
-                  src={leftArrow}
-                />
-              </Link>
-            </div>
-            <div className={styles.announcementDetail_titleBar__title}>
-              {news[newIndex].title}
-            </div>
-          </div>
-          <div
-            ref={ref}
-            className={styles.announcementDetail_content}
-            dangerouslySetInnerHTML={{ __html: news[newIndex].content }}
-          />
-        </div>
-        {height != 0 ? <Footer /> : <div></div>}
+        <>
+          {loading ? (
+            <div></div>
+          ) : (
+            <NewDetail title={newInfo.title} content={newInfo.content} />
+          )}
+        </>
       </div>
     </Fragment>
   );
