@@ -12,6 +12,7 @@ import {
   SET_BANNER,
   SET_COOPERATIONWORKS,
   SET_COOPERATIONWORKS_DETAIL,
+  SET_HOME_NEWS,
 } from './actionTypes';
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
@@ -19,6 +20,7 @@ const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 // import bannerjson from '../assets/json/banner.json';
 // import staffjson from '../assets/json/teachers.json';
 //import gwjson from '../assets/json/works.json';
+// import newsjson from '../assets/json/news.json';
 
 export const getNews = async (dispatch, options) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
@@ -211,5 +213,26 @@ export const getCooperationWorksDetail = async (dispatch, options) => {
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+
+export const getHomeNews = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從json取資料
+    // const homeNews = newsjson;
+
+    //從後台取資料
+    const url = `${BASE_URL}/post/homePage`;
+    const response = await axios.get(url);
+    const homeNews = response.data;
+    dispatch({
+      type: SET_HOME_NEWS,
+      payload: homeNews,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
   }
 };

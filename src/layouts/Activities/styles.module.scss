@@ -2,6 +2,7 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
 
 .container {
   width: 100vw;
@@ -10,7 +11,7 @@
 }
 .activityContainer {
   min-height: 100vh;
-  margin: 0 10vw;
+  margin: 0 $dtd-margin-desktop;
   margin-bottom: $dtd-index-main-spacing;
 }
 a:hover {
@@ -18,16 +19,16 @@ a:hover {
 }
 @media (max-width: $dtd-media-desktop) {
   .activityContainer {
-    margin: 0 4.8vw $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-tablet $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .activityContainer {
-    margin: 0 6.9vw $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-phone $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone-small) {
   .activityContainer {
-    margin: 0 6.25vw $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-phone-small $dtd-secondary-spacing;
   }
 }

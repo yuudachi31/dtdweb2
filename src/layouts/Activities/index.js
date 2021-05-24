@@ -1,6 +1,8 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
+import * as Scroll from 'react-scroll';
+import Cookie from 'js-cookie';
 /*component*/
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -14,9 +16,8 @@ import { UIStoreContext } from '../../uiStore/reducer';
 
 import path from '../../utils/path';
 import DTDActivities from '../../assets/json/DTDActivities.json';
-import * as Scroll from 'react-scroll';
 
-const Activities = () => {
+const Activities = (prop) => {
   const {
     state: {
       activitiesPage: { activitiesCategory },
@@ -25,12 +26,19 @@ const Activities = () => {
   } = useContext(UIStoreContext);
 
   const geturlid = window.location.href;
+
   useEffect(() => {
+    console.log('geturl = ' + prop.match.url);
     if (geturlid.search(/#/i) !== -1) {
       Scroll.scroller.scrollTo('content');
-    } else {
+      setPageContent(dispatch, Cookie.getJSON('activitiesCategory'));
+      setActiveNavItem(dispatch, Cookie.get('activeItem'));
+    } else if (prop.match.url === path.activities) {
       setPageContent(dispatch, DTDActivities);
       setActiveNavItem(dispatch, path.activities);
+    } else {
+      setPageContent(dispatch, Cookie.getJSON('activitiesCategory'));
+      setActiveNavItem(dispatch, Cookie.get('activeItem'));
     }
   }, []);
 

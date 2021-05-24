@@ -1,4 +1,5 @@
 import constants from './actionTypes';
+import Cookie from 'js-cookie';
 
 export const clickHamburgerMenu = (dispatch) => {
   dispatch({ type: constants.CLICK_HAMBURGERMENU });
@@ -33,6 +34,7 @@ export const setPageContent = (dispatch, activitiesCategory) => {
     type: constants.SET_PAGE_CONTENT,
     payload: activitiesCategory,
   });
+  Cookie.set('activitiesCategory', JSON.stringify(activitiesCategory));
 };
 
 export const setActiveNavItem = (dispatch, activeItem) => {
@@ -40,4 +42,5 @@ export const setActiveNavItem = (dispatch, activeItem) => {
     type: constants.SET_NAVBAR_ACTIVEITEM,
     payload: activeItem,
   });
+  Cookie.set('activeItem', activeItem);
 };

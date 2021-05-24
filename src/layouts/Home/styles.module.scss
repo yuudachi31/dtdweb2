@@ -2,6 +2,7 @@
 @import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
 @import '../../styles/media.scss';
+@import '../../styles/pageMargin.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
 .homePage_bgc {
@@ -9,23 +10,23 @@
 }
 .container {
   width: 100vw;
-  padding: 0 10vw;
+  padding: 0 $dtd-margin-desktop;
 }
 
 @media (max-width: $dtd-media-tablet) {
   .container {
-    padding: 0 4.8vw;
+    padding: 0 $dtd-margin-tablet;
   }
 }
 
 @media (max-width: $dtd-media-phone) {
   .container {
-    padding: 0 6.9vw;
+    padding: 0 $dtd-margin-phone;
   }
 }
 
 @media (max-width: $dtd-media-phone-small) {
   .container {
-    padding: 0 6.25vw;
+    padding: 0 $dtd-margin-phone-small;
   }
 }
