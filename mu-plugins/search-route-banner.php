@@ -13,6 +13,7 @@
             array_push($results, array(
                 'id' => get_the_ID(),
                 'bannerUrl' => get_field('bannerUrl')['url'],
+                'link' => get_field('link'),
             ));
         }
 

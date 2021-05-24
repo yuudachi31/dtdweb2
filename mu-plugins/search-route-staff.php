@@ -35,11 +35,16 @@
                'title' => "行政人員",
                'list' => array(),
             ),
+            array(
+               'groupid' => 5,
+               'title' => "已退休/已離職/未兼課",
+               'list' => array(),
+            ),
          );
    
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
-   
+
             $groupID = 0;
             switch(get_field('grouptitle')){
                case "專任老師/互動科技領域":
@@ -52,6 +57,8 @@
                   $groupID = 3; break;
                case "行政人員":
                   $groupID = 4; break;
+               case "已退休/已離職/未兼課":
+                  $groupID = 5; break;
             }
 
             $collection = array(

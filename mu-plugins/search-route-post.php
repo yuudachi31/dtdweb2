@@ -54,7 +54,7 @@
          array_push($results[0]['list'], array(
             'id' => get_the_ID(),
             'title' => get_the_title(),
-            'content' => get_the_content(),
+            'date' => get_the_date('Y/m/d'),
          ));
       }
 
@@ -71,7 +71,7 @@
          array_push($results[1]['list'], array(
             'id' => get_the_ID(),
             'title' => get_the_title(),
-            'content' => get_the_content(),
+            'date' => get_the_date('Y/m/d'),
          ));
       }
 
@@ -83,7 +83,6 @@
       $postPerPage = ( $data['postPerPage'] ) ? $data['postPerPage'] : 20;
 
       $mainQuery = new WP_Query(array(
-         
          'post_type' => 'post',
          'category_name' => 'achievement',
          'ignore_sticky_posts' => true,
@@ -99,7 +98,8 @@
          array_push($results, array(
             'id' => get_the_ID(),
             'title' => get_the_title(),
-            'content' => get_the_content(),
+            'content' => apply_filters('the_content', get_the_content()),
+            //'content' => get_the_content(),
          ));
       }
 
