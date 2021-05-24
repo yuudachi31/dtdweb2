@@ -14,6 +14,7 @@ import {
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
   SET_BANNER,
+  SET_HOME_NEWS,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -29,6 +30,7 @@ const initialState = {
   cooperationWorksDetail: {},
   requestdata: { loading: false, error: null },
   banner: [],
+  homeNews: [],
 };
 
 function reducer(state, action) {
@@ -37,6 +39,11 @@ function reducer(state, action) {
       return {
         ...state,
         banner: action.payload,
+      };
+    case SET_HOME_NEWS:
+      return {
+        ...state,
+        homeNews: action.payload,
       };
     case SET_NEWS:
       return {
