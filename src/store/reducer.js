@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import {
   SET_NEWS,
+  SET_NEWINFO,
   SET_STAFF,
   SET_STAFF_DETAIL,
   SET_GRADUATONWORKS,
@@ -20,6 +21,7 @@ export const StoreContext = createContext();
 
 const initialState = {
   news: [],
+  newInfo: {},
   staff: [],
   staffDetail: {},
   graduationWorks: [],
@@ -42,6 +44,11 @@ function reducer(state, action) {
       return {
         ...state,
         news: action.payload,
+      };
+    case SET_NEWINFO:
+      return {
+        ...state,
+        newInfo: action.payload,
       };
     case SET_STAFF:
       return {

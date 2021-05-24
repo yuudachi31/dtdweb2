@@ -69,7 +69,7 @@ const Routes = () => {
             />
             <Route
               exact
-              path={`${path.announcements}/:newIndex`}
+              path={`${path.announcements}/newinfo`}
               component={AnnouncementDetailPage}
             ></Route>
             <Route
@@ -79,7 +79,7 @@ const Routes = () => {
             />
             <Route
               exact
-              path={`${path.achievements}/:newIndex`}
+              path={`${path.achievements}/newinfo`}
               component={AchievementDetailPage}
             ></Route>
             {/* 招生資訊 */}

@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
+// import * as Scroll from 'react-scroll';
 
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
@@ -20,12 +21,15 @@ const News = (prop) => {
   } = useContext(UIStoreContext);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     getNews(dispatch, {
       clickNumber: pageSeletedNumber,
       pageStyle: prop.pageStyle,
     });
   }, [pageSeletedNumber]);
+
+  // useEffect(() => {
+  //   Scroll.animateScroll.scrollTo(0);
+  // }, [news]);
 
   const page = prop.pageStyle.substring(0, prop.pageStyle.length - 4);
 
@@ -36,9 +40,9 @@ const News = (prop) => {
       ) : (
         <div className={styles.container}>
           <div className={styles.new}>
-            {news.map((newContent, newIndex) => (
+            {news.map((newContent) => (
               <Link
-                to={`/${page}/${newIndex}`}
+                to={`/${page}/newinfo?id=${newContent.id}`}
                 key={newContent.id}
                 className={styles.new_link}
               >

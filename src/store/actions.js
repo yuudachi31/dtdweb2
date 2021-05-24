@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {
   SET_NEWS,
+  SET_NEWINFO,
   SET_STAFF,
   SET_STAFF_DETAIL,
   SET_GRADUATONWORKS,
@@ -31,6 +32,25 @@ export const getNews = async (dispatch, options) => {
     dispatch({
       type: SET_NEWS,
       payload: news,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+
+export const getNewInfo = async (dispatch, options) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  const { newID } = options;
+
+  try {
+    const url = `${BASE_URL}/post?postID=${newID}`;
+    const response = await axios.get(url);
+    const newInfo = response.data[0];
+
+    dispatch({
+      type: SET_NEWINFO,
+      payload: newInfo,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {

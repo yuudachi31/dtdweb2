@@ -52,7 +52,7 @@ const reducer = (state, action) => {
     case constants.SET_PAGENUMBERSTATE: {
       const pageNumberStateArr = [];
       for (let i = 1; i <= action.payload; i++) {
-        if (i == 1) {
+        if (i == state.pageSeletedNumber) {
           pageNumberStateArr.push(true);
         } else {
           pageNumberStateArr.push(false);
@@ -61,7 +61,6 @@ const reducer = (state, action) => {
       return {
         ...state,
         pageNumberState: pageNumberStateArr,
-        pageSeletedNumber: 1,
       };
     }
 
