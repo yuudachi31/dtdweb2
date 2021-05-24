@@ -15,6 +15,7 @@ import { UIStoreContext } from '../../uiStore/reducer';
 import path from '../../utils/path';
 import DTDActivities from '../../assets/json/DTDActivities.json';
 import * as Scroll from 'react-scroll';
+import Cookie from 'js-cookie';
 
 const Activities = () => {
   const {
@@ -33,6 +34,10 @@ const Activities = () => {
       setActiveNavItem(dispatch, path.activities);
     }
   }, []);
+
+  useEffect(() => {
+    Cookie.set('activitiesCategory', JSON.stringify(activitiesCategory));
+  }, [activitiesCategory]);
 
   return (
     <Fragment>
