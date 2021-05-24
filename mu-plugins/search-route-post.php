@@ -31,12 +31,12 @@
       $results = array(
          array(
             'groupid' => 0,
-            'title' => '系務公告',
+            'title' => '系務公告 / Announcement',
             'list' => array()
          ),
          array(
             'groupid' => 1,
-            'title' => '師生榮譽榜',
+            'title' => '師生榮譽榜 / Achievement',
             'list' => array()
          ),
       );
