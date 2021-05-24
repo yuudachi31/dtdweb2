@@ -35,7 +35,12 @@ const IndexNews = () => {
               <div className={styles.news_top}></div>
               {newsType.list.map((newsDetail) => (
                 <div className={styles.news} key={newsDetail.id}>
-                  <Link to="/" className={styles.link_a__textdecnone}>
+                  <Link
+                    to={`/${
+                      newsType.groupid === 0 ? 'announcements' : 'achievements'
+                    }/?page=0&id=${newsDetail.id}`}
+                    className={styles.link_a__textdecnone}
+                  >
                     <p className={styles.news_p}>{newsDetail.title}</p>
                   </Link>
                   <hr className={styles.news_p}></hr>
