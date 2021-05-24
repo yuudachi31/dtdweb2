@@ -38,7 +38,7 @@ const IndexNews = () => {
                   <Link
                     to={`/${
                       newsType.groupid === 0 ? 'announcements' : 'achievements'
-                    }/?page=0&id=${newsDetail.id}`}
+                    }/newinfo?id=${newsDetail.id}`}
                     className={styles.link_a__textdecnone}
                   >
                     <p className={styles.news_p}>{newsDetail.title}</p>
@@ -51,7 +51,11 @@ const IndexNews = () => {
                 </div>
               ))}
               <button
-                className={`${styles.news_button} ${styles.news_button_mb}`}
+                className={
+                  newsType.groupid === 0
+                    ? `${styles.news_button} ${styles.news_button_mb}`
+                    : `${styles.news_button}`
+                }
               >
                 <FontAwesomeIcon icon={faAngleRight} />
                 &ensp;&ensp;&ensp;More
