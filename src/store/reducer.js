@@ -6,9 +6,12 @@ import {
   SET_NEWINFO,
   SET_STAFF,
   SET_STAFF_DETAIL,
-  SET_GRADUATONWORKS,
-  SET_GRADUATONWORKS_SORT,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
+  SET_GRADUATONWORKS_SHOW,
   SET_GRADUATONWORKS_DETAIL,
+  SET_COURSEWORKS_SHOW,
+  SET_COURSEWORKS_DETAIL,
   SET_COOPERATIONWORKS,
   SET_COOPERATIONWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
@@ -25,9 +28,12 @@ const initialState = {
   newInfo: {},
   staff: [],
   staffDetail: {},
-  graduationWorks: [],
-  graduationWorksSort: [],
+  worksSort: ['所有'],
+  worksSortActiveItem: '所有',
+  graduationWorksShow: [],
   graduationWorksDetail: {},
+  courseWorksShow: [],
+  courseWorksDetail: {},
   cooperationWorks: [],
   cooperationWorksDetail: {},
   requestdata: { loading: false, error: null },
@@ -67,20 +73,35 @@ function reducer(state, action) {
         ...state,
         staffDetail: action.payload,
       };
-    case SET_GRADUATONWORKS:
+    case SET_WORKS_SORT:
       return {
         ...state,
-        graduationWorks: action.payload,
+        worksSort: action.payload,
       };
-    case SET_GRADUATONWORKS_SORT:
+    case SET_WORKSSORT_ACTIVEITEM:
       return {
         ...state,
-        graduationWorksSort: action.payload,
+        worksSortActiveItem: action.payload,
+      };
+    case SET_GRADUATONWORKS_SHOW:
+      return {
+        ...state,
+        graduationWorksShow: action.payload,
       };
     case SET_GRADUATONWORKS_DETAIL:
       return {
         ...state,
         graduationWorksDetail: action.payload,
+      };
+    case SET_COURSEWORKS_SHOW:
+      return {
+        ...state,
+        courseWorksShow: action.payload,
+      };
+    case SET_COURSEWORKS_DETAIL:
+      return {
+        ...state,
+        courseWorksDetail: action.payload,
       };
     case SET_COOPERATIONWORKS:
       return {

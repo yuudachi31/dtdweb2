@@ -3,12 +3,10 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import downloadsjson from '../../assets/json/downloads.json';
-
-const downloadGroup = () => {
+const DocsGroup = (prop) => {
   const [downloaddetail, setdownloaddetail] = useState([]);
   useEffect(() => {
-    setdownloaddetail(downloadsjson);
+    setdownloaddetail(prop.json);
   }, []);
   return (
     <div className={styles.container}>
@@ -72,4 +70,4 @@ const downloadGroup = () => {
   );
 };
 
-export default downloadGroup;
+export default DocsGroup;

@@ -211,7 +211,7 @@ const Header = () => {
                 </li>
                 <li className={styles.nav_hamLinkBox}>
                   <Link
-                    to="/"
+                    to={path.courseWorks}
                     className={styles.nav_hamLink}
                     onClick={() => clickHamburgerLink(dispatch)}
                   >
@@ -368,7 +368,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
+              <Link to={path.courseWorks} className={styles.nav_link}>
                 課程作品
               </Link>
             </li>

@@ -17,16 +17,16 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Masonry from 'react-masonry-css';
 
 import {
-  getGraduationWorks,
-  getGraduationWorksShow,
+  getCourseWorks,
+  getCourseWorksShow,
   setWorksSortActiveItem,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
-const GraduationWorks = () => {
+const CourseWorks = () => {
   const {
     state: {
-      graduationWorksShow,
+      courseWorksShow,
       worksSort,
       worksSortActiveItem,
       requestdata: { loading },
@@ -38,36 +38,36 @@ const GraduationWorks = () => {
     991: 2,
     575: 1,
   };
-  const geturlid = window.location.href;
+  const getUrlId = window.location.href;
   useEffect(() => {
-    if (geturlid.search(/#/i) != -1) {
+    if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
       worksSortActiveItem == '所有'
-        ? getGraduationWorks(dispatch)
-        : getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
+        ? getCourseWorks(dispatch)
+        : getCourseWorksShow(dispatch, { sort: worksSortActiveItem });
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSortActiveItem(dispatch);
-      getGraduationWorks(dispatch);
+      getCourseWorks(dispatch);
     }
   }, []);
   return (
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>畢業專題-國立臺北教育大學</title>
+        <title>課程作品-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的畢業專題" />
       </Helmet>
       <div className={styles.container} id="top">
         <Header />
         <Banner />
-        <div className={styles.graduationWorksContainer} id="content">
-          <PageTitle title="畢業專題" />
+        <div className={styles.courseWorksContainer} id="content">
+          <PageTitle title="課程作品" />
           {worksSort.length > 1 ? (
             <WorksSort
               sortsList={worksSort}
               selectedItem={worksSortActiveItem}
-              path={path.graduationWorks}
+              path={path.courseWorks}
             />
           ) : (
             <></>
@@ -80,7 +80,7 @@ const GraduationWorks = () => {
               columnClassName={styles.worksArea_column}
               breakpointCols={breakPoint}
             >
-              {graduationWorksShow.map((workslist) =>
+              {courseWorksShow.map((workslist) =>
                 workslist.sortList.map((work) => (
                   <div className={styles.worksBox} key={work.id}>
                     <img src={work.workImgUrl} />
@@ -90,7 +90,7 @@ const GraduationWorks = () => {
                       </div>
                       <Link
                         to={
-                          path.graduationWorks +
+                          path.courseWorks +
                           '/' +
                           workslist.sortTitle +
                           '/' +
@@ -118,4 +118,4 @@ const GraduationWorks = () => {
   );
 };
 
-export default GraduationWorks;
+export default CourseWorks;

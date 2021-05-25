@@ -4,7 +4,7 @@ import {
   SET_NEWINFO,
   SET_STAFF,
   SET_STAFF_DETAIL,
-  SET_GRADUATONWORKS,
+  SET_GRADUATONWORKS_SHOW,
   SET_GRADUATONWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
@@ -13,6 +13,10 @@ import {
   SET_COOPERATIONWORKS,
   SET_COOPERATIONWORKS_DETAIL,
   SET_HOME_NEWS,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
+  SET_COURSEWORKS_SHOW,
+  SET_COURSEWORKS_DETAIL,
 } from './actionTypes';
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
@@ -125,6 +129,13 @@ export const getBanner = async (dispatch) => {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
   }
 };
+
+export const setWorksSortActiveItem = async (dispatch) => {
+  dispatch({
+    type: SET_WORKSSORT_ACTIVEITEM,
+    payload: '所有',
+  });
+};
 export const getGraduationWorks = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -132,11 +143,44 @@ export const getGraduationWorks = async (dispatch) => {
     const url = `${BASE_URL}/graduateProject`;
     const response = await axios.get(url);
     const works = response.data;
-
+    var worksSortArray = ['所有'];
+    works.map((work) => worksSortArray.push(work.sortTitle));
     //從json取資料
     // const works = gwjson;
     dispatch({
-      type: SET_GRADUATONWORKS,
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: '所有',
+    });
+    dispatch({
+      type: SET_GRADUATONWORKS_SHOW,
+      payload: works,
+    });
+    dispatch({
+      type: SET_WORKS_SORT,
+      payload: worksSortArray,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+export const getGraduationWorksShow = async (dispatch, options) => {
+  const { sort = 109 } = options;
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/graduateProject?graduateYear=${sort}`;
+    const response = await axios.get(url);
+    const works = response.data;
+    //從json取資料
+    // const works = gwjson;
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
+    });
+    dispatch({
+      type: SET_GRADUATONWORKS_SHOW,
       payload: works,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
@@ -163,6 +207,87 @@ export const getGraduationWorksDetail = async (dispatch, options) => {
 
     dispatch({
       type: SET_GRADUATONWORKS_DETAIL,
+      payload: worksDetail,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+
+export const getCourseWorks = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/classProject`;
+    const response = await axios.get(url);
+    const works = response.data;
+    var worksSortArray = ['所有'];
+    works.map((work) => worksSortArray.push(work.sortTitle));
+    //從json取資料
+    // const works = gwjson;
+    console.log(works);
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: '所有',
+    });
+    dispatch({
+      type: SET_COURSEWORKS_SHOW,
+      payload: works,
+    });
+    dispatch({
+      type: SET_WORKS_SORT,
+      payload: worksSortArray,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+export const getCourseWorksShow = async (dispatch, options) => {
+  const { sort = '遊戲設計' } = options;
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/classProject?classGroup=${sort}`;
+    const response = await axios.get(url);
+    const works = [response.data];
+    //從json取資料
+    // const works = gwjson;
+    console.log(works);
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
+    });
+    dispatch({
+      type: SET_COURSEWORKS_SHOW,
+      payload: works,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+
+export const getCourseWorksDetail = async (dispatch, options) => {
+  //從後台取資料
+  const { workId = 0 } = options;
+  //從json取資料
+  // const { groupid = 0, teacherid2 = 0 } = options;
+
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/classProject?postID=${workId}`;
+    const response = await axios.get(url);
+    const worksDetail = response.data;
+    // //從json取資料
+    //const worksDetail = gwjson[groupid2].list[teacherid2];
+
+    dispatch({
+      type: SET_COURSEWORKS_DETAIL,
       payload: worksDetail,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });

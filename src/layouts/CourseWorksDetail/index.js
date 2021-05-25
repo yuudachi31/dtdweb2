@@ -11,10 +11,10 @@ import path from '../../utils/path';
 //設計
 import styles from './styles.module.scss';
 //取資料
-import { getGraduationWorksDetail } from '../../store/actions';
+import { getCourseWorksDetail } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
-const GraduationWorksDetail = () => {
+const CourseWorksDetail = () => {
   const location = useLocation();
   // const { groupid, teacherid, staffpath } = QueryString.parse(
   //   location.search,
@@ -22,24 +22,24 @@ const GraduationWorksDetail = () => {
   const { workId } = QueryString.parse(location.search);
   const {
     state: {
-      graduationWorksDetail,
+      courseWorksDetail,
       requestdata: { loading },
     },
     dispatch,
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getGraduationWorksDetail(dispatch, { workId });
+    getCourseWorksDetail(dispatch, { workId });
     Scroll.scroller.scrollTo('top');
   }, []);
 
   return (
     <>
-      {loading || JSON.stringify(graduationWorksDetail) === '{}' ? (
+      {loading || JSON.stringify(courseWorksDetail) === '{}' ? (
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>畢業專題-國立臺北教育大學</title>
+            <title>課程作品-國立臺北教育大學</title>
             <meta name="description" content="數位科技設計學系的教室團隊" />
           </Helmet>
           <div className={styles.container} id="top">
@@ -52,14 +52,14 @@ const GraduationWorksDetail = () => {
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>{graduationWorksDetail.workTitle}-國立臺北教育大學</title>
+            <title>{courseWorksDetail.workTitle}-國立臺北教育大學</title>
             <meta name="description" content="數位科技設計學系的教室團隊" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
             <WorksDetail
-              worksDetail={graduationWorksDetail}
-              path={path.graduationWorks}
+              worksDetail={courseWorksDetail}
+              path={path.courseWorks}
             />
           </div>
           <Footer />
@@ -69,4 +69,4 @@ const GraduationWorksDetail = () => {
   );
 };
 
-export default GraduationWorksDetail;
+export default CourseWorksDetail;
