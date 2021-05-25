@@ -9,6 +9,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 import { getHomeNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
+import path from '../../utils/path';
 
 const IndexNews = () => {
   const {
@@ -50,16 +51,24 @@ const IndexNews = () => {
                   </span>
                 </div>
               ))}
-              <button
-                className={
+              <Link
+                to={
                   newsType.groupid === 0
-                    ? `${styles.news_button} ${styles.news_button_mb}`
-                    : `${styles.news_button}`
+                    ? `${path.announcements}`
+                    : `${path.achievements}`
                 }
               >
-                <FontAwesomeIcon icon={faAngleRight} />
-                &ensp;&ensp;&ensp;More
-              </button>
+                <button
+                  className={
+                    newsType.groupid === 0
+                      ? `${styles.news_button} ${styles.news_button_mb}`
+                      : `${styles.news_button}`
+                  }
+                >
+                  <FontAwesomeIcon icon={faAngleRight} />
+                  &ensp;&ensp;&ensp;More
+                </button>
+              </Link>
             </div>
           ))}
         </div>
