@@ -25,13 +25,15 @@ import CollegePage from '../layouts/College';
 import MasterPage from '../layouts/Master';
 import InservicePage from '../layouts/Inservice';
 // 作品展示
+import GraduationWorksPage from '../layouts/GraduationWorks';
+import GraduationWorksDetailPage from '../layouts/GraduationWorksDetail';
+import CourseWorksPage from '../layouts/CourseWorks';
+import CourseWorksDetailPage from '../layouts/CourseWorksDetail';
+import CooperationWorksPage from '../layouts/CooperationWorks';
+import CooperationWorksDetailPage from '../layouts/CooperationWorksDetail';
 // 下載專區
 import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
-import GraduationWorksPage from '../layouts/GraduationWorks';
-import GraduationWorksDetailPage from '../layouts/GraduationWorksDetail';
-import CooperationWorksPage from '../layouts/CooperationWorks';
-import CooperationWorksDetailPage from '../layouts/CooperationWorksDetail';
 
 const Routes = () => {
   return (
@@ -94,13 +96,14 @@ const Routes = () => {
             />
             <Route
               exact
-              path={`${path.graduationWorks}/:sort`}
-              component={GraduationWorksPage}
-            />
-            <Route
-              exact
               path={`${path.graduationWorks}/:sort/:works`}
               component={GraduationWorksDetailPage}
+            />
+            <Route exact path={path.courseWorks} component={CourseWorksPage} />
+            <Route
+              exact
+              path={`${path.courseWorks}/:sort/:works`}
+              component={CourseWorksDetailPage}
             />
             <Route
               exact

@@ -5,16 +5,18 @@ import {
   SET_NEWS,
   SET_STAFF,
   SET_STAFF_DETAIL,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
   SET_GRADUATONWORKS_SHOW,
   SET_GRADUATONWORKS_DETAIL,
+  SET_COURSEWORKS_SHOW,
+  SET_COURSEWORKS_DETAIL,
   SET_COOPERATIONWORKS,
   SET_COOPERATIONWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
   SET_BANNER,
-  SET_WORKS_SORT,
-  SET_WORKSSORT_ACTIVEITEM,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -27,6 +29,8 @@ const initialState = {
   worksSortActiveItem: '所有',
   graduationWorksShow: [],
   graduationWorksDetail: {},
+  courseWorksShow: [],
+  courseWorksDetail: {},
   cooperationWorks: [],
   cooperationWorksDetail: {},
   requestdata: { loading: false, error: null },
@@ -74,6 +78,16 @@ function reducer(state, action) {
       return {
         ...state,
         graduationWorksDetail: action.payload,
+      };
+    case SET_COURSEWORKS_SHOW:
+      return {
+        ...state,
+        courseWorksShow: action.payload,
+      };
+    case SET_COURSEWORKS_DETAIL:
+      return {
+        ...state,
+        courseWorksDetail: action.payload,
       };
     case SET_COOPERATIONWORKS:
       return {

@@ -14,6 +14,7 @@ export default {
   inservice: '/inservice',
   // 作品展示
   graduationWorks: '/graduationWorks',
+  courseWorks: '/courseWorks',
   cooperationWorks: '/cooperationWorks',
   // 下載專區
   rules: '/rules',

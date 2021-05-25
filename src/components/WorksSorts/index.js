@@ -4,6 +4,8 @@ import styles from './styles.module.scss';
 import {
   getGraduationWorksShow,
   getGraduationWorks,
+  getCourseWorksShow,
+  getCourseWorks,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -17,6 +19,10 @@ const SortsList = (prop) => {
       sort == '所有'
         ? getGraduationWorks(dispatch)
         : getGraduationWorksShow(dispatch, { sort });
+    } else if (path == '/courseWorks') {
+      sort == '所有'
+        ? getCourseWorks(dispatch)
+        : getCourseWorksShow(dispatch, { sort });
     }
   };
   return (
