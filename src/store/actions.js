@@ -3,7 +3,7 @@ import {
   SET_NEWS,
   SET_STAFF,
   SET_STAFF_DETAIL,
-  SET_GRADUATONWORKS,
+  SET_GRADUATONWORKS_SHOW,
   SET_GRADUATONWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
@@ -11,6 +11,8 @@ import {
   SET_BANNER,
   SET_COOPERATIONWORKS,
   SET_COOPERATIONWORKS_DETAIL,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
 } from './actionTypes';
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
@@ -110,11 +112,50 @@ export const getGraduationWorks = async (dispatch) => {
     const url = `${BASE_URL}/graduateProject`;
     const response = await axios.get(url);
     const works = response.data;
-
+    var worksSortArray = ['所有'];
+    works.map((work) => worksSortArray.push(work.sortTitle));
     //從json取資料
     // const works = gwjson;
     dispatch({
-      type: SET_GRADUATONWORKS,
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: '所有',
+    });
+    dispatch({
+      type: SET_GRADUATONWORKS_SHOW,
+      payload: works,
+    });
+    dispatch({
+      type: SET_WORKS_SORT,
+      payload: worksSortArray,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+export const setWorksSortActiveItem = async (dispatch) => {
+  dispatch({
+    type: SET_WORKSSORT_ACTIVEITEM,
+    payload: '所有',
+  });
+};
+export const getGraduationWorksShow = async (dispatch, options) => {
+  const { sort = 109 } = options;
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    const url = `${BASE_URL}/graduateProject?graduateYear=${sort}`;
+    const response = await axios.get(url);
+    const works = response.data;
+    //從json取資料
+    // const works = gwjson;
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
+    });
+    dispatch({
+      type: SET_GRADUATONWORKS_SHOW,
       payload: works,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });

@@ -94,7 +94,12 @@ const Routes = () => {
             />
             <Route
               exact
-              path={`${path.graduationWorks}/:works`}
+              path={`${path.graduationWorks}/:sort`}
+              component={GraduationWorksPage}
+            />
+            <Route
+              exact
+              path={`${path.graduationWorks}/:sort/:works`}
               component={GraduationWorksDetailPage}
             />
             <Route

@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import * as Scroll from 'react-scroll';
 //路徑
 import path from '../../utils/path';
 
@@ -15,13 +16,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import Masonry from 'react-masonry-css';
 
-import { getGraduationWorks } from '../../store/actions';
+import {
+  getGraduationWorks,
+  getGraduationWorksShow,
+  setWorksSortActiveItem,
+} from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 const GraduationWorks = () => {
   const {
     state: {
-      graduationWorks,
+      graduationWorksShow,
+      worksSort,
+      worksSortActiveItem,
       requestdata: { loading },
     },
     dispatch,
@@ -31,13 +38,19 @@ const GraduationWorks = () => {
     991: 2,
     575: 1,
   };
+  const geturlid = window.location.href;
   useEffect(() => {
-    getGraduationWorks(dispatch);
+    if (geturlid.search(/#/i) != -1) {
+      Scroll.scroller.scrollTo('content');
+      worksSortActiveItem == '所有'
+        ? getGraduationWorks(dispatch)
+        : getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
+    } else {
+      Scroll.scroller.scrollTo('top');
+      setWorksSortActiveItem(dispatch);
+      getGraduationWorks(dispatch);
+    }
   }, []);
-  var worksSortArray = ['所有'];
-  useEffect(() => {
-    graduationWorks.map((work) => worksSortArray.push(work.sortTitle));
-  }, [loading]);
   return (
     <Fragment>
       <Helmet>
@@ -45,24 +58,29 @@ const GraduationWorks = () => {
         <title>畢業專題-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的畢業專題" />
       </Helmet>
-      <div className={styles.container}>
+      <div className={styles.container} id="top">
         <Header />
         <Banner />
-        {loading ? (
-          <div className={styles.graduationWorksContainer}>
-            <PageTitle title="畢業專題" />
+        <div className={styles.graduationWorksContainer} id="content">
+          <PageTitle title="畢業專題" />
+          {worksSort.length > 1 ? (
+            <WorksSort
+              sortsList={worksSort}
+              selectedItem={worksSortActiveItem}
+              path={path.graduationWorks}
+            />
+          ) : (
+            <></>
+          )}
+          {loading ? (
             <div className={styles.worksArea}></div>
-          </div>
-        ) : (
-          <div className={styles.graduationWorksContainer}>
-            <PageTitle title="畢業專題" />
-            <WorksSort sortsList={worksSortArray} />
+          ) : (
             <Masonry
               className={styles.worksArea}
               columnClassName={styles.worksArea_column}
               breakpointCols={breakPoint}
             >
-              {graduationWorks.map((workslist) =>
+              {graduationWorksShow.map((workslist) =>
                 workslist.sortList.map((work) => (
                   <div className={styles.worksBox} key={work.id}>
                     <img src={work.workImgUrl} />
@@ -73,6 +91,8 @@ const GraduationWorks = () => {
                       <Link
                         to={
                           path.graduationWorks +
+                          '/' +
+                          workslist.sortTitle +
                           '/' +
                           work.workTitle +
                           '?workId=' +
@@ -90,9 +110,8 @@ const GraduationWorks = () => {
                 )),
               )}
             </Masonry>
-          </div>
-        )}
-
+          )}
+        </div>
         <Footer />
       </div>
     </Fragment>

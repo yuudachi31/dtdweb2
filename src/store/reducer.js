@@ -5,8 +5,7 @@ import {
   SET_NEWS,
   SET_STAFF,
   SET_STAFF_DETAIL,
-  SET_GRADUATONWORKS,
-  SET_GRADUATONWORKS_SORT,
+  SET_GRADUATONWORKS_SHOW,
   SET_GRADUATONWORKS_DETAIL,
   SET_COOPERATIONWORKS,
   SET_COOPERATIONWORKS_DETAIL,
@@ -14,6 +13,8 @@ import {
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
   SET_BANNER,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -22,8 +23,9 @@ const initialState = {
   news: [],
   staff: [],
   staffDetail: {},
-  graduationWorks: [],
-  graduationWorksSort: [],
+  worksSort: ['所有'],
+  worksSortActiveItem: '所有',
+  graduationWorksShow: [],
   graduationWorksDetail: {},
   cooperationWorks: [],
   cooperationWorksDetail: {},
@@ -53,15 +55,20 @@ function reducer(state, action) {
         ...state,
         staffDetail: action.payload,
       };
-    case SET_GRADUATONWORKS:
+    case SET_WORKS_SORT:
       return {
         ...state,
-        graduationWorks: action.payload,
+        worksSort: action.payload,
       };
-    case SET_GRADUATONWORKS_SORT:
+    case SET_WORKSSORT_ACTIVEITEM:
       return {
         ...state,
-        graduationWorksSort: action.payload,
+        worksSortActiveItem: action.payload,
+      };
+    case SET_GRADUATONWORKS_SHOW:
+      return {
+        ...state,
+        graduationWorksShow: action.payload,
       };
     case SET_GRADUATONWORKS_DETAIL:
       return {

@@ -5,9 +5,11 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-import DownloadGroup from '../../components/DownloadsGroup';
+import DocsGroup from '../../components/DocsGroup';
 
 import styles from './styles.module.scss';
+
+import downloadJson from '../../assets/json/downloads.json';
 
 const Download = () => {
   return (
@@ -22,7 +24,7 @@ const Download = () => {
         <Banner />
         <div className={styles.downloadContainer}>
           <PageTitle title="表格下載" />
-          <DownloadGroup />
+          <DocsGroup json={downloadJson} />
         </div>
         <Footer />
       </div>
