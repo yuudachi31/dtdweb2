@@ -23,9 +23,9 @@ const Announcements = () => {
         <Banner />
         <div className={styles.board}>
           <PageTitle title="系務公告" />
-          <News pageStyle="announcementsPage" />
+          <News pageStyle="announcements" />
         </div>
-        <PageNumber pageCount="3" />
+        <PageNumber pageCount="3" pageStyle="announcements" />
         <Footer />
       </div>
     </Fragment>

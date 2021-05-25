@@ -25,13 +25,13 @@ import CollegePage from '../layouts/College';
 import MasterPage from '../layouts/Master';
 import InservicePage from '../layouts/Inservice';
 // 作品展示
-// 下載專區
-import RulesPage from '../layouts/Rules';
-import DownloadsPage from '../layouts/Downloads';
 import GraduationWorksPage from '../layouts/GraduationWorks';
 import GraduationWorksDetailPage from '../layouts/GraduationWorksDetail';
 import CooperationWorksPage from '../layouts/CooperationWorks';
 import CooperationWorksDetailPage from '../layouts/CooperationWorksDetail';
+// 下載專區
+import RulesPage from '../layouts/Rules';
+import DownloadsPage from '../layouts/Downloads';
 
 const Routes = () => {
   return (

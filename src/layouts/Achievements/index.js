@@ -23,9 +23,9 @@ const Achievements = () => {
         <Banner />
         <div className={styles.board}>
           <PageTitle title="師生榮譽榜" />
-          <News pageStyle="achievementsPage" />
+          <News pageStyle="achievements" />
         </div>
-        <PageNumber pageCount="3" />
+        <PageNumber pageCount="3" pageStyle="achievements" />
         <Footer />
       </div>
     </Fragment>

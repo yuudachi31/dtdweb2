@@ -9,7 +9,6 @@ const initialState = {
   hamburgerMenu: false,
   hamburgerTitle: [false, false, false, false, false],
   pageNumberState: [],
-  pageSeletedNumber: 1,
   activitiesPage: {
     activitiesCategory,
   },
@@ -52,11 +51,7 @@ const reducer = (state, action) => {
     case constants.SET_PAGENUMBERSTATE: {
       const pageNumberStateArr = [];
       for (let i = 1; i <= action.payload; i++) {
-        if (i == state.pageSeletedNumber) {
-          pageNumberStateArr.push(true);
-        } else {
-          pageNumberStateArr.push(false);
-        }
+        pageNumberStateArr.push(false);
       }
       return {
         ...state,
@@ -76,31 +71,9 @@ const reducer = (state, action) => {
       return {
         ...state,
         pageNumberState: pageNumberStateArr,
-        pageSeletedNumber: action.payload,
       };
     }
 
-    case constants.CLICK_PAGECHEVRON: {
-      const pageNumberStateArr = [];
-      var selectedNumber = 1;
-      for (let i = 1; i <= state.pageNumberState.length; i++) {
-        if (state.pageNumberState[i - 1] == true) {
-          selectedNumber = i + action.payload;
-        }
-      }
-      for (let i = 1; i <= state.pageNumberState.length; i++) {
-        if (i == selectedNumber) {
-          pageNumberStateArr.push(true);
-        } else {
-          pageNumberStateArr.push(false);
-        }
-      }
-      return {
-        ...state,
-        pageNumberState: pageNumberStateArr,
-        pageSeletedNumber: selectedNumber,
-      };
-    }
     case constants.SET_PAGE_CONTENT:
       return {
         ...state,

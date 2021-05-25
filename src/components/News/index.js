@@ -1,13 +1,14 @@
 import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.scss';
-import { Link } from 'react-router-dom';
-// import * as Scroll from 'react-scroll';
+import { Link, useLocation } from 'react-router-dom';
+import * as QueryString from 'query-string';
 
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
-import { UIStoreContext } from '../../uiStore/reducer';
 
 const News = (prop) => {
+  const location = useLocation();
+  const { page } = QueryString.parse(location.search);
   const {
     state: {
       news,
@@ -16,22 +17,13 @@ const News = (prop) => {
     dispatch,
   } = useContext(StoreContext);
 
-  const {
-    state: { pageSeletedNumber },
-  } = useContext(UIStoreContext);
-
   useEffect(() => {
     getNews(dispatch, {
-      clickNumber: pageSeletedNumber,
+      clickNumber: page,
       pageStyle: prop.pageStyle,
     });
-  }, [pageSeletedNumber]);
-
-  // useEffect(() => {
-  //   Scroll.animateScroll.scrollTo(0);
-  // }, [news]);
-
-  const page = prop.pageStyle.substring(0, prop.pageStyle.length - 4);
+    window.scrollTo(0, 0);
+  }, [page]);
 
   return (
     <>
@@ -39,17 +31,26 @@ const News = (prop) => {
         <div className={styles.container}></div>
       ) : (
         <div className={styles.container}>
-          <div className={styles.new}>
+          <div className={styles.news}>
             {news.map((newContent) => (
               <Link
-                to={`/${page}/newinfo?id=${newContent.id}`}
+                to={`/${prop.pageStyle}/newinfo?id=${newContent.id}`}
                 key={newContent.id}
                 className={styles.new_link}
               >
                 <div className={styles.new_box}>
-                  <div className={styles.new_title}>{newContent.title}</div>
-                  <div className={styles.new_content}>
-                    面試時間表經公告後不予調整順序。 考生報到及應試時請 […]
+                  <div
+                    className={`${styles.new_title} ${styles.new_text_nowrap}`}
+                  >
+                    {newContent.title}
+                  </div>
+                  <div
+                    className={`${styles.new_content} ${styles.new_text_nowrap}`}
+                  >
+                    {newContent.content
+                      .replace(/<li>|<p>/g, ' ')
+                      .replace(/<[^>]*>?/gm, '')
+                      .replace(/&nbsp;/g, '')}
                   </div>
                 </div>
               </Link>

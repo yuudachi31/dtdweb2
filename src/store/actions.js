@@ -27,7 +27,7 @@ export const getNews = async (dispatch, options) => {
   const { clickNumber = 1, pageStyle } = options;
 
   try {
-    const url = `${BASE_URL}/post/${pageStyle}?page=${clickNumber}`;
+    const url = `${BASE_URL}/post/${pageStyle}Page?page=${clickNumber}`;
     const response = await axios.get(url);
     const news = response.data;
 
