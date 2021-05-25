@@ -13,6 +13,7 @@ import {
   clickHamburgerMenu,
   clickHamburgerTitle,
   clickHamburgerLink,
+  clickPageNumber,
 } from '../../uiStore/actions';
 
 import { UIStoreContext } from '../../uiStore/reducer';
@@ -114,7 +115,12 @@ const Header = () => {
                   <Link
                     to={path.announcements}
                     className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    onClick={() => {
+                      clickHamburgerLink(dispatch);
+                      clickPageNumber(dispatch, {
+                        clickNumber: 1,
+                      });
+                    }}
                   >
                     系務公告
                   </Link>
@@ -123,7 +129,12 @@ const Header = () => {
                   <Link
                     to={path.achievements}
                     className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    onClick={() => {
+                      clickHamburgerLink(dispatch);
+                      clickPageNumber(dispatch, {
+                        clickNumber: 1,
+                      });
+                    }}
                   >
                     師生榮譽榜
                   </Link>
@@ -293,12 +304,28 @@ const Header = () => {
           </div>
           <ul className={styles.nav_dropmenu}>
             <li className={styles.nav_linkBox}>
-              <Link to={path.announcements} className={styles.nav_link}>
+              <Link
+                to={path.announcements}
+                className={styles.nav_link}
+                onClick={() => {
+                  clickPageNumber(dispatch, {
+                    clickNumber: 1,
+                  });
+                }}
+              >
                 系務公告
               </Link>
             </li>
             <li className={styles.nav_linkBox}>
-              <Link to={path.achievements} className={styles.nav_link}>
+              <Link
+                to={path.achievements}
+                className={styles.nav_link}
+                onClick={() => {
+                  clickPageNumber(dispatch, {
+                    clickNumber: 1,
+                  });
+                }}
+              >
                 師生榮譽榜
               </Link>
             </li>

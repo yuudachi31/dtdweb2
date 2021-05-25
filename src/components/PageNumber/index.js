@@ -1,11 +1,9 @@
 import React, { useEffect, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import * as QueryString from 'query-string';
 import styles from './styles.module.scss';
 
-import {
-  setPageNumberState,
-  clickPageNumber,
-  clickPageChevron,
-} from '../../uiStore/actions';
+import { setPageNumberState, clickPageNumber } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
 /*icon*/
@@ -16,6 +14,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const PageNumber = (porp) => {
+  const location = useLocation();
+  const { page } = QueryString.parse(location.search);
   const {
     state: { pageNumberState },
     dispatch,
@@ -24,6 +24,9 @@ const PageNumber = (porp) => {
   useEffect(() => {
     setPageNumberState(dispatch, {
       pageCount: Number(porp.pageCount),
+    });
+    clickPageNumber(dispatch, {
+      clickNumber: page == undefined ? 1 : Number(page),
     });
   }, []);
 
@@ -35,22 +38,36 @@ const PageNumber = (porp) => {
   return (
     <div className={styles.container}>
       <div className={styles.pageNumber_box}>
-        <button
+        <Link
+          to={
+            page == undefined || Number(page) - 1 == 1
+              ? `/${porp.pageStyle}`
+              : `/${porp.pageStyle}?page=${Number(page) - 1}`
+          }
           className={
             pageNumberState[0]
               ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
               : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
           }
           onClick={
-            pageNumberState[0]
+            page == undefined
               ? () => {}
-              : () => clickPageChevron(dispatch, { clickChevron: -1 })
+              : () => {
+                  clickPageNumber(dispatch, {
+                    clickNumber: page == Number(page) - 1,
+                  });
+                }
           }
         >
           <FontAwesomeIcon icon={faChevronLeft} />
-        </button>
+        </Link>
         {pageNumberArr.map((pageNumber) => (
-          <button
+          <Link
+            to={
+              pageNumber == 1
+                ? `/${porp.pageStyle}`
+                : `/${porp.pageStyle}?page=${pageNumber}`
+            }
             key={pageNumber}
             className={
               pageNumberState[pageNumber - 1]
@@ -64,22 +81,33 @@ const PageNumber = (porp) => {
             }}
           >
             {pageNumber}
-          </button>
+          </Link>
         ))}
-        <button
+        <Link
+          to={
+            page == undefined
+              ? `/${porp.pageStyle}?page=2`
+              : Number(page) == pageNumberState.length
+              ? `/${porp.pageStyle}?page=${page}`
+              : `/${porp.pageStyle}?page=${Number(page) + 1}`
+          }
           className={
             pageNumberState[pageNumberState.length - 1]
               ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
               : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
           }
           onClick={
-            pageNumberState[pageNumberState.length - 1]
+            page == pageNumberState.length
               ? () => {}
-              : () => clickPageChevron(dispatch, { clickChevron: 1 })
+              : () => {
+                  clickPageNumber(dispatch, {
+                    clickNumber: page == undefined ? 2 : Number(page) + 1,
+                  });
+                }
           }
         >
           <FontAwesomeIcon icon={faChevronRight} />
-        </button>
+        </Link>
       </div>
     </div>
   );

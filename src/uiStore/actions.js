@@ -24,11 +24,6 @@ export const clickPageNumber = (dispatch, options) => {
   dispatch({ type: constants.CLICK_PAGENUMBER, payload: clickNumber });
 };
 
-export const clickPageChevron = (dispatch, options) => {
-  const { clickChevron } = options;
-  dispatch({ type: constants.CLICK_PAGECHEVRON, payload: clickChevron });
-};
-
 export const setPageContent = (dispatch, activitiesCategory) => {
   dispatch({
     type: constants.SET_PAGE_CONTENT,
