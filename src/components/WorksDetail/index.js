@@ -11,28 +11,28 @@ import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 const WorksDetail = (prop) => {
   const { worksDetail, path } = prop;
   return (
-    <div className={styles.gwDetail}>
+    <div className={styles.worksDetail}>
       {/* 作品名稱 */}
-      <Row className={styles.gwDetail_titleBar}>
+      <Row className={styles.worksDetail_titleBar}>
         <Link
           to={path + '#content'}
-          className={styles.gwDetail_titleBar__backBtn}
+          className={styles.worksDetail_titleBar__backBtn}
         >
           <img src={leftArrow} />
         </Link>
-        <div className={styles.gwDetail_titleBar__name}>
+        <div className={styles.worksDetail_titleBar__name}>
           {worksDetail.workTitle}
         </div>
       </Row>
       {/* 作品資訊 */}
-      <Row className={styles.gwDetail_contentBar}>
+      <Row className={styles.worksDetail_contentBar}>
         {/* 作品相片 */}
         <Col
           lg={4}
           md={12}
           sm={12}
           xs={12}
-          className={styles.gwDetail_contentBar__img}
+          className={styles.worksDetail_contentBar__img}
         >
           <img src={worksDetail.workImgUrl} />
         </Col>
@@ -40,7 +40,7 @@ const WorksDetail = (prop) => {
           lg={8}
           md={12}
           sm={12}
-          className={styles.gwDetail_contentBar__content}
+          className={styles.worksDetail_contentBar__content}
         >
           <div className={styles.contentDetail}>
             {/* 得獎紀錄 */}
