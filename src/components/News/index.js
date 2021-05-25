@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
-// import * as Scroll from 'react-scroll';
 
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
@@ -25,11 +24,8 @@ const News = (prop) => {
       clickNumber: pageSeletedNumber,
       pageStyle: prop.pageStyle,
     });
+    window.scrollTo(0, 0);
   }, [pageSeletedNumber]);
-
-  // useEffect(() => {
-  //   Scroll.animateScroll.scrollTo(0);
-  // }, [news]);
 
   const page = prop.pageStyle.substring(0, prop.pageStyle.length - 4);
 
@@ -39,7 +35,7 @@ const News = (prop) => {
         <div className={styles.container}></div>
       ) : (
         <div className={styles.container}>
-          <div className={styles.new}>
+          <div className={styles.news}>
             {news.map((newContent) => (
               <Link
                 to={`/${page}/newinfo?id=${newContent.id}`}
@@ -47,9 +43,18 @@ const News = (prop) => {
                 className={styles.new_link}
               >
                 <div className={styles.new_box}>
-                  <div className={styles.new_title}>{newContent.title}</div>
-                  <div className={styles.new_content}>
-                    面試時間表經公告後不予調整順序。 考生報到及應試時請 […]
+                  <div
+                    className={`${styles.new_title} ${styles.new_text_nowrap}`}
+                  >
+                    {newContent.title}
+                  </div>
+                  <div
+                    className={`${styles.new_content} ${styles.new_text_nowrap}`}
+                  >
+                    {newContent.content
+                      .replace(/<li>|<p>/g, ' ')
+                      .replace(/<[^>]*>?/gm, '')
+                      .replace(/&nbsp;/g, '')}
                   </div>
                 </div>
               </Link>

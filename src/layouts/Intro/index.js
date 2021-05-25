@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import Carousel from 'react-bootstrap/Carousel';
+import * as Scroll from 'react-scroll';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -12,8 +13,14 @@ import classjson from '../../assets/json/class.json';
 
 const Intro = () => {
   const [classdetail, setclassdetail] = useState([]);
+  const geturlid = window.location.href;
   useEffect(() => {
     setclassdetail(classjson);
+    if (geturlid.search(/#/i) != -1) {
+      Scroll.scroller.scrollTo(geturlid.slice(geturlid.search(/#/i) + 1));
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (
@@ -102,7 +109,7 @@ const Intro = () => {
               </div>
             </div>
           </div>
-          <div className={styles.pageTitle__marginTop}>
+          <div className={styles.pageTitle__marginTop} id="classroom">
             <PageTitle title="教室導覽" />
             <div className={styles.contentBox__marginTop}>
               <div className={styles.classBox}>

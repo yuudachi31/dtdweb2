@@ -7,7 +7,7 @@
   width: 100%;
 }
 
-.new {
+.news {
   padding: 0 $dtd-secondary-spacing;
 }
 
@@ -26,6 +26,12 @@
     padding: 6px 0;
     font-size: $dtd-hint-size;
     color: $dtd-submenu-text-color;
+  }
+
+  .new_text_nowrap {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 
   &:hover {

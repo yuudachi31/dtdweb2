@@ -11,9 +11,6 @@ import { getNewInfo } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 import styles from './styles.module.scss';
-import '@wordpress/block-library/build-style/style.css';
-import '@wordpress/block-library/build-style/style.css';
-import '@wordpress/block-library/build-style/style.css';
 
 const AchievementDetail = () => {
   const location = useLocation();

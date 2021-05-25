@@ -16,6 +16,7 @@ const Admissions = (prop) => {
   const [admissiondetail, setadmissiondetail] = useState([]);
   useEffect(() => {
     setadmissiondetail(admissionsjson[prop.number]);
+    window.scrollTo(0, 0);
   }, []);
   return (
     <div className={styles.container}>
