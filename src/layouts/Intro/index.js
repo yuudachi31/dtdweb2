@@ -4,9 +4,9 @@ import * as Scroll from 'react-scroll';
 import Carousel from 'react-bootstrap/Carousel';
 //components
 import Header from '../../components/Header';
-import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
+import Footer from '../../components/Footer';
 //設計
 import styles from './styles.module.scss';
 //資料匯入
@@ -36,7 +36,7 @@ const Intro = () => {
       <div className={styles.container}>
         <PageTitle title="本系簡介" />
         <div
-          className={`${styles.intro_contentBlock__marginTop} ${styles.intro_aboutBlock}`}
+          className={`${styles.intro_block__marginTop} ${styles.intro_aboutBlock}`}
         >
           <iframe
             className={styles.aboutBlock_video}
@@ -62,7 +62,7 @@ const Intro = () => {
         </div>
         <PageTitle title="教育理念" />
         <div
-          className={`${styles.intro_contentBlock__marginTop} ${styles.intro_conceptBlock}`}
+          className={`${styles.intro_block__marginTop} ${styles.intro_conceptBlock}`}
         >
           <div className={styles.conceptBlock_conceptBox}>
             <img src="assets/images/intro/foresight.png"></img>
@@ -95,7 +95,7 @@ const Intro = () => {
         </div>
         <div id="classroom">
           <PageTitle title="教室導覽" />
-          <div className={styles.intro_contentBlock__marginTop}>
+          <div className={styles.intro_block__marginTop}>
             {/* 教室資訊輪播 */}
             <div className={styles.intro_classroomCarousel}>
               <Carousel
