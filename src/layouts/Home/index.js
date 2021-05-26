@@ -22,13 +22,15 @@ const Home = () => {
         <title>數位科技設計學系-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的首頁" />
       </Helmet>
-      <Header id="top" />
-      <IndexBanner />
-      <div className={styles.container}>
-        <IndexNews />
-        <IndexContent />
+      <div className={styles.container} id="top">
+        <Header />
+        <IndexBanner />
+        <div className={styles.homeContainer}>
+          <IndexNews />
+          <IndexContent />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </Fragment>
   );
 };
