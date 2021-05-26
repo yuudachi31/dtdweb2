@@ -12,27 +12,27 @@ import {
 import admissionsjson from '../../assets/json/admissions.json';
 
 const Admissions = (prop) => {
-  const [admissiondetail, setadmissiondetail] = useState([]);
+  const [admissionsdetail, setadmissionsdetail] = useState([]);
   useEffect(() => {
-    setadmissiondetail(admissionsjson[prop.number]);
+    setadmissionsdetail(admissionsjson[prop.number]);
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
-      {admissiondetail.regulations_content &&
-      admissiondetail.regulations_document ? (
+      {admissionsdetail.regulations_content &&
+      admissionsdetail.regulations_document ? (
         <>
           <div className={styles.admissions_titleBar}>入學資訊</div>
           <div className={styles.admissions_infoBlock}>
             <div className={styles.infoBlock_degreeBox}>
               <img
-                src={admissiondetail.info_img}
+                src={admissionsdetail.info_img}
                 className={styles.degreeBox_img__width}
               ></img>
               <div
                 className={`${styles.degreeBox_name} ${styles.admissions_content__preLine}`}
               >
-                {admissiondetail.info_departmentName}
+                {admissionsdetail.info_departmentName}
               </div>
             </div>
             <div className={styles.infoBlock_infoBox}>
@@ -45,7 +45,7 @@ const Admissions = (prop) => {
                 <div
                   className={`${styles.infoRow_content} ${styles.admissions_content__fontSize}`}
                 >
-                  {admissiondetail.info_studuntNumber}
+                  {admissionsdetail.info_studuntNumber}
                 </div>
               </div>
               <div className={styles.infoBox_infoRow}>
@@ -57,7 +57,7 @@ const Admissions = (prop) => {
                 <div
                   className={`${styles.infoRow_content} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
                 >
-                  {admissiondetail.info_admission}
+                  {admissionsdetail.info_admission}
                 </div>
               </div>
               <div className={styles.infoBox_infoRow}>
@@ -69,7 +69,7 @@ const Admissions = (prop) => {
                 <div
                   className={`${styles.infoRow_content} ${styles.admissions_content__fontSize}`}
                 >
-                  {admissiondetail.info_target}
+                  {admissionsdetail.info_target}
                 </div>
               </div>
               <div className={styles.infoBox_infoRow}>
@@ -81,7 +81,7 @@ const Admissions = (prop) => {
                 <div
                   className={`${styles.infoRow_content} ${styles.admissions_content__fontSize}`}
                 >
-                  {admissiondetail.info_schoolTime}
+                  {admissionsdetail.info_schoolTime}
                 </div>
               </div>
               <div className={styles.infoBox_infoRow}>
@@ -94,10 +94,10 @@ const Admissions = (prop) => {
                   className={`${styles.infoRow_content} ${styles.admissions_content__fontSize}`}
                 >
                   <a
-                    href={admissiondetail.info_documentURL}
+                    href={admissionsdetail.info_documentURL}
                     className={styles.infoRow_document}
                   >
-                    {admissiondetail.info_documentName}
+                    {admissionsdetail.info_documentName}
                   </a>
                 </div>
               </div>
@@ -110,7 +110,7 @@ const Admissions = (prop) => {
                 <div
                   className={`${styles.infoRow_content} ${styles.admissions_content__fontSize}`}
                 >
-                  {admissiondetail.info_remark}
+                  {admissionsdetail.info_remark}
                 </div>
               </div>
             </div>
@@ -118,27 +118,29 @@ const Admissions = (prop) => {
           <div className={styles.admissions_titleBar}>修課規定</div>
           <div className={styles.admissions_regulationsBlock}>
             <div className={styles.regulationsBlock_regulationsBox}>
-              {admissiondetail.regulations_content.map((regulationsContent) => (
-                <div
-                  className={styles.regulationsBox_regulationsItem__margin}
-                  key={regulationsContent.regulations_title}
-                >
+              {admissionsdetail.regulations_content.map(
+                (regulationsContent) => (
                   <div
-                    className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                    className={styles.regulationsBox_regulationsItem__margin}
+                    key={regulationsContent.regulations_title}
                   >
-                    {regulationsContent.regulations_title}
+                    <div
+                      className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                    >
+                      {regulationsContent.regulations_title}
+                    </div>
+                    <div
+                      className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
+                    >
+                      {regulationsContent.regulations_rules}
+                    </div>
                   </div>
-                  <div
-                    className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
-                  >
-                    {regulationsContent.regulations_rules}
-                  </div>
-                </div>
-              ))}
+                ),
+              )}
             </div>
             <div className={styles.regulationsBlock_divisionLine}></div>
             <div className={styles.regulationsBlock_regulationsBox}>
-              {admissiondetail.regulations_document.map(
+              {admissionsdetail.regulations_document.map(
                 (regulationsDocument) => (
                   <div
                     className={styles.regulationsBox_regulationsItem__margin}
@@ -173,7 +175,7 @@ const Admissions = (prop) => {
           <div className={styles.admissions_titleBar}>修業地圖</div>
           <div className={styles.admissions_classMapBlock}>
             <img
-              src={admissiondetail.classMap}
+              src={admissionsdetail.classMap}
               className={styles.classMapBlock_img__width}
             ></img>
           </div>
