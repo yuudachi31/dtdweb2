@@ -23,7 +23,7 @@ const Header = () => {
 
   return (
     <div className={styles.container}>
-      <Link to={path.home}>
+      <Link to={path.home} onClick={() => clickHamburgerLink(dispatch)}>
         <img className={styles.logo} src={logo}></img>
       </Link>
       <div className={styles.nav}>
