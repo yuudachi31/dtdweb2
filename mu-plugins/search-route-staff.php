@@ -35,11 +35,6 @@
                'title' => "行政人員",
                'list' => array(),
             ),
-            array(
-               'groupid' => 5,
-               'title' => "已退休/已離職/未兼課",
-               'list' => array(),
-            ),
          );
    
          while($mainQuery->have_posts()) {
@@ -59,6 +54,12 @@
                   $groupID = 4; break;
                case "已退休/已離職/未兼課":
                   $groupID = 5; break;
+            }
+
+
+            //已退休/已離職/未兼課 目前不需要回傳
+            if($groupID > 4){
+               continue;
             }
 
             $collection = array(
