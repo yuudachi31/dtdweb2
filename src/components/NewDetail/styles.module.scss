@@ -1,54 +1,44 @@
 @import '../../styles/media.scss';
-@import '../../styles/color.scss';
-@import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
 @import '../../styles/spacing.scss';
+@import '../../styles/font.scss';
+@import '../../styles/color.scss';
 
-.newDetail {
-  margin: 27px 10vw 80px 12vw;
-}
-
-@media (max-width: $dtd-media-tablet) {
-  .newDetail {
-    margin: 27px 6.8vw 80px 6.8vw;
-  }
-}
-@media (max-width: $dtd-media-phone) {
-  .newDetail {
-    margin: 27px 6.9vw 80px 6.9vw;
-  }
-}
-@media (max-width: $dtd-media-phone-small) {
-  .newDetail {
-    margin: 27px 6.25vw 80px 6.25vw;
-  }
+.container {
+  width: 100vw;
+  padding: 0 $dtd-margin-desktop;
+  background-color: $dtd-main-bg-color;
 }
 
-.newDetail_titleBar {
+.newDetail_newDetailBlock__padding {
+  padding: 27px 0 80px 2vw;
+}
+
+.newDetailBlock_titleBar {
   display: flex;
   margin-bottom: 40px;
   align-items: center;
 }
-.newDetail_titleBar__backBtnBox {
+
+.titleBar_backBtn {
   padding: 9px 22px 9px 0;
-}
-.newDetail_titleBar__backBtn {
-  padding: 0;
   margin: 0;
   border: none;
   background-color: $dtd-main-bg-color;
 }
-.newDetail_titleBar__img {
+
+.backBtn_img__width {
   width: 30px;
-  height: 30px;
 }
-.newDetail_titleBar__title {
+
+.titleBar_title {
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   padding: 9px 0 9px 36px;
   font-size: $dtd-h1-size;
   font-weight: bold;
 }
 
-.newDetail_content {
+.newDetailBlock_content {
   width: 100%;
   height: auto;
 
@@ -58,6 +48,7 @@
   font-weight: 400;
   letter-spacing: 0;
   color: #626262;
+
   & > p {
     margin: 0 0 15px;
   }
@@ -87,6 +78,14 @@
     border-spacing: 0;
     border-radius: 5px;
   }
+  & > table td {
+    border-color: rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: middle;
+  }
   & > tbody {
     display: table-row-group;
     vertical-align: middle;
@@ -97,12 +96,28 @@
     vertical-align: inherit;
     border-color: inherit;
   }
-  & > table td {
-    border-color: rgba(0, 0, 0, 0.08);
-    padding: 10px;
-    text-align: center;
-    border-width: 1px;
-    border-style: solid;
-    vertical-align: middle;
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .container {
+    padding: 0 $dtd-margin-tablet;
+  }
+
+  .newDetail_newDetailBlock__padding {
+    padding: 27px 2vw 80px 2vw;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .container {
+    padding: 0 $dtd-margin-phone;
+  }
+
+  .newDetail_newDetailBlock__padding {
+    padding: 27px 0 80px 0;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .container {
+    padding: 0 $dtd-margin-phone-small;
   }
 }

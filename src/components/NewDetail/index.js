@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
-
 import { useHistory } from 'react-router-dom';
-
+//設計
 import styles from './styles.module.scss';
 import '@wordpress/block-library/build-style/style.css';
 // import '@wordpress/block-library/build-style/editor.css';
 // import '@wordpress/block-library/build-style/theme.css';
-
+//components
 import Footer from '../Footer';
-
 //圖片匯入
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 
@@ -25,25 +23,25 @@ const NewDetail = (prop) => {
 
   return (
     <>
-      <div className={styles.newDetail}>
-        <div className={styles.newDetail_titleBar}>
-          <div className={styles.newDetail_titleBar__backBtnBox}>
+      <div className={styles.container}>
+        <div className={styles.newDetail_newDetailBlock__padding}>
+          <div className={styles.newDetailBlock_titleBar}>
             <button
-              className={styles.newDetail_titleBar__backBtn}
+              className={styles.titleBar_backBtn}
               onClick={() => history.goBack()}
             >
-              <img className={styles.newDetail_titleBar__img} src={leftArrow} />
+              <img className={styles.backBtn_img__width} src={leftArrow} />
             </button>
+            <div className={styles.titleBar_title}>{prop.title}</div>
           </div>
-          <div className={styles.newDetail_titleBar__title}>{prop.title}</div>
+          <div
+            ref={ref}
+            className={styles.newDetailBlock_content}
+            dangerouslySetInnerHTML={{ __html: prop.content }}
+          />
         </div>
-        <div
-          ref={ref}
-          className={styles.newDetail_content}
-          dangerouslySetInnerHTML={{ __html: prop.content }}
-        />
       </div>
-      {height != 0 ? <Footer /> : <div></div>}
+      {height != 0 ? <Footer /> : <></>}
     </>
   );
 };
