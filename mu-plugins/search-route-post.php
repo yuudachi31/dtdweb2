@@ -9,18 +9,40 @@
          'p' => $data['postID']
       ));
 
-      while($mainQuery->have_posts()) {
-         $mainQuery->the_post();
+      if($data['postID']){
 
-         array_push($results, array(
+         while($mainQuery->have_posts()) {
+            $mainQuery->the_post();
+            $url = get_permalink(get_the_ID());
+         }
+
+         $content = wp_remote_get( $url)["body"];
+         $content = ConvertContentLabel($content);
+         //$content = CaptureMainContent($content);
+
+         $results = array(
             'id' => get_the_ID(),
             'groupTitle' => get_field('groupTitle'),
             'title' => get_the_title(),
-            'content' => get_the_content(),
-         ));
-      }
+            'content' => $content,
+         );
 
-      return $results;
+         return $results;
+      }
+      else{
+         while($mainQuery->have_posts()) {
+            $mainQuery->the_post();
+   
+            array_push($results, array(
+               'id' => get_the_ID(),
+               'groupTitle' => get_field('groupTitle'),
+               'title' => get_the_title(),
+               'content' => get_the_content(),
+            ));
+         }
+   
+         return $results;
+      }
    }
 
 
@@ -98,8 +120,7 @@
          array_push($results, array(
             'id' => get_the_ID(),
             'title' => get_the_title(),
-            'content' => apply_filters('the_content', get_the_content()),
-            //'content' => get_the_content(),
+            'content' => ConvertContentLabel(get_the_content()),
          ));
       }
 
@@ -126,11 +147,26 @@
          array_push($results, array(
             'id' => get_the_ID(),
             'title' => get_the_title(),
-            'content' => get_the_content(),
+            'content' => ConvertContentLabel(get_the_content()),
          ));
       }
 
       //array_push($results, pageID)
 
       return $results;
+   }
+
+   function ConvertContentLabel($content){
+      $content = str_replace(array("\r"), '', $content);
+      $content = str_replace('\"', "\\\"", $content);
+      return $content;
+   }
+
+   function CaptureMainContent($content){
+      $capture_start = "<h2>";
+      $capture_end = "<h2>";
+      $start = stripos($content, $capture_start);
+      $end = strrpos($content, $capture_end);
+      $content = substr($content, $start, $end-1);
+      return $content;
    }
