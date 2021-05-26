@@ -8,25 +8,25 @@
 .homePage_bgc {
   background-color: $dtd-main-bg-color;
 }
-.container {
+.homeContainer {
   width: 100vw;
   padding: 0 $dtd-margin-desktop;
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .container {
+  .homeContainer {
     padding: 0 $dtd-margin-tablet;
   }
 }
 
 @media (max-width: $dtd-media-phone) {
-  .container {
+  .homeContainer {
     padding: 0 $dtd-margin-phone;
   }
 }
 
 @media (max-width: $dtd-media-phone-small) {
-  .container {
+  .homeContainer {
     padding: 0 $dtd-margin-phone-small;
   }
 }
