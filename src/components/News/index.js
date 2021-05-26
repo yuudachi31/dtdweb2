@@ -1,8 +1,9 @@
 import React, { useEffect, useContext } from 'react';
-import styles from './styles.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
-
+//設計
+import styles from './styles.module.scss';
+//動態變數
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -28,34 +29,28 @@ const News = (prop) => {
   return (
     <>
       {loading ? (
-        <div className={styles.container}></div>
+        <></>
       ) : (
-        <div className={styles.container}>
-          <div className={styles.news}>
-            {news.map((newContent) => (
-              <Link
-                to={`/${prop.pageStyle}/newinfo?id=${newContent.id}`}
-                key={newContent.id}
-                className={styles.new_link}
-              >
-                <div className={styles.new_box}>
-                  <div
-                    className={`${styles.new_title} ${styles.new_text_nowrap}`}
-                  >
-                    {newContent.title}
-                  </div>
-                  <div
-                    className={`${styles.new_content} ${styles.new_text_nowrap}`}
-                  >
-                    {newContent.content
-                      .replace(/<li>|<p>/g, ' ')
-                      .replace(/<[^>]*>?/gm, '')
-                      .replace(/&nbsp;/g, '')}
-                  </div>
+        <div className={styles.news_newsBlock}>
+          {news.map((newContent) => (
+            <div className={styles.newsBlock_newBox} key={newContent.id}>
+              <Link to={`/${prop.pageStyle}/newinfo?id=${newContent.id}`}>
+                <div
+                  className={`${styles.newBox_title} ${styles.newBox_text_ellipsis}`}
+                >
+                  {newContent.title}
+                </div>
+                <div
+                  className={`${styles.newBox_content} ${styles.newBox_text_ellipsis}`}
+                >
+                  {newContent.content
+                    .replace(/<li>|<p>/g, ' ')
+                    .replace(/<[^>]*>?/gm, '')
+                    .replace(/&nbsp;/g, '')}
                 </div>
               </Link>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       )}
     </>
