@@ -1,75 +1,72 @@
 @import '../../styles/media.scss';
+@import '../../styles/pageMargin.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
 
 .container {
   width: 100vw;
-}
-
-.board {
-  width: 100vw;
-  padding: 0 10vw;
+  padding: 0 $dtd-margin-desktop;
   background-color: $dtd-main-bg-color;
 }
 
-.intro_content_p {
-  font-size: $dtd-p-size;
-}
-.pageTitle__marginTop {
-  margin-top: 0;
-}
-.contentBox__marginTop {
+.intro_contentBlock__marginTop {
   margin-top: $dtd-secondary-spacing;
 }
-
-.introBox__flex {
+.intro_aboutBlock {
   display: flex;
 }
-.introBox_img {
-  width: 150;
-}
-.introBox_video {
+
+.aboutBlock_video {
   width: 45%;
   margin-right: 5%;
 }
-.introBox_textContent {
+.aboutBlock_content {
   width: 50%;
+  font-size: $dtd-p-size;
 }
 
-.ideasBox__flex {
+.intro_conceptBlock {
   display: flex;
   text-align: center;
-  margin-right: -2%;
+  margin-right: -3%;
 }
-.ideaBox {
+
+.conceptBlock_conceptBox {
   width: 22%;
   margin-right: 3%;
 }
-.ideaBox_title {
+.conceptBox_title {
   font-size: $dtd-h2-size;
   margin: 24px 0 16px 0;
 }
+.conceptBox_content {
+  font-size: $dtd-p-size;
+}
 
-.classBox {
+.intro_classroomInfo__fontSize {
+  font-size: $dtd-hint-size;
+}
+.intro_classroomCarousel {
   position: relative;
   width: 100%;
   height: 398px;
   margin-bottom: 80px;
 }
-.classBox_carousel_img {
-  width: 100%;
-  height: 398px;
-  object-fit: cover;
-}
-.classBox_carouselChevron {
+
+.classroomCarousel_chevron {
   & a {
     background-color: $dtd-text-color;
     opacity: 0.6;
     width: 64px;
   }
 }
-.classBoxInfo {
+.classroomCarousel_img {
+  width: 100%;
+  height: 398px;
+  object-fit: cover;
+}
+.classroomCarousel_classroomCarouselInfo {
   position: absolute;
   bottom: 0;
   left: calc(50% - 206px);
@@ -79,137 +76,141 @@
   color: white;
   padding: 16px $dtd-secondary-spacing 0 $dtd-secondary-spacing;
 }
-.classBoxInfo_name {
+
+.classroomCarouselInfo_classroomCarouselName {
   font-size: $dtd-h2-size;
   text-align: center;
   margin-bottom: 24px;
 }
-.classBoxInfo_row {
+.classroomCarouselInfo_classroomCarouselRow {
   display: flex;
   margin-bottom: 16px;
 }
-.classBoxInfo__p {
-  font-size: $dtd-hint-size;
-}
-.classBoxInfo_title {
+
+.classroomCarouselRow_title {
   width: 30%;
 }
-.classBoxInfo_content {
+.classroomCarouselRow_content {
   width: 70%;
 }
 
-.classBoxPhone {
+.intro_classroomBlock {
   display: none;
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .board {
-    padding: 0 4.8vw;
+  .container {
+    padding: 0 $dtd-margin-tablet;
   }
 
-  .pageTitle__marginTop {
-    margin-top: -$dtd-secondary-spacing;
-  }
-  .contentBox__marginTop {
+  .intro_contentBlock__marginTop {
     margin-top: 0;
   }
-
-  .introBox__flex {
+  .intro_aboutBlock {
     display: block;
+    margin-bottom: -$dtd-secondary-spacing;
   }
-  .introBox_video {
+
+  .aboutBlock_video {
     width: 79.6%;
     background-color: $dtd-main-color;
     margin: 0 10.2% 24px 10.2%;
   }
-  .introBox_textContent {
+  .aboutBlock_content {
     width: 100%;
   }
 
-  .ideasBox__flex {
+  .intro_conceptBlock {
     margin-right: -4%;
-    margin-bottom: -$dtd-secondary-spacing;
+    margin-bottom: -$dtd-main-spcing;
     flex-wrap: wrap;
   }
-  .ideaBox {
+
+  .conceptBlock_conceptBox {
     width: 46%;
     margin-right: 4%;
     margin-bottom: $dtd-secondary-spacing;
   }
 
-  .classBox {
+  .intro_classroomCarousel {
     height: 310px;
   }
-  .classBox_carousel_img {
-    height: 310px;
-  }
-  .classBox_carouselChevron {
+
+  .classroomCarousel_chevron {
     & a {
       width: 50px;
     }
   }
+  .classroomCarousel_img {
+    height: 310px;
+  }
 }
 
 @media (max-width: $dtd-media-phone) {
-  .board {
-    padding: 0 6.9vw;
+  .container {
+    padding: 0 $dtd-margin-phone;
   }
-  .introBox_video {
+
+  .aboutBlock_video {
     width: 100%;
     background-color: $dtd-main-color;
     margin: 0 0 24px 0;
   }
-  .ideasBox__flex {
+
+  .intro_conceptBlock {
     margin-right: 0;
     flex-wrap: wrap;
   }
-  .ideaBox {
+
+  .conceptBlock_conceptBox {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
   }
 
-  .classBox {
+  .intro_classroomCarousel {
     display: none;
   }
-  .classBoxPhone {
+  .intro_classroomBlock {
     width: 100%;
     display: block;
-    margin-bottom: $dtd-section-spacing;
+    padding-bottom: $dtd-section-spacing;
   }
-}
 
-.classBoxPhone_img {
-  width: 100%;
-  height: 256px;
-  object-fit: cover;
-}
-.classBoxPhoneInfo {
-  width: 100%;
-  background-color: $dtd-text-color;
-  opacity: 0.9;
-  color: white;
-  padding: 16px 24px 4px 24px;
-  margin-bottom: $dtd-secondary-spacing;
-}
-.classBoxPhoneInfo_name {
-  font-size: $dtd-h2-size;
-  text-align: center;
-  margin-bottom: 20px;
-}
-.classBoxPhoneInfo_row {
-  display: flex;
-  margin-bottom: 12px;
-}
-.classBoxPhoneInfo_title {
-  width: 86px;
-}
-.classBoxPhoneInfo_content {
-  width: calc(100% - 86px);
+  .classroomBlock_img {
+    width: 100%;
+    height: 256px;
+    object-fit: cover;
+  }
+  .classroomBlock_classroomBlockInfo {
+    width: 100%;
+    background-color: $dtd-text-color;
+    opacity: 0.9;
+    color: white;
+    padding: 16px 24px 4px 24px;
+    margin-bottom: $dtd-secondary-spacing;
+  }
+
+  .classroomBlockInfo_classroomBlockName {
+    font-size: $dtd-h2-size;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .classroomBlockInfo_classroomBlockRow {
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  .classroomBlockRow_title {
+    width: 86px;
+  }
+  .classroomBlockRow_content {
+    width: calc(100% - 86px);
+  }
 }
 
 @media (max-width: $dtd-media-phone-small) {
-  .board {
-    padding: 0 6.25vw;
+  .container {
+    padding: 0 $dtd-margin-phone-small;
   }
 }
