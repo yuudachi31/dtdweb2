@@ -54,7 +54,7 @@ const PageNumber = (porp) => {
               ? () => {}
               : () => {
                   clickPageNumber(dispatch, {
-                    clickNumber: page == Number(page) - 1,
+                    clickNumber: Number(page) - 1,
                   });
                 }
           }
