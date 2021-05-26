@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom';
 
 import styles from './styles.module.scss';
 import '@wordpress/block-library/build-style/style.css';
-import '@wordpress/block-library/build-style/editor.css';
-import '@wordpress/block-library/build-style/theme.css';
+// import '@wordpress/block-library/build-style/editor.css';
+// import '@wordpress/block-library/build-style/theme.css';
 
 import Footer from '../Footer';
 
@@ -27,8 +27,11 @@ const NewDetail = (prop) => {
     <>
       <div className={styles.newDetail}>
         <div className={styles.newDetail_titleBar}>
-          <div className={styles.newDetail_titleBar__backBtn}>
-            <button onClick={() => history.goBack()}>
+          <div className={styles.newDetail_titleBar__backBtnBox}>
+            <button
+              className={styles.newDetail_titleBar__backBtn}
+              onClick={() => history.goBack()}
+            >
               <img className={styles.newDetail_titleBar__img} src={leftArrow} />
             </button>
           </div>

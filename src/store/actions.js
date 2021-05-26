@@ -52,7 +52,7 @@ export const getNewInfo = async (dispatch, options) => {
   try {
     const url = `${BASE_URL}/post?postID=${newID}`;
     const response = await axios.get(url);
-    const newInfo = response.data[0];
+    const newInfo = response.data;
 
     dispatch({
       type: SET_NEWINFO,
