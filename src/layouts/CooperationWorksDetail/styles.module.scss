@@ -2,156 +2,34 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
-a {
-  &:hover {
-    text-decoration: none;
-  }
-}
+@import '../../styles/pageMargin.scss';
+
 .container {
   width: 100vw;
   min-height: 100vh;
   background-color: $dtd-main-bg-color;
-  color: $dtd-text-color;
+  color: $dtd-submenu-text-color;
 }
 
-.cwDetail {
-  margin: 0 10vw;
-  padding-top: 30px;
-  //padding-top: $dtd-main-spcing;
+//worksContainer
+.worksContainer {
+  min-height: 100vh;
+  margin: 0 $dtd-margin-desktop;
+  padding-top: 27px;
   padding-bottom: $dtd-index-main-spacing;
 }
 @media (max-width: $dtd-media-tablet) {
-  .cwDetail {
-    margin: 0 4.8vw;
-    padding-top: 27px;
+  .worksContainer {
+    margin: 0 $dtd-margin-tablet;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .cwDetail {
-    margin: 0 6.9vw 0;
+  .worksContainer {
+    margin: 0 $dtd-margin-phone;
   }
 }
 @media (max-width: $dtd-media-phone-small) {
-  .cwDetail {
-    margin: 0 6.25vw 0;
-  }
-}
-
-//名稱與返回鍵
-.cwDetail_titleBar {
-  align-items: center;
-  height: 65px;
-}
-.cwDetail_titleBar__backBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 $dtd-secondary-spacing;
-  & img {
-    width: 30px;
-    height: 30px;
-  }
-}
-.cwDetail_titleBar__name {
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  height: 48px;
-  display: flex;
-  align-items: center;
-  padding-left: $dtd-secondary-spacing;
-  font-size: $dtd-h1-size;
-}
-
-//作品資訊
-.cwDetail_contentBar {
-  margin-top: 40px;
-  margin-left: 3vw;
-  margin-right: 0;
-}
-//作品圖片
-.cwDetail_contentBar__img {
-  display: flex;
-  // justify-content: center;
-  height: auto;
-  width: 100%;
-  align-items: flex-start;
-  & img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-}
-//作品資料內容
-.cwDetail_contentBar__content {
-  height: 100%;
-  padding-left: 39px;
-}
-@media (max-width: $dtd-media-tablet) {
-  .cwDetail_contentBar {
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-  .cwDetail_contentBar__content {
-    padding: 24px 15.2% 0 15.2%;
-  }
-  .cwDetail_contentBar__img {
-    padding: 0 15.2%;
-    height: auto;
-    justify-content: center;
-    & img {
-      width: 100%;
-      height: auto;
-      border-radius: 5px;
-    }
-  }
-}
-@media (max-width: $dtd-media-phone) {
-  .cwDetail_contentBar {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .cwDetail_contentBar__content {
-    padding: 24px 15px 0 15px;
-  }
-  .cwDetail_contentBar__img {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-//詳細資訊
-.contentDetail {
-  margin-top: 14px;
-  font-size: $dtd-p-size;
-  & div {
-    // margin: 10px 0;
-    color: $dtd-submenu-text-color;
-  }
-  & div:last-child {
-    margin-top: 16px;
-  }
-}
-.contentDetail_intro {
-  white-space: pre-wrap;
-  margin-bottom: $dtd-section-spacing;
-  line-height: 30px;
-  text-align: justify;
-}
-
-//相關連結
-.contentLine {
-  height: 1px;
-  background-color: $dtd-main-color;
-  margin-top: $dtd-section-spacing;
-}
-.relatedBar {
-  margin-top: 42px;
-  color: $dtd-submenu-text-color;
-  & a {
-    margin-left: 16px;
-    color: $dtd-main-color;
-    &:hover {
-      color: $dtd-main-color;
-      box-shadow: 0 1px $dtd-main-color;
-    }
+  .worksContainer {
+    margin: 0 $dtd-margin-phone-small;
   }
 }

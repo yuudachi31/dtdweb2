@@ -2,43 +2,44 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
+
 .container {
   width: 100vw;
   min-height: 100vh;
   background-color: $dtd-main-bg-color;
-  color: $dtd-text-color;
+  color: $dtd-submenu-text-color;
 }
 
-.staffDetail {
-  margin: 0 10vw;
-  padding-top: 30px;
-  //padding-top: $dtd-main-spcing;
+.staffContainer {
+  min-height: 100vh;
+  margin: 0 $dtd-margin-desktop;
+  padding-top: 27px;
   padding-bottom: 142px;
 }
 @media (max-width: $dtd-media-tablet) {
-  .staffDetail {
-    margin: 0 4.8vw;
-    padding-top: 27px;
-    padding-bottom: 80px;
+  .staffContainer {
+    margin: 0 $dtd-margin-tablet;
+    padding-bottom: $dtd-index-main-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .staffDetail {
-    margin: 0 6.9vw 0;
+  .staffContainer {
+    margin: 0 $dtd-margin-phone;
   }
 }
 @media (max-width: $dtd-media-phone-small) {
-  .staffDetail {
-    margin: 0 6.25vw 0;
+  .staffContainer {
+    margin: 0 $dtd-margin-phone-small;
   }
 }
 
 //名稱與返回鍵
-.staffDetail_titleBar {
+.staffContainer_titleBar {
   align-items: center;
   height: 65px;
 }
-.staffDetail_titleBar__backBtn {
+.staffContainer_titleBar__backBtn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +49,7 @@
     height: 30px;
   }
 }
-.staffDetail_titleBar__name {
+.staffContainer_titleBar__name {
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   height: 48px;
   display: flex;
@@ -58,20 +59,20 @@
 }
 
 //教師資訊
-.staffDetail_contentBar {
+.staffContainer_contentBar {
   margin-top: $dtd-section-spacing;
 }
 @media (max-width: $dtd-media-desktop) {
-  .staffDetail_contentBar {
+  .staffContainer_contentBar {
     margin-top: 40px;
   }
 }
 //教師人像
-.staffDetail_contentBar__box {
+.staffContainer_contentBar__box {
   display: flex;
   justify-content: center;
 }
-.staffDetail_contentBar__img {
+.staffContainer_contentBar__img {
   border: 8px solid #f8f8f8;
   overflow: hidden;
   display: flex;
@@ -86,29 +87,29 @@
   }
 }
 //教師資料內容
-.staffDetail_contentBar__content {
+.staffContainer_contentBar__content {
   height: 100%;
 }
 @media (max-width: $dtd-media-tablet) {
-  .staffDetail_contentBar__content {
+  .staffContainer_contentBar__content {
     padding: 24px 15.2% 0 15.2%;
   }
-  .staffDetail_contentBar__img {
+  .staffContainer_contentBar__img {
     height: 240px;
     width: 240px;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .staffDetail_contentBar__content {
+  .staffContainer_contentBar__content {
     padding: 24px 15px 0 15px;
   }
 }
 //聯絡資訊
-.contactBar {
+.content_contactBar {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.contactBar_contactBox {
+.content_contactBar__contactBox {
   display: flex;
   align-items: center;
   height: 30px;
@@ -117,25 +118,26 @@
     width: 16px;
     height: 16px;
   }
+  & div {
+    color: $dtd-main-color;
+  }
 }
-.contactBar_contactBox__hint {
-  color: $dtd-main-color;
-}
-.contactLine {
+// .contactBar_contactBox__hint {
+// }
+.content_contactLine {
   height: 1px;
   background-color: $dtd-main-color;
 }
 //詳細資訊
-.contactDetail {
+.content_contactDetail {
   margin-top: 20px;
   font-size: $dtd-p-size;
   & div {
     margin: 10px 0;
-    color: $dtd-submenu-text-color;
   }
 }
-.contactDetail,
-.contactBar_contactBox {
+.content_contactDetail,
+.content_contactBar__contactBox {
   & a {
     color: $dtd-main-color;
     &:hover {

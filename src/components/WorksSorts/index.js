@@ -1,6 +1,7 @@
 import { useContext } from 'react';
+//css
 import styles from './styles.module.scss';
-
+//data
 import {
   getGraduationWorksShow,
   getGraduationWorks,

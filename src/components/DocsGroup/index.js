@@ -4,27 +4,24 @@ import styles from './styles.module.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DocsGroup = (prop) => {
-  const [downloaddetail, setdownloaddetail] = useState([]);
+  const [docsdetail, setDocsDetail] = useState([]);
   useEffect(() => {
-    setdownloaddetail(prop.json);
+    setDocsDetail(prop.json);
   }, []);
   return (
     <div className={styles.container}>
-      {downloaddetail.map((group) => (
+      {docsdetail.map((group) => (
         <div className={styles.container} key={group.title}>
-          <div className={styles.downloadGroupName}>{group.title}</div>
-          <div className={styles.downloadBar}>
+          <div className={styles.docsGroupName}>{group.title}</div>
+          <div className={styles.docsBar}>
             {group.list.map((download) =>
               !download.docname2 ? (
-                <div
-                  key={download.docname}
-                  className={styles.downloadBar_downloadBox}
-                >
+                <div key={download.docname} className={styles.docsBar_docsBox}>
                   <a href={download.docurl} target="_blank" rel="noreferrer">
                     {download.docname}
                   </a>
                   {download.remarks != '' ? (
-                    <div className={styles.downloadBar_downloadBox__remarks}>
+                    <div className={styles.docsBar_docsBox__remarks}>
                       （{download.remarks}）
                     </div>
                   ) : (
@@ -32,10 +29,7 @@ const DocsGroup = (prop) => {
                   )}
                 </div>
               ) : !download.docname3 ? (
-                <div
-                  key={download.docname}
-                  className={styles.downloadBar_downloadBox}
-                >
+                <div key={download.docname} className={styles.docsBar_docsBox}>
                   <a href={download.docurl} target="_blank" rel="noreferrer">
                     {download.docname}
                   </a>
@@ -45,10 +39,7 @@ const DocsGroup = (prop) => {
                   </a>
                 </div>
               ) : (
-                <div
-                  key={download.docname}
-                  className={styles.downloadBar_downloadBox}
-                >
+                <div key={download.docname} className={styles.docsBar_docsBox}>
                   <a href={download.docurl} target="_blank" rel="noreferrer">
                     {download.docname}
                   </a>

@@ -1,13 +1,14 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
-//路徑
-import path from '../../utils/path';
-//設計
-import styles from './styles.module.scss';
+//bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
-//取職員資料
+//path
+import path from '../../utils/path';
+//css
+import styles from './styles.module.scss';
+//data
 import { getStaff } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -19,11 +20,14 @@ const StaffGroup = () => {
     },
     dispatch,
   } = useContext(StoreContext);
-  const geturlid = window.location.href;
+
+  //get url
+  const getUrlId = window.location.href;
+
   useEffect(() => {
     getStaff(dispatch);
-    if (geturlid.search(/#/i) != -1) {
-      Scroll.scroller.scrollTo(geturlid.slice(geturlid.search(/#/i) + 1));
+    if (getUrlId.search(/#/i) != -1) {
+      Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1));
     }
   }, []);
   return (

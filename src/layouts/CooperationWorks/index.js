@@ -1,20 +1,21 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-//路徑
-import path from '../../utils/path';
-
+import Masonry from 'react-masonry-css';
+import * as Scroll from 'react-scroll';
+//components
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-import WorksSort from '../../components/WorksSorts';
-
+//path
+import path from '../../utils/path';
+//css
 import styles from './styles.module.scss';
+//icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import Masonry from 'react-masonry-css';
-
+//data
 import { getCooperationWorks } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -26,33 +27,40 @@ const CooperationWorks = () => {
     },
     dispatch,
   } = useContext(StoreContext);
+
+  //Masonry rwd breakPoint
   const breakPoint = {
     default: 3,
     991: 2,
     575: 1,
   };
+
+  //get url
+  const getUrlId = window.location.href;
+
   useEffect(() => {
     getCooperationWorks(dispatch);
+    if (getUrlId.search(/#/i) != -1) {
+      Scroll.scroller.scrollTo('content');
+    } else {
+      Scroll.scroller.scrollTo('top');
+    }
   }, []);
   return (
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
         <title>合作成果-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的畢業專題" />
+        <meta name="description" content="數位科技設計學系的合作成果" />
       </Helmet>
-      <div className={styles.container}>
+      <div className={styles.container} id="top">
         <Header />
         <Banner />
-        {loading ? (
-          <div className={styles.cooperationWorksContainer}>
-            <PageTitle title="合作成果" />
+        <div className={styles.cooperationWorksContainer} id="content">
+          <PageTitle title="合作成果" />
+          {loading ? (
             <div className={styles.worksArea}></div>
-          </div>
-        ) : (
-          <div className={styles.cooperationWorksContainer}>
-            <PageTitle title="合作成果" />
-            <WorksSort sortsList={[]} />
+          ) : (
             <Masonry
               className={styles.worksArea}
               columnClassName={styles.worksArea_column}
@@ -84,9 +92,8 @@ const CooperationWorks = () => {
                 </div>
               ))}
             </Masonry>
-          </div>
-        )}
-
+          )}
+        </div>
         <Footer />
       </div>
     </Fragment>

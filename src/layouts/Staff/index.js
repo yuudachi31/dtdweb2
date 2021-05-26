@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-
+//componemt
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import TreachGroup from '../../components/StaffGroup';
-
+//css
 import styles from './styles.module.scss';
 
 const Staff = () => {
