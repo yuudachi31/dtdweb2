@@ -1,38 +1,38 @@
 import React from 'react';
-
-import styles from './styles.module.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+//bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
-
-//圖片匯入
+//css
+import styles from './styles.module.scss';
+//icons
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 
 const WorksDetail = (prop) => {
   const { worksDetail, path } = prop;
   return (
-    <div className={styles.worksDetail}>
+    <div className={styles.worksContainer}>
       {/* 作品名稱 */}
-      <Row className={styles.worksDetail_titleBar}>
+      <Row className={styles.worksContainer_titleBar}>
         <Link
           to={path + '#content'}
-          className={styles.worksDetail_titleBar__backBtn}
+          className={styles.worksContainer_titleBar__backBtn}
         >
           <img src={leftArrow} />
         </Link>
-        <div className={styles.worksDetail_titleBar__name}>
+        <div className={styles.worksContainer_titleBar__name}>
           {worksDetail.workTitle}
         </div>
       </Row>
       {/* 作品資訊 */}
-      <Row className={styles.worksDetail_contentBar}>
+      <Row className={styles.worksContainer_contentBar}>
         {/* 作品相片 */}
         <Col
           lg={4}
           md={12}
           sm={12}
           xs={12}
-          className={styles.worksDetail_contentBar__img}
+          className={styles.worksContainer_contentBar__img}
         >
           <img src={worksDetail.workImgUrl} />
         </Col>
@@ -40,12 +40,12 @@ const WorksDetail = (prop) => {
           lg={8}
           md={12}
           sm={12}
-          className={styles.worksDetail_contentBar__content}
+          className={styles.worksContainer_contentBar__content}
         >
-          <div className={styles.contentDetail}>
+          <div className={styles.content_detail}>
             {/* 得獎紀錄 */}
             {worksDetail.honor != '' ? (
-              <div className={styles.contentDetail_intro}>
+              <div className={styles.content_detail__introContent}>
                 <strong>得獎紀錄：</strong>
                 <br />
                 {worksDetail.honor.replace(/<br ?\/?>/g, '')}
@@ -54,7 +54,7 @@ const WorksDetail = (prop) => {
               <></>
             )}
             {/* 作品介紹 */}
-            <div className={styles.contentDetail_intro}>
+            <div className={styles.content_detail__introContent}>
               <strong>作品介紹：</strong>
               <br />
               {worksDetail.introduction.replace(/<br ?\/?>/g, '')}
@@ -70,9 +70,9 @@ const WorksDetail = (prop) => {
               {worksDetail.instructor}
             </div>
           </div>
-          <div className={styles.contentLine}></div>
+          <div className={styles.content_line}></div>
           {/* 相關連結 */}
-          <div className={styles.relatedBar}>
+          <div className={styles.content_relatedBar}>
             <div>
               <strong>相關連結：</strong>
               {worksDetail.relatedLinks.length != 0

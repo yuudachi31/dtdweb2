@@ -3,23 +3,21 @@ import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
-//componemt&路徑
+//componemts
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import WorksDetail from '../../components/WorksDetail';
+//path
 import path from '../../utils/path';
-//設計
+//css
 import styles from './styles.module.scss';
-//取資料
+//data
 import { getCourseWorksDetail } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 const CourseWorksDetail = () => {
   const location = useLocation();
-  // const { groupid, teacherid, staffpath } = QueryString.parse(
-  //   location.search,
-  // );
-  const { workId } = QueryString.parse(location.search);
+  const { workId, sort } = QueryString.parse(location.search);
   const {
     state: {
       courseWorksDetail,
@@ -29,7 +27,7 @@ const CourseWorksDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getCourseWorksDetail(dispatch, { workId });
+    getCourseWorksDetail(dispatch, { workId, sort });
     Scroll.scroller.scrollTo('top');
   }, []);
 
@@ -40,11 +38,11 @@ const CourseWorksDetail = () => {
           <Helmet>
             <meta charSet="utf-8" />
             <title>課程作品-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的教室團隊" />
+            <meta name="description" content="數位科技設計學系的課程作品" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.gwDetail}></div>
+            <div className={styles.worksContainer}></div>
             <Footer />
           </div>
         </Fragment>
@@ -53,7 +51,7 @@ const CourseWorksDetail = () => {
           <Helmet>
             <meta charSet="utf-8" />
             <title>{courseWorksDetail.workTitle}-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的教室團隊" />
+            <meta name="description" content="數位科技設計學系的課程作品" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />

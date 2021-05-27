@@ -1,25 +1,27 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import Masonry from 'react-masonry-css';
 import * as Scroll from 'react-scroll';
-//路徑
-import path from '../../utils/path';
-
+//components
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import WorksSort from '../../components/WorksSorts';
-
+//path
+import path from '../../utils/path';
+//css
 import styles from './styles.module.scss';
+//icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
-import Masonry from 'react-masonry-css';
-
+//data
 import {
   getGraduationWorks,
   getGraduationWorksShow,
   setWorksSortActiveItem,
+  setWorksSort,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -33,21 +35,31 @@ const GraduationWorks = () => {
     },
     dispatch,
   } = useContext(StoreContext);
+
+  //Masonry rwd breakPoint
   const breakPoint = {
     default: 3,
     991: 2,
     575: 1,
   };
-  const geturlid = window.location.href;
+
+  //get url
+  const getUrlId = window.location.href;
+
   useEffect(() => {
-    if (geturlid.search(/#/i) != -1) {
+    setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
+    if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
-      worksSortActiveItem == '所有'
-        ? getGraduationWorks(dispatch)
-        : getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
+      if (worksSortActiveItem == '所有') {
+        getGraduationWorks(dispatch);
+      } else {
+        setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+        getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
+      }
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSortActiveItem(dispatch);
+      setWorksSort(dispatch, { sort: worksSortActiveItem, path });
       getGraduationWorks(dispatch);
     }
   }, []);
@@ -96,7 +108,9 @@ const GraduationWorks = () => {
                           '/' +
                           work.workTitle +
                           '?workId=' +
-                          work.id
+                          work.id +
+                          '&sort=' +
+                          worksSortActiveItem
                         }
                         className={styles.worksBox_content__link}
                       >
