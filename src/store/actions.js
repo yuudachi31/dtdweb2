@@ -130,12 +130,50 @@ export const getBanner = async (dispatch) => {
   }
 };
 
-//設定作品級分類選項
+//設定作品分類選項為所有
 export const setWorksSortActiveItem = async (dispatch) => {
   dispatch({
     type: SET_WORKSSORT_ACTIVEITEM,
     payload: '所有',
   });
+};
+//設定作品分類陣列
+export const setWorksSort = async (dispatch, options) => {
+  const { sort = '109', path = '/' } = options;
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    //從後台取資料
+    var url = '/';
+    var worksSortArray = ['所有'];
+    var response = {};
+    var works = [];
+
+    if (path === '/graduationWorks') {
+      url = `${BASE_URL}/graduateProject`;
+      response = await axios.get(url);
+      works = response.data;
+      works.map((work) => worksSortArray.push(work.sortTitle.toString()));
+    } else if (path === '/courseWorks') {
+      url = `${BASE_URL}/classProject`;
+      response = await axios.get(url);
+      works = response.data;
+      works.map((work) => worksSortArray.push(work.sortTitle));
+    }
+    //從json取資料
+    // const works = gwjson;
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
+    }); //紀錄作品分類
+    dispatch({
+      type: SET_WORKS_SORT,
+      payload: worksSortArray,
+    }); //紀錄所有分類名稱
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
 };
 
 //取得所有畢業專題作品資料
@@ -147,7 +185,7 @@ export const getGraduationWorks = async (dispatch) => {
     const response = await axios.get(url);
     const works = response.data;
     var worksSortArray = ['所有'];
-    works.map((work) => worksSortArray.push(work.sortTitle));
+    works.map((work) => worksSortArray.push(work.sortTitle.toString()));
     //從json取資料
     // const works = gwjson;
 
@@ -171,7 +209,7 @@ export const getGraduationWorks = async (dispatch) => {
 };
 //取得指定分類畢業專題作品資料
 export const getGraduationWorksShow = async (dispatch, options) => {
-  const { sort = 109 } = options;
+  const { sort = '109' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     //從後台取資料
@@ -198,7 +236,7 @@ export const getGraduationWorksShow = async (dispatch, options) => {
 //取得單項畢業專題作品資料
 export const getGraduationWorksDetail = async (dispatch, options) => {
   //從後台取資料
-  const { workId = 0 } = options;
+  const { workId = 0, sort = '109' } = options;
   //從json取資料
   // const { groupid = 0, teacherid2 = 0 } = options;
 
@@ -214,6 +252,10 @@ export const getGraduationWorksDetail = async (dispatch, options) => {
     dispatch({
       type: SET_GRADUATONWORKS_DETAIL,
       payload: worksDetail,
+    });
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
@@ -281,7 +323,7 @@ export const getCourseWorksShow = async (dispatch, options) => {
 //取得單項課程作品資料
 export const getCourseWorksDetail = async (dispatch, options) => {
   //從後台取資料
-  const { workId = 0 } = options;
+  const { workId = 0, sort = '遊戲設計' } = options;
   //從json取資料
   // const { groupid = 0, teacherid2 = 0 } = options;
 
@@ -297,6 +339,10 @@ export const getCourseWorksDetail = async (dispatch, options) => {
     dispatch({
       type: SET_COURSEWORKS_DETAIL,
       payload: worksDetail,
+    });
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {

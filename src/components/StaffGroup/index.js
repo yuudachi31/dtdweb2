@@ -27,9 +27,18 @@ const StaffGroup = () => {
   useEffect(() => {
     getStaff(dispatch);
     if (getUrlId.search(/#/i) != -1) {
-      Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1));
+      Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
+        offset: -32,
+      });
     }
   }, []);
+  // useEffect(() => {
+  //   if (getUrlId.search(/#/i) != -1) {
+  //     Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
+  //       offset: -32,
+  //     });
+  //   }
+  // }, [loading]);
   return (
     <>
       {loading ? (
@@ -38,16 +47,18 @@ const StaffGroup = () => {
         <div className={styles.container}>
           {staff.map((group) => (
             <div
-              className={styles.container}
+              className={styles.staffContainer}
               key={group.groupid}
               id={'group' + group.groupid}
             >
-              <div className={styles.staffGroupName}>{group.title}</div>
-              <Row className={styles.staffBar}>
+              <div className={styles.staffContainer_staffGroupName}>
+                {group.title}
+              </div>
+              <Row className={styles.staffContainer_staffBar}>
                 {group.list.map((tea) => (
                   <Col
                     key={tea.id}
-                    className={styles.staffBar_staffBox}
+                    className={styles.staffContainer_staffBar__staffBox}
                     xl={3}
                     lg={6}
                     md={6}
@@ -63,16 +74,11 @@ const StaffGroup = () => {
                         '&staffpath=' +
                         tea.teachername
                       }
-                      className={styles.staffBar_staffBox__img}
                     >
                       <img src={tea.imgurl} />
                     </Link>
-                    <div className={styles.staffBar_staffBox__content}>
-                      {tea.title}
-                    </div>
-                    <div className={styles.staffBar_staffBox__content}>
-                      {tea.teachername}
-                    </div>
+                    <div>{tea.title}</div>
+                    <div>{tea.teachername}</div>
                   </Col>
                 ))}
               </Row>

@@ -21,6 +21,7 @@ import {
   getCourseWorks,
   getCourseWorksShow,
   setWorksSortActiveItem,
+  setWorksSort,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -48,12 +49,16 @@ const CourseWorks = () => {
   useEffect(() => {
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
-      worksSortActiveItem == '所有'
-        ? getCourseWorks(dispatch)
-        : getCourseWorksShow(dispatch, { sort: worksSortActiveItem });
+      if (worksSortActiveItem == '所有') {
+        getCourseWorks(dispatch);
+      } else {
+        setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+        getCourseWorksShow(dispatch, { sort: worksSortActiveItem });
+      }
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSortActiveItem(dispatch);
+      setWorksSort(dispatch, { sort: worksSortActiveItem, path });
       getCourseWorks(dispatch);
     }
   }, []);
@@ -102,7 +107,9 @@ const CourseWorks = () => {
                           '/' +
                           work.workTitle +
                           '?workId=' +
-                          work.id
+                          work.id +
+                          '&sort=' +
+                          worksSortActiveItem
                         }
                         className={styles.worksBox_content__link}
                       >

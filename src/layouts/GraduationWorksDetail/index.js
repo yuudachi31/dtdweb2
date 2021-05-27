@@ -17,7 +17,7 @@ import { StoreContext } from '../../store/reducer';
 
 const GraduationWorksDetail = () => {
   const location = useLocation();
-  const { workId } = QueryString.parse(location.search);
+  const { workId, sort } = QueryString.parse(location.search);
   const {
     state: {
       graduationWorksDetail,
@@ -27,7 +27,7 @@ const GraduationWorksDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getGraduationWorksDetail(dispatch, { workId });
+    getGraduationWorksDetail(dispatch, { workId, sort });
     Scroll.scroller.scrollTo('top');
   }, []);
 

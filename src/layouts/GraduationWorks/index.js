@@ -21,6 +21,7 @@ import {
   getGraduationWorks,
   getGraduationWorksShow,
   setWorksSortActiveItem,
+  setWorksSort,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -46,14 +47,19 @@ const GraduationWorks = () => {
   const getUrlId = window.location.href;
 
   useEffect(() => {
+    setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
-      worksSortActiveItem == '所有'
-        ? getGraduationWorks(dispatch)
-        : getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
+      if (worksSortActiveItem == '所有') {
+        getGraduationWorks(dispatch);
+      } else {
+        setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+        getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
+      }
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSortActiveItem(dispatch);
+      setWorksSort(dispatch, { sort: worksSortActiveItem, path });
       getGraduationWorks(dispatch);
     }
   }, []);
@@ -102,7 +108,9 @@ const GraduationWorks = () => {
                           '/' +
                           work.workTitle +
                           '?workId=' +
-                          work.id
+                          work.id +
+                          '&sort=' +
+                          worksSortActiveItem
                         }
                         className={styles.worksBox_content__link}
                       >
