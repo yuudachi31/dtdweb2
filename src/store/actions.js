@@ -22,8 +22,6 @@ import {
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 
 // import bannerjson from '../assets/json/banner.json';
-// import staffjson from '../assets/json/teachers.json';
-//import gwjson from '../assets/json/works.json';
 // import newsjson from '../assets/json/news.json';
 
 export const getNews = async (dispatch, options) => {
@@ -68,12 +66,9 @@ export const getNewDetail = async (dispatch, options) => {
 export const getStaff = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/staff`;
     const response = await axios.get(url);
     const staff = response.data;
-    //從json取資料
-    // const staff = staffjson;
 
     dispatch({
       type: SET_STAFF,
@@ -87,19 +82,13 @@ export const getStaff = async (dispatch) => {
 };
 //取得單筆教職員資料
 export const getStaffDetail = async (dispatch, options) => {
-  //從後台取資料
   const { staffpath = '范丙林' } = options;
-  //從json取資料
-  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/staff?term=${staffpath}`;
     const response = await axios.get(url);
     const staffDetail = response.data;
-    // //從json取資料
-    // const staffDetail = staffjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_STAFF_DETAIL,
@@ -142,7 +131,6 @@ export const setWorksSort = async (dispatch, options) => {
   const { sort = '109', path = '/' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     var url = '/';
     var worksSortArray = [];
     var response = {};
@@ -160,8 +148,7 @@ export const setWorksSort = async (dispatch, options) => {
       works = response.data;
       works.map((work) => worksSortArray.push(work.sortTitle));
     }
-    //從json取資料
-    // const works = gwjson;
+
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
@@ -189,7 +176,7 @@ export const getGraduationWorks = async (dispatch) => {
     works.map((work) => worksSortArray.push(work.sortTitle.toString()));
     //從json取資料
     // const works = gwjson;
-    console.log(works[0]);
+
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: works[0].sortTitle,
