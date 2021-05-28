@@ -180,7 +180,11 @@ const StaffDetail = () => {
                       <strong>
                         {staffDetail.title != '助教' ? '學歷：' : ''}
                       </strong>
-                      {staffDetail.education}
+                      {staffDetail.title != '助教'
+                        ? staffDetail.education != ''
+                          ? staffDetail.education
+                          : '無'
+                        : ''}
                     </div>
                     {/* 專長（助教除外） */}
                     <div>

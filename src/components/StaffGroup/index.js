@@ -72,7 +72,12 @@ const StaffGroup = () => {
                         '?groupid=' +
                         group.groupid +
                         '&staffpath=' +
-                        tea.teachername
+                        (tea.teachername.search(/（|\(/i) == -1
+                          ? tea.teachername
+                          : tea.teachername.slice(
+                              0,
+                              tea.teachername.search(/（|\(/i),
+                            ))
                       }
                     >
                       <img src={tea.imgurl} />
