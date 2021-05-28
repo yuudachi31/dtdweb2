@@ -6,8 +6,8 @@ import activitiesCategory from '../assets/json/DTDActivities.json';
 export const UIStoreContext = createContext();
 
 const initialState = {
-  hamburgerMenu: false,
-  hamburgerTitle: [false, false, false, false, false],
+  hamburgerMenuState: false,
+  hamburgerTitleState: [false, false, false, false, false],
   pageNumberState: [],
   activitiesPage: {
     activitiesCategory,
@@ -18,37 +18,36 @@ const initialState = {
 };
 const reducer = (state, action) => {
   switch (action.type) {
-    case constants.CLICK_HAMBURGERMENU: {
-      const hamburgerMenuState = !state.hamburgerMenu;
+    case constants.CLICK_HAMBURGER_MENU: {
       return {
         ...state,
-        hamburgerMenu: hamburgerMenuState,
-        hamburgerTitle: [false, false, false, false, false],
+        hamburgerMenuState: !state.hamburgerMenuState,
+        hamburgerTitleState: [false, false, false, false, false],
       };
     }
-    case constants.CLICK_HAMBURGERTITLE: {
-      const hamburgerTitleState = [];
+    case constants.CLICK_HAMBURGER_TITLE: {
+      const hamburgerTitleStateArr = [];
       for (let i = 0; i < 5; i++) {
         if (i == action.payload) {
-          hamburgerTitleState.push(!state.hamburgerTitle[i]);
+          hamburgerTitleStateArr.push(!state.hamburgerTitleState[i]);
         } else {
-          hamburgerTitleState.push(false);
+          hamburgerTitleStateArr.push(false);
         }
       }
       return {
         ...state,
-        hamburgerTitle: hamburgerTitleState,
+        hamburgerTitleState: hamburgerTitleStateArr,
       };
     }
-    case constants.CLICK_HAMBURGERLINK: {
+    case constants.CLICK_HAMBURGER_LINK: {
       return {
         ...state,
-        hamburgerMenu: false,
-        hamburgerTitle: [false, false, false, false, false],
+        hamburgerMenuState: false,
+        hamburgerTitleState: [false, false, false, false, false],
       };
     }
 
-    case constants.SET_PAGENUMBERSTATE: {
+    case constants.SET_PAGENUMBER_STATE: {
       const pageNumberStateArr = [];
       for (let i = 1; i <= action.payload; i++) {
         pageNumberStateArr.push(false);

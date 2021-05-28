@@ -2,27 +2,27 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import * as Scroll from 'react-scroll';
 import Carousel from 'react-bootstrap/Carousel';
-//components
+// 設計
+import styles from './styles.module.scss';
+// components
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Footer from '../../components/Footer';
-//設計
-import styles from './styles.module.scss';
-//資料匯入
+// 資料匯入
 import introjson from '../../assets/json/intro.json';
 
 const Intro = () => {
-  const [introdetail, setintrodetail] = useState({});
+  const [introDetail, setIntroDetail] = useState({});
   const geturlid = window.location.href;
   useEffect(() => {
-    setintrodetail(introjson);
+    setIntroDetail(introjson);
     if (geturlid.search(/#/i) != -1) {
       Scroll.scroller.scrollTo(geturlid.slice(geturlid.search(/#/i) + 1));
     } else {
       window.scrollTo(0, 0);
     }
-  }, [introdetail]);
+  }, [introDetail]);
 
   return (
     <Fragment>
@@ -34,9 +34,9 @@ const Intro = () => {
       <Header />
       <Banner />
       <>
-        {introdetail.introContent &&
-        introdetail.concept &&
-        introdetail.classroom ? (
+        {introDetail.about_content &&
+        introDetail.concepts &&
+        introDetail.classrooms ? (
           <div className={styles.container}>
             <PageTitle title="本系簡介" />
             <div
@@ -53,24 +53,24 @@ const Intro = () => {
                 allowFullScreen
               ></iframe>
               <div className={styles.aboutBlock_content}>
-                {introdetail.introContent}
+                {introDetail.about_content}
               </div>
             </div>
             <PageTitle title="教育理念" />
             <div
               className={`${styles.intro_block__marginTop} ${styles.intro_conceptBlock}`}
             >
-              {introdetail.concept.map((conceptInfo) => (
+              {introDetail.concepts.map((concept) => (
                 <div
                   className={styles.conceptBlock_conceptBox}
-                  key={conceptInfo.title}
+                  key={concept.concept_title}
                 >
-                  <img src={conceptInfo.img}></img>
+                  <img src={concept.concept_img}></img>
                   <div className={styles.conceptBox_title}>
-                    {conceptInfo.title}
+                    {concept.concept_title}
                   </div>
                   <div className={styles.conceptBox_content}>
-                    {conceptInfo.content}
+                    {concept.concept_content}
                   </div>
                 </div>
               ))}
@@ -84,11 +84,14 @@ const Intro = () => {
                     indicators={false}
                     className={styles.classroomCarousel_chevron}
                   >
-                    {introdetail.classroom.map((classInfo) => (
-                      <Carousel.Item interval={5000} key={classInfo.id}>
+                    {introDetail.classrooms.map((classroom) => (
+                      <Carousel.Item
+                        interval={5000}
+                        key={classroom.classroom_id}
+                      >
                         <img
                           className={styles.classroomCarousel_img}
-                          src={classInfo.classUrl}
+                          src={classroom.classroom_img}
                         />
                         <div
                           className={
@@ -100,7 +103,7 @@ const Intro = () => {
                               styles.classroomCarouselInfo_classroomCarouselName
                             }
                           >
-                            {classInfo.name}
+                            {classroom.classroom_name}
                           </div>
                           <div
                             className={
@@ -115,7 +118,7 @@ const Intro = () => {
                             <div
                               className={`${styles.classroomCarouselRow_content} ${styles.intro_classroomInfo__fontSize}`}
                             >
-                              {classInfo.location}
+                              {classroom.classroom_location}
                             </div>
                           </div>
                           <div
@@ -131,7 +134,7 @@ const Intro = () => {
                             <div
                               className={`${styles.classroomCarouselRow_content} ${styles.intro_classroomInfo__fontSize}`}
                             >
-                              {classInfo.intro}
+                              {classroom.classroom_intro}
                             </div>
                           </div>
                         </div>
@@ -141,10 +144,10 @@ const Intro = () => {
                 </div>
                 {/* 教室資訊區塊 */}
                 <div className={styles.intro_classroomBlock}>
-                  {introdetail.classroom.map((classInfo) => (
-                    <div key={classInfo.id}>
+                  {introDetail.classrooms.map((classroom) => (
+                    <div key={classroom.classroom_id}>
                       <img
-                        src={classInfo.classUrl}
+                        src={classroom.classroom_img}
                         className={styles.classroomBlock_img}
                       />
                       <div className={styles.classroomBlock_classroomBlockInfo}>
@@ -153,7 +156,7 @@ const Intro = () => {
                             styles.classroomBlockInfo_classroomBlockName
                           }
                         >
-                          {classInfo.name}
+                          {classroom.classroom_name}
                         </div>
                         <div
                           className={
@@ -168,7 +171,7 @@ const Intro = () => {
                           <div
                             className={`${styles.classroomBlockRow_content} ${styles.intro_classroomInfo__fontSize}`}
                           >
-                            {classInfo.location}
+                            {classroom.classroom_location}
                           </div>
                         </div>
                         <div
@@ -184,7 +187,7 @@ const Intro = () => {
                           <div
                             className={`${styles.classroomBlockRow_content} ${styles.intro_classroomInfo__fontSize}`}
                           >
-                            {classInfo.intro}
+                            {classroom.classroom_intro}
                           </div>
                         </div>
                       </div>

@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-//components
+// 設計
+import styles from './styles.module.scss';
+// components
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import News from '../../components/News';
 import PageNumber from '../../components/PageNumber';
 import Footer from '../../components/Footer';
-//設計
-import styles from './styles.module.scss';
 
 const Announcements = () => {
   return (
@@ -24,7 +24,7 @@ const Announcements = () => {
         <PageTitle title="系務公告" />
         <News pageStyle="announcements" />
       </div>
-      <PageNumber pageCount="3" pageStyle="announcements" />
+      <PageNumber pageCount={3} pageStyle="announcements" />
       <Footer />
     </Fragment>
   );

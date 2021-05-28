@@ -1,24 +1,24 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
-//設計
+// 設計
 import styles from './styles.module.scss';
 import '@wordpress/block-library/build-style/style.css';
 // import '@wordpress/block-library/build-style/editor.css';
 // import '@wordpress/block-library/build-style/theme.css';
-//components
+// components
 import Footer from '../Footer';
-//圖片匯入
+// 圖片匯入
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 
 const NewDetail = (prop) => {
-  const [height, setHeight] = useState(0);
+  const [contentHeight, setContentHeight] = useState(0);
   const ref = useRef(null);
 
   const history = useHistory();
 
   useEffect(() => {
-    setHeight(ref.current.clientHeight);
-    console.log(ref.current.clientHeight);
+    setContentHeight(ref.current.clientHeight);
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -41,7 +41,7 @@ const NewDetail = (prop) => {
           />
         </div>
       </div>
-      {height != 0 ? <Footer /> : <></>}
+      {contentHeight != 0 ? <Footer /> : <></>}
     </>
   );
 };

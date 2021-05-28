@@ -1,20 +1,19 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-//路徑
-import path from '../../utils/path';
-//設計
+// 設計
 import styles from './styles.module.scss';
-//圖片匯入
+// 路徑
+import path from '../../utils/path';
+// 圖片匯入
 import logo from '../../assets/images/header/DTD.png';
-//icon匯入
+// icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-//靜態變數
+// uiStore
 import {
   clickHamburgerMenu,
   clickHamburgerTitle,
   clickHamburgerLink,
-  clickPageNumber,
 } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
@@ -68,28 +67,12 @@ const Header = () => {
           </div>
           <ul className={styles.dropdownMenu_pageList}>
             <li className={styles.pageList_pageBox}>
-              <Link
-                to={path.announcements}
-                className={styles.pageBox_page}
-                onClick={() => {
-                  clickPageNumber(dispatch, {
-                    clickNumber: 1,
-                  });
-                }}
-              >
+              <Link to={path.announcements} className={styles.pageBox_page}>
                 系務公告
               </Link>
             </li>
             <li className={styles.pageList_pageBox}>
-              <Link
-                to={path.achievements}
-                className={styles.pageBox_page}
-                onClick={() => {
-                  clickPageNumber(dispatch, {
-                    clickNumber: 1,
-                  });
-                }}
-              >
+              <Link to={path.achievements} className={styles.pageBox_page}>
                 師生榮譽榜
               </Link>
             </li>
@@ -168,7 +151,7 @@ const Header = () => {
         {/* hamburgerMenu */}
         <button
           className={
-            state.hamburgerMenu
+            state.hamburgerMenuState
               ? `${styles.nav_hamMenu} ${styles.hamMenu_icon__selectedColor}`
               : styles.nav_hamMenu
           }
@@ -181,7 +164,7 @@ const Header = () => {
         </button>
         <ul
           className={
-            state.hamburgerMenu
+            state.hamburgerMenuState
               ? styles.hamMenu_hamDropdownMenu
               : styles.hamMenu_hamDropdownMenu__close
           }
@@ -195,7 +178,7 @@ const Header = () => {
               <p>關於數位</p>
               <ul
                 className={
-                  state.hamburgerTitle[0]
+                  state.hamburgerTitleState[0]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
@@ -249,7 +232,7 @@ const Header = () => {
               <p>最新消息</p>
               <ul
                 className={
-                  state.hamburgerTitle[1]
+                  state.hamburgerTitleState[1]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
@@ -260,9 +243,6 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => {
                       clickHamburgerLink(dispatch);
-                      clickPageNumber(dispatch, {
-                        clickNumber: 1,
-                      });
                     }}
                   >
                     系務公告
@@ -274,9 +254,6 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => {
                       clickHamburgerLink(dispatch);
-                      clickPageNumber(dispatch, {
-                        clickNumber: 1,
-                      });
                     }}
                   >
                     師生榮譽榜
@@ -295,7 +272,7 @@ const Header = () => {
               <p>招生資訊</p>
               <ul
                 className={
-                  state.hamburgerTitle[2]
+                  state.hamburgerTitleState[2]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
@@ -340,7 +317,7 @@ const Header = () => {
               <p>作品展示</p>
               <ul
                 className={
-                  state.hamburgerTitle[3]
+                  state.hamburgerTitleState[3]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
@@ -385,7 +362,7 @@ const Header = () => {
               <p>下載專區</p>
               <ul
                 className={
-                  state.hamburgerTitle[4]
+                  state.hamburgerTitleState[4]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }

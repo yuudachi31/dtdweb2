@@ -1,9 +1,9 @@
 import React, { useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
-//設計
+// 設計
 import styles from './styles.module.scss';
-//動態變數
+// store
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -20,7 +20,7 @@ const News = (prop) => {
 
   useEffect(() => {
     getNews(dispatch, {
-      clickNumber: page,
+      clickNumber: page == undefined ? 1 : page,
       pageStyle: prop.pageStyle,
     });
     window.scrollTo(0, 0);
