@@ -1,5 +1,5 @@
 export const SET_NEWS = 'SET_NEWS';
-export const SET_NEWINFO = 'SET_NEWINFO';
+export const SET_NEW_DETAIL = 'SET_NEW_DETAIL';
 export const SET_STAFF = 'SET_STAFF';
 export const SET_STAFF_DETAIL = 'SET_STAFF_DETAIL';
 export const SET_WORKS_SORT = 'SET_WORKS_SORT';

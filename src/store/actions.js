@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {
   SET_NEWS,
-  SET_NEWINFO,
+  SET_NEW_DETAIL,
   SET_STAFF,
   SET_STAFF_DETAIL,
   SET_GRADUATONWORKS_SHOW,
@@ -28,7 +28,7 @@ const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 
 export const getNews = async (dispatch, options) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
-  const { clickNumber = 1, pageStyle } = options;
+  const { clickNumber = '1', pageStyle } = options;
 
   try {
     const url = `${BASE_URL}/post/${pageStyle}Page?page=${clickNumber}`;
@@ -45,18 +45,18 @@ export const getNews = async (dispatch, options) => {
   }
 };
 
-export const getNewInfo = async (dispatch, options) => {
+export const getNewDetail = async (dispatch, options) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   const { newID } = options;
 
   try {
     const url = `${BASE_URL}/post?postID=${newID}`;
     const response = await axios.get(url);
-    const newInfo = response.data;
+    const newDetail = response.data;
 
     dispatch({
-      type: SET_NEWINFO,
-      payload: newInfo,
+      type: SET_NEW_DETAIL,
+      payload: newDetail,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {

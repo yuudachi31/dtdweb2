@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
-//components
+// 設計
+import styles from './styles.module.scss';
+// components
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Admissions from '../../components/Admissions';
 import Footer from '../../components/Footer';
-//設計
-import styles from './styles.module.scss';
 
 const Inservice = () => {
   return (
@@ -21,7 +21,7 @@ const Inservice = () => {
       <Banner />
       <div className={styles.container}>
         <PageTitle title="在職碩士班" />
-        <Admissions number="2" />
+        <Admissions number={2} />
       </div>
       <Footer />
     </Fragment>

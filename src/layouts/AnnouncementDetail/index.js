@@ -2,28 +2,28 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
-//components
+// 設計
+// import styles from './styles.module.scss';
+// components
 import Header from '../../components/Header';
 import NewDetail from '../../components/NewDetail';
-//動態變數
-import { getNewInfo } from '../../store/actions';
+// store
+import { getNewDetail } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
-//設計
-// import styles from './styles.module.scss';
 
 const AnnouncementDetail = () => {
   const location = useLocation();
   const { id } = QueryString.parse(location.search);
   const {
     state: {
-      newInfo,
+      newDetail,
       requestdata: { loading },
     },
     dispatch,
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getNewInfo(dispatch, {
+    getNewDetail(dispatch, {
       newID: id,
     });
   }, []);
@@ -40,7 +40,7 @@ const AnnouncementDetail = () => {
         {loading ? (
           <div></div>
         ) : (
-          <NewDetail title={newInfo.title} content={newInfo.content} />
+          <NewDetail title={newDetail.title} content={newDetail.content} />
         )}
       </>
     </Fragment>

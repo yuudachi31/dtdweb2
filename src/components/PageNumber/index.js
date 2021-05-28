@@ -1,17 +1,17 @@
 import React, { useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
-//設計
+// 設計
 import styles from './styles.module.scss';
-//靜態變數
-import { setPageNumberState, clickPageNumber } from '../../uiStore/actions';
-import { UIStoreContext } from '../../uiStore/reducer';
-//匯入icon
+// icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+// uiStore
+import { setPageNumberState, clickPageNumber } from '../../uiStore/actions';
+import { UIStoreContext } from '../../uiStore/reducer';
 
 const PageNumber = (porp) => {
   const location = useLocation();
@@ -25,10 +25,13 @@ const PageNumber = (porp) => {
     setPageNumberState(dispatch, {
       pageCount: Number(porp.pageCount),
     });
+  }, []);
+
+  useEffect(() => {
     clickPageNumber(dispatch, {
       clickNumber: page == undefined ? 1 : Number(page),
     });
-  }, []);
+  }, [page]);
 
   const pageNumberArr = [];
   for (var i = 1; i <= porp.pageCount; i++) {

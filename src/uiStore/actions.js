@@ -2,25 +2,25 @@ import constants from './actionTypes';
 import Cookie from 'js-cookie';
 
 export const clickHamburgerMenu = (dispatch) => {
-  dispatch({ type: constants.CLICK_HAMBURGERMENU });
+  dispatch({ type: constants.CLICK_HAMBURGER_MENU });
 };
 
 export const clickHamburgerTitle = (dispatch, options) => {
   const { clickTitle } = options;
-  dispatch({ type: constants.CLICK_HAMBURGERTITLE, payload: clickTitle });
+  dispatch({ type: constants.CLICK_HAMBURGER_TITLE, payload: clickTitle });
 };
 
 export const clickHamburgerLink = (dispatch) => {
-  dispatch({ type: constants.CLICK_HAMBURGERLINK });
+  dispatch({ type: constants.CLICK_HAMBURGER_LINK });
 };
 
 export const setPageNumberState = (dispatch, options) => {
   const { pageCount } = options;
-  dispatch({ type: constants.SET_PAGENUMBERSTATE, payload: pageCount });
+  dispatch({ type: constants.SET_PAGENUMBER_STATE, payload: pageCount });
 };
 
 export const clickPageNumber = (dispatch, options) => {
-  const { clickNumber } = options;
+  const { clickNumber = 1 } = options;
   dispatch({ type: constants.CLICK_PAGENUMBER, payload: clickNumber });
 };
 
