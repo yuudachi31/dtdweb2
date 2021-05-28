@@ -105,38 +105,25 @@ const Intro = () => {
                           >
                             {classroom.classroom_name}
                           </div>
-                          <div
-                            className={
-                              styles.classroomCarouselInfo_classroomCarouselRow
-                            }
-                          >
+                          {classroom.classroom_info.map((infoDetail) => (
                             <div
-                              className={`${styles.classroomCarouselRow_title} ${styles.intro_classroomInfo__fontSize}`}
+                              className={
+                                styles.classroomCarouselInfo_classroomCarouselRow
+                              }
+                              key={infoDetail.info_content}
                             >
-                              教室地點：
+                              <div
+                                className={`${styles.classroomCarouselRow_title} ${styles.intro_classroomInfo__fontSize}`}
+                              >
+                                {infoDetail.info_title}
+                              </div>
+                              <div
+                                className={`${styles.classroomCarouselRow_content} ${styles.intro_classroomInfo__fontSize}`}
+                              >
+                                {infoDetail.info_content}
+                              </div>
                             </div>
-                            <div
-                              className={`${styles.classroomCarouselRow_content} ${styles.intro_classroomInfo__fontSize}`}
-                            >
-                              {classroom.classroom_location}
-                            </div>
-                          </div>
-                          <div
-                            className={
-                              styles.classroomCarouselInfo_classroomCarouselRow
-                            }
-                          >
-                            <div
-                              className={`${styles.classroomCarouselRow_title} ${styles.intro_classroomInfo__fontSize}`}
-                            >
-                              教室簡介：
-                            </div>
-                            <div
-                              className={`${styles.classroomCarouselRow_content} ${styles.intro_classroomInfo__fontSize}`}
-                            >
-                              {classroom.classroom_intro}
-                            </div>
-                          </div>
+                          ))}
                         </div>
                       </Carousel.Item>
                     ))}
@@ -158,38 +145,25 @@ const Intro = () => {
                         >
                           {classroom.classroom_name}
                         </div>
-                        <div
-                          className={
-                            styles.classroomBlockInfo_classroomBlockRow
-                          }
-                        >
+                        {classroom.classroom_info.map((infoDetail) => (
                           <div
-                            className={`${styles.classroomBlockRow_title} ${styles.intro_classroomInfo__fontSize}`}
+                            className={
+                              styles.classroomBlockInfo_classroomBlockRow
+                            }
+                            key={infoDetail.info_content}
                           >
-                            教室地點：
+                            <div
+                              className={`${styles.classroomBlockRow_title} ${styles.intro_classroomInfo__fontSize}`}
+                            >
+                              {infoDetail.info_title}
+                            </div>
+                            <div
+                              className={`${styles.classroomBlockRow_content} ${styles.intro_classroomInfo__fontSize}`}
+                            >
+                              {infoDetail.info_content}
+                            </div>
                           </div>
-                          <div
-                            className={`${styles.classroomBlockRow_content} ${styles.intro_classroomInfo__fontSize}`}
-                          >
-                            {classroom.classroom_location}
-                          </div>
-                        </div>
-                        <div
-                          className={
-                            styles.classroomBlockInfo_classroomBlockRow
-                          }
-                        >
-                          <div
-                            className={`${styles.classroomBlockRow_title} ${styles.intro_classroomInfo__fontSize}`}
-                          >
-                            教室簡介：
-                          </div>
-                          <div
-                            className={`${styles.classroomBlockRow_content} ${styles.intro_classroomInfo__fontSize}`}
-                          >
-                            {classroom.classroom_intro}
-                          </div>
-                        </div>
+                        ))}
                       </div>
                     </div>
                   ))}
