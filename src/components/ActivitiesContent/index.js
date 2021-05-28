@@ -6,6 +6,10 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import path from '../../utils/path';
 
+/*icon*/
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+
 const ActivitiesContent = (prop) => {
   return (
     <Row>
@@ -34,7 +38,10 @@ const ActivitiesContent = (prop) => {
             <Link
               to={`${path.activities}/${activities.category}/${activities.id}`}
             >
-              <div className={styles.activitiesBoxBottom_more}>&gt; More</div>
+              <div className={styles.activitiesBoxBottom_more}>
+                <FontAwesomeIcon icon={faAngleRight} />
+                &ensp;More
+              </div>
             </Link>
           </div>
         </Col>

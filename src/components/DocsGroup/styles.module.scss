@@ -8,7 +8,7 @@
   background-color: $dtd-main-bg-color;
   color: $dtd-text-color;
 }
-.downloadGroupName {
+.docsGroupName {
   width: 100%;
   height: 54px;
   border-radius: 5px;
@@ -18,19 +18,19 @@
   padding-left: $dtd-secondary-spacing;
   font-size: $dtd-h2-size;
 }
-.downloadBar {
+.docsBar {
   font-size: $dtd-p-size;
   margin-top: $dtd-section-spacing;
   margin-bottom: $dtd-section-spacing;
   padding: 0 $dtd-secondary-spacing;
-  & .downloadBar_downloadBox {
+  & .docsBar_docsBox {
     // display: inline;
     margin-bottom: 18px;
     &:last-child {
       margin-bottom: 0;
     }
   }
-  & .downloadBar_downloadBox__remarks {
+  & .docsBar_docsBox__remarks {
     display: inline;
     color: $dtd-submenu-text-color;
   }

@@ -3,27 +3,26 @@ import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
-//componemt&路徑
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
-import path from '../../utils/path';
-//設計
-import styles from './styles.module.scss';
+//bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
-//取資料
-import { getStaffDetail } from '../../store/actions';
-import { StoreContext } from '../../store/reducer';
-//圖片匯入
+//componemts
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+//path
+import path from '../../utils/path';
+//css
+import styles from './styles.module.scss';
+//icons
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 import phoneIcon from '../../assets/images/icons/icon_phone.png';
 import emailIcon from '../../assets/images/icons/icon_email.png';
+//data
+import { getStaffDetail } from '../../store/actions';
+import { StoreContext } from '../../store/reducer';
 
 const StaffDetail = () => {
   const location = useLocation();
-  // const { groupid, teacherid, staffpath } = QueryString.parse(
-  //   location.search,
-  // );
   const { groupid, staffpath } = QueryString.parse(location.search);
   const {
     state: {
@@ -34,10 +33,6 @@ const StaffDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    // const groupid2 = parseInt(groupid);
-    // const teacherid2 = parseInt(teacherid);
-    // getStaffDetail(dispatch, { groupid2, teacherid2 });
-    // getStaffDetail(dispatch, { groupid2, teacherid2, teacherpath });
     getStaffDetail(dispatch, { staffpath });
     Scroll.scroller.scrollTo('top');
   }, []);
@@ -53,7 +48,7 @@ const StaffDetail = () => {
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.staffDetail}></div>
+            <div className={styles.staffContainer}></div>
             <Footer />
           </div>
         </Fragment>
@@ -66,16 +61,16 @@ const StaffDetail = () => {
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.staffDetail}>
+            <div className={styles.staffContainer}>
               {/* 教師名字 */}
-              <Row className={styles.staffDetail_titleBar}>
+              <Row className={styles.staffContainer_titleBar}>
                 <Link
                   to={path.staff + '#group' + groupid}
-                  className={styles.staffDetail_titleBar__backBtn}
+                  className={styles.staffContainer_titleBar__backBtn}
                 >
                   <img src={leftArrow} />
                 </Link>
-                <div className={styles.staffDetail_titleBar__name}>
+                <div className={styles.staffContainer_titleBar__name}>
                   {staffDetail.teachername.search(/（/i) == -1
                     ? staffDetail.teachername
                     : staffDetail.teachername.substring(
@@ -85,16 +80,16 @@ const StaffDetail = () => {
                 </div>
               </Row>
               {/* 教師資訊 */}
-              <Row className={styles.staffDetail_contentBar}>
+              <Row className={styles.staffContainer_contentBar}>
                 {/* 教師頭像 */}
                 <Col
                   lg={3}
                   md={12}
                   sm={12}
                   xs={12}
-                  className={styles.staffDetail_contentBar__box}
+                  className={styles.staffContainer_contentBar__box}
                 >
-                  <div className={styles.staffDetail_contentBar__img}>
+                  <div className={styles.staffContainer_contentBar__img}>
                     <img src={staffDetail.imgurl} />
                   </div>
                 </Col>
@@ -102,7 +97,7 @@ const StaffDetail = () => {
                   lg={9}
                   md={12}
                   sm={12}
-                  className={styles.staffDetail_contentBar__content}
+                  className={styles.staffContainer_contentBar__content}
                 >
                   {/* 職稱 */}
                   <div>
@@ -112,12 +107,12 @@ const StaffDetail = () => {
                       : '兼任' + staffDetail.title}
                   </div>
                   {/* 電話與email */}
-                  <Row className={styles.contactBar}>
+                  <Row className={styles.content_contactBar}>
                     <Col
                       xl={3}
                       lg={4}
                       md={5}
-                      className={styles.contactBar_contactBox}
+                      className={styles.content_contactBar__contactBox}
                     >
                       <img src={phoneIcon} />
                       {staffDetail.phone != '' ? (
@@ -135,26 +130,22 @@ const StaffDetail = () => {
                           校內分機：{staffDetail.phone}
                         </a>
                       ) : (
-                        <div className={styles.contactBar_contactBox__hint}>
-                          校內分機：無
-                        </div>
+                        <div>校內分機：無</div>
                       )}
                     </Col>
-                    <Col className={styles.contactBar_contactBox}>
+                    <Col className={styles.content_contactBar__contactBox}>
                       <img src={emailIcon} />
                       {staffDetail.email != '' ? (
                         <a href={'mailto:' + staffDetail.email}>
                           電子信箱：{staffDetail.email}
                         </a>
                       ) : (
-                        <div className={styles.contactBar_contactBox__hint}>
-                          電子信箱：無
-                        </div>
+                        <div>電子信箱：無</div>
                       )}
                     </Col>
                   </Row>
-                  <div className={styles.contactLine}></div>
-                  <div className={styles.contactDetail}>
+                  <div className={styles.content_contactLine}></div>
+                  <div className={styles.content_contactDetail}>
                     {/* 辦公室or研究室 */}
                     <div>
                       <strong>

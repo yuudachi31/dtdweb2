@@ -1,6 +1,7 @@
 import { useContext } from 'react';
+//css
 import styles from './styles.module.scss';
-
+//data
 import {
   getGraduationWorksShow,
   getGraduationWorks,
@@ -36,7 +37,7 @@ const SortsList = (prop) => {
                   ? styles.sorttitle_selected
                   : styles.sorttitle
               }
-              onClick={(e) => Click(sort, e)}
+              onClick={(e) => Click(sort.toString(), e)}
               key={sort}
             >
               {sort}

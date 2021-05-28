@@ -1,50 +1,43 @@
 @import '../../styles/media.scss';
-@import '../../styles/color.scss';
-@import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
+@import '../../styles/font.scss';
+@import '../../styles/color.scss';
 
-.container {
-  width: 100%;
-}
-
-.news {
+.news_newsBlock {
   padding: 0 $dtd-secondary-spacing;
 }
 
-.new_link {
-  .new_box {
-    padding: 10px 0;
-  }
-
-  .new_title {
+.newsBlock_newBox {
+  padding: 10px 0;
+  .newBox_title {
     padding: 6px 0;
-    font-size: 20px;
+    font-size: $dtd-h2-size;
     color: $dtd-text-color;
-  }
-
-  .new_content {
-    padding: 6px 0;
-    font-size: $dtd-hint-size;
-    color: $dtd-submenu-text-color;
-  }
-
-  .new_text_nowrap {
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 
   &:hover {
     text-decoration: none;
 
-    & .new_title {
+    & .newBox_title {
       color: $dtd-main-color;
     }
   }
 }
 
+.newBox_text_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.newBox_content {
+  padding: 6px 0;
+  font-size: $dtd-hint-size;
+  color: $dtd-submenu-text-color;
+}
+
 @media (max-width: $dtd-media-phone) {
-  .new {
+  .news_newsBlock {
     padding: 0;
   }
 }

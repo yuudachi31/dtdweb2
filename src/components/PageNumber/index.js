@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
+//設計
 import styles from './styles.module.scss';
-
+//靜態變數
 import { setPageNumberState, clickPageNumber } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
-
-/*icon*/
+//匯入icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
@@ -37,7 +37,7 @@ const PageNumber = (porp) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.pageNumber_box}>
+      <div className={styles.pageNumber_pageNumberBlock}>
         <Link
           to={
             page == undefined || Number(page) - 1 == 1
@@ -46,15 +46,15 @@ const PageNumber = (porp) => {
           }
           className={
             pageNumberState[0]
-              ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
-              : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
+              ? `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_chevron__disabled}`
+              : `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_btn__hover}`
           }
           onClick={
             page == undefined
               ? () => {}
               : () => {
                   clickPageNumber(dispatch, {
-                    clickNumber: page == Number(page) - 1,
+                    clickNumber: Number(page) - 1,
                   });
                 }
           }
@@ -71,8 +71,8 @@ const PageNumber = (porp) => {
             key={pageNumber}
             className={
               pageNumberState[pageNumber - 1]
-                ? `${styles.pageNumber_number} ${styles.pageNumber_number_selected}`
-                : `${styles.pageNumber_number} ${styles.pageNumber_hover}`
+                ? `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_number__selected}`
+                : `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_btn__hover}`
             }
             onClick={() => {
               clickPageNumber(dispatch, {
@@ -93,8 +93,8 @@ const PageNumber = (porp) => {
           }
           className={
             pageNumberState[pageNumberState.length - 1]
-              ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
-              : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
+              ? `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_chevron__disabled}`
+              : `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_btn__hover}`
           }
           onClick={
             page == pageNumberState.length
