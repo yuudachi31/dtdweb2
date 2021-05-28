@@ -1,11 +1,14 @@
-import { Link } from 'react-router-dom';
-// import styles from './styles.module.scss';
-import { UIStoreContext } from '../../uiStore/reducer';
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import path from '../../utils/path';
+
+/* uiStore */
+import { UIStoreContext } from '../../uiStore/reducer';
 import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
+
+/* json檔 */
 import DTDActivities from '../../assets/json/DTDActivities.json';
 import studyGroup from '../../assets/json/studyGroup.json';
-import path from '../../utils/path';
 
 const ActivitiesNavItem = (prop) => {
   const { children, pathTo, className, activeClassName } = prop;

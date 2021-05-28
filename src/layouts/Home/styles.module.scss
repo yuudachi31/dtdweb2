@@ -3,13 +3,13 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/media.scss';
 @import '../../styles/pageMargin.scss';
-@import 'bootstrap/dist/css/bootstrap.min.css';
 
-.homePage_bgc {
+.container {
+  width: 100vw;
   background-color: $dtd-main-bg-color;
 }
 .homeContainer {
-  width: 100vw;
+  min-height: 100vh;
   padding: 0 $dtd-margin-desktop;
 }
 

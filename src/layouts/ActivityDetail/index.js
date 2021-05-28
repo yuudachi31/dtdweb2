@@ -1,18 +1,23 @@
 import React, { Fragment, useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Cookie from 'js-cookie';
+import * as Scroll from 'react-scroll';
 import styles from './styles.module.scss';
+
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 import path from '../../utils/path';
-import * as Scroll from 'react-scroll';
-import Cookie from 'js-cookie';
+
+/* Components */
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+
+/* uiStore */
 import { UIStoreContext } from '../../uiStore/reducer';
 import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
 
 const ActivityDetail = (prop) => {
-  /*進到此頁時，會自動置頂*/
+  //進到此頁時，會自動置頂
   useEffect(() => {
     Scroll.scroller.scrollTo('top');
   }, []);
@@ -23,6 +28,17 @@ const ActivityDetail = (prop) => {
     (x) => x.id === prop.match.params.activityId,
   );
 
+  const { dispatch } = useContext(UIStoreContext);
+
+  useEffect(() => {
+    setPageContent(dispatch, activitiesCategoryCookie);
+    if (activity.category === 'DTDActivities') {
+      setActiveNavItem(dispatch, `${path.activities}`);
+    } else {
+      setActiveNavItem(dispatch, `${path.activities}/${activity.category}`);
+    }
+  }, []);
+
   const linkUrl = () => {
     if (activity.category === 'DTDActivities') {
       return `${path.activities}#content`;
@@ -30,17 +46,6 @@ const ActivityDetail = (prop) => {
       return `${path.activities}/${activity.category}#content`;
     }
   };
-  const { dispatch } = useContext(UIStoreContext);
-
-  useEffect(() => {
-    setPageContent(dispatch, activitiesCategoryCookie);
-    console.log('activity = ' + activity.category);
-    if (activity.category === 'DTDActivities') {
-      setActiveNavItem(dispatch, `${path.activities}`);
-    } else {
-      setActiveNavItem(dispatch, `${path.activities}/${activity.category}`);
-    }
-  }, []);
 
   return (
     <Fragment>

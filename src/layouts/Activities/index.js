@@ -3,6 +3,10 @@ import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
 import Cookie from 'js-cookie';
+
+import path from '../../utils/path';
+import DTDActivities from '../../assets/json/DTDActivities.json';
+
 /*component*/
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -10,12 +14,10 @@ import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Navbar from '../../components/ActivitiesNavbar';
 import ActivitiesContent from '../../components/ActivitiesContent';
-/*uiStore*/
+
+/* uiStore */
 import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
-
-import path from '../../utils/path';
-import DTDActivities from '../../assets/json/DTDActivities.json';
 
 const Activities = (prop) => {
   const {
@@ -27,9 +29,11 @@ const Activities = (prop) => {
 
   const geturlid = window.location.href;
 
+  /*判斷是從哪頁進入系上活動來設定系上活動的內容*/
   useEffect(() => {
     console.log('geturl = ' + prop.match.url);
     if (geturlid.search(/#/i) !== -1) {
+      //從ActivityDetail頁回到系上活動，會直接到content的區塊
       Scroll.scroller.scrollTo('content');
       setPageContent(dispatch, Cookie.getJSON('activitiesCategory'));
       setActiveNavItem(dispatch, Cookie.get('activeItem'));

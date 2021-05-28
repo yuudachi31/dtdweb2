@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
 
-/*component*/
+/* component */
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import IndexBanner from '../../components/IndexBanner';
@@ -11,12 +11,13 @@ import IndexNews from '../../components/IndexNews';
 import IndexContent from '../../components/IndexContent';
 
 const Home = () => {
+  //進入首頁後會置頂
   useEffect(() => {
     Scroll.scroller.scrollTo('top');
   }, []);
 
   return (
-    <Fragment className={styles.homePage_bgc}>
+    <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
         <title>數位科技設計學系-國立臺北教育大學</title>
