@@ -85,7 +85,7 @@ export const getStaff = async (dispatch) => {
     console.log(error);
   }
 };
-//取得教職員個人資料
+//取得單筆教職員資料
 export const getStaffDetail = async (dispatch, options) => {
   //從後台取資料
   const { staffpath = '范丙林' } = options;
@@ -137,7 +137,7 @@ export const setWorksSortActiveItem = async (dispatch) => {
     payload: '所有',
   });
 };
-//設定作品分類陣列
+//設定作品分類陣列內容
 export const setWorksSort = async (dispatch, options) => {
   const { sort = '109', path = '/' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
@@ -233,7 +233,7 @@ export const getGraduationWorksShow = async (dispatch, options) => {
     console.log(error);
   }
 };
-//取得單項畢業專題作品資料
+//取得單筆畢業專題作品資料
 export const getGraduationWorksDetail = async (dispatch, options) => {
   //從後台取資料
   const { workId = 0, sort = '109' } = options;
@@ -320,7 +320,7 @@ export const getCourseWorksShow = async (dispatch, options) => {
     console.log(error);
   }
 };
-//取得單項課程作品資料
+//取得單筆課程作品資料
 export const getCourseWorksDetail = async (dispatch, options) => {
   //從後台取資料
   const { workId = 0, sort = '遊戲設計' } = options;
@@ -371,7 +371,7 @@ export const getCooperationWorks = async (dispatch) => {
     console.log(error);
   }
 };
-//取得單項合作成果作品
+//取得單筆合作成果作品
 export const getCooperationWorksDetail = async (dispatch, options) => {
   //從後台取資料
   const { workId = 0 } = options;
