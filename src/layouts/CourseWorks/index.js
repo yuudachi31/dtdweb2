@@ -47,18 +47,25 @@ const CourseWorks = () => {
   const getUrlId = window.location.href;
 
   useEffect(() => {
+    setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
       if (worksSortActiveItem == '所有') {
         getCourseWorks(dispatch);
       } else {
-        setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+        setWorksSort(dispatch, {
+          sort: worksSortActiveItem,
+          path: path.courseWorks,
+        });
         getCourseWorksShow(dispatch, { sort: worksSortActiveItem });
       }
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSortActiveItem(dispatch);
-      setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+      setWorksSort(dispatch, {
+        sort: worksSortActiveItem,
+        path: path.courseWorks,
+      });
       getCourseWorks(dispatch);
     }
   }, []);

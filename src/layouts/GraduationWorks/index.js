@@ -53,13 +53,19 @@ const GraduationWorks = () => {
       if (worksSortActiveItem == '所有') {
         getGraduationWorks(dispatch);
       } else {
-        setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+        setWorksSort(dispatch, {
+          sort: worksSortActiveItem,
+          path: path.graduationWorks,
+        });
         getGraduationWorksShow(dispatch, { sort: worksSortActiveItem });
       }
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSortActiveItem(dispatch);
-      setWorksSort(dispatch, { sort: worksSortActiveItem, path });
+      setWorksSort(dispatch, {
+        sort: worksSortActiveItem,
+        path: path.graduationWorks,
+      });
       getGraduationWorks(dispatch);
     }
   }, []);
