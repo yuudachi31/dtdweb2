@@ -122,6 +122,11 @@ export const getBanner = async (dispatch) => {
 //設定作品分類陣列內容
 export const setWorksSort = async (dispatch, options) => {
   const { sort = '109', path = '/' } = options;
+
+  dispatch({
+    type: SET_WORKSSORT_ACTIVEITEM,
+    payload: '所有',
+  });
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     var url = '/';
@@ -140,6 +145,15 @@ export const setWorksSort = async (dispatch, options) => {
       response = await axios.get(url);
       works = response.data;
       works.map((work) => worksSortArray.push(work.sortTitle));
+    } else if (path === '/') {
+      dispatch({
+        type: SET_GRADUATONWORKS_SHOW,
+        payload: [],
+      }); //清掉畫面
+      dispatch({
+        type: SET_COURSEWORKS_SHOW,
+        payload: [],
+      }); //清掉畫面
     }
 
     dispatch({
