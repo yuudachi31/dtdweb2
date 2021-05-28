@@ -6,6 +6,7 @@
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'class_projects',
+         'posts_per_page' => -1, //ALL
          'p' => $data['postID'],  //用PostID搜尋特定文章
       ));
       

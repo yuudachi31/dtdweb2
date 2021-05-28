@@ -3,6 +3,7 @@
    function staffSearchResults($data) {
       $mainQuery = new WP_Query(array(
          'post_type' => 'staff',
+         'posts_per_page' => -1, //ALL
          's' => sanitize_text_field($data['term'])
       ));
 
