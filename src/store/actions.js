@@ -140,6 +140,15 @@ export const setWorksSort = async (dispatch, options) => {
       response = await axios.get(url);
       works = response.data;
       works.map((work) => worksSortArray.push(work.sortTitle));
+    } else if (path === '/') {
+      dispatch({
+        type: SET_GRADUATONWORKS_SHOW,
+        payload: [],
+      }); //清掉畫面
+      dispatch({
+        type: SET_COURSEWORKS_SHOW,
+        payload: [],
+      }); //清掉畫面
     }
 
     dispatch({
