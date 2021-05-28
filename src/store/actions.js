@@ -22,8 +22,6 @@ import {
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
 
 // import bannerjson from '../assets/json/banner.json';
-// import staffjson from '../assets/json/teachers.json';
-//import gwjson from '../assets/json/works.json';
 // import newsjson from '../assets/json/news.json';
 
 export const getNews = async (dispatch, options) => {
@@ -68,12 +66,9 @@ export const getNewDetail = async (dispatch, options) => {
 export const getStaff = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/staff`;
     const response = await axios.get(url);
     const staff = response.data;
-    //從json取資料
-    // const staff = staffjson;
 
     dispatch({
       type: SET_STAFF,
@@ -87,19 +82,13 @@ export const getStaff = async (dispatch) => {
 };
 //取得單筆教職員資料
 export const getStaffDetail = async (dispatch, options) => {
-  //從後台取資料
   const { staffpath = '范丙林' } = options;
-  //從json取資料
-  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/staff?term=${staffpath}`;
     const response = await axios.get(url);
     const staffDetail = response.data;
-    // //從json取資料
-    // const staffDetail = staffjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_STAFF_DETAIL,
@@ -130,19 +119,11 @@ export const getBanner = async (dispatch) => {
   }
 };
 
-//設定作品分類選項為所有
-export const setWorksSortActiveItem = async (dispatch) => {
-  dispatch({
-    type: SET_WORKSSORT_ACTIVEITEM,
-    payload: '所有',
-  });
-};
 //設定作品分類陣列內容
 export const setWorksSort = async (dispatch, options) => {
   const { sort = '109', path = '/' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     var url = '/';
     var worksSortArray = [];
     var response = {};
@@ -160,8 +141,7 @@ export const setWorksSort = async (dispatch, options) => {
       works = response.data;
       works.map((work) => worksSortArray.push(work.sortTitle));
     }
-    //從json取資料
-    // const works = gwjson;
+
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
@@ -181,23 +161,20 @@ export const setWorksSort = async (dispatch, options) => {
 export const getGraduationWorks = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/graduateProject`;
     const response = await axios.get(url);
     const works = response.data;
     var worksSortArray = [];
     works.map((work) => worksSortArray.push(work.sortTitle.toString()));
-    //從json取資料
-    // const works = gwjson;
-    console.log(works[0]);
+
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: works[0].sortTitle,
-    }); //紀錄作品分類
+    }); //紀錄作品分類為最新一屆
     dispatch({
       type: SET_GRADUATONWORKS_SHOW,
       payload: [works[0]],
-    }); //紀錄要顯示的作品
+    }); //紀錄要顯示的作品為最新一屆（顯示作品統一格式為陣列）
     dispatch({
       type: SET_WORKS_SORT,
       payload: worksSortArray,
@@ -213,12 +190,9 @@ export const getGraduationWorksShow = async (dispatch, options) => {
   const { sort = '109' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/graduateProject?graduateYear=${sort}`;
     const response = await axios.get(url);
     const works = response.data;
-    //從json取資料
-    // const works = gwjson;
 
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
@@ -236,19 +210,13 @@ export const getGraduationWorksShow = async (dispatch, options) => {
 };
 //取得單筆畢業專題作品資料
 export const getGraduationWorksDetail = async (dispatch, options) => {
-  //從後台取資料
   const { workId = 0, sort = '109' } = options;
-  //從json取資料
-  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/graduateProject?postID=${workId}`;
     const response = await axios.get(url);
     const worksDetail = response.data;
-    // //從json取資料
-    //const worksDetail = gwjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_GRADUATONWORKS_DETAIL,
@@ -257,7 +225,7 @@ export const getGraduationWorksDetail = async (dispatch, options) => {
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
-    });
+    }); //紀錄作品分類
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
@@ -268,23 +236,20 @@ export const getGraduationWorksDetail = async (dispatch, options) => {
 export const getCourseWorks = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/classProject`;
     const response = await axios.get(url);
     const works = response.data;
     var worksSortArray = ['所有'];
     works.map((work) => worksSortArray.push(work.sortTitle));
-    //從json取資料
-    // const works = gwjson;
 
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: '所有',
-    }); //紀錄作品分類
+    }); //紀錄作品分類為所有
     dispatch({
       type: SET_COURSEWORKS_SHOW,
       payload: works,
-    }); //紀錄要顯示的作品
+    }); //紀錄要顯示的作品為全部作品
     dispatch({
       type: SET_WORKS_SORT,
       payload: worksSortArray,
@@ -300,12 +265,9 @@ export const getCourseWorksShow = async (dispatch, options) => {
   const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/classProject?classGroup=${sort}`;
     const response = await axios.get(url);
-    const works = [response.data];
-    //從json取資料
-    // const works = gwjson;
+    const works = [response.data]; //顯示作品統一格式為陣列
 
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
@@ -323,19 +285,13 @@ export const getCourseWorksShow = async (dispatch, options) => {
 };
 //取得單筆課程作品資料
 export const getCourseWorksDetail = async (dispatch, options) => {
-  //從後台取資料
   const { workId = 0, sort = '遊戲設計' } = options;
-  //從json取資料
-  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/classProject?postID=${workId}`;
     const response = await axios.get(url);
     const worksDetail = response.data;
-    // //從json取資料
-    //const worksDetail = gwjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_COURSEWORKS_DETAIL,
@@ -344,7 +300,7 @@ export const getCourseWorksDetail = async (dispatch, options) => {
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
-    });
+    }); //紀錄作品分類
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
@@ -355,12 +311,9 @@ export const getCourseWorksDetail = async (dispatch, options) => {
 export const getCooperationWorks = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/cooperateProject`;
     const response = await axios.get(url);
     const works = response.data;
-    //從json取資料
-    // const works = gwjson;
 
     dispatch({
       type: SET_COOPERATIONWORKS,
@@ -374,19 +327,13 @@ export const getCooperationWorks = async (dispatch) => {
 };
 //取得單筆合作成果作品
 export const getCooperationWorksDetail = async (dispatch, options) => {
-  //從後台取資料
   const { workId = 0 } = options;
-  //從json取資料
-  // const { groupid = 0, teacherid2 = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從後台取資料
     const url = `${BASE_URL}/cooperateProject?postID=${workId}`;
     const response = await axios.get(url);
     const worksDetail = response.data;
-    // //從json取資料
-    //const worksDetail = gwjson[groupid2].list[teacherid2];
 
     dispatch({
       type: SET_COOPERATIONWORKS_DETAIL,
