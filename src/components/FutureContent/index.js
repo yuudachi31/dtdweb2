@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import works from '../../assets/images/index/works.png';
+import works from '../../assets/images/future/works.png';
 import Future from '../../assets/json/future.json';
 
 const FutureContent = () => {
