@@ -20,7 +20,6 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 import {
   getGraduationWorks,
   getGraduationWorksShow,
-  // setWorksSortActiveItem,
   setWorksSort,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
@@ -61,7 +60,6 @@ const GraduationWorks = () => {
       }
     } else {
       Scroll.scroller.scrollTo('top');
-      // setWorksSortActiveItem(dispatch);
       setWorksSort(dispatch, {
         sort: worksSortActiveItem,
         path: path.graduationWorks,
