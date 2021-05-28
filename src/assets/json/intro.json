@@ -25,24 +25,51 @@
     "classrooms":[
         {
             "classroom_id":1,
-            "classroom_img":"/assets/images/banners/banner_1.jpg",
+            "classroom_img":"/assets/images/activities/drawings.jpg",
             "classroom_name":"數位娛樂實驗室",
-            "classroom_location":"創意館 1F E812",
-            "classroom_intro":"此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ"
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E812"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ"
+                }
+            ]
         },
         {
             "classroom_id":2,
-            "classroom_img":"/assets/images/banners/banner_2.jpg",
+            "classroom_img":"/assets/images/activities/poor.jpg",
             "classroom_name":"科技娛樂實驗室",
-            "classroom_location":"創意館 1F E813",
-            "classroom_intro":"此教室為ＹＹＹＹＹＹＹ用途，配備ＹＹＹＹＹＹ"
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E813"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"此教室為ＹＹＹＹＹＹＹ用途，配備ＹＹＹＹＹＹ"
+                }
+            ]
         },
         {
             "classroom_id":3,
-            "classroom_img":"/assets/images/banners/banner_4.jpg",
+            "classroom_img":"/assets/images/activities/fight.jpg",
             "classroom_name":"設計娛樂實驗室",
-            "classroom_location":"創意館 1F E814",
-            "classroom_intro":"此教室為ＺＺＺＺＺＺＺ用途，配備ＺＺＺＺＺＺ"
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E814"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"此教室為ＺＺＺＺＺＺＺ用途，配備ＺＺＺＺＺＺ"
+                }
+            ]
         }
     ] 
 }
