@@ -1,7 +1,10 @@
 import React, { useEffect, useContext } from 'react';
 import styles from './styles.module.scss';
+
+/* react-bootstrap 輪播 */
 import Carousel from 'react-bootstrap/Carousel';
 
+/* store */
 import { getBanner } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 

@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.scss';
+
 /* react-Bootstrap */
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import path from '../../utils/path';
 
-/*icon*/
+/* icon */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 

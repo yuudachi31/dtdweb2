@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+/* 從json檔撈資料 */
 import indexContent from '../../assets/json/indexContent.json';
 
 const IndexContent = () => {

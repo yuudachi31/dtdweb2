@@ -1,15 +1,16 @@
 import React, { useContext, useEffect } from 'react';
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
+import path from '../../utils/path';
 
-/*icon*/
+/* icon */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
+/* store */
 import { getHomeNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
-import path from '../../utils/path';
 
 const IndexNews = () => {
   const {
