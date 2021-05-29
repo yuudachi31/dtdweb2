@@ -7,7 +7,7 @@ import Cookie from 'js-cookie';
 import path from '../../utils/path';
 import DTDActivities from '../../assets/json/DTDActivities.json';
 
-/*component*/
+/* component */
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
