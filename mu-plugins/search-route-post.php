@@ -16,13 +16,11 @@
             $url = get_permalink(get_the_ID());
          }
 
-         $content = wp_remote_get( $url)["body"];
+         $content = wp_remote_get($url)["body"];
          $content = ConvertContentLabel($content);
-         //$content = CaptureMainContent($content);
 
          $results = array(
             'id' => get_the_ID(),
-            'groupTitle' => get_field('groupTitle'),
             'title' => get_the_title(),
             'content' => $content,
          );
@@ -52,12 +50,12 @@
 
       $results = array(
          array(
-            'groupid' => 0,
+            'groupId' => 0,
             'title' => '系務公告 / Announcement',
             'list' => array()
          ),
          array(
-            'groupid' => 1,
+            'groupId' => 1,
             'title' => '師生榮譽榜 / Achievement',
             'list' => array()
          ),
@@ -159,14 +157,5 @@
    function ConvertContentLabel($content){
       $content = str_replace(array("\r"), '', $content);
       $content = str_replace('\"', "\\\"", $content);
-      return $content;
-   }
-
-   function CaptureMainContent($content){
-      $capture_start = "<h2>";
-      $capture_end = "<h2>";
-      $start = stripos($content, $capture_start);
-      $end = strrpos($content, $capture_end);
-      $content = substr($content, $start, $end-1);
       return $content;
    }
