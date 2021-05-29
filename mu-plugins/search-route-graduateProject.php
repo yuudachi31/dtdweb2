@@ -4,6 +4,7 @@
       
       $mainQuery = new WP_Query(array(
          'post_type' => 'graduate_projects',
+         'posts_per_page' => -1, //ALL
          'p' => $data['postID'],  //用PostID搜尋特定文章
          'meta_value' => $data['graduateYear'], //當request帶有graduateYear=XXX，只顯示XXX學年組的文章
       ));
