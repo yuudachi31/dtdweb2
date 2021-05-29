@@ -12,7 +12,7 @@ import studyGroup from '../../assets/json/studyGroup.json';
 
 const ActivitiesNavItem = (prop) => {
   const { children, pathTo, className, activeClassName } = prop;
-  const { state, dispatch } = useContext(UIStoreContext);
+  const { uiState, uiDispatch } = useContext(UIStoreContext);
 
   const getJSON = (url) => {
     switch (url) {
@@ -26,8 +26,8 @@ const ActivitiesNavItem = (prop) => {
   };
 
   const onClick = () => {
-    setPageContent(dispatch, getJSON(pathTo));
-    setActiveNavItem(dispatch, pathTo);
+    setPageContent(uiDispatch, getJSON(pathTo));
+    setActiveNavItem(uiDispatch, pathTo);
   };
 
   return (
@@ -38,7 +38,7 @@ const ActivitiesNavItem = (prop) => {
           className={`
             ${className} 
             ${
-              state.activitiesNavBar.activeItem === pathTo
+              uiState.activitiesNavBar.activeItem === pathTo
                 ? activeClassName
                 : ''
             }`}

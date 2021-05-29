@@ -9,6 +9,7 @@ const initialState = {
   hamburgerMenuState: false,
   hamburgerTitleState: [false, false, false, false, false],
   pageNumberState: [],
+  newsLoadState: true,
   activitiesPage: {
     activitiesCategory,
   },
@@ -16,12 +17,12 @@ const initialState = {
     activeItem: '/activities',
   },
 };
-const reducer = (state, action) => {
+const reducer = (uiState, action) => {
   switch (action.type) {
     case constants.CLICK_HAMBURGER_MENU: {
       return {
-        ...state,
-        hamburgerMenuState: !state.hamburgerMenuState,
+        ...uiState,
+        hamburgerMenuState: !uiState.hamburgerMenuState,
         hamburgerTitleState: [false, false, false, false, false],
       };
     }
@@ -29,19 +30,19 @@ const reducer = (state, action) => {
       const hamburgerTitleStateArr = [];
       for (let i = 0; i < 5; i++) {
         if (i == action.payload) {
-          hamburgerTitleStateArr.push(!state.hamburgerTitleState[i]);
+          hamburgerTitleStateArr.push(!uiState.hamburgerTitleState[i]);
         } else {
           hamburgerTitleStateArr.push(false);
         }
       }
       return {
-        ...state,
+        ...uiState,
         hamburgerTitleState: hamburgerTitleStateArr,
       };
     }
     case constants.CLICK_HAMBURGER_LINK: {
       return {
-        ...state,
+        ...uiState,
         hamburgerMenuState: false,
         hamburgerTitleState: [false, false, false, false, false],
       };
@@ -53,14 +54,14 @@ const reducer = (state, action) => {
         pageNumberStateArr.push(false);
       }
       return {
-        ...state,
+        ...uiState,
         pageNumberState: pageNumberStateArr,
       };
     }
 
     case constants.CLICK_PAGENUMBER: {
       const pageNumberStateArr = [];
-      for (let i = 1; i <= state.pageNumberState.length; i++) {
+      for (let i = 1; i <= uiState.pageNumberState.length; i++) {
         if (i == action.payload) {
           pageNumberStateArr.push(true);
         } else {
@@ -68,33 +69,40 @@ const reducer = (state, action) => {
         }
       }
       return {
-        ...state,
+        ...uiState,
         pageNumberState: pageNumberStateArr,
+      };
+    }
+
+    case constants.SET_NEWSLOAD_STATE: {
+      return {
+        ...uiState,
+        newsLoadState: action.payload,
       };
     }
 
     case constants.SET_PAGE_CONTENT:
       return {
-        ...state,
+        ...uiState,
         activitiesPage: {
           activitiesCategory: action.payload,
         },
       };
     case constants.SET_NAVBAR_ACTIVEITEM:
       return {
-        ...state,
+        ...uiState,
         activitiesNavBar: {
           activeItem: action.payload,
         },
       };
     default:
-      return state;
+      return uiState;
   }
 };
 
 export function UIStoreProvider(props) {
-  const [state, dispatch] = useReducer(reducer, initialState);
-  const value = { state, dispatch };
+  const [uiState, uiDispatch] = useReducer(reducer, initialState);
+  const value = { uiState, uiDispatch };
 
   return (
     <UIStoreContext.Provider value={value}>

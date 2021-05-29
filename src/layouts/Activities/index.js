@@ -21,10 +21,10 @@ import { UIStoreContext } from '../../uiStore/reducer';
 
 const Activities = (prop) => {
   const {
-    state: {
+    uiState: {
       activitiesPage: { activitiesCategory },
     },
-    dispatch,
+    uiDispatch,
   } = useContext(UIStoreContext);
 
   const geturlid = window.location.href;
@@ -35,14 +35,14 @@ const Activities = (prop) => {
     if (geturlid.search(/#/i) !== -1) {
       //從ActivityDetail頁回到系上活動，會直接到content的區塊
       Scroll.scroller.scrollTo('content');
-      setPageContent(dispatch, Cookie.getJSON('activitiesCategory'));
-      setActiveNavItem(dispatch, Cookie.get('activeItem'));
+      setPageContent(uiDispatch, Cookie.getJSON('activitiesCategory'));
+      setActiveNavItem(uiDispatch, Cookie.get('activeItem'));
     } else if (prop.match.url === path.activities) {
-      setPageContent(dispatch, DTDActivities);
-      setActiveNavItem(dispatch, path.activities);
+      setPageContent(uiDispatch, DTDActivities);
+      setActiveNavItem(uiDispatch, path.activities);
     } else {
-      setPageContent(dispatch, Cookie.getJSON('activitiesCategory'));
-      setActiveNavItem(dispatch, Cookie.get('activeItem'));
+      setPageContent(uiDispatch, Cookie.getJSON('activitiesCategory'));
+      setActiveNavItem(uiDispatch, Cookie.get('activeItem'));
     }
   }, []);
 

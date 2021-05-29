@@ -1,39 +1,44 @@
 import constants from './actionTypes';
 import Cookie from 'js-cookie';
 
-export const clickHamburgerMenu = (dispatch) => {
-  dispatch({ type: constants.CLICK_HAMBURGER_MENU });
+export const clickHamburgerMenu = (uiDispatch) => {
+  uiDispatch({ type: constants.CLICK_HAMBURGER_MENU });
 };
 
-export const clickHamburgerTitle = (dispatch, options) => {
+export const clickHamburgerTitle = (uiDispatch, options) => {
   const { clickTitle } = options;
-  dispatch({ type: constants.CLICK_HAMBURGER_TITLE, payload: clickTitle });
+  uiDispatch({ type: constants.CLICK_HAMBURGER_TITLE, payload: clickTitle });
 };
 
-export const clickHamburgerLink = (dispatch) => {
-  dispatch({ type: constants.CLICK_HAMBURGER_LINK });
+export const clickHamburgerLink = (uiDispatch) => {
+  uiDispatch({ type: constants.CLICK_HAMBURGER_LINK });
 };
 
-export const setPageNumberState = (dispatch, options) => {
+export const setPageNumberState = (uiDispatch, options) => {
   const { pageCount } = options;
-  dispatch({ type: constants.SET_PAGENUMBER_STATE, payload: pageCount });
+  uiDispatch({ type: constants.SET_PAGENUMBER_STATE, payload: pageCount });
 };
 
-export const clickPageNumber = (dispatch, options) => {
+export const clickPageNumber = (uiDispatch, options) => {
   const { clickNumber = 1 } = options;
-  dispatch({ type: constants.CLICK_PAGENUMBER, payload: clickNumber });
+  uiDispatch({ type: constants.CLICK_PAGENUMBER, payload: clickNumber });
 };
 
-export const setPageContent = (dispatch, activitiesCategory) => {
-  dispatch({
+export const setNewsLoadState = (uiDispatch, options) => {
+  const { loadState } = options;
+  uiDispatch({ type: constants.SET_NEWSLOAD_STATE, payload: loadState });
+};
+
+export const setPageContent = (uiDispatch, activitiesCategory) => {
+  uiDispatch({
     type: constants.SET_PAGE_CONTENT,
     payload: activitiesCategory,
   });
   Cookie.set('activitiesCategory', JSON.stringify(activitiesCategory));
 };
 
-export const setActiveNavItem = (dispatch, activeItem) => {
-  dispatch({
+export const setActiveNavItem = (uiDispatch, activeItem) => {
+  uiDispatch({
     type: constants.SET_NAVBAR_ACTIVEITEM,
     payload: activeItem,
   });
