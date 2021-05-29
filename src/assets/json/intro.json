@@ -1,0 +1,76 @@
+{
+    "about_content":"由於科技持續地發展與應用，不斷推陳出新的資訊產品，牽動了人們對於數位科技的產品觀點與需求，此一衝擊主導了現在與未來就業市場對於兼備數位科技與視覺設計領域人才的迫切需求。 \n\n\n具備跨領域能力的人才，不僅不可取代性高，在未來也更具備競爭優勢。有鑑於相關人才的迫切需求，本校積極投入相關資源，嘗試以更前瞻、更開放的作法來培養現在與未來的產業所需的人才，而數位科技設計學系的成立，正是國立臺北教育大學積極培養跨領域人才的濫觴。 \n\n\n本校於民國95年8月成立《數位內容設計學系》開始招收一般高中生，以科技、資訊與設計的理論課程為核心，搭配紮實的實作與專題課程，培育學生具備優異的跨領域數位科技設計的專長，畢業學生授予《設計學士學位》。",
+    "concepts":[
+        {
+            "concept_img":"assets/images/intro/foresight.png",
+            "concept_title":"前瞻",
+            "concept_content":"本系課程導入未來科技趨勢，包含物聯網(IoT)、虛擬實境(VR)、擴增實境(AR)等多門專業課程。"
+        },
+        {
+            "concept_img":"assets/images/intro/open.png",
+            "concept_title":"開放",
+            "concept_content":"本系培養學生對於科技應用的創新思維，使學生善於將科技與生活融合，創造科技附加價值。"
+        },
+        {
+            "concept_img":"assets/images/intro/integration.png",
+            "concept_title":"跨領域整合",
+            "concept_content":"學生學習跨足美術、程式兩大領域，美術與程式相輔之下創造更出眾的科技軟硬產品。"
+        },
+        {
+            "concept_img":"assets/images/intro/resource.png",
+            "concept_title":"資源",
+            "concept_content":"本系擁有電腦繪圖、Apple MAC、等多種硬體設備。"
+        }
+    ],
+    "classrooms":[
+        {
+            "classroom_id":1,
+            "classroom_img":"/assets/images/activities/drawings.jpg",
+            "classroom_name":"數位娛樂實驗室",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E812"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ"
+                }
+            ]
+        },
+        {
+            "classroom_id":2,
+            "classroom_img":"/assets/images/activities/poor.jpg",
+            "classroom_name":"科技娛樂實驗室",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E813"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"此教室為ＹＹＹＹＹＹＹ用途，配備ＹＹＹＹＹＹ"
+                }
+            ]
+        },
+        {
+            "classroom_id":3,
+            "classroom_img":"/assets/images/activities/fight.jpg",
+            "classroom_name":"設計娛樂實驗室",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E814"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"此教室為ＺＺＺＺＺＺＺ用途，配備ＺＺＺＺＺＺ"
+                }
+            ]
+        }
+    ] 
+}
+ 

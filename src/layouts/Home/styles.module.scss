@@ -2,24 +2,31 @@
 @import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
 @import '../../styles/media.scss';
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../../styles/pageMargin.scss';
 
-.homePage_bgc {
-  background-color: $dtd-main-bg-color;
-}
 .container {
   width: 100vw;
-  padding: 0 10%;
+  background-color: $dtd-main-bg-color;
+}
+.homeContainer {
+  min-height: 100vh;
+  padding: 0 $dtd-margin-desktop;
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .container {
-    padding: 0 4.8%;
+  .homeContainer {
+    padding: 0 $dtd-margin-tablet;
   }
 }
 
 @media (max-width: $dtd-media-phone) {
-  .container {
-    padding: 0 6%;
+  .homeContainer {
+    padding: 0 $dtd-margin-phone;
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .homeContainer {
+    padding: 0 $dtd-margin-phone-small;
   }
 }

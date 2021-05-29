@@ -1,5 +1,5 @@
-@import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/color.scss';
 
 .container {
   position: relative;
@@ -8,7 +8,7 @@
   background-color: $dtd-main-bg-color;
 }
 
-.pageNumber_box {
+.pageNumber_pageNumberBlock {
   position: absolute;
   left: 50%;
   top: 64px;
@@ -16,41 +16,40 @@
   display: flex;
 }
 
-.pageNumber_number {
-  font-size: $dtd-hint-size;
-  font-weight: bold;
+.pageNumberBlock_btn__hover:hover {
+  color: $dtd-main-color;
+  text-decoration: none;
+}
+
+.pageNumberBlock_chevron {
   margin: 0 6px;
   padding: 0 6px;
   border: none;
   background-color: $dtd-main-bg-color;
   color: $dtd-submenu-text-color;
 }
-
-.pageNumber_chevron {
-  margin: 1px 6px 0 6px;
-  padding: 0 6px;
-  border: none;
-  background-color: $dtd-main-bg-color;
-  color: $dtd-submenu-text-color;
-}
-
-.pageNumber_hover:hover {
-  color: $dtd-main-color;
-  text-decoration: none;
-}
-
-.pageNumber_number_selected {
-  color: $dtd-main-color;
+.pageNumberBlock_chevron__disabled {
+  color: $dtd-hint-text-color;
+  cursor: default;
   &:hover {
-    color: $dtd-main-color;
+    color: $dtd-hint-text-color;
     text-decoration: none;
   }
 }
 
-.pageNumber_chevron_unclicked {
-  color: $dtd-hint-text-color;
+.pageNumberBlock_number {
+  font-size: $dtd-hint-size;
+  font-weight: bold;
+  margin: 0 6px;
+  padding: 1px 6px 0 6px;
+  border: none;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-submenu-text-color;
+}
+.pageNumberBlock_number__selected {
+  color: $dtd-main-color;
   &:hover {
-    color: $dtd-hint-text-color;
+    color: $dtd-main-color;
     text-decoration: none;
   }
 }

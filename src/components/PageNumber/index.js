@@ -1,90 +1,118 @@
 import React, { useEffect, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import * as QueryString from 'query-string';
+// 設計
 import styles from './styles.module.scss';
-
-import {
-  setPageNumberState,
-  clickPageNumber,
-  clickPageChevron,
-} from '../../uiStore/actions';
-import { UIStoreContext } from '../../uiStore/reducer';
-
-/*icon*/
+// icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+// uiStore
+import { setPageNumberState, clickPageNumber } from '../../uiStore/actions';
+import { UIStoreContext } from '../../uiStore/reducer';
 
 const PageNumber = (porp) => {
+  const location = useLocation();
+  const { page } = QueryString.parse(location.search);
   const {
-    state: { pageNumber },
+    state: { pageNumberState },
     dispatch,
   } = useContext(UIStoreContext);
 
-  const pageNumberNames = porp.pageNumber.split(',');
-
   useEffect(() => {
     setPageNumberState(dispatch, {
-      numberCount: pageNumberNames.length,
+      pageCount: Number(porp.pageCount),
     });
   }, []);
 
+  useEffect(() => {
+    clickPageNumber(dispatch, {
+      clickNumber: page == undefined ? 1 : Number(page),
+    });
+  }, [page]);
+
+  const pageNumberArr = [];
+  for (var i = 1; i <= porp.pageCount; i++) {
+    pageNumberArr.push(i);
+  }
+
   return (
-    <>
-      {pageNumberNames && pageNumber.length != 0 ? (
-        <div className={styles.container}>
-          <div className={styles.pageNumber_box}>
-            <button
-              className={
-                pageNumber[0]
-                  ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
-                  : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
-              }
-              onClick={
-                pageNumber[0]
-                  ? () => {}
-                  : () => clickPageChevron(dispatch, { clickState: -1 })
-              }
-            >
-              <FontAwesomeIcon icon={faChevronLeft} />
-            </button>
-            {pageNumberNames.map((pageNumberName, pageNumberIndex) => (
-              <button
-                key={pageNumberName}
-                className={
-                  pageNumber[pageNumberIndex]
-                    ? `${styles.pageNumber_number} ${styles.pageNumber_number_selected}`
-                    : `${styles.pageNumber_number} ${styles.pageNumber_hover}`
-                }
-                onClick={() => {
+    <div className={styles.container}>
+      <div className={styles.pageNumber_pageNumberBlock}>
+        <Link
+          to={
+            page == undefined || Number(page) - 1 == 1
+              ? `/${porp.pageStyle}`
+              : `/${porp.pageStyle}?page=${Number(page) - 1}`
+          }
+          className={
+            pageNumberState[0]
+              ? `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_chevron__disabled}`
+              : `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_btn__hover}`
+          }
+          onClick={
+            page == undefined
+              ? () => {}
+              : () => {
                   clickPageNumber(dispatch, {
-                    clickNumber: pageNumberIndex,
+                    clickNumber: Number(page) - 1,
                   });
-                }}
-              >
-                {pageNumberName}
-              </button>
-            ))}
-            <button
-              className={
-                pageNumber[pageNumber.length - 1]
-                  ? `${styles.pageNumber_chevron} ${styles.pageNumber_chevron_unclicked}`
-                  : `${styles.pageNumber_chevron} ${styles.pageNumber_hover}`
-              }
-              onClick={
-                pageNumber[pageNumber.length - 1]
-                  ? () => {}
-                  : () => clickPageChevron(dispatch, { clickState: 1 })
-              }
-            >
-              <FontAwesomeIcon icon={faChevronRight} />
-            </button>
-          </div>
-        </div>
-      ) : (
-        <div className={styles.container}></div>
-      )}
-    </>
+                }
+          }
+        >
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </Link>
+        {pageNumberArr.map((pageNumber) => (
+          <Link
+            to={
+              pageNumber == 1
+                ? `/${porp.pageStyle}`
+                : `/${porp.pageStyle}?page=${pageNumber}`
+            }
+            key={pageNumber}
+            className={
+              pageNumberState[pageNumber - 1]
+                ? `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_number__selected}`
+                : `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_btn__hover}`
+            }
+            onClick={() => {
+              clickPageNumber(dispatch, {
+                clickNumber: pageNumber,
+              });
+            }}
+          >
+            {pageNumber}
+          </Link>
+        ))}
+        <Link
+          to={
+            page == undefined
+              ? `/${porp.pageStyle}?page=2`
+              : Number(page) == pageNumberState.length
+              ? `/${porp.pageStyle}?page=${page}`
+              : `/${porp.pageStyle}?page=${Number(page) + 1}`
+          }
+          className={
+            pageNumberState[pageNumberState.length - 1]
+              ? `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_chevron__disabled}`
+              : `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_btn__hover}`
+          }
+          onClick={
+            page == pageNumberState.length
+              ? () => {}
+              : () => {
+                  clickPageNumber(dispatch, {
+                    clickNumber: page == undefined ? 2 : Number(page) + 1,
+                  });
+                }
+          }
+        >
+          <FontAwesomeIcon icon={faChevronRight} />
+        </Link>
+      </div>
+    </div>
   );
 };
 

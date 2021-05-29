@@ -10,19 +10,23 @@
             "list":[
                 {
                     "imgUrl":"assets/images/index/about.png",
-                    "title":"關於數位"
+                    "title":"關於數位",
+                    "path":"/intro"
                 },
                 {
                     "imgUrl":"assets/images/index/works.png",
-                    "title":"作品展示"
+                    "title":"作品展示",
+                    "path":"/graduationWorks"
                 },
                 {
                     "imgUrl":"assets/images/index/senior.png",
-                    "title":"招生資訊"
+                    "title":"招生資訊",
+                    "path":"/college"
                 },
                 {
                     "imgUrl":"assets/images/index/classroom.png",
-                    "title":"教室導覽"
+                    "title":"教室導覽",
+                    "path":"/intro#classroom"
                 }
             ]
         }
@@ -30,27 +34,33 @@
     "link":[
         {
             "imgUrl":"assets/images/index/Job.png",
-            "title":"就業分析"
+            "title":"就業分析",
+            "path":"http://polomilky.github.io/paperwebsite/"
         },
         {
             "imgUrl":"assets/images/index/StudyGroup.png",
-            "title":"讀書會"
+            "title":"讀書會",
+            "path":"/activities/studyGroup"
         },
         {
             "imgUrl":"assets/images/index/Fan.png",
-            "title":"粉絲團"
+            "title":"粉絲團",
+            "path":"https://www.facebook.com/ntuedtd/?ref=ts&fref=ts"
         },
         {
             "imgUrl":"assets/images/index/TeachGroup.png",
-            "title":"教學團隊"
+            "title":"教學團隊",
+            "path":"/staff"
         },
         {
             "imgUrl":"assets/images/index/WebGroup.png",
-            "title":"系網團隊"
+            "title":"系網團隊",
+            "path":"/"
         },
         {
             "imgUrl":"assets/images/index/Ntue.png",
-            "title":"國北教大"
+            "title":"國北教大",
+            "path":"https://www.ntue.edu.tw/"
         }
     ]
 

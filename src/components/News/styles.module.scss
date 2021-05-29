@@ -1,34 +1,43 @@
 @import '../../styles/media.scss';
-@import '../../styles/color.scss';
-@import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
+@import '../../styles/font.scss';
+@import '../../styles/color.scss';
 
-.container {
-  width: 100%;
-}
-
-.new {
+.news_newsBlock {
   padding: 0 $dtd-secondary-spacing;
 }
 
-.new_box {
+.newsBlock_newBox {
   padding: 10px 0;
+  .newBox_title {
+    padding: 6px 0;
+    font-size: $dtd-h2-size;
+    color: $dtd-text-color;
+  }
+
+  &:hover {
+    text-decoration: none;
+
+    & .newBox_title {
+      color: $dtd-main-color;
+    }
+  }
 }
 
-.new_title {
-  padding: 6px 0;
-  font-size: 20px;
-  color: $dtd-text-color;
+.newBox_text_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.new_content {
+.newBox_content {
   padding: 6px 0;
   font-size: $dtd-hint-size;
   color: $dtd-submenu-text-color;
 }
 
 @media (max-width: $dtd-media-phone) {
-  .new {
+  .news_newsBlock {
     padding: 0;
   }
 }

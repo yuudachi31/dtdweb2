@@ -1,0 +1,123 @@
+@import '../../styles/media.scss';
+@import '../../styles/pageMargin.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/font.scss';
+@import '../../styles/color.scss';
+
+.container {
+  width: 100vw;
+  padding: 0 $dtd-margin-desktop;
+  background-color: $dtd-main-bg-color;
+}
+
+.newDetail_newDetailBlock__padding {
+  padding: 27px 0 80px 2vw;
+}
+
+.newDetailBlock_titleBar {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: center;
+}
+
+.titleBar_backBtn {
+  padding: 9px 22px 9px 0;
+  margin: 0;
+  border: none;
+  background-color: $dtd-main-bg-color;
+}
+
+.backBtn_img__width {
+  width: 30px;
+}
+
+.titleBar_title {
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+  padding: 9px 0 9px 36px;
+  font-size: $dtd-h1-size;
+  font-weight: bold;
+}
+
+.newDetailBlock_content {
+  width: 100%;
+  height: auto;
+
+  //wordpress style
+  font-size: 13px;
+  line-height: 21px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #626262;
+
+  & > p {
+    margin: 0 0 15px;
+  }
+  & > ul {
+    color: #737e86;
+  }
+  & > ul li {
+    margin-bottom: 10px;
+    list-style: disc outside;
+  }
+  & > .wp-block-file {
+    margin-bottom: 1.5em;
+  }
+  & > .wp-block-file * + .wp-block-file__button {
+    margin-left: 0.75em;
+  }
+  & > a {
+    color: #2991d6;
+  }
+  & > strong {
+    font-weight: bold;
+  }
+  & > table {
+    width: 100%;
+    margin-bottom: 15px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 5px;
+  }
+  & > table td {
+    border-color: rgba(0, 0, 0, 0.08);
+    padding: 10px;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    vertical-align: middle;
+  }
+  & > tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+  & > tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .container {
+    padding: 0 $dtd-margin-tablet;
+  }
+
+  .newDetail_newDetailBlock__padding {
+    padding: 27px 2vw 80px 2vw;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .container {
+    padding: 0 $dtd-margin-phone;
+  }
+
+  .newDetail_newDetailBlock__padding {
+    padding: 27px 0 80px 0;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .container {
+    padding: 0 $dtd-margin-phone-small;
+  }
+}

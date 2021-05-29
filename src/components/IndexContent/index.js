@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+/* 從json檔撈資料 */
 import indexContent from '../../assets/json/indexContent.json';
 
 const IndexContent = () => {
@@ -33,7 +34,7 @@ const IndexContent = () => {
                 key={list.title}
                 className={styles.admissionBlock}
               >
-                <Link to="/" className={styles.link_a__textdecnone}>
+                <Link to={list.path} className={styles.link_a__textdecnone}>
                   <div className={styles.link_img}>
                     <img
                       src={list.imgUrl}
@@ -53,12 +54,12 @@ const IndexContent = () => {
         <Row className={styles.link}>
           {indexContent.link.map((link) => (
             <Col sm={2} xs={6} key={link.title} className={styles.linkBlock}>
-              <Link to="/" className={styles.link_a__textdecnone}>
+              <a href={link.path} className={styles.link_a__textdecnone}>
                 <div className={styles.link_img}>
                   <img src={link.imgUrl} alt="" />
                 </div>
                 <div className={styles.link_p}>{link.title}</div>
-              </Link>
+              </a>
             </Col>
           ))}
         </Row>

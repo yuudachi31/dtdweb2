@@ -2,24 +2,28 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
 
 .container {
-  // min-height: 100vh;
   width: 100vw;
   background-color: $dtd-main-bg-color;
 }
-//staffContainer
 .futureContainer {
   min-height: 100vh;
-  margin: 0 10%;
+  margin: 0 $dtd-margin-desktop;
 }
-@media (max-width: $dtd-media-desktop) {
+@media (max-width: $dtd-media-tablet) {
   .futureContainer {
-    margin: 0 4.8% $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-tablet $dtd-secondary-spacing;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .futureContainer {
-    margin: 0 6% $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-phone $dtd-secondary-spacing;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .futureContainer {
+    margin: 0 $dtd-margin-phone-small $dtd-secondary-spacing;
   }
 }

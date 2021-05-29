@@ -3,22 +3,42 @@ import PropTypes from 'prop-types';
 
 import {
   SET_NEWS,
+  SET_NEW_DETAIL,
   SET_STAFF,
   SET_STAFF_DETAIL,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
+  SET_GRADUATONWORKS_SHOW,
+  SET_GRADUATONWORKS_DETAIL,
+  SET_COURSEWORKS_SHOW,
+  SET_COURSEWORKS_DETAIL,
+  SET_COOPERATIONWORKS,
+  SET_COOPERATIONWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
   SET_BANNER,
+  SET_HOME_NEWS,
 } from './actionTypes';
 
 export const StoreContext = createContext();
 
 const initialState = {
   news: [],
+  newDetail: {},
   staff: [],
   staffDetail: {},
+  worksSort: ['所有'],
+  worksSortActiveItem: '所有',
+  graduationWorksShow: [],
+  graduationWorksDetail: {},
+  courseWorksShow: [],
+  courseWorksDetail: {},
+  cooperationWorks: [],
+  cooperationWorksDetail: {},
   requestdata: { loading: false, error: null },
   banner: [],
+  homeNews: [],
 };
 
 function reducer(state, action) {
@@ -28,10 +48,20 @@ function reducer(state, action) {
         ...state,
         banner: action.payload,
       };
+    case SET_HOME_NEWS:
+      return {
+        ...state,
+        homeNews: action.payload,
+      };
     case SET_NEWS:
       return {
         ...state,
         news: action.payload,
+      };
+    case SET_NEW_DETAIL:
+      return {
+        ...state,
+        newDetail: action.payload,
       };
     case SET_STAFF:
       return {
@@ -43,7 +73,46 @@ function reducer(state, action) {
         ...state,
         staffDetail: action.payload,
       };
-
+    case SET_WORKS_SORT:
+      return {
+        ...state,
+        worksSort: action.payload,
+      };
+    case SET_WORKSSORT_ACTIVEITEM:
+      return {
+        ...state,
+        worksSortActiveItem: action.payload,
+      };
+    case SET_GRADUATONWORKS_SHOW:
+      return {
+        ...state,
+        graduationWorksShow: action.payload,
+      };
+    case SET_GRADUATONWORKS_DETAIL:
+      return {
+        ...state,
+        graduationWorksDetail: action.payload,
+      };
+    case SET_COURSEWORKS_SHOW:
+      return {
+        ...state,
+        courseWorksShow: action.payload,
+      };
+    case SET_COURSEWORKS_DETAIL:
+      return {
+        ...state,
+        courseWorksDetail: action.payload,
+      };
+    case SET_COOPERATIONWORKS:
+      return {
+        ...state,
+        cooperationWorks: action.payload,
+      };
+    case SET_COOPERATIONWORKS_DETAIL:
+      return {
+        ...state,
+        cooperationWorksDetail: action.payload,
+      };
     case BEGIN_DATA_REQUEST:
       return {
         ...state,

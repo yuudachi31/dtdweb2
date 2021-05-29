@@ -1,170 +1,117 @@
 import React, { useState, useEffect } from 'react';
-
+// 設計
 import styles from './styles.module.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-/*icon*/
+// icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faExternalLinkAlt,
   faDownload,
 } from '@fortawesome/free-solid-svg-icons';
-
+// 資料匯入
 import admissionsjson from '../../assets/json/admissions.json';
 
 const Admissions = (prop) => {
-  const [admissiondetail, setadmissiondetail] = useState([]);
+  const [admissionsDetail, setAdmissionsDetail] = useState({});
   useEffect(() => {
-    setadmissiondetail(admissionsjson[prop.number]);
+    setAdmissionsDetail(admissionsjson[prop.number]);
+    window.scrollTo(0, 0);
   }, []);
   return (
-    <div className={styles.container}>
-      {admissiondetail.regulations_content &&
-      admissiondetail.regulations_document ? (
-        <div className={styles.container}>
-          <div className={styles.admissionGroupName}>入學資訊</div>
-          <div className={styles.info_bar}>
-            <div className={styles.info_contentBox}>
-              <div className={styles.info_department}>
-                <img
-                  src={admissiondetail.info_img}
-                  className={styles.info_img}
-                ></img>
-                <div className={styles.info_departmentName}>
-                  {admissiondetail.info_departmentName}
-                </div>
-              </div>
-              <div className={styles.info_insideBox_marginBottom}>
-                <div className={styles.info_rowBox}>
-                  <div
-                    className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
-                  >
-                    招生資訊：
-                  </div>
-                  <div
-                    className={`${styles.info_contentData} ${styles.admission_content_p}`}
-                  >
-                    {admissiondetail.info_studuntNumber}
-                  </div>
-                </div>
-                <div className={styles.info_rowBox}>
-                  <div
-                    className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
-                  >
-                    入學方式：
-                  </div>
-                  <div
-                    className={`${styles.info_contentData} ${styles.admission_content_p} ${styles.admission_content_enter}`}
-                  >
-                    {admissiondetail.info_admission}
-                  </div>
-                </div>
-                <div className={styles.info_rowBox}>
-                  <div
-                    className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
-                  >
-                    入學對象：
-                  </div>
-                  <div
-                    className={`${styles.info_contentData} ${styles.admission_content_p}`}
-                  >
-                    {admissiondetail.info_target}
-                  </div>
-                </div>
-                <div className={styles.info_rowBox}>
-                  <div
-                    className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
-                  >
-                    平日上課時間：
-                  </div>
-                  <div
-                    className={`${styles.info_contentData} ${styles.admission_content_p}`}
-                  >
-                    {admissiondetail.info_schoolTime}
-                  </div>
-                </div>
-                <div className={styles.info_rowBox}>
-                  <div
-                    className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
-                  >
-                    相關資訊連結：
-                  </div>
-                  <div
-                    className={`${styles.info_contentData} ${styles.admission_content_p}`}
-                  >
-                    <a
-                      href={admissiondetail.info_documentURL}
-                      className={styles.info_documentURL}
-                    >
-                      {admissiondetail.info_documentName}
-                    </a>
-                  </div>
-                </div>
-                <div className={styles.info_rowBox}>
-                  <div
-                    className={`${styles.info_contentTitle} ${styles.admission_content_p}`}
-                  >
-                    備註：
-                  </div>
-                  <div
-                    className={`${styles.info_contentData} ${styles.admission_content_p}`}
-                  >
-                    {admissiondetail.info_remark}
-                  </div>
-                </div>
+    <>
+      {admissionsDetail.info &&
+      admissionsDetail.regulations_rules &&
+      admissionsDetail.regulations_documents ? (
+        <>
+          <div className={styles.admissions_titleBar}>入學資訊</div>
+          <div className={styles.admissions_infoBlock}>
+            <div className={styles.infoBlock_degreeBox}>
+              <img
+                src={admissionsDetail.degreeImg}
+                className={styles.degreeBox_img__width}
+              ></img>
+              <div
+                className={`${styles.degreeBox_name} ${styles.admissions_content__preLine}`}
+              >
+                {admissionsDetail.degreeName}
               </div>
             </div>
-          </div>
-          <div className={styles.admissionGroupName}>修課規定</div>
-          <div className={styles.regulations_bar}>
-            <div className={styles.regulations_box}>
-              {admissiondetail.regulations_content.map((regulationsContent) => (
+            <div className={styles.infoBlock_infoBox}>
+              {admissionsDetail.info.map((infoDetail) => (
                 <div
-                  className={styles.regulations_documentBox}
-                  key={regulationsContent.regulations_title}
+                  className={styles.infoBox_infoRow}
+                  key={infoDetail.info_content}
                 >
                   <div
-                    className={`${styles.regulations_title_bold} ${styles.admission_content_p} ${styles.regulations_contentRow_marginBottom}`}
+                    className={`${styles.infoRow_title} ${styles.admissions_content__fontSize}`}
                   >
-                    {regulationsContent.regulations_title}
+                    {infoDetail.info_title}
                   </div>
                   <div
-                    className={`${styles.regulations_content_marginLeft} ${styles.admission_content_enter}`}
+                    className={`${styles.infoRow_content} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
                   >
-                    {regulationsContent.regulations_rules}
+                    {infoDetail.info_URL == undefined ? (
+                      infoDetail.info_content
+                    ) : (
+                      <a
+                        href={infoDetail.info_URL}
+                        className={styles.infoRow_document}
+                      >
+                        {infoDetail.info_content}
+                      </a>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
-            <div className={styles.titleLine}></div>
-            <div className={styles.regulations_box}>
-              {admissiondetail.regulations_document.map(
+          </div>
+          <div className={styles.admissions_titleBar}>修課規定</div>
+          <div className={styles.admissions_regulationsBlock}>
+            <div className={styles.regulationsBlock_regulationsBox}>
+              {admissionsDetail.regulations_rules.map((regulationsRule) => (
+                <div
+                  className={styles.regulationsBox_regulationsItem__margin}
+                  key={regulationsRule.rule_title}
+                >
+                  <div
+                    className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                  >
+                    {regulationsRule.rule_title}
+                  </div>
+                  <div
+                    className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
+                  >
+                    {regulationsRule.rule_content}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className={styles.regulationsBlock_divisionLine}></div>
+            <div className={styles.regulationsBlock_regulationsBox}>
+              {admissionsDetail.regulations_documents.map(
                 (regulationsDocument) => (
                   <div
-                    className={styles.regulations_documentBox}
-                    key={regulationsDocument.regulations_title}
+                    className={styles.regulationsBox_regulationsItem__margin}
+                    key={regulationsDocument.document_title}
                   >
                     <div
-                      className={`${styles.regulations_title_bold} ${styles.admission_content_p} ${styles.regulations_contentRow_marginBottom}`}
+                      className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
                     >
-                      {regulationsDocument.regulations_documentTitle}
+                      {regulationsDocument.document_title}
                     </div>
                     <a
-                      className={`${styles.regulations_content_marginLeft} ${styles.regulations_document}`}
-                      href={regulationsDocument.regulations_documentURL}
+                      className={`${styles.regulationsItem_document} ${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize}`}
+                      href={regulationsDocument.document_URL}
                     >
                       <FontAwesomeIcon
-                        className={styles.regulations_documentIcon_marginTop}
+                        className={styles.document_icon_margin}
                         icon={
-                          regulationsDocument.regulations_documentType == '0'
+                          regulationsDocument.document_type == '0'
                             ? faExternalLinkAlt
                             : faDownload
                         }
                       />
-                      <div
-                        className={`${styles.regulations_documentName_marginLeft} ${styles.admission_content_p}`}
-                      >
-                        {regulationsDocument.regulations_documentName}
+                      <div className={styles.admissions_content__fontSize}>
+                        {regulationsDocument.document_name}
                       </div>
                     </a>
                   </div>
@@ -172,18 +119,18 @@ const Admissions = (prop) => {
               )}
             </div>
           </div>
-          <div className={styles.admissionGroupName}>修業地圖</div>
-          <div className={styles.classMap_bar}>
+          <div className={styles.admissions_titleBar}>修業地圖</div>
+          <div className={styles.admissions_classMapBlock}>
             <img
-              src={admissiondetail.classMap}
-              className={styles.classMap_img}
+              src={admissionsDetail.classMap_img}
+              className={styles.classMapBlock_img__width}
             ></img>
           </div>
-        </div>
+        </>
       ) : (
-        <div></div>
+        <></>
       )}
-    </div>
+    </>
   );
 };
 

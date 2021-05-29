@@ -1,14 +1,9 @@
 @import '../../styles/media.scss';
 @import '../../styles/spacing.scss';
-@import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/color.scss';
 
-.container {
-  width: 100%;
-  background-color: $dtd-main-bg-color;
-  color: $dtd-text-color;
-}
-.admissionGroupName {
+.admissions_titleBar {
   width: 100%;
   height: 54px;
   border-radius: 5px;
@@ -19,49 +14,51 @@
   font-size: $dtd-h2-size;
 }
 
-.admission_content_p {
+.admissions_content__fontSize {
   font-size: $dtd-p-size;
 }
-.admission_content_enter {
+.admissions_content__preLine {
   white-space: pre-line;
 }
 
-.info_bar {
-  font-size: $dtd-p-size;
-  margin-top: $dtd-section-spacing;
-  margin-bottom: $dtd-section-spacing;
+.admissions_infoBlock {
+  margin: $dtd-section-spacing 0;
   padding: 0 $dtd-secondary-spacing;
-}
-.info_contentBox {
   display: flex;
-  width: 100%;
 }
-.info_department {
-  margin-right: 144px;
+
+.infoBlock_degreeBox {
+  width: 206px;
+  text-align: center;
 }
-.info_img {
-  height: 160px;
+
+.degreeBox_img__width {
   width: 160px;
 }
-.info_departmentName {
+.degreeBox_name {
   font-size: $dtd-h2-size;
   margin-top: $dtd-secondary-spacing;
 }
-.info_insideBox_marginBottom {
+
+.infoBlock_infoBox {
+  width: calc(100% - 304px);
+  margin-left: 113px;
   margin-bottom: -$dtd-p-size;
 }
-.info_rowBox {
+
+.infoBox_infoRow {
   display: flex;
   margin-bottom: $dtd-p-size;
 }
-.info_contentTitle {
-  width: 128px;
-  margin-right: $dtd-secondary-spacing;
+
+.infoRow_title {
+  width: 112px;
 }
-.info_contentData {
-  width: calc(100% - 144px);
+.infoRow_content {
+  width: calc(100% - 112px);
+  padding-left: 6.1%;
 }
-.info_documentURL {
+.infoRow_document {
   color: $dtd-main-color;
   &:hover {
     color: $dtd-main-color;
@@ -71,34 +68,34 @@
   }
 }
 
-.regulations_bar {
-  font-size: $dtd-p-size;
-  margin-top: $dtd-section-spacing;
-  margin-bottom: $dtd-section-spacing;
+.admissions_regulationsBlock {
+  margin: $dtd-section-spacing 0;
   padding: 0 $dtd-secondary-spacing;
 }
 
-.regulations_box {
+.regulationsBlock_regulationsBox {
   display: flex;
-  margin-right: -218px;
-}
-.regulations_contentBox {
-  margin-right: 144px;
-}
-.regulations_title_bold {
-  font-weight: bold;
-}
-.regulations_content_marginLeft {
-  margin-left: 24px;
-}
-.regulations_contentRow_marginBottom {
-  margin-bottom: $dtd-p-size;
+  margin-right: -168px;
 }
 
-.regulations_documentBox {
-  margin-right: 218px;
+.regulationsBox_regulationsItem__margin {
+  margin-right: 168px;
 }
-.regulations_document {
+.regulationsItem_title {
+  font-weight: bold;
+  margin-bottom: $dtd-p-size;
+}
+.regulationsItem_content__marginLeft {
+  margin-left: 24px;
+}
+
+.regulationsBlock_divisionLine {
+  height: 1px;
+  background-color: $dtd-hint-text-color;
+  margin: $dtd-secondary-spacing 0;
+}
+
+.regulationsItem_document {
   display: flex;
   color: $dtd-text-color;
   &:hover {
@@ -106,92 +103,95 @@
     text-decoration: none;
   }
 }
-.regulations_documentIcon_marginTop {
+
+.document_icon_margin {
   margin-top: 2.5px;
-}
-.regulations_documentName_marginLeft {
-  margin-left: 8px;
+  margin-right: 8px;
 }
 
-.classMap_bar {
-  font-size: $dtd-p-size;
-  margin-top: $dtd-section-spacing;
-  margin-bottom: $dtd-section-spacing;
+.admissions_classMapBlock {
+  margin: $dtd-section-spacing 0;
   padding: 0 $dtd-secondary-spacing;
 }
-.classMap_img {
-  width: 100%;
-}
 
-.titleLine {
+.classMapBlock_img__width {
   width: 100%;
-  height: 1px;
-  background-color: $dtd-hint-text-color;
-  margin: 32px 0;
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .info_department {
-    margin-right: $dtd-staff-rwd-spacing;
+  .infoBlock_infoBox {
+    width: calc(92.2% - 206px);
+    margin-left: 7.8%;
   }
 
-  .regulations_box {
-    display: flex;
+  .infoRow_content {
+    padding-left: 8.3%;
+  }
+
+  .regulationsBlock_regulationsBox {
     margin-right: 0;
     justify-content: space-between;
   }
-  .regulations_contentBox {
-    margin-right: $dtd-staff-rwd-spacing;
-  }
-  .regulations_documentBox {
+
+  .regulationsBox_regulationsItem__margin {
     margin-right: 0;
   }
 
-  .classMap_bar {
+  .admissions_classMapBlock {
     padding: 0 10px;
   }
 }
 
-@media (max-width: $dtd-media-phone) {
-  .info_bar {
-    padding: 0 16px;
-  }
-  .info_contentBox {
+@media (max-width: 768px) {
+  .admissions_infoBlock {
     display: block;
-    width: 100%;
   }
-  .info_department {
-    margin-right: 0;
-    text-align: center;
+
+  .infoBlock_degreeBox {
+    width: 100%;
     margin-bottom: $dtd-main-spcing;
   }
-  // .info_insideBox_marginBottom {
-  //   margin-bottom: 0;
-  // }
-  // .info_rowBox {
-  //   display: block;
-  //   width: 100%;
-  //   margin-bottom: $dtd-secondary-spacing;
-  // }
-  // .info_contentTitle {
-  //   width: 100%;
-  //   margin-right: 0;
-  //   margin-bottom: $dtd-p-size;
-  // }
-  // .info_contentData {
-  //   width: 100%;
-  // }
+  .infoBlock_infoBox {
+    width: 100%;
+    margin: 0;
+  }
 
-  .regulations_box {
+  .infoRow_content {
+    padding-left: 7%;
+  }
+
+  .regulationsBlock_regulationsBox {
     display: block;
     margin-right: 0;
   }
-  .regulations_contentBox {
+
+  .regulationsBox_regulationsItem__margin {
     margin-right: 0;
-    margin-bottom: 32px;
+    margin-bottom: $dtd-secondary-spacing;
   }
-  .regulations_documentBox {
-    margin-right: 0;
-    margin-bottom: 32px;
+}
+
+@media (max-width: $dtd-media-phone) {
+  .admissions_infoBlock {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .infoBox_infoRow {
+    display: block;
+    margin-bottom: $dtd-secondary-spacing;
+  }
+  .infoRow_title {
+    width: 100%;
+    margin-bottom: $dtd-p-size;
+  }
+  .infoRow_content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .admissions_regulationsBlock {
+    padding: 0 8px;
   }
 }

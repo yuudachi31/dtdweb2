@@ -1,15 +1,15 @@
 import React, { useEffect, useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import * as QueryString from 'query-string';
+// 設計
 import styles from './styles.module.scss';
-
-// import '@wordpress/block-library/build-style/style.css';
-// import '@wordpress/block-library/build-style/style.css';
-// import '@wordpress/block-library/build-style/style.css';
-
+// store
 import { getNews } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
-import { UIStoreContext } from '../../uiStore/reducer';
 
 const News = (prop) => {
+  const location = useLocation();
+  const { page } = QueryString.parse(location.search);
   const {
     state: {
       news,
@@ -18,34 +18,39 @@ const News = (prop) => {
     dispatch,
   } = useContext(StoreContext);
 
-  const {
-    state: { pageSeletedNumber },
-  } = useContext(UIStoreContext);
-
   useEffect(() => {
-    window.scrollTo(0, 0);
     getNews(dispatch, {
-      clickNumber: pageSeletedNumber,
+      clickNumber: page == undefined ? 1 : page,
       pageStyle: prop.pageStyle,
     });
-  }, [pageSeletedNumber]);
+    window.scrollTo(0, 0);
+  }, [page]);
 
   return (
     <>
       {loading ? (
-        <div className={styles.container}></div>
+        <></>
       ) : (
-        <div className={styles.container}>
-          <div className={styles.new}>
-            {news.map((newContent) => (
-              <div key={newContent.id} className={styles.new_box}>
-                <div className={styles.new_title}>{newContent.title}</div>
-                <div className={styles.new_content}>
-                  面試時間表經公告後不予調整順序。 考生報到及應試時請 […]
+        <div className={styles.news_newsBlock}>
+          {news.map((newContent) => (
+            <div className={styles.newsBlock_newBox} key={newContent.id}>
+              <Link to={`/${prop.pageStyle}/newinfo?id=${newContent.id}`}>
+                <div
+                  className={`${styles.newBox_title} ${styles.newBox_text_ellipsis}`}
+                >
+                  {newContent.title}
                 </div>
-              </div>
-            ))}
-          </div>
+                <div
+                  className={`${styles.newBox_content} ${styles.newBox_text_ellipsis}`}
+                >
+                  {newContent.content
+                    .replace(/<li>|<p>/g, ' ')
+                    .replace(/<[^>]*>?/gm, '')
+                    .replace(/&nbsp;/g, '')}
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       )}
     </>

@@ -3,6 +3,11 @@
 @import '../../styles/media.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
 
+.carousel_img__rwdHeight {
+  height: 35vh;
+  object-fit: cover;
+}
+
 @media (max-width: $dtd-media-tablet) {
   .carousel_img__rwdHeight {
     height: 30vh;

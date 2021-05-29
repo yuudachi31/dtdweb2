@@ -1,0 +1,35 @@
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/media.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: $dtd-secondary-spacing;
+  padding-bottom: $dtd-main-spcing;
+}
+.sorttitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dtd-text-color;
+  background-color: $dtd-main-bg-color;
+  padding: 0 16px 8px 16px;
+  cursor: default;
+  &:hover {
+    box-shadow: 0 2px 0 #85b6dd;
+  }
+}
+.sorttitle_selected {
+  background-color: $dtd-main-bg-color;
+  box-shadow: 0 2px 0 $dtd-main-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dtd-text-color;
+  padding: 0 16px 8px 16px;
+  cursor: default;
+}
