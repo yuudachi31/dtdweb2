@@ -48,8 +48,8 @@ const StaffGroup = () => {
           {staff.map((group) => (
             <div
               className={styles.staffContainer}
-              key={group.groupId}
-              id={'group' + group.groupId}
+              key={group.groupid}
+              id={'group' + group.groupid}
             >
               <div className={styles.staffContainer_staffGroupName}>
                 {group.title}
