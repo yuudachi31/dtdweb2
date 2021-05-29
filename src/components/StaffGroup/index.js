@@ -48,8 +48,8 @@ const StaffGroup = () => {
           {staff.map((group) => (
             <div
               className={styles.staffContainer}
-              key={group.groupid}
-              id={'group' + group.groupid}
+              key={group.groupId}
+              id={'group' + group.groupId}
             >
               <div className={styles.staffContainer_staffGroupName}>
                 {group.title}
@@ -68,22 +68,22 @@ const StaffGroup = () => {
                       to={
                         path.staff +
                         '/' +
-                        tea.englishname +
+                        tea.englishName +
                         '?groupid=' +
                         group.groupid +
                         '&staffpath=' +
-                        (tea.teachername.search(/（|\(/i) == -1
-                          ? tea.teachername
-                          : tea.teachername.slice(
+                        (tea.teacherName.search(/（/i) == -1
+                          ? tea.teacherName
+                          : tea.teacherName.slice(
                               0,
-                              tea.teachername.search(/（|\(/i),
+                              tea.teacherName.search(/（/i),
                             ))
                       }
                     >
-                      <img src={tea.imgurl} />
+                      <img src={tea.imgUrl} />
                     </Link>
                     <div>{tea.title}</div>
-                    <div>{tea.teachername}</div>
+                    <div>{tea.teacherName}</div>
                   </Col>
                 ))}
               </Row>
