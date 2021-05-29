@@ -32,14 +32,14 @@ const IndexNews = () => {
       ) : (
         <div className={`${styles.section} ${styles.section_news}`} id="news">
           {homeNews.map((newsType) => (
-            <div className={styles.newsContent} key={newsType.groupid}>
+            <div className={styles.newsContent} key={newsType.groupId}>
               <h1>{newsType.title}</h1>
               <div className={styles.news_top}></div>
               {newsType.list.map((newsDetail) => (
                 <div className={styles.news} key={newsDetail.id}>
                   <Link
                     to={`/${
-                      newsType.groupid === 0 ? 'announcements' : 'achievements'
+                      newsType.groupId === 0 ? 'announcements' : 'achievements'
                     }/newinfo?id=${newsDetail.id}`}
                     className={styles.link_a__textdecnone}
                   >
@@ -54,14 +54,14 @@ const IndexNews = () => {
               ))}
               <Link
                 to={
-                  newsType.groupid === 0
+                  newsType.groupId === 0
                     ? `${path.announcements}`
                     : `${path.achievements}`
                 }
               >
                 <button
                   className={
-                    newsType.groupid === 0
+                    newsType.groupId === 0
                       ? `${styles.news_button} ${styles.news_button_mb}`
                       : `${styles.news_button}`
                   }

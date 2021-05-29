@@ -23,7 +23,7 @@
 }
 .content {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   margin-top: $dtd-section-spacing;
   .content_img {
