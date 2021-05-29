@@ -8,7 +8,7 @@ import styles from './styles.module.scss';
 import PageTitle from '..//PageTitle';
 // store
 import { getNews } from '../../store/actions';
-import { setLoadState } from '../../uiStore/actions';
+import { setNewsLoadState } from '../../uiStore/actions';
 import { StoreContext } from '../../store/reducer';
 import { UIStoreContext } from '../../uiStore/reducer';
 
@@ -35,7 +35,7 @@ const News = (prop) => {
     });
     if (newsLoadState) {
       window.scrollTo(0, 0);
-      setLoadState(uiDispatch, { loadState: false });
+      setNewsLoadState(uiDispatch, { loadState: false });
     } else {
       Scroll.scroller.scrollTo('pageTitle');
     }

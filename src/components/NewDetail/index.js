@@ -10,7 +10,7 @@ import Footer from '../Footer';
 // 圖片匯入
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 // uiStore
-import { setLoadState } from '../../uiStore/actions';
+import { setNewsLoadState } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
 const NewDetail = (prop) => {
@@ -31,13 +31,15 @@ const NewDetail = (prop) => {
           <div className={styles.newDetailBlock_titleBar}>
             <Link
               to={
-                prop.page == null
+                prop.previous == undefined
+                  ? `/`
+                  : prop.page == null
                   ? `/${prop.previous}`
                   : `/${prop.previous}?page=${prop.page}`
               }
               className={styles.titleBar_backBtn__padding}
               onClick={() => {
-                setLoadState(uiDispatch, { loadState: false });
+                setNewsLoadState(uiDispatch, { loadState: false });
               }}
             >
               <img className={styles.backBtn_img__width} src={leftArrow} />

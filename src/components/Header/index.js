@@ -14,7 +14,7 @@ import {
   clickHamburgerMenu,
   clickHamburgerTitle,
   clickHamburgerLink,
-  setLoadState,
+  setNewsLoadState,
 } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
@@ -71,7 +71,9 @@ const Header = () => {
               <Link
                 to={path.announcements}
                 className={styles.pageBox_page}
-                onClick={() => setLoadState(uiDispatch, { loadState: true })}
+                onClick={() =>
+                  setNewsLoadState(uiDispatch, { loadState: true })
+                }
               >
                 系務公告
               </Link>
@@ -80,7 +82,9 @@ const Header = () => {
               <Link
                 to={path.achievements}
                 className={styles.pageBox_page}
-                onClick={() => setLoadState(uiDispatch, { loadState: true })}
+                onClick={() =>
+                  setNewsLoadState(uiDispatch, { loadState: true })
+                }
               >
                 師生榮譽榜
               </Link>
@@ -252,7 +256,7 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => {
                       clickHamburgerLink(uiDispatch);
-                      setLoadState(uiDispatch, { loadState: true });
+                      setNewsLoadState(uiDispatch, { loadState: true });
                     }}
                   >
                     系務公告
@@ -264,7 +268,7 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => {
                       clickHamburgerLink(uiDispatch);
-                      setLoadState(uiDispatch, { loadState: true });
+                      setNewsLoadState(uiDispatch, { loadState: true });
                     }}
                   >
                     師生榮譽榜

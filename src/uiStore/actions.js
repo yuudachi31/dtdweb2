@@ -24,7 +24,7 @@ export const clickPageNumber = (uiDispatch, options) => {
   uiDispatch({ type: constants.CLICK_PAGENUMBER, payload: clickNumber });
 };
 
-export const setLoadState = (uiDispatch, options) => {
+export const setNewsLoadState = (uiDispatch, options) => {
   const { loadState } = options;
   uiDispatch({ type: constants.SET_NEWSLOAD_STATE, payload: loadState });
 };
