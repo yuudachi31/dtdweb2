@@ -17,18 +17,18 @@ const PageNumber = (porp) => {
   const location = useLocation();
   const { page } = QueryString.parse(location.search);
   const {
-    state: { pageNumberState },
-    dispatch,
+    uiState: { pageNumberState },
+    uiDispatch,
   } = useContext(UIStoreContext);
 
   useEffect(() => {
-    setPageNumberState(dispatch, {
+    setPageNumberState(uiDispatch, {
       pageCount: Number(porp.pageCount),
     });
   }, []);
 
   useEffect(() => {
-    clickPageNumber(dispatch, {
+    clickPageNumber(uiDispatch, {
       clickNumber: page == undefined ? 1 : Number(page),
     });
   }, [page]);
@@ -56,7 +56,7 @@ const PageNumber = (porp) => {
             page == undefined
               ? () => {}
               : () => {
-                  clickPageNumber(dispatch, {
+                  clickPageNumber(uiDispatch, {
                     clickNumber: Number(page) - 1,
                   });
                 }
@@ -78,7 +78,7 @@ const PageNumber = (porp) => {
                 : `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_btn__hover}`
             }
             onClick={() => {
-              clickPageNumber(dispatch, {
+              clickPageNumber(uiDispatch, {
                 clickNumber: pageNumber,
               });
             }}
@@ -103,7 +103,7 @@ const PageNumber = (porp) => {
             page == pageNumberState.length
               ? () => {}
               : () => {
-                  clickPageNumber(dispatch, {
+                  clickPageNumber(uiDispatch, {
                     clickNumber: page == undefined ? 2 : Number(page) + 1,
                   });
                 }

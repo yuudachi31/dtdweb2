@@ -13,7 +13,7 @@ import { StoreContext } from '../../store/reducer';
 
 const AnnouncementDetail = () => {
   const location = useLocation();
-  const { id } = QueryString.parse(location.search);
+  const { previous, page, id } = QueryString.parse(location.search);
   const {
     state: {
       newDetail,
@@ -40,7 +40,12 @@ const AnnouncementDetail = () => {
         {loading ? (
           <div></div>
         ) : (
-          <NewDetail title={newDetail.title} content={newDetail.content} />
+          <NewDetail
+            previous={previous}
+            page={page == undefined ? null : page}
+            title={newDetail.title}
+            content={newDetail.content}
+          />
         )}
       </>
     </Fragment>

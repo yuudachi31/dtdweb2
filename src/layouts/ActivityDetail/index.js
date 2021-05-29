@@ -28,14 +28,14 @@ const ActivityDetail = (prop) => {
     (x) => x.id === prop.match.params.activityId,
   );
 
-  const { dispatch } = useContext(UIStoreContext);
+  const { uiDispatch } = useContext(UIStoreContext);
 
   useEffect(() => {
-    setPageContent(dispatch, activitiesCategoryCookie);
+    setPageContent(uiDispatch, activitiesCategoryCookie);
     if (activity.category === 'DTDActivities') {
-      setActiveNavItem(dispatch, `${path.activities}`);
+      setActiveNavItem(uiDispatch, `${path.activities}`);
     } else {
-      setActiveNavItem(dispatch, `${path.activities}/${activity.category}`);
+      setActiveNavItem(uiDispatch, `${path.activities}/${activity.category}`);
     }
   }, []);
 
