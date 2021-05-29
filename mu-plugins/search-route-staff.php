@@ -96,6 +96,7 @@
       $collection = array(
          'id' => get_the_ID(),
          'groupTitle' => get_field('grouptitle'),
+         'sort_weight' => get_field('sort_weight'),
          'teacherName' => get_field('teachername'),
          'englishName' => get_field('englishname'),
          'title' => get_field('title'),

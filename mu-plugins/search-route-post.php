@@ -16,12 +16,11 @@
             $url = get_permalink(get_the_ID());
          }
 
-         $content = wp_remote_get( $url)["body"];
+         $content = wp_remote_get($url)["body"];
          $content = ConvertContentLabel($content);
 
          $results = array(
             'id' => get_the_ID(),
-            'groupTitle' => get_field('groupTitle'),
             'title' => get_the_title(),
             'content' => $content,
          );
