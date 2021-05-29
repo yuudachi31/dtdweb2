@@ -19,15 +19,15 @@
   font-size: $dtd-h2-size;
 }
 .section {
-  margin: 0 55px $dtd-section-spacing 55px;
+  margin: 0 0 $dtd-section-spacing $dtd-secondary-spacing;
 }
 .content {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   margin-top: $dtd-section-spacing;
   .content_img {
-    margin-right: 104px;
+    margin-right: $dtd-staff-rwd-spacing;
   }
 }
 
@@ -42,34 +42,78 @@
     font-weight: bold;
     margin-bottom: 14px;
   }
-
+  .explain {
+    display: flex;
+    font-size: $dtd-p-size;
+  }
   .description_spanContent {
     display: flex;
-    flex-direction: column;
-    font-size: $dtd-p-size;
-    color: $dtd-text-color;
-  }
-
-  .description_span {
-    margin-top: 16px;
+    .description_spanContentLeft {
+      width: 240px;
+    }
+    .description_span {
+      margin-top: 16px;
+    }
   }
 }
 
-.explain {
-  display: flex;
-  font-size: $dtd-p-size;
-
-  .explain_p_red {
-    color: #ed1313;
+@media (max-width: 768px) {
+  .section {
+    margin: 0 0 $dtd-section-spacing 21%;
+  }
+  .content {
+    flex-direction: column;
+    align-items: flex-start;
+    .content_img {
+      margin-right: 0;
+    }
+  }
+  .description {
+    margin-top: $dtd-secondary-spacing;
   }
 }
 
 @media (max-width: $dtd-media-phone) {
-  .content {
-    display: flex;
+  .section {
+    margin: 0 10px $dtd-section-spacing 15%;
+  }
+  .description {
+    .description_spanContent {
+      .description_spanContentLeft {
+        width: 200px;
+      }
+    }
+  }
+}
+
+@media (max-width: 461px) {
+  .section {
+    margin: 0 10px $dtd-section-spacing 10%;
+  }
+  .description {
+    .description_spanContent {
+      .description_spanContentLeft {
+        width: 155px;
+      }
+    }
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .section {
+    margin: 0 0 $dtd-section-spacing 0;
+  }
+  .description {
+    height: 100%;
+  }
+  .description_spanContent {
     flex-direction: column;
-    .content_img {
-      margin-right: 0;
+    margin-top: $dtd-secondary-spacing;
+  }
+  .content_img {
+    width: 100%;
+    .content_img__size {
+      width: 100%;
     }
   }
 }
