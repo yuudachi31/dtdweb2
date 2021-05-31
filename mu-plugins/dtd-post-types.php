@@ -6,13 +6,13 @@ function prefix_register_dtd_routes_projects() {
       'show_in_rest' => true,
       'rewrite' => array('slug' => 'banners'),
       'has_archive' => true,
-      'supports' => array('title', 'thumbnail'),  #發文資料欄位
+      'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
             'name' => '首頁輪播圖',
-            'add_new' => '新增',
-            'edit_item' => '編輯',
-            'all_items' => '全部',
+            'add_new' => '新增輪播圖',
+            'edit_item' => '編輯輪播圖',
+            'all_items' => '全部輪播圖',
             'singular_name' => 'Banners'
       ),
       'menu_icon' => 'dashicons-images-alt2'
@@ -22,13 +22,13 @@ function prefix_register_dtd_routes_projects() {
       'show_in_rest' => true,
       'rewrite' => array('slug' => 'staff'),
       'has_archive' => true,
-      'supports' => array('title', 'thumbnail'),  #發文資料欄位
+      'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
             'name' => '教職員',
-            'add_new' => '新增',
-            'edit_item' => '編輯',
-            'all_items' => '全部',
+            'add_new' => '新增教職員',
+            'edit_item' => '編輯教職員',
+            'all_items' => '全部教職員',
             'singular_name' => 'Staff'
       ),
       'menu_icon' => 'dashicons-admin-users'

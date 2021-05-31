@@ -4,6 +4,8 @@ import * as Scroll from 'react-scroll';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
+//components
+import Loading from '../Loading';
 //path
 import path from '../../utils/path';
 //css
@@ -38,7 +40,9 @@ const StaffGroup = () => {
   return (
     <>
       {loading ? (
-        <div className={styles.container}></div>
+        <div className={styles.container}>
+          <Loading />
+        </div>
       ) : (
         <div className={styles.container}>
           {staff.map((group) => (

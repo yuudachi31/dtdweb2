@@ -9,6 +9,7 @@ import { Col, Row } from 'react-bootstrap';
 //componemts
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Loading from '../../components/Loading';
 //path
 import path from '../../utils/path';
 //css
@@ -52,7 +53,9 @@ const StaffDetail = () => {
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.staffContainer}></div>
+            <div className={styles.staffContainer}>
+              <Loading />
+            </div>
             <Footer />
           </div>
         </Fragment>

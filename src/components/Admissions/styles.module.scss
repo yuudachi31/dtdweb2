@@ -69,7 +69,7 @@
 }
 
 .admissions_regulationsBlock {
-  margin: $dtd-section-spacing 0;
+  margin: $dtd-section-spacing 0 $dtd-index-main-spacing 0;
   padding: 0 $dtd-secondary-spacing;
 }
 
@@ -109,15 +109,6 @@
   margin-right: 8px;
 }
 
-.admissions_classMapBlock {
-  margin: $dtd-section-spacing 0;
-  padding: 0 $dtd-secondary-spacing;
-}
-
-.classMapBlock_img__width {
-  width: 100%;
-}
-
 @media (max-width: $dtd-media-tablet) {
   .infoBlock_infoBox {
     width: calc(92.2% - 206px);
@@ -135,10 +126,6 @@
 
   .regulationsBox_regulationsItem__margin {
     margin-right: 0;
-  }
-
-  .admissions_classMapBlock {
-    padding: 0 10px;
   }
 }
 

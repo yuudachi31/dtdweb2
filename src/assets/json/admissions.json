@@ -5,7 +5,7 @@
         "info":
         [
             {
-                "info_title":"招生資訊：",
+                "info_title":"招生人數：",
                 "info_content":"1班43人"
             },
             {
@@ -22,8 +22,8 @@
             },
             {
                 "info_title":"相關資訊連結：",
-                "info_content":"大學部甄選訊息",
-                "info_URL":""
+                "info_content":"學士班招生資訊",
+                "info_URL":"https://exam.ntue.edu.tw/"
             },
             {
                 "info_title":"備註：",
@@ -45,12 +45,10 @@
         [
             {
                 "document_title": "課程計畫表",
-                "document_name": "請至教務處課務組依入學年度查詢",
-                "document_type": 0,
+                "document_name": "請至「教務處課務組」依入學年度查詢",
                 "document_URL": "https://academic.ntue.edu.tw/files/11-1007-99.php"
             }
-        ],
-        "classMap_img": "assets/images/admissions/collegeMap.jpg"
+        ]
     },
     {
         "degreeImg": "assets/images/admissions/masterIcon.png",
@@ -58,7 +56,7 @@
         "info":
         [
             {
-                "info_title":"招生資訊：",
+                "info_title":"招生人數：",
                 "info_content":"1班27人"
             },
             {
@@ -75,7 +73,8 @@
             },
             {
                 "info_title":"相關資訊連結：",
-                "info_content":"碩士班甄試及考試入學招生簡章請逕向本校「招生資訊」網站查詢"
+                "info_content":"碩士班招生資訊",
+                "info_URL":"https://exam.ntue.edu.tw/"
             },
             {
                 "info_title":"下載：",
@@ -98,18 +97,10 @@
         [
             {
                 "document_title": "課程計畫表",
-                "document_name": "請至教務處課務組依入學年度查詢",
-                "document_type": 0,
+                "document_name": "請至「教務處課務組」依入學年度查詢",
                 "document_URL": "https://academic.ntue.edu.tw/files/11-1007-99.php"
-            },
-            {
-                "document_title": "學生手冊",
-                "document_name": "研究所（109）入學學生手冊",
-                "document_type": 1,
-                "document_URL": ""
             }
-        ],
-        "classMap_img": "assets/images/admissions/masterMap.jpg"
+        ]
     },
     {
         "degreeImg": "assets/images/admissions/inserveIcon.png",
@@ -117,7 +108,7 @@
         "info":
         [
             {
-                "info_title":"招生資訊：",
+                "info_title":"招生人數：",
                 "info_content":"依各學年簡章為準"
             },
             {
@@ -134,7 +125,8 @@
             },
             {
                 "info_title":"相關資訊連結：",
-                "info_content":"碩士在職專班招生簡章請逕向本校「招生資訊」網站查詢"
+                "info_content":"碩士在職專班招生資訊",
+                "info_URL":"https://academic.ntue.edu.tw/files/11-1007-99.php"
             },
             {
                 "info_title":"下載：",
@@ -156,12 +148,10 @@
         "regulations_documents":
         [
             {
-                "document_title": "應修科目表與學生手冊",
-                "document_name": "在職碩士班（109）入學學生手冊",
-                "document_type": 1,
-                "document_URL": ""
+                "document_title": "選課說明",
+                "document_name": "請至「進修推廣處」查詢",
+                "document_URL": "https://dice.ntue.edu.tw/about/detail/2/5"
             }
-        ],
-        "classMap_img": ""
+        ]
     }
 ]

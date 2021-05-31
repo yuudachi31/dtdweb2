@@ -67,7 +67,9 @@ const News = (prop) => {
                   <div
                     className={`${styles.newBox_title} ${styles.newBox_text_ellipsis}`}
                   >
-                    {newContent.title}
+                    {newContent.isLatest
+                      ? `［最新］${newContent.title}`
+                      : newContent.title}
                   </div>
                   <div
                     className={`${styles.newBox_content} ${styles.newBox_text_ellipsis}`}

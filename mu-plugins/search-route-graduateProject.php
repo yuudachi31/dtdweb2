@@ -15,6 +15,7 @@
          $gradRange = [100, 150];
 
          $results = array();
+         //先建立所有年份的資料空間，後續再將多餘的刪除
          for($i = $gradRange[1]; $i >= $gradRange[0]; $i--){
             array_push($results,array(
                'sortTitle' => $i,
@@ -28,7 +29,7 @@
             $sortTitle = get_field('sortTitle');
 
             $collection = ReturnGraduateProjectCollection();
-
+            //將collection放入對應的年份
             array_push($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
          }
          //刪除空白沒有資料的年份
