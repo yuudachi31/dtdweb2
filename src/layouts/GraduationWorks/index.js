@@ -61,7 +61,7 @@ const GraduationWorks = () => {
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSort(dispatch, {
-        sort: worksSortActiveItem,
+        sort: '所有',
         path: path.graduationWorks,
       });
       getGraduationWorks(dispatch);

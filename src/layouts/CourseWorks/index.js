@@ -46,7 +46,9 @@ const CourseWorks = () => {
   const getUrlId = window.location.href;
 
   useEffect(() => {
+    console.log(worksSortActiveItem);
     setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
+    console.log(worksSortActiveItem);
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
       if (worksSortActiveItem == '所有') {
@@ -61,7 +63,7 @@ const CourseWorks = () => {
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSort(dispatch, {
-        sort: worksSortActiveItem,
+        sort: '所有',
         path: path.courseWorks,
       });
       getCourseWorks(dispatch);
