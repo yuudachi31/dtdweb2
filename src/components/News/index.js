@@ -32,9 +32,9 @@ const News = (prop) => {
 
   useEffect(() => {
     if (loading) {
-      disableBodyScroll(document);
+      disableBodyScroll('body');
     } else {
-      enableBodyScroll(document);
+      enableBodyScroll('body');
     }
   }, [loading]);
 
