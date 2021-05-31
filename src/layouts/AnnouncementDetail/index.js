@@ -43,7 +43,11 @@ const AnnouncementDetail = () => {
           <NewDetail
             previous={previous}
             page={page == undefined ? null : page}
-            title={newDetail.title}
+            title={
+              newDetail.isLatest
+                ? `［最新］${newDetail.title}`
+                : newDetail.title
+            }
             content={newDetail.content}
           />
         )}

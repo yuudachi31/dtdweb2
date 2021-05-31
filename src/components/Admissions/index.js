@@ -3,10 +3,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './styles.module.scss';
 // icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faExternalLinkAlt,
-  faDownload,
-} from '@fortawesome/free-solid-svg-icons';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 // 資料匯入
 import admissionsjson from '../../assets/json/admissions.json';
 
@@ -85,7 +82,11 @@ const Admissions = (prop) => {
                 </div>
               ))}
             </div>
-            <div className={styles.regulationsBlock_divisionLine}></div>
+            {admissionsDetail.regulations_documents.length == 0 ? (
+              <></>
+            ) : (
+              <div className={styles.regulationsBlock_divisionLine}></div>
+            )}
             <div className={styles.regulationsBlock_regulationsBox}>
               {admissionsDetail.regulations_documents.map(
                 (regulationsDocument) => (
@@ -104,11 +105,7 @@ const Admissions = (prop) => {
                     >
                       <FontAwesomeIcon
                         className={styles.document_icon_margin}
-                        icon={
-                          regulationsDocument.document_type == '0'
-                            ? faExternalLinkAlt
-                            : faDownload
-                        }
+                        icon={faExternalLinkAlt}
                       />
                       <div className={styles.admissions_content__fontSize}>
                         {regulationsDocument.document_name}
