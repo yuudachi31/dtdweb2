@@ -15,6 +15,7 @@ import StaffDetailPage from '../layouts/StaffDetail';
 import ActivitiesPage from '../layouts/Activities';
 import ActivityDetailPage from '../layouts/ActivityDetail';
 import FuturePage from '../layouts/Future';
+import TeamsPage from '../layouts/Teams';
 // 最新消息
 import AnnouncementsPage from '../layouts/Announcements';
 import AnnouncementDetailPage from '../layouts/AnnouncementDetail';
@@ -63,6 +64,7 @@ const Routes = () => {
               component={ActivityDetailPage}
             />
             <Route exact path={path.future} component={FuturePage} />
+            <Route exact path={path.teams} component={TeamsPage} />
             {/* 最新消息 */}
             <Route
               exact

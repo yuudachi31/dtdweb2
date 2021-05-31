@@ -5,6 +5,7 @@ export default {
   staff: '/staff',
   activities: '/activities',
   future: '/future',
+  teams: '/teams',
   // 最新消息
   announcements: '/announcements',
   achievements: '/achievements',
