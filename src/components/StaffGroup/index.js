@@ -26,19 +26,15 @@ const StaffGroup = () => {
 
   useEffect(() => {
     getStaff(dispatch);
+  }, []);
+
+  useEffect(() => {
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
         offset: -32,
       });
     }
-  }, []);
-  // useEffect(() => {
-  //   if (getUrlId.search(/#/i) != -1) {
-  //     Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
-  //       offset: -32,
-  //     });
-  //   }
-  // }, [loading]);
+  }, [loading]);
   return (
     <>
       {loading ? (
@@ -68,22 +64,22 @@ const StaffGroup = () => {
                       to={
                         path.staff +
                         '/' +
-                        tea.englishname +
+                        tea.englishName +
                         '?groupid=' +
                         group.groupid +
                         '&staffpath=' +
-                        (tea.teachername.search(/（|\(/i) == -1
-                          ? tea.teachername
-                          : tea.teachername.slice(
+                        (tea.teacherName.search(/（/i) == -1
+                          ? tea.teacherName
+                          : tea.teacherName.slice(
                               0,
-                              tea.teachername.search(/（|\(/i),
+                              tea.teacherName.search(/（/i),
                             ))
                       }
                     >
-                      <img src={tea.imgurl} />
+                      <img src={tea.imgUrl} />
                     </Link>
                     <div>{tea.title}</div>
-                    <div>{tea.teachername}</div>
+                    <div>{tea.teacherName}</div>
                   </Col>
                 ))}
               </Row>

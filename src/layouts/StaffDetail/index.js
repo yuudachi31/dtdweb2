@@ -18,7 +18,7 @@ import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 import phoneIcon from '../../assets/images/icons/icon_phone.png';
 import emailIcon from '../../assets/images/icons/icon_email.png';
 //data
-import { getStaffDetail } from '../../store/actions';
+import { getStaff, getStaffDetail } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 const StaffDetail = () => {
@@ -27,6 +27,7 @@ const StaffDetail = () => {
   const {
     state: {
       staffDetail,
+      staff,
       requestdata: { loading },
     },
     dispatch,
@@ -35,6 +36,9 @@ const StaffDetail = () => {
   useEffect(() => {
     getStaffDetail(dispatch, { staffpath });
     Scroll.scroller.scrollTo('top');
+    if (staff.length == 0) {
+      getStaff(dispatch);
+    }
   }, []);
 
   return (
@@ -56,7 +60,7 @@ const StaffDetail = () => {
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>{staffDetail.teachername}-國立臺北教育大學</title>
+            <title>{staffDetail.teacherName}-國立臺北教育大學</title>
             <meta name="description" content="數位科技設計學系的教學團隊" />
           </Helmet>
           <div className={styles.container} id="top">
@@ -71,11 +75,11 @@ const StaffDetail = () => {
                   <img src={leftArrow} />
                 </Link>
                 <div className={styles.staffContainer_titleBar__name}>
-                  {staffDetail.teachername.search(/（/i) == -1
-                    ? staffDetail.teachername
-                    : staffDetail.teachername.substring(
+                  {staffDetail.teacherName.search(/（/i) == -1
+                    ? staffDetail.teacherName
+                    : staffDetail.teacherName.substring(
                         0,
-                        staffDetail.teachername.search(/（/i),
+                        staffDetail.teacherName.search(/（/i),
                       )}
                 </div>
               </Row>
@@ -90,7 +94,7 @@ const StaffDetail = () => {
                   className={styles.staffContainer_contentBar__box}
                 >
                   <div className={styles.staffContainer_contentBar__img}>
-                    <img src={staffDetail.imgurl} />
+                    <img src={staffDetail.imgUrl} />
                   </div>
                 </Col>
                 <Col

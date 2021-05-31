@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 // 設計
-import styles from './styles.module.scss';
+// import styles from './styles.module.scss';
 // components
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
-import PageTitle from '../../components/PageTitle';
 import News from '../../components/News';
 import PageNumber from '../../components/PageNumber';
 import Footer from '../../components/Footer';
@@ -20,10 +19,7 @@ const Announcements = () => {
       </Helmet>
       <Header />
       <Banner />
-      <div className={styles.container}>
-        <PageTitle title="系務公告" />
-        <News pageStyle="announcements" />
-      </div>
+      <News pageStyle="announcements" />
       <PageNumber pageCount={3} pageStyle="announcements" />
       <Footer />
     </Fragment>

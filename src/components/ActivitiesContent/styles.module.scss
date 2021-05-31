@@ -28,3 +28,9 @@
 .activitiesBoxBottom_more {
   color: #85b6dd;
 }
+
+@media (max-width: $dtd-media-phone-small) {
+  .activitiesBox_img {
+    height: 200px;
+  }
+}
