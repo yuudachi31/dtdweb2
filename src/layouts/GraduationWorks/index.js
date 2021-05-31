@@ -9,6 +9,7 @@ import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import WorksSort from '../../components/WorksSorts';
+import Loading from '../../components/Loading';
 //path
 import path from '../../utils/path';
 //css
@@ -89,7 +90,9 @@ const GraduationWorks = () => {
             <></>
           )}
           {loading ? (
-            <div className={styles.worksArea}></div>
+            <div className={styles.worksArea}>
+              <Loading />
+            </div>
           ) : (
             <Masonry
               className={styles.worksArea}

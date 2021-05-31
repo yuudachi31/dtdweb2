@@ -8,6 +8,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
+import Loading from '../../components/Loading';
 //path
 import path from '../../utils/path';
 //css
@@ -59,7 +60,9 @@ const CooperationWorks = () => {
         <div className={styles.cooperationWorksContainer} id="content">
           <PageTitle title="合作成果" />
           {loading ? (
-            <div className={styles.worksArea}></div>
+            <div className={styles.worksArea}>
+              <Loading />
+            </div>
           ) : (
             <Masonry
               className={styles.worksArea}
