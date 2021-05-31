@@ -166,6 +166,9 @@
     color: $dtd-text-color;
     background-color: $dtd-hint-text-color;
     width: 100%;
+    &:hover {
+      color: $dtd-text-color;
+    }
   }
 }
 

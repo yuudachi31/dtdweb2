@@ -82,11 +82,7 @@ const Admissions = (prop) => {
                 </div>
               ))}
             </div>
-            {admissionsDetail.regulations_documents.length == 0 ? (
-              <></>
-            ) : (
-              <div className={styles.regulationsBlock_divisionLine}></div>
-            )}
+            <div className={styles.regulationsBlock_divisionLine}></div>
             <div className={styles.regulationsBlock_regulationsBox}>
               {admissionsDetail.regulations_documents.map(
                 (regulationsDocument) => (
@@ -115,13 +111,6 @@ const Admissions = (prop) => {
                 ),
               )}
             </div>
-          </div>
-          <div className={styles.admissions_titleBar}>修業地圖</div>
-          <div className={styles.admissions_classMapBlock}>
-            <img
-              src={admissionsDetail.classMap_img}
-              className={styles.classMapBlock_img__width}
-            ></img>
           </div>
         </>
       ) : (
