@@ -4,6 +4,9 @@ import styles from './styles.module.scss';
 /* react-bootstrap 輪播 */
 import Carousel from 'react-bootstrap/Carousel';
 
+/* compontent */
+import Loading from '../../components/Loading';
+
 /* store */
 import { getBanner } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
@@ -24,7 +27,7 @@ const IndexBanner = () => {
   return (
     <>
       {loading ? (
-        <div className={styles.container}></div>
+        <Loading />
       ) : (
         <div>
           <Carousel indicators={false} controls={false}>

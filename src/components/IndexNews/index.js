@@ -3,6 +3,9 @@ import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import path from '../../utils/path';
 
+/* compontent */
+import Loading from '../../components/Loading';
+
 /* icon */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
@@ -28,7 +31,7 @@ const IndexNews = () => {
   return (
     <>
       {loading ? (
-        <div className={styles.container}></div>
+        <Loading />
       ) : (
         <div className={`${styles.section} ${styles.section_news}`} id="news">
           {homeNews.map((newsType) => (

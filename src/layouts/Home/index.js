@@ -1,7 +1,11 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+
+/* store */
+import { StoreContext } from '../../store/reducer';
 
 /* component */
 import Header from '../../components/Header';
@@ -15,6 +19,20 @@ const Home = () => {
   useEffect(() => {
     Scroll.scroller.scrollTo('top');
   }, []);
+
+  const {
+    state: {
+      requestdata: { loading },
+    },
+  } = useContext(StoreContext);
+
+  useEffect(() => {
+    if (loading) {
+      disableBodyScroll('body');
+    } else {
+      enableBodyScroll('body');
+    }
+  }, [loading]);
 
   return (
     <Fragment>
