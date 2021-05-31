@@ -11,18 +11,18 @@ const TeamsGroup = (prop) => {
     <div className={styles.container}>
       {gradeList.map((group) => (
         <div
-          className={styles.teamsContainer}
+          className={styles.teamsGContainer}
           key={group.groupId}
           id={'group' + group.groupId}
         >
-          <div className={styles.teamsContainer_teamsGroupName}>
+          <div className={styles.teamsGContainer_teamsGroupName}>
             {group.title}
           </div>
-          <Row className={styles.teamsContainer_teamsBar}>
+          <Row className={styles.teamsGContainer_teamsBar}>
             {group.list.map((member) => (
               <Col
                 key={member.id}
-                className={styles.teamsContainer_teamsBar__teamsBox}
+                className={styles.teamsGContainer_teamsBar__teamsBox}
                 xl={3}
                 lg={6}
                 md={6}
