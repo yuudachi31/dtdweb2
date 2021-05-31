@@ -14,35 +14,26 @@
 .teamsContainer {
   min-height: 100vh;
   margin: 0 $dtd-margin-desktop;
-  // padding-bottom: $dtd-index-main-spacing;
   display: flex;
   flex-direction: column;
   align-items: center;
-  &:last-child {
-    margin-bottom: $dtd-index-main-spacing;
-  }
 }
 @media (max-width: $dtd-media-tablet) {
   .teamsContainer {
     margin: 0 $dtd-margin-tablet;
-    &:last-child {
-      margin-bottom: $dtd-index-main-spacing;
-    }
   }
 }
 @media (max-width: $dtd-media-phone) {
   .teamsContainer {
     margin: 0 $dtd-margin-phone;
-    &:last-child {
-      margin-bottom: $dtd-index-main-spacing;
-    }
   }
 }
 @media (max-width: $dtd-media-phone-small) {
   .teamsContainer {
     margin: 0 $dtd-margin-phone-small;
-    &:last-child {
-      margin-bottom: $dtd-index-main-spacing;
-    }
   }
+}
+
+.teamsContainer_bottomSpace {
+  height: $dtd-index-main-spacing;
 }

@@ -28,6 +28,7 @@ const Teams = () => {
             <TeamsGroup gradeList={grade.gradeList} />
           </div>
         ))}
+        <section className={styles.teamsContainer_bottomSpace}></section>
         <Footer />
       </div>
     </Fragment>
