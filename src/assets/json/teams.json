@@ -3,7 +3,7 @@
         "gradeTitle": 2021,
         "gradeList": [
             {
-                "groupId": 0,
+                "groupId": "2-0",
                 "title": "前端程式",
                 "list": [
                     {
@@ -24,7 +24,7 @@
                 ]
             },
             {
-                "groupId": 1,
+                "groupId": "2-1",
                 "title": "後端程式",
                 "list": [
                     {
@@ -40,7 +40,7 @@
                 ]
             },
             {
-                "groupId": 2,
+                "groupId": "2-2",
                 "title": "UI",
                 "list": [
                     {
@@ -61,7 +61,7 @@
         "gradeTitle": 2017,
         "gradeList": [
             {
-                "groupId": 0,
+                "groupId": "1-0",
                 "title": "企劃",
                 "list": [
                     {
@@ -72,7 +72,7 @@
                 ]
             },
             {
-                "groupId": 1,
+                "groupId": "1-1",
                 "title": "程式設計",
                 "list": [
                     {
@@ -103,7 +103,7 @@
                 ]
             },
             {
-                "groupId": 2,
+                "groupId": "1-2",
                 "title": "美術設計",
                 "list": [
                     {

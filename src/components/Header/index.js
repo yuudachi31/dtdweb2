@@ -57,7 +57,7 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.pageList_pageBox}>
-              <Link to="/" className={styles.pageBox_page}>
+              <Link to={path.teams} className={styles.pageBox_page}>
                 系網團隊
               </Link>
             </li>
@@ -239,7 +239,7 @@ const Header = () => {
                 </li>
                 <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
+                    to={path.teams}
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
