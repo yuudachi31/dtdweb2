@@ -42,6 +42,7 @@
       }
       //全部文章
       else{
+         //取得全部的課程分類
          $taxonomy = get_terms([
             'taxonomy' => 'taxonomy_className',
             'hide_empty' => false,

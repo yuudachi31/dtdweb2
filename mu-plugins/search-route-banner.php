@@ -2,7 +2,8 @@
 
     function bannerSearchResults($data) {
         $mainQuery = new WP_Query(array(
-            'post_type' => 'banners'
+            'post_type' => 'banners',
+            'posts_per_page' => -1, //ALL
         ));
 
         $results = array();
