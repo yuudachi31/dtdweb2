@@ -36,7 +36,7 @@ jobs:
         run: npm install -g surge
         
       - name: Creating Build
-        run: npm run build
+        run: npm run build && cp build/index.html build/200.html
         
       - name: deploying using surge
         run: surge ./build http://dtd-ntue-demo.surge.sh/ --token ${{ secrets.SURGE_TOKEN }}
