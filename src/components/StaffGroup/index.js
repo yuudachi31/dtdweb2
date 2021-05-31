@@ -26,19 +26,15 @@ const StaffGroup = () => {
 
   useEffect(() => {
     getStaff(dispatch);
+  }, []);
+
+  useEffect(() => {
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
         offset: -32,
       });
     }
-  }, []);
-  // useEffect(() => {
-  //   if (getUrlId.search(/#/i) != -1) {
-  //     Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
-  //       offset: -32,
-  //     });
-  //   }
-  // }, [loading]);
+  }, [loading]);
   return (
     <>
       {loading ? (

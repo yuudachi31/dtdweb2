@@ -18,7 +18,7 @@ import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 import phoneIcon from '../../assets/images/icons/icon_phone.png';
 import emailIcon from '../../assets/images/icons/icon_email.png';
 //data
-import { getStaffDetail } from '../../store/actions';
+import { getStaff, getStaffDetail } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 const StaffDetail = () => {
@@ -27,6 +27,7 @@ const StaffDetail = () => {
   const {
     state: {
       staffDetail,
+      staff,
       requestdata: { loading },
     },
     dispatch,
@@ -35,6 +36,9 @@ const StaffDetail = () => {
   useEffect(() => {
     getStaffDetail(dispatch, { staffpath });
     Scroll.scroller.scrollTo('top');
+    if (staff.length == 0) {
+      getStaff(dispatch);
+    }
   }, []);
 
   return (
