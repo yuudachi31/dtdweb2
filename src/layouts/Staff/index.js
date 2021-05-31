@@ -5,7 +5,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-import TreachGroup from '../../components/StaffGroup';
+import StaffGroup from '../../components/StaffGroup';
 //css
 import styles from './styles.module.scss';
 
@@ -22,7 +22,7 @@ const Staff = () => {
         <Banner />
         <div className={styles.staffContainer}>
           <PageTitle title="教學團隊" />
-          <TreachGroup />
+          <StaffGroup />
         </div>
         <Footer />
       </div>
