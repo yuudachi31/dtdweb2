@@ -5,7 +5,8 @@ import * as Scroll from 'react-scroll';
 // 設計
 import styles from './styles.module.scss';
 // components
-import PageTitle from '..//PageTitle';
+import PageTitle from '../PageTitle';
+import Loading from '../Loading';
 // store
 import { getNews } from '../../store/actions';
 import { setNewsLoadState } from '../../uiStore/actions';
@@ -44,9 +45,14 @@ const News = (prop) => {
   return (
     <div className={styles.container} id="pageTitle">
       {loading ? (
-        <PageTitle
-          title={prop.pageStyle == 'announcements' ? '系務公告' : '師生榮譽榜'}
-        />
+        <>
+          <PageTitle
+            title={
+              prop.pageStyle == 'announcements' ? '系務公告' : '師生榮譽榜'
+            }
+          />
+          <Loading />
+        </>
       ) : (
         <>
           <PageTitle

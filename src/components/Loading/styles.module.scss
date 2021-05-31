@@ -4,9 +4,13 @@
 @import '../../styles/media.scss';
 
 .container {
-  position: relative;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
+  background-color: $dtd-main-bg-color;
+  z-index: 1;
 }
 
 .loading_loadingBlock {
