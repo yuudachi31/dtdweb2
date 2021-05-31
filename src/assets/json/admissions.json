@@ -48,8 +48,7 @@
                 "document_name": "請至「教務處課務組」依入學年度查詢",
                 "document_URL": "https://academic.ntue.edu.tw/files/11-1007-99.php"
             }
-        ],
-        "classMap_img": "assets/images/admissions/collegeMap.jpg"
+        ]
     },
     {
         "degreeImg": "assets/images/admissions/masterIcon.png",
@@ -101,8 +100,7 @@
                 "document_name": "請至「教務處課務組」依入學年度查詢",
                 "document_URL": "https://academic.ntue.edu.tw/files/11-1007-99.php"
             }
-        ],
-        "classMap_img": "assets/images/admissions/masterMap.jpg"
+        ]
     },
     {
         "degreeImg": "assets/images/admissions/inserveIcon.png",
@@ -149,7 +147,11 @@
         ],
         "regulations_documents":
         [
-        ],
-        "classMap_img": ""
+            {
+                "document_title": "選課說明",
+                "document_name": "請至「進修推廣處」查詢",
+                "document_URL": "https://dice.ntue.edu.tw/about/detail/2/5"
+            }
+        ]
     }
 ]
