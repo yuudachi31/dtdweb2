@@ -9,6 +9,7 @@ import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import WorksSort from '../../components/WorksSorts';
+import Loading from '../../components/Loading';
 //path
 import path from '../../utils/path';
 //css
@@ -46,7 +47,9 @@ const CourseWorks = () => {
   const getUrlId = window.location.href;
 
   useEffect(() => {
+    console.log(worksSortActiveItem);
     setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
+    console.log(worksSortActiveItem);
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
       if (worksSortActiveItem == '所有') {
@@ -61,7 +64,7 @@ const CourseWorks = () => {
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSort(dispatch, {
-        sort: worksSortActiveItem,
+        sort: '所有',
         path: path.courseWorks,
       });
       getCourseWorks(dispatch);
@@ -89,7 +92,9 @@ const CourseWorks = () => {
             <></>
           )}
           {loading ? (
-            <div className={styles.worksArea}></div>
+            <div className={styles.worksArea}>
+              <Loading />
+            </div>
           ) : (
             <Masonry
               className={styles.worksArea}

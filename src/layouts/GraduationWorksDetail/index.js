@@ -7,6 +7,7 @@ import * as Scroll from 'react-scroll';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import WorksDetail from '../../components/WorksDetail';
+import Loading from '../../components/Loading';
 //path
 import path from '../../utils/path';
 //css
@@ -42,7 +43,9 @@ const GraduationWorksDetail = () => {
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.worksContainer}></div>
+            <div className={styles.worksContainer}>
+              <Loading />
+            </div>
             <Footer />
           </div>
         </Fragment>

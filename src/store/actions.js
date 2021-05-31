@@ -123,10 +123,6 @@ export const getBanner = async (dispatch) => {
 export const setWorksSort = async (dispatch, options) => {
   const { sort = '109', path = '/' } = options;
 
-  dispatch({
-    type: SET_WORKSSORT_ACTIVEITEM,
-    payload: '所有',
-  });
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     var url = '/';
