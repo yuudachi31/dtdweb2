@@ -56,6 +56,11 @@ const Header = () => {
                 修課與未來發展
               </Link>
             </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to="/" className={styles.pageBox_page}>
+                系網團隊
+              </Link>
+            </li>
           </ul>
         </button>
 
@@ -230,6 +235,15 @@ const Header = () => {
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     修課與未來發展
+                  </Link>
+                </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to="/"
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    系網團隊
                   </Link>
                 </li>
               </ul>

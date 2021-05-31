@@ -6,6 +6,7 @@ import * as QueryString from 'query-string';
 // import styles from './styles.module.scss';
 // components
 import Header from '../../components/Header';
+import Loading from '../../components/Loading';
 import NewDetail from '../../components/NewDetail';
 // store
 import { getNewDetail } from '../../store/actions';
@@ -38,7 +39,7 @@ const AnnouncementDetail = () => {
       <Header />
       <>
         {loading ? (
-          <div></div>
+          <Loading />
         ) : (
           <NewDetail
             previous={previous}
