@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
@@ -36,7 +37,13 @@ const StaffGroup = () => {
         offset: -32,
       });
     }
+    if (loading) {
+      disableBodyScroll('body');
+    } else {
+      enableBodyScroll('body');
+    }
   }, [loading]);
+
   return (
     <>
       {loading ? (

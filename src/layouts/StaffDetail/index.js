@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
@@ -41,6 +42,14 @@ const StaffDetail = () => {
       getStaff(dispatch);
     }
   }, []);
+
+  useEffect(() => {
+    if (loading) {
+      disableBodyScroll('body');
+    } else {
+      enableBodyScroll('body');
+    }
+  }, [loading]);
 
   return (
     <>

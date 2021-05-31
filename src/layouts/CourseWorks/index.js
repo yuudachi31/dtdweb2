@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Masonry from 'react-masonry-css';
 import * as Scroll from 'react-scroll';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //components
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -70,6 +71,15 @@ const CourseWorks = () => {
       getCourseWorks(dispatch);
     }
   }, []);
+
+  useEffect(() => {
+    if (loading) {
+      disableBodyScroll('body');
+    } else {
+      enableBodyScroll('body');
+    }
+  }, [loading]);
+
   return (
     <Fragment>
       <Helmet>
