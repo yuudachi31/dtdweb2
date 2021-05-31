@@ -53,7 +53,7 @@ const Header = () => {
             </li>
             <li className={styles.pageList_pageBox}>
               <Link to={path.future} className={styles.pageBox_page}>
-                未來發展
+                修課與未來發展
               </Link>
             </li>
           </ul>
@@ -229,7 +229,7 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    未來發展
+                    修課與未來發展
                   </Link>
                 </li>
               </ul>
