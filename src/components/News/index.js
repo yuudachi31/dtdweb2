@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 // 設計
 import styles from './styles.module.scss';
 // components
@@ -28,6 +29,14 @@ const News = (prop) => {
     uiState: { newsLoadState },
     uiDispatch,
   } = useContext(UIStoreContext);
+
+  useEffect(() => {
+    if (loading) {
+      disableBodyScroll(document);
+    } else {
+      enableBodyScroll(document);
+    }
+  }, [loading]);
 
   useEffect(() => {
     getNews(dispatch, {
