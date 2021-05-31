@@ -23,7 +23,7 @@ const ActivitiesContent = (prop) => {
           key={activities.id}
         >
           <Link
-            to={`${path.activities}/${activities.category}/${activities.id}`}
+            to={`${path.activities}/${activities.category}/${activities.title}`}
           >
             <div className={styles.activitiesBox_img}>
               <img

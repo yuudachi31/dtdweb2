@@ -25,7 +25,7 @@ const ActivityDetail = (prop) => {
   const activitiesCategoryCookie = Cookie.getJSON('activitiesCategory');
 
   const activity = activitiesCategoryCookie.find(
-    (x) => x.id === prop.match.params.activityId,
+    (x) => x.title === prop.match.params.activityTitle,
   );
 
   const { dispatch } = useContext(UIStoreContext);

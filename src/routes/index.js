@@ -59,7 +59,7 @@ const Routes = () => {
             />
             <Route
               exact
-              path={`${path.activities}/:category/:activityId`}
+              path={`${path.activities}/:category/:activityTitle`}
               component={ActivityDetailPage}
             />
             <Route exact path={path.future} component={FuturePage} />
