@@ -43,7 +43,11 @@ const IndexNews = () => {
                     }/newinfo?id=${newsDetail.id}`}
                     className={styles.link_a__textdecnone}
                   >
-                    <p className={styles.news_p}>{newsDetail.title}</p>
+                    <p className={styles.news_p}>
+                      {newsDetail.isLatest === true
+                        ? `［最新］${newsDetail.title}`
+                        : `${newsDetail.title}`}
+                    </p>
                   </Link>
                   <hr className={styles.news_p}></hr>
                   <span className={styles.news_span}>
