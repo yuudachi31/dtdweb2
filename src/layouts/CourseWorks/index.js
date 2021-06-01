@@ -48,9 +48,7 @@ const CourseWorks = () => {
   const getUrlId = window.location.href;
 
   useEffect(() => {
-    console.log(worksSortActiveItem);
     setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
-    console.log(worksSortActiveItem);
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
       if (worksSortActiveItem == '所有') {
