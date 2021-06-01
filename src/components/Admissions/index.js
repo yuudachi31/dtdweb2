@@ -10,7 +10,7 @@ import admissionsjson from '../../assets/json/admissions.json';
 const Admissions = (prop) => {
   const [admissionsDetail, setAdmissionsDetail] = useState({});
   useEffect(() => {
-    setAdmissionsDetail(admissionsjson[prop.number]);
+    setAdmissionsDetail(admissionsjson[prop.index]);
     window.scrollTo(0, 0);
   }, []);
   return (

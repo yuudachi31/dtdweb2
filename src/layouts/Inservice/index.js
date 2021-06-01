@@ -21,7 +21,7 @@ const Inservice = () => {
       <Banner />
       <div className={styles.container}>
         <PageTitle title="在職碩士班" />
-        <Admissions number={2} />
+        <Admissions index={2} />
       </div>
       <Footer />
     </Fragment>

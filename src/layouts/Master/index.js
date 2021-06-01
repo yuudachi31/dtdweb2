@@ -21,7 +21,7 @@ const Master = () => {
       <Banner />
       <div className={styles.container}>
         <PageTitle title="碩士班" />
-        <Admissions number={1} />
+        <Admissions index={1} />
       </div>
       <Footer />
     </Fragment>

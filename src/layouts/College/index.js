@@ -21,7 +21,7 @@ const College = () => {
       <Banner />
       <div className={styles.container}>
         <PageTitle title="學士班" />
-        <Admissions number={0} />
+        <Admissions index={0} />
       </div>
       <Footer />
     </Fragment>
