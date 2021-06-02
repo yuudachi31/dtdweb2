@@ -52,15 +52,6 @@ const PageNumber = (porp) => {
               ? `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_chevron__disabled}`
               : `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_btn__hover}`
           }
-          onClick={
-            page == undefined
-              ? () => {}
-              : () => {
-                  clickPageNumber(uiDispatch, {
-                    clickNumber: Number(page) - 1,
-                  });
-                }
-          }
         >
           <FontAwesomeIcon icon={faChevronLeft} />
         </Link>
@@ -77,11 +68,6 @@ const PageNumber = (porp) => {
                 ? `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_number__selected}`
                 : `${styles.pageNumberBlock_number} ${styles.pageNumberBlock_btn__hover}`
             }
-            onClick={() => {
-              clickPageNumber(uiDispatch, {
-                clickNumber: pageNumber,
-              });
-            }}
           >
             {pageNumber}
           </Link>
@@ -98,15 +84,6 @@ const PageNumber = (porp) => {
             pageNumberState[pageNumberState.length - 1]
               ? `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_chevron__disabled}`
               : `${styles.pageNumberBlock_chevron} ${styles.pageNumberBlock_btn__hover}`
-          }
-          onClick={
-            page == pageNumberState.length
-              ? () => {}
-              : () => {
-                  clickPageNumber(uiDispatch, {
-                    clickNumber: page == undefined ? 2 : Number(page) + 1,
-                  });
-                }
           }
         >
           <FontAwesomeIcon icon={faChevronRight} />
