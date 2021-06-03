@@ -15,10 +15,10 @@ const DocsGroup = (prop) => {
           <div className={styles.docsGroupName}>{group.title}</div>
           <div className={styles.docsBar}>
             {group.list.map((download) =>
-              !download.docname2 ? (
-                <div key={download.docname} className={styles.docsBar_docsBox}>
-                  <a href={download.docurl} target="_blank" rel="noreferrer">
-                    {download.docname}
+              !download.docName2 ? (
+                <div key={download.docName} className={styles.docsBar_docsBox}>
+                  <a href={download.docUrl} target="_blank" rel="noreferrer">
+                    {download.docName}
                   </a>
                   {download.remarks != '' ? (
                     <div className={styles.docsBar_docsBox__remarks}>
@@ -28,28 +28,28 @@ const DocsGroup = (prop) => {
                     <div></div>
                   )}
                 </div>
-              ) : !download.docname3 ? (
-                <div key={download.docname} className={styles.docsBar_docsBox}>
-                  <a href={download.docurl} target="_blank" rel="noreferrer">
-                    {download.docname}
+              ) : !download.docName3 ? (
+                <div key={download.docName} className={styles.docsBar_docsBox}>
+                  <a href={download.docUrl} target="_blank" rel="noreferrer">
+                    {download.docName}
                   </a>
                   ／
-                  <a href={download.docurl2} target="_blank" rel="noreferrer">
-                    {download.docname2}
+                  <a href={download.docUrl2} target="_blank" rel="noreferrer">
+                    {download.docName2}
                   </a>
                 </div>
               ) : (
-                <div key={download.docname} className={styles.docsBar_docsBox}>
-                  <a href={download.docurl} target="_blank" rel="noreferrer">
-                    {download.docname}
+                <div key={download.docName} className={styles.docsBar_docsBox}>
+                  <a href={download.docUrl} target="_blank" rel="noreferrer">
+                    {download.docName}
                   </a>
                   ／
-                  <a href={download.docurl2} target="_blank" rel="noreferrer">
-                    {download.docname2}
+                  <a href={download.docUrl2} target="_blank" rel="noreferrer">
+                    {download.docName2}
                   </a>
                   ／
-                  <a href={download.docurl3} target="_blank" rel="noreferrer">
-                    {download.docname3}
+                  <a href={download.docUrl3} target="_blank" rel="noreferrer">
+                    {download.docName3}
                   </a>
                 </div>
               ),
