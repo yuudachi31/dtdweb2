@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
-import Cookie from 'js-cookie';
 import * as Scroll from 'react-scroll';
 import styles from './styles.module.scss';
 
@@ -22,7 +21,9 @@ const ActivityDetail = (prop) => {
     Scroll.scroller.scrollTo('top');
   }, []);
 
-  const activitiesCategoryCookie = Cookie.getJSON('activitiesCategory');
+  const activitiesCategoryCookie = JSON.parse(
+    localStorage.getItem('activitiesCategory'),
+  );
 
   const activity = activitiesCategoryCookie.find(
     (x) => x.title === prop.match.params.activityTitle,
