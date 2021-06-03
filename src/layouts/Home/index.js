@@ -10,8 +10,7 @@ import { StoreContext } from '../../store/reducer';
 /* component */
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import IndexBanner from '../../components/IndexBanner';
-import IndexNews from '../../components/IndexNews';
+import IndexBannerNews from '../../components/IndexBannerNews';
 import IndexContent from '../../components/IndexContent';
 
 const Home = () => {
@@ -43,9 +42,8 @@ const Home = () => {
       </Helmet>
       <div className={styles.container} id="top">
         <Header />
-        <IndexBanner />
+        <IndexBannerNews />
         <div className={styles.homeContainer}>
-          <IndexNews />
           <IndexContent />
         </div>
         <Footer />
