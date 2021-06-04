@@ -15,6 +15,28 @@ const IndexContent = () => {
         <div className={styles.section} id="event" key={event.title}>
           <h1>{event.title}</h1>
           <hr></hr>
+          <Row className={styles.link}>
+            {event.list.map((list) => (
+              <Col
+                lg={4}
+                sm={4}
+                xs={12}
+                key={list.title}
+                className={styles.eventBlock}
+              >
+                <a href={list.path} className={styles.link_a__textdecnone}>
+                  <div className={styles.eventLink_img}>
+                    <img
+                      src={list.imgUrl}
+                      alt=""
+                      className={styles.eventLink_img__size}
+                    />
+                  </div>
+                  <div className={styles.link_p}>{list.title}</div>
+                </a>
+              </Col>
+            ))}
+          </Row>
         </div>
       ))}
       {indexContent.admission.map((admission) => (

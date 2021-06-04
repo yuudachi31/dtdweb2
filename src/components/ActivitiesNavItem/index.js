@@ -8,7 +8,7 @@ import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
 
 /* json檔 */
 import DTDActivities from '../../assets/json/DTDActivities.json';
-import studyGroup from '../../assets/json/studyGroup.json';
+import DTDGroup from '../../assets/json/DTDGroup.json';
 
 const ActivitiesNavItem = (prop) => {
   const { children, pathTo, className, activeClassName } = prop;
@@ -18,8 +18,8 @@ const ActivitiesNavItem = (prop) => {
     switch (url) {
       case path.activities:
         return DTDActivities;
-      case `${path.activities}/studyGroup`:
-        return studyGroup;
+      case `${path.activities}/DTDGroup`:
+        return DTDGroup;
       default:
         return DTDActivities;
     }

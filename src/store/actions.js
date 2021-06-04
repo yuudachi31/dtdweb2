@@ -100,25 +100,6 @@ export const getStaffDetail = async (dispatch, options) => {
   }
 };
 
-export const getBanner = async (dispatch) => {
-  dispatch({ type: BEGIN_DATA_REQUEST });
-  try {
-    //從後台取資料
-    const url = `${BASE_URL}/banner`;
-    const response = await axios.get(url);
-    const banner = response.data;
-    //從json取資料
-    // const banner = bannerjson;
-    dispatch({
-      type: SET_BANNER,
-      payload: banner,
-    });
-    dispatch({ type: SUCCESS_DATA_REQUEST });
-  } catch (error) {
-    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
-  }
-};
-
 //設定作品分類陣列內容
 export const setWorksSort = async (dispatch, options) => {
   const { sort = '109', path = '/' } = options;
@@ -355,16 +336,20 @@ export const getCooperationWorksDetail = async (dispatch, options) => {
   }
 };
 
-export const getHomeNews = async (dispatch) => {
+export const getHomeData = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    //從json取資料
-    // const homeNews = newsjson;
-
     //從後台取資料
-    const url = `${BASE_URL}/post/homePage`;
-    const response = await axios.get(url);
-    const homeNews = response.data;
+    const bannerUrl = `${BASE_URL}/banner`;
+    const newsUrl = `${BASE_URL}/post/homePage`;
+    const bannerResponse = await axios.get(bannerUrl);
+    const newsResponse = await axios.get(newsUrl);
+    const banner = bannerResponse.data;
+    const homeNews = newsResponse.data;
+    dispatch({
+      type: SET_BANNER,
+      payload: banner,
+    });
     dispatch({
       type: SET_HOME_NEWS,
       payload: homeNews,
@@ -372,6 +357,5 @@ export const getHomeNews = async (dispatch) => {
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
-    console.log(error);
   }
 };

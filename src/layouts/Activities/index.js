@@ -2,7 +2,6 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
-import Cookie from 'js-cookie';
 
 import path from '../../utils/path';
 import DTDActivities from '../../assets/json/DTDActivities.json';
@@ -35,14 +34,20 @@ const Activities = (prop) => {
     if (geturlid.search(/#/i) !== -1) {
       //從ActivityDetail頁回到系上活動，會直接到content的區塊
       Scroll.scroller.scrollTo('content');
-      setPageContent(uiDispatch, Cookie.getJSON('activitiesCategory'));
-      setActiveNavItem(uiDispatch, Cookie.get('activeItem'));
+      setPageContent(
+        uiDispatch,
+        JSON.parse(localStorage.getItem('activitiesCategory')),
+      );
+      setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
     } else if (prop.match.url === path.activities) {
       setPageContent(uiDispatch, DTDActivities);
       setActiveNavItem(uiDispatch, path.activities);
     } else {
-      setPageContent(uiDispatch, Cookie.getJSON('activitiesCategory'));
-      setActiveNavItem(uiDispatch, Cookie.get('activeItem'));
+      setPageContent(
+        uiDispatch,
+        JSON.parse(localStorage.getItem('activitiesCategory')),
+      );
+      setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
     }
   }, []);
 
