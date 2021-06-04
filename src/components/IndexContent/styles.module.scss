@@ -30,10 +30,12 @@ hr {
   display: flex;
   justify-content: space-between;
 }
+.eventLink_img,
 .link_img {
   display: flex;
   justify-content: center;
 }
+.eventLink_img__size,
 .link_img__size {
   width: 100%;
   border-radius: 5px;
@@ -61,6 +63,8 @@ hr {
   .admissionContent {
     padding: 3% 10%;
   }
+  .eventBlock:nth-child(1),
+  .eventBlock:nth-child(2),
   .admissionBlock:nth-child(3) {
     margin-bottom: $dtd-secondary-spacing;
   }

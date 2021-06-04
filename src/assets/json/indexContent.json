@@ -1,7 +1,24 @@
 {
     "event":[
         {
-            "title": "活動公告 / Event"
+            "title": "活動公告 / Event",
+            "list":[
+                {
+                    "imgUrl":"assets/images/index/HomePage-yodex.png",
+                    "title":"新一代設計展",
+                    "path":"https://www.facebook.com/ntuedtd110/"
+                },
+                {
+                    "imgUrl":"assets/images/index/HomePage-camp.png",
+                    "title":"數位營",
+                    "path":"https://www.facebook.com/ntuedtdcamp/"
+                },
+                {
+                    "imgUrl":"assets/images/index/HomePage-collaboration.png",
+                    "title":"合作成果",
+                    "path":"/cooperationWorks"
+                }
+            ]
         }
     ],
     "admission":[

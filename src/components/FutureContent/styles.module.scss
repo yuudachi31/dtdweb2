@@ -57,17 +57,19 @@
   }
 }
 
-@media (max-width: 915px) {
-  .content {
-    .content_img {
-      margin-right: $dtd-main-spcing;
-    }
-  }
+@media (max-width: $dtd-media-tablet) {
   .description {
     .description_spanContent {
       .description_spanContentLeft {
         width: 200px;
       }
+    }
+  }
+}
+@media (max-width: 915px) {
+  .content {
+    .content_img {
+      margin-right: $dtd-section-spacing;
     }
   }
 }

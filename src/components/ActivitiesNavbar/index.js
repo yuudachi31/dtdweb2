@@ -14,7 +14,7 @@ const ActivitiesNavbar = () => {
         系所活動
       </NavItem>
       <NavItem
-        pathTo={`${path.activities}/studyGroup`}
+        pathTo={`${path.activities}/DTDGroup`}
         className={styles.navItem}
         activeClassName={styles.navItem_active}
       >

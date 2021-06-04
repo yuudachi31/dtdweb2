@@ -1,5 +1,4 @@
 import constants from './actionTypes';
-import Cookie from 'js-cookie';
 
 export const clickHamburgerMenu = (uiDispatch) => {
   uiDispatch({ type: constants.CLICK_HAMBURGER_MENU });
@@ -34,7 +33,10 @@ export const setPageContent = (uiDispatch, activitiesCategory) => {
     type: constants.SET_PAGE_CONTENT,
     payload: activitiesCategory,
   });
-  Cookie.set('activitiesCategory', JSON.stringify(activitiesCategory));
+  localStorage.setItem(
+    'activitiesCategory',
+    JSON.stringify(activitiesCategory),
+  );
 };
 
 export const setActiveNavItem = (uiDispatch, activeItem) => {
@@ -42,5 +44,5 @@ export const setActiveNavItem = (uiDispatch, activeItem) => {
     type: constants.SET_NAVBAR_ACTIVEITEM,
     payload: activeItem,
   });
-  Cookie.set('activeItem', activeItem);
+  localStorage.setItem('activeItem', activeItem);
 };
