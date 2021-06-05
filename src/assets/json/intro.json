@@ -25,8 +25,24 @@
     "classrooms":[
         {
             "classroom_id":1,
-            "classroom_img":"/assets/images/activities/drawings.jpg",
-            "classroom_name":"數位娛樂實驗室",
+            "classroom_img":"/assets/images/classrooms/E811.jpg",
+            "classroom_name":"數位互動設計實驗室",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"創意館 1F E811"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系專業電腦課程使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":2,
+            "classroom_img":"/assets/images/classrooms/E812.jpg",
+            "classroom_name":"多媒體設計實驗室",
             "classroom_info":
             [
                 {
@@ -35,14 +51,14 @@
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"此教室為ＸＸＸＸＸＸＸ用途，配備ＸＸＸＸＸＸ"
+                    "info_content":"本教室為本系專業電腦課程使用"
                 }
             ]
         },
         {
-            "classroom_id":2,
-            "classroom_img":"/assets/images/activities/poor.jpg",
-            "classroom_name":"科技娛樂實驗室",
+            "classroom_id":3,
+            "classroom_img":"/assets/images/classrooms/E813.jpg",
+            "classroom_name":"手繪創意設計工作室",
             "classroom_info":
             [
                 {
@@ -51,14 +67,14 @@
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"此教室為ＹＹＹＹＹＹＹ用途，配備ＹＹＹＹＹＹ"
+                    "info_content":"本教室為本系專業手繪設計課程使用"
                 }
             ]
         },
         {
-            "classroom_id":3,
-            "classroom_img":"/assets/images/activities/fight.jpg",
-            "classroom_name":"設計娛樂實驗室",
+            "classroom_id":4,
+            "classroom_img":"/assets/images/classrooms/E814.jpg",
+            "classroom_name":"數位娛樂設計實驗室",
             "classroom_info":
             [
                 {
@@ -67,7 +83,23 @@
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"此教室為ＺＺＺＺＺＺＺ用途，配備ＺＺＺＺＺＺ"
+                    "info_content":"本教室為本系專業電腦（APPLE MINI）課程使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":5,
+            "classroom_img":"/assets/images/classrooms/E134-33.jpg",
+            "classroom_name":"互動設計研究室",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室地點：",
+                    "info_content":"134-33 號"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"提供本系學生研究與討論空間"
                 }
             ]
         }
