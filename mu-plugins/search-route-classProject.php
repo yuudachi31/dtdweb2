@@ -2,7 +2,7 @@
 
    function classProjectSearchResults($data) {
       
-      $classGroup = ($data['classGroup']) ;
+      $workType = ($data['workType']) ;
 
       $mainQuery = new WP_Query(array(
          'post_type' => 'class_projects',
@@ -19,23 +19,21 @@
          return $collection;
       }
       //如果要求特定課程
-      else if($classGroup != null){
+      else if($workType != null){
 
-         $results = array(
-            'sortTitle' => $classGroup,
+         $results = array();
+         array_push($results,array(
+            'sortTitle' => $workType,
             'sortList' => array()
-         );
+         ));
 
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
 
-            //取出所屬課程分類名
-            $sortTitle = get_the_terms(get_the_ID(),'taxonomy_className')[0]->name;
-
-            if($sortTitle == $classGroup){
+            if(ClassProject_IsPostHasTheTaxonomy($workType)){
                $collection = ReturnClassProjectCollection();
 
-               array_push($results['sortList'], $collection);
+               $results[0]['sortList'] = RandomInsertClassProjectCollection($results[0]['sortList'], $collection);
             }
          }
          return $results;
@@ -44,7 +42,7 @@
       else{
          //取得全部的課程分類
          $taxonomy = get_terms([
-            'taxonomy' => 'taxonomy_className',
+            'taxonomy' => 'taxonomy_workType',
             'hide_empty' => false,
          ]);
    
@@ -63,13 +61,17 @@
    
             $collection = ReturnClassProjectCollection();
    
-            //取出所屬課程分類名
-            $sortTitle = get_the_terms(get_the_ID(),'taxonomy_className')[0]->name;
-   
             for($i = 0; $i < count($results); $i++){
-               if($results[$i]['sortTitle'] == $sortTitle){
-                  array_push($results[$i]['sortList'], $collection);
+               if(ClassProject_IsPostHasTheTaxonomy($results[$i]['sortTitle'])){
+                  $results[$i]['sortList'] = RandomInsertClassProjectCollection($results[$i]['sortList'], $collection);
                }
+            }
+         }
+         
+         //消除沒有作品的課程項目
+         for($i = count($results) - 1; $i >= 0; $i--){
+            if(count($results[$i]['sortList']) == 0){
+               array_splice($results, $i, 1);
             }
          }
 
@@ -109,9 +111,44 @@
       //消除該筆資料relatedLinks中空白的項目
       for($i = count($collection['relatedLinks']) - 1; $i >= 0; $i--){
          if($collection['relatedLinks'][$i]['linkUrl'] == ''){
-            unset($collection['relatedLinks'][$i]);
+            array_splice($collection['relatedLinks'], $i, 1);
          }
       }
 
       return $collection;
+   }
+
+   //無法直接插入在某index資料會出問題，因此使用此函式
+   function RandomInsertClassProjectCollection($array, $collection){
+      
+      //先插在最後一項
+      array_push($array, $collection);
+
+      $lastIndex = count($array) - 1;
+
+      //再取隨機一項進行交換
+      $randomIndex = rand(0, count($array) - 1);
+      if($randomIndex != $lastIndex){
+         
+         $storage = array();
+
+         $storage = $array[$randomIndex];
+         $array[$randomIndex] = $array[$lastIndex];
+         $array[$lastIndex] = $storage;
+      }
+
+      return $array;
+   }
+
+   function ClassProject_IsPostHasTheTaxonomy($findTaxonomy){
+      $isExist = false;
+
+      //取出此Post擁有的分類
+      $taxonomyArray = get_the_terms(get_the_ID(),'taxonomy_workType');
+
+      foreach($taxonomyArray as $eachTaxonomy){
+         if($eachTaxonomy->name == $findTaxonomy) $isExist = true;
+      }
+
+      return $isExist;
    }
