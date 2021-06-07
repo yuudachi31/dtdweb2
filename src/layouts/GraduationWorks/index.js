@@ -90,7 +90,7 @@ const GraduationWorks = () => {
         <Banner />
         <div className={styles.graduationWorksContainer} id="content">
           <PageTitle title="畢業專題" />
-          {worksSort.length > 1 ? (
+          {worksSort.length > 0 ? (
             <WorksSort
               sortsList={worksSort}
               selectedItem={worksSortActiveItem}
