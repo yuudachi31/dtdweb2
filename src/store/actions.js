@@ -10,8 +10,8 @@ import {
   SET_GRADUATONWORKS_DETAIL,
   SET_COURSEWORKS_SHOW,
   SET_COURSEWORKS_DETAIL,
-  SET_COOPERATIONWORKS,
-  SET_COOPERATIONWORKS_DETAIL,
+  SET_GOODWORKS_SHOW,
+  SET_GOODWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
@@ -256,10 +256,10 @@ export const getCourseWorksShow = async (dispatch, options) => {
   const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    const url = `${BASE_URL}/classProject?classGroup=${sort}`;
+    const url = `${BASE_URL}/classProject?workType=${sort}`;
     const response = await axios.get(url);
-    const works = [response.data]; //顯示作品統一格式為陣列
-
+    const works = response.data;
+    console.log('課程作品＝ ' + response.data);
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
@@ -298,26 +298,59 @@ export const getCourseWorksDetail = async (dispatch, options) => {
   }
 };
 
-//取得所有合作成果作品
-export const getCooperationWorks = async (dispatch) => {
+//取得所有優良成果作品資料
+export const getGoodWorks = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     const url = `${BASE_URL}/cooperateProject`;
     const response = await axios.get(url);
     const works = response.data;
+    var worksSortArray = ['所有'];
+    works.map((work) => worksSortArray.push(work.sortTitle));
 
     dispatch({
-      type: SET_COOPERATIONWORKS,
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: '所有',
+    }); //紀錄作品分類為所有
+    dispatch({
+      type: SET_GOODWORKS_SHOW,
       payload: works,
-    });
+    }); //紀錄要顯示的作品為全部作品
+    dispatch({
+      type: SET_WORKS_SORT,
+      payload: worksSortArray,
+    }); //紀錄所有分類名稱
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
     console.log(error);
   }
 };
-//取得單筆合作成果作品
-export const getCooperationWorksDetail = async (dispatch, options) => {
+//取得指定分類優良作品資料
+export const getGoodWorksShow = async (dispatch, options) => {
+  const { sort = '遊戲設計' } = options;
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    const url = `${BASE_URL}/classProject?workType=${sort}`;
+    const response = await axios.get(url);
+    const works = response.data;
+    console.log('優良作品＝ ' + response.data);
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
+    }); //紀錄作品分類
+    dispatch({
+      type: SET_GOODWORKS_SHOW,
+      payload: works,
+    }); //紀錄要顯示的作品
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+//取得單筆優良作品資料
+export const getGoodWorksDetail = async (dispatch, options) => {
   const { workId = 0 } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
@@ -327,7 +360,7 @@ export const getCooperationWorksDetail = async (dispatch, options) => {
     const worksDetail = response.data;
 
     dispatch({
-      type: SET_COOPERATIONWORKS_DETAIL,
+      type: SET_GOODWORKS_DETAIL,
       payload: worksDetail,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });

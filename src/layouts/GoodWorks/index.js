@@ -9,6 +9,7 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
+import WorksSort from '../../components/WorksSorts';
 import Loading from '../../components/Loading';
 //path
 import path from '../../utils/path';
@@ -18,13 +19,19 @@ import styles from './styles.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 //data
-import { getCooperationWorks } from '../../store/actions';
+import {
+  getGoodWorks,
+  getGoodWorksShow,
+  setWorksSort,
+} from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
-const CooperationWorks = () => {
+const GoodWorks = () => {
   const {
     state: {
-      cooperationWorks,
+      goodWorksShow,
+      worksSort,
+      worksSortActiveItem,
       requestdata: { loading },
     },
     dispatch,
@@ -41,11 +48,25 @@ const CooperationWorks = () => {
   const getUrlId = window.location.href;
 
   useEffect(() => {
-    getCooperationWorks(dispatch);
+    setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
+      if (worksSortActiveItem == '所有') {
+        getGoodWorks(dispatch);
+      } else {
+        setWorksSort(dispatch, {
+          sort: worksSortActiveItem,
+          path: path.goodWorks,
+        });
+        getGoodWorksShow(dispatch, { sort: worksSortActiveItem });
+      }
     } else {
       Scroll.scroller.scrollTo('top');
+      setWorksSort(dispatch, {
+        sort: '所有',
+        path: path.goodWorks,
+      });
+      getGoodWorks(dispatch);
     }
   }, []);
 
@@ -61,14 +82,23 @@ const CooperationWorks = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>合作成果-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的合作成果" />
+        <title>優良作品-國立臺北教育大學</title>
+        <meta name="description" content="數位科技設計學系的優良作品" />
       </Helmet>
       <div className={styles.container} id="top">
         <Header />
         <Banner />
-        <div className={styles.cooperationWorksContainer} id="content">
-          <PageTitle title="合作成果" />
+        <div className={styles.goodWorksContainer} id="content">
+          <PageTitle title="優良作品" />
+          {worksSort.length > 1 ? (
+            <WorksSort
+              sortsList={worksSort}
+              selectedItem={worksSortActiveItem}
+              path={path.courseWorks}
+            />
+          ) : (
+            <></>
+          )}
           {loading ? (
             <div className={styles.worksArea}>
               <Loading />
@@ -79,11 +109,11 @@ const CooperationWorks = () => {
               columnClassName={styles.worksArea_column}
               breakpointCols={breakPoint}
             >
-              {cooperationWorks.map((work) => (
+              {goodWorksShow.map((work) => (
                 <div className={styles.worksBox} key={work.id}>
                   <Link
                     to={
-                      path.cooperationWorks +
+                      path.goodWorks +
                       '/' +
                       work.workTitle +
                       '?workId=' +
@@ -98,7 +128,7 @@ const CooperationWorks = () => {
                     </div>
                     <Link
                       to={
-                        path.cooperationWorks +
+                        path.goodWorks +
                         '/' +
                         work.workTitle +
                         '?workId=' +
@@ -123,4 +153,4 @@ const CooperationWorks = () => {
   );
 };
 
-export default CooperationWorks;
+export default GoodWorks;

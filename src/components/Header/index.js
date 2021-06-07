@@ -142,8 +142,8 @@ const Header = () => {
               </Link>
             </li>
             <li className={styles.pageList_pageBox}>
-              <Link to={path.cooperationWorks} className={styles.pageBox_page}>
-                合作成果
+              <Link to={path.goodWorks} className={styles.pageBox_page}>
+                優良作品
               </Link>
             </li>
           </ul>
@@ -371,11 +371,11 @@ const Header = () => {
                 </li>
                 <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to={path.cooperationWorks}
+                    to={path.goodWorks}
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    合作成果
+                    優良作品
                   </Link>
                 </li>
               </ul>

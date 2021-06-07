@@ -7,6 +7,8 @@ import {
   getGraduationWorks,
   getCourseWorksShow,
   getCourseWorks,
+  getGoodWorksShow,
+  getGoodWorks,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -24,6 +26,10 @@ const SortsList = (prop) => {
       sort == '所有'
         ? getCourseWorks(dispatch)
         : getCourseWorksShow(dispatch, { sort });
+    } else if (path == '/cooperationWorks') {
+      sort == '所有'
+        ? getGoodWorks(dispatch)
+        : getGoodWorksShow(dispatch, { sort });
     }
   };
   return (
