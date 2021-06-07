@@ -76,6 +76,7 @@ const GoodWorks = () => {
     } else {
       enableBodyScroll('body');
     }
+    console.log(goodWorksShow);
   }, [loading]);
 
   return (
@@ -109,23 +110,9 @@ const GoodWorks = () => {
               columnClassName={styles.worksArea_column}
               breakpointCols={breakPoint}
             >
-              {goodWorksShow.map((work) => (
-                <div className={styles.worksBox} key={work.id}>
-                  <Link
-                    to={
-                      path.goodWorks +
-                      '/' +
-                      work.workTitle +
-                      '?workId=' +
-                      work.id
-                    }
-                  >
-                    <img src={work.workImgUrl} />
-                  </Link>
-                  <div className={styles.worksBox_content}>
-                    <div className={styles.worksBox_content__title}>
-                      {work.workTitle}
-                    </div>
+              {goodWorksShow.map((workslist) =>
+                workslist.sortList.map((work) => (
+                  <div className={styles.worksBox} key={work.id}>
                     <Link
                       to={
                         path.goodWorks +
@@ -134,16 +121,32 @@ const GoodWorks = () => {
                         '?workId=' +
                         work.id
                       }
-                      className={styles.worksBox_content__link}
                     >
-                      <FontAwesomeIcon icon={faAngleRight} />
-                      <div className={styles.worksBox_content__linktext}>
-                        More
-                      </div>
+                      <img src={work.workImgUrl} />
                     </Link>
+                    <div className={styles.worksBox_content}>
+                      <div className={styles.worksBox_content__title}>
+                        {work.workTitle}
+                      </div>
+                      <Link
+                        to={
+                          path.goodWorks +
+                          '/' +
+                          work.workTitle +
+                          '?workId=' +
+                          work.id
+                        }
+                        className={styles.worksBox_content__link}
+                      >
+                        <FontAwesomeIcon icon={faAngleRight} />
+                        <div className={styles.worksBox_content__linktext}>
+                          More
+                        </div>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-              ))}
+                )),
+              )}
             </Masonry>
           )}
         </div>
