@@ -37,7 +37,7 @@ const ActivitiesContent = (prop) => {
               {activities.title}
             </div>
             <Link
-              to={`${path.activities}/${activities.category}/${activities.id}`}
+              to={`${path.activities}/${activities.category}/${activities.title}`}
             >
               <div className={styles.activitiesBoxBottom_more}>
                 <FontAwesomeIcon icon={faAngleRight} />

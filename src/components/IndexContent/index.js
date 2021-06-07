@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -9,6 +10,9 @@ import Col from 'react-bootstrap/Col';
 import indexContent from '../../assets/json/indexContent.json';
 
 const IndexContent = () => {
+  useEffect(() => {
+    localStorage.clear();
+  }, []);
   return (
     <>
       {indexContent.event.map((event) => (
