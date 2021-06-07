@@ -1,0 +1,16 @@
+[
+    {
+        "id":0,
+        "category":"camp",
+        "title":"數位營",
+        "photo":"/assets/images/activities/camp.jpg",
+        "description":"數位營於暑假期間舉辦，讓有興趣的高中生報名參與，希望透過課程學習、專題體驗、團康闖關等活動，深入了解數位系。"
+    },
+    {
+        "id":1,
+        "category":"camp",
+        "title":"AI機器人營隊",
+        "photo":"/assets/images/activities/Kebbi.jpg",
+        "description":"AI機器人課程於暑假與寒假開課，教導國小生透過機器人來學習程式語言，透過與凱比機器人的互動，培養邏輯思考與問題解決的能力。"
+    }
+]
