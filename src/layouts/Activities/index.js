@@ -5,6 +5,7 @@ import * as Scroll from 'react-scroll';
 
 import path from '../../utils/path';
 import DTDActivities from '../../assets/json/DTDActivities.json';
+import DTDGroup from '../../assets/json/DTDGroup.json';
 
 /* component */
 import Header from '../../components/Header';
@@ -22,6 +23,7 @@ const Activities = (prop) => {
   const {
     uiState: {
       activitiesPage: { activitiesCategory },
+      activitiesNavBar: { activeItem },
     },
     uiDispatch,
   } = useContext(UIStoreContext);
@@ -42,6 +44,9 @@ const Activities = (prop) => {
     } else if (prop.match.url === path.activities) {
       setPageContent(uiDispatch, DTDActivities);
       setActiveNavItem(uiDispatch, path.activities);
+    } else if (prop.match.url === `${path.activities}/DTDGroup`) {
+      setPageContent(uiDispatch, DTDGroup);
+      setActiveNavItem(uiDispatch, `${path.activities}/DTDGroup`);
     } else {
       setPageContent(
         uiDispatch,
@@ -49,6 +54,7 @@ const Activities = (prop) => {
       );
       setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
     }
+    console.log('activeItem' + activeItem);
   }, []);
 
   return (
