@@ -22,7 +22,7 @@ const GoodWorksDetail = () => {
   const { workId } = QueryString.parse(location.search);
   const {
     state: {
-      cooperationWorksDetail,
+      goodWorksDetail,
       requestdata: { loading },
     },
     dispatch,
@@ -43,7 +43,7 @@ const GoodWorksDetail = () => {
 
   return (
     <>
-      {loading || JSON.stringify(cooperationWorksDetail) === '{}' ? (
+      {loading || JSON.stringify(goodWorksDetail) === '{}' ? (
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
@@ -62,15 +62,12 @@ const GoodWorksDetail = () => {
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>{cooperationWorksDetail.workTitle}-國立臺北教育大學</title>
+            <title>{goodWorksDetail.workTitle}-國立臺北教育大學</title>
             <meta name="description" content="數位科技設計學系的優良作品" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <WorksDetail
-              worksDetail={cooperationWorksDetail}
-              path={path.cooperationWorks}
-            />
+            <WorksDetail worksDetail={goodWorksDetail} path={path.goodWorks} />
           </div>
           <Footer />
         </Fragment>

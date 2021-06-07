@@ -48,7 +48,7 @@ const SortsList = (prop) => {
               onClick={(e) => Click(sort.toString(), e)}
               key={sort}
             >
-              {sort}
+              {sort.slice(sort.search(/-/i) + 1)}
             </div>
           ))}
         </div>

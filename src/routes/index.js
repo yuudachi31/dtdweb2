@@ -110,7 +110,7 @@ const Routes = () => {
             <Route exact path={path.goodWorks} component={GoodWorksPage} />
             <Route
               exact
-              path={`${path.goodWorks}/:works`}
+              path={`${path.goodWorks}/:sort/:works`}
               component={GoodWorksDetailPage}
             />
             {/* 下載專區 */}

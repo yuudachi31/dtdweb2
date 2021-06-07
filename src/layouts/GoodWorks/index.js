@@ -76,7 +76,6 @@ const GoodWorks = () => {
     } else {
       enableBodyScroll('body');
     }
-    console.log(goodWorksShow);
   }, [loading]);
 
   return (
@@ -95,7 +94,7 @@ const GoodWorks = () => {
             <WorksSort
               sortsList={worksSort}
               selectedItem={worksSortActiveItem}
-              path={path.courseWorks}
+              path={path.goodWorks}
             />
           ) : (
             <></>
@@ -117,9 +116,15 @@ const GoodWorks = () => {
                       to={
                         path.goodWorks +
                         '/' +
+                        workslist.sortTitle.slice(
+                          workslist.sortTitle.search(/-/i) + 1,
+                        ) +
+                        '/' +
                         work.workTitle +
                         '?workId=' +
-                        work.id
+                        work.id +
+                        '&sort=' +
+                        worksSortActiveItem
                       }
                     >
                       <img src={work.workImgUrl} />
@@ -132,9 +137,15 @@ const GoodWorks = () => {
                         to={
                           path.goodWorks +
                           '/' +
+                          workslist.sortTitle.slice(
+                            workslist.sortTitle.search(/-/i) + 1,
+                          ) +
+                          '/' +
                           work.workTitle +
                           '?workId=' +
-                          work.id
+                          work.id +
+                          '&sort=' +
+                          worksSortActiveItem
                         }
                         className={styles.worksBox_content__link}
                       >

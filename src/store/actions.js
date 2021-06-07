@@ -263,13 +263,13 @@ export const getCourseWorks = async (dispatch) => {
 };
 //取得指定分類課程作品資料
 export const getCourseWorksShow = async (dispatch, options) => {
-  const { sort = '遊戲設計' } = options;
+  const { sort = 'C-遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     const url = `${BASE_URL}/classProject?workType=${sort}`;
     const response = await axios.get(url);
     const works = response.data;
-    console.log('課程作品＝ ' + response.data);
+
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
@@ -286,7 +286,7 @@ export const getCourseWorksShow = async (dispatch, options) => {
 };
 //取得單筆課程作品資料
 export const getCourseWorksDetail = async (dispatch, options) => {
-  const { workId = 0, sort = '遊戲設計' } = options;
+  const { workId = 0, sort = 'C-遊戲設計' } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -338,13 +338,13 @@ export const getGoodWorks = async (dispatch) => {
 };
 //取得指定分類優良作品資料
 export const getGoodWorksShow = async (dispatch, options) => {
-  const { sort = '遊戲設計' } = options;
+  const { sort = 'C-遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     const url = `${BASE_URL}/cooperateProject?workType=${sort}`;
     const response = await axios.get(url);
     const works = response.data;
-    console.log(works);
+
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,

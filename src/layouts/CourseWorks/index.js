@@ -116,7 +116,9 @@ const CourseWorks = () => {
                       to={
                         path.graduationWorks +
                         '/' +
-                        workslist.sortTitle +
+                        workslist.sortTitle.slice(
+                          workslist.sortTitle.search(/-/i) + 1,
+                        ) +
                         '/' +
                         work.workTitle +
                         '?workId=' +
@@ -135,7 +137,9 @@ const CourseWorks = () => {
                         to={
                           path.courseWorks +
                           '/' +
-                          workslist.sortTitle +
+                          workslist.sortTitle.slice(
+                            workslist.sortTitle.search(/-/i) + 1,
+                          ) +
                           '/' +
                           work.workTitle +
                           '?workId=' +
