@@ -81,7 +81,17 @@ const CooperationWorks = () => {
             >
               {cooperationWorks.map((work) => (
                 <div className={styles.worksBox} key={work.id}>
-                  <img src={work.workImgUrl} />
+                  <Link
+                    to={
+                      path.cooperationWorks +
+                      '/' +
+                      work.workTitle +
+                      '?workId=' +
+                      work.id
+                    }
+                  >
+                    <img src={work.workImgUrl} />
+                  </Link>
                   <div className={styles.worksBox_content}>
                     <div className={styles.worksBox_content__title}>
                       {work.workTitle}
