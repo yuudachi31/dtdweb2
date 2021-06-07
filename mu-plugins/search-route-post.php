@@ -67,7 +67,7 @@
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
          'category_name' => 'announcement',
-         //'ignore_sticky_posts' => true,   //設定至頂無效
+         'ignore_sticky_posts' => true,   //設定至頂無效
          'posts_per_page' => $postPerGroup,
       ));
 
@@ -86,7 +86,7 @@
       $mainQuery = new WP_Query(array(
          'post_type' => 'post',
          'category_name' => 'achievement',
-         //'ignore_sticky_posts' => true,   //設定至頂無效
+         'ignore_sticky_posts' => true,   //設定至頂無效
          'posts_per_page' => $postPerGroup,
       ));
 

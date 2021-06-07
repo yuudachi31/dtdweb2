@@ -88,10 +88,10 @@ add_action('init', 'prefix_register_dtd_routes_projects');
 //建立custom post-type中的分類
 function create_taxonomies() 
 {
-  register_taxonomy('taxonomy_className','class_projects', array(
+  register_taxonomy('taxonomy_workType',array('class_projects', 'cooperation_projects' ), array(
     'hierarchical' => true,
     'labels' => array(
-      'name' => '課程清單',
+      'name' => '成果分類',
       'all_items' => '全部',
       'edit_item' => '編輯', 
     ),
@@ -100,7 +100,7 @@ function create_taxonomies()
     'show_ui' => true,
     'public' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'taxonomy_className' ),
+    'rewrite' => array( 'slug' => 'taxonomy_workType' ),
   ));
 }
 add_action( 'init', 'create_taxonomies');

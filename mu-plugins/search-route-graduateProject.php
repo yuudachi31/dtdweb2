@@ -30,12 +30,12 @@
 
             $collection = ReturnGraduateProjectCollection();
             //將collection放入對應的年份
-            array_push($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
+            $results[$gradRange[1] - $sortTitle]['sortList'] = RandomInsertGraduateProjectCollection($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
          }
          //刪除空白沒有資料的年份
          for($i = $gradRange[1] - $gradRange[0]; $i >= 0; $i--){
             if(count($results[$i]['sortList']) == 0){
-               unset($results[$i]);
+               array_splice($results, $i, 1);
                $results = array_values($results);
             }
          }
@@ -85,9 +85,31 @@
       //消除該筆資料relatedLinks中空白的項目
       for($i = count($collection['relatedLinks']) - 1; $i >= 0; $i--){
          if($collection['relatedLinks'][$i]['linkUrl'] == ''){
-            unset($collection['relatedLinks'][$i]);
+            array_splice($collection['relatedLinks'], $i, 1);
          }
       }
 
       return $collection;
+   }
+
+   //無法直接插入在某index資料會出問題，因此使用此函式
+   function RandomInsertGraduateProjectCollection($array, $collection){
+      
+      //先插在最後一項
+      array_push($array, $collection);
+
+      $lastIndex = count($array) - 1;
+
+      //再取隨機一項進行交換
+      $randomIndex = rand(0, count($array) - 1);
+      if($randomIndex != $lastIndex){
+         
+         $storage = array();
+
+         $storage = $array[$randomIndex];
+         $array[$randomIndex] = $array[$lastIndex];
+         $array[$lastIndex] = $storage;
+      }
+
+      return $array;
    }
