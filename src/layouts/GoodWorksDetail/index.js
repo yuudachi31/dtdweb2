@@ -47,8 +47,8 @@ const GoodWorksDetail = () => {
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>合作成果-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的合作成果" />
+            <title>優良作品-國立臺北教育大學</title>
+            <meta name="description" content="數位科技設計學系的優良作品" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
@@ -63,7 +63,7 @@ const GoodWorksDetail = () => {
           <Helmet>
             <meta charSet="utf-8" />
             <title>{cooperationWorksDetail.workTitle}-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的合作成果" />
+            <meta name="description" content="數位科技設計學系的優良作品" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />

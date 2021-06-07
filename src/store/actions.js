@@ -122,6 +122,12 @@ export const setWorksSort = async (dispatch, options) => {
       response = await axios.get(url);
       works = response.data;
       works.map((work) => worksSortArray.push(work.sortTitle));
+    } else if (path === '/goodWorks') {
+      worksSortArray[0] = '所有';
+      url = `${BASE_URL}/cooperateProject`;
+      response = await axios.get(url);
+      works = response.data;
+      works.map((work) => worksSortArray.push(work.sortTitle));
     } else if (path === '/') {
       dispatch({
         type: SET_GRADUATONWORKS_SHOW,
@@ -129,6 +135,10 @@ export const setWorksSort = async (dispatch, options) => {
       }); //清掉畫面
       dispatch({
         type: SET_COURSEWORKS_SHOW,
+        payload: [],
+      }); //清掉畫面
+      dispatch({
+        type: SET_GOODWORKS_SHOW,
         payload: [],
       }); //清掉畫面
     }
@@ -331,10 +341,10 @@ export const getGoodWorksShow = async (dispatch, options) => {
   const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    const url = `${BASE_URL}/classProject?workType=${sort}`;
+    const url = `${BASE_URL}/cooperateProject?workType=${sort}`;
     const response = await axios.get(url);
     const works = response.data;
-    console.log('優良作品＝ ' + response.data);
+    console.log(works);
     dispatch({
       type: SET_WORKSSORT_ACTIVEITEM,
       payload: sort,
