@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 // 設計
-// import styles from './styles.module.scss';
+import styles from './styles.module.scss';
 // components
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
@@ -19,7 +19,9 @@ const Announcements = () => {
       </Helmet>
       <Header />
       <Banner />
-      <News pageStyle="announcements" />
+      <div className={styles.container}>
+        <News pageStyle="announcements" />
+      </div>
       <PageNumber pageCount={3} pageStyle="announcements" />
       <Footer />
     </Fragment>

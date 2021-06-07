@@ -52,7 +52,7 @@ const News = (prop) => {
   }, [page]);
 
   return (
-    <div className={styles.container} id="pageTitle">
+    <div id="pageTitle">
       {loading ? (
         <>
           <PageTitle

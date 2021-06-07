@@ -1,5 +1,26 @@
 @import '../../styles/media.scss';
 @import '../../styles/pageMargin.scss';
-@import '../../styles/spacing.scss';
-@import '../../styles/font.scss';
 @import '../../styles/color.scss';
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0 $dtd-margin-desktop;
+  background-color: $dtd-main-bg-color;
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .container {
+    padding: 0 $dtd-margin-tablet;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .container {
+    padding: 0 $dtd-margin-phone;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .container {
+    padding: 0 $dtd-margin-phone-small;
+  }
+}
