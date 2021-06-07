@@ -12,8 +12,8 @@ import {
   SET_GRADUATONWORKS_DETAIL,
   SET_COURSEWORKS_SHOW,
   SET_COURSEWORKS_DETAIL,
-  SET_COOPERATIONWORKS,
-  SET_COOPERATIONWORKS_DETAIL,
+  SET_GOODWORKS_SHOW,
+  SET_GOODWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
@@ -34,8 +34,8 @@ const initialState = {
   graduationWorksDetail: {},
   courseWorksShow: [],
   courseWorksDetail: {},
-  cooperationWorks: [],
-  cooperationWorksDetail: {},
+  goodWorksShow: [],
+  goodWorksDetail: {},
   requestdata: { loading: false, error: null },
   banner: [],
   homeNews: [],
@@ -103,15 +103,15 @@ function reducer(state, action) {
         ...state,
         courseWorksDetail: action.payload,
       };
-    case SET_COOPERATIONWORKS:
+    case SET_GOODWORKS_SHOW:
       return {
         ...state,
-        cooperationWorks: action.payload,
+        goodWorksShow: action.payload,
       };
-    case SET_COOPERATIONWORKS_DETAIL:
+    case SET_GOODWORKS_DETAIL:
       return {
         ...state,
-        cooperationWorksDetail: action.payload,
+        goodWorksDetail: action.payload,
       };
     case BEGIN_DATA_REQUEST:
       return {

@@ -16,7 +16,7 @@ export default {
   // 作品展示
   graduationWorks: '/graduationWorks',
   courseWorks: '/courseWorks',
-  cooperationWorks: '/cooperationWorks',
+  goodWorks: '/goodWorks',
   // 下載專區
   rules: '/rules',
   downloads: '/downloads',

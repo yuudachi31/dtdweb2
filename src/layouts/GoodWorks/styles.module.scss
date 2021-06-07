@@ -16,8 +16,8 @@ a {
   color: $dtd-text-color;
 }
 
-//cooperationWorksContainer
-.cooperationWorksContainer {
+//goodWorksContainer
+.goodWorksContainer {
   min-height: 100vh;
   margin: 0 $dtd-margin-desktop;
   padding-bottom: $dtd-section-spacing;
@@ -26,24 +26,23 @@ a {
   align-items: center;
 }
 @media (max-width: $dtd-media-tablet) {
-  .cooperationWorksContainer {
+  .goodWorksContainer {
     margin: 0 $dtd-margin-tablet;
   }
 }
 @media (max-width: $dtd-media-phone) {
-  .cooperationWorksContainer {
+  .goodWorksContainer {
     margin: 0 $dtd-margin-phone;
   }
 }
 @media (max-width: $dtd-media-phone-small) {
-  .cooperationWorksContainer {
+  .goodWorksContainer {
     margin: 0 $dtd-margin-phone-small;
   }
 }
 
 //Masonry css
 .worksArea {
-  margin-top: 128px;
   display: flex;
   width: 100%;
 }

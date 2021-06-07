@@ -20,16 +20,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 //data
 import {
-  getCourseWorks,
-  getCourseWorksShow,
+  getGoodWorks,
+  getGoodWorksShow,
   setWorksSort,
 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
-const CourseWorks = () => {
+const GoodWorks = () => {
   const {
     state: {
-      courseWorksShow,
+      goodWorksShow,
       worksSort,
       worksSortActiveItem,
       requestdata: { loading },
@@ -52,21 +52,21 @@ const CourseWorks = () => {
     if (getUrlId.search(/#/i) != -1) {
       Scroll.scroller.scrollTo('content');
       if (worksSortActiveItem == '所有') {
-        getCourseWorks(dispatch);
+        getGoodWorks(dispatch);
       } else {
         setWorksSort(dispatch, {
           sort: worksSortActiveItem,
-          path: path.courseWorks,
+          path: path.goodWorks,
         });
-        getCourseWorksShow(dispatch, { sort: worksSortActiveItem });
+        getGoodWorksShow(dispatch, { sort: worksSortActiveItem });
       }
     } else {
       Scroll.scroller.scrollTo('top');
       setWorksSort(dispatch, {
         sort: '所有',
-        path: path.courseWorks,
+        path: path.goodWorks,
       });
-      getCourseWorks(dispatch);
+      getGoodWorks(dispatch);
     }
   }, []);
 
@@ -82,19 +82,19 @@ const CourseWorks = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>課程作品-國立臺北教育大學</title>
-        <meta name="description" content="數位科技設計學系的課程作品" />
+        <title>優良作品-國立臺北教育大學</title>
+        <meta name="description" content="數位科技設計學系的優良作品" />
       </Helmet>
       <div className={styles.container} id="top">
         <Header />
         <Banner />
-        <div className={styles.courseWorksContainer} id="content">
-          <PageTitle title="課程作品" />
+        <div className={styles.goodWorksContainer} id="content">
+          <PageTitle title="優良作品" />
           {worksSort.length > 1 ? (
             <WorksSort
               sortsList={worksSort}
               selectedItem={worksSortActiveItem}
-              path={path.courseWorks}
+              path={path.goodWorks}
             />
           ) : (
             <></>
@@ -109,12 +109,12 @@ const CourseWorks = () => {
               columnClassName={styles.worksArea_column}
               breakpointCols={breakPoint}
             >
-              {courseWorksShow.map((workslist) =>
+              {goodWorksShow.map((workslist) =>
                 workslist.sortList.map((work) => (
                   <div className={styles.worksBox} key={work.id}>
                     <Link
                       to={
-                        path.graduationWorks +
+                        path.goodWorks +
                         '/' +
                         workslist.sortTitle.slice(
                           workslist.sortTitle.search(/-/i) + 1,
@@ -135,7 +135,7 @@ const CourseWorks = () => {
                       </div>
                       <Link
                         to={
-                          path.courseWorks +
+                          path.goodWorks +
                           '/' +
                           workslist.sortTitle.slice(
                             workslist.sortTitle.search(/-/i) + 1,
@@ -167,4 +167,4 @@ const CourseWorks = () => {
   );
 };
 
-export default CourseWorks;
+export default GoodWorks;
