@@ -30,8 +30,8 @@ import GraduationWorksPage from '../layouts/GraduationWorks';
 import GraduationWorksDetailPage from '../layouts/GraduationWorksDetail';
 import CourseWorksPage from '../layouts/CourseWorks';
 import CourseWorksDetailPage from '../layouts/CourseWorksDetail';
-import CooperationWorksPage from '../layouts/CooperationWorks';
-import CooperationWorksDetailPage from '../layouts/CooperationWorksDetail';
+import GoodWorksPage from '../layouts/GoodWorks';
+import GoodWorksDetailPage from '../layouts/GoodWorksDetail';
 // 下載專區
 import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
@@ -107,15 +107,11 @@ const Routes = () => {
               path={`${path.courseWorks}/:sort/:works`}
               component={CourseWorksDetailPage}
             />
+            <Route exact path={path.goodWorks} component={GoodWorksPage} />
             <Route
               exact
-              path={path.cooperationWorks}
-              component={CooperationWorksPage}
-            />
-            <Route
-              exact
-              path={`${path.cooperationWorks}/:works`}
-              component={CooperationWorksDetailPage}
+              path={`${path.goodWorks}/:works`}
+              component={GoodWorksDetailPage}
             />
             {/* 下載專區 */}
             <Route exact path={path.rules} component={RulesPage} />

@@ -14,10 +14,10 @@ import path from '../../utils/path';
 //css
 import styles from './styles.module.scss';
 //data
-import { getCooperationWorksDetail } from '../../store/actions';
+import { getGoodWorksDetail } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
-const CooperationWorksDetail = () => {
+const GoodWorksDetail = () => {
   const location = useLocation();
   const { workId } = QueryString.parse(location.search);
   const {
@@ -29,7 +29,7 @@ const CooperationWorksDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getCooperationWorksDetail(dispatch, { workId });
+    getGoodWorksDetail(dispatch, { workId });
     Scroll.scroller.scrollTo('top');
   }, []);
 
@@ -79,4 +79,4 @@ const CooperationWorksDetail = () => {
   );
 };
 
-export default CooperationWorksDetail;
+export default GoodWorksDetail;
