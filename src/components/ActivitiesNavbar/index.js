@@ -18,7 +18,28 @@ const ActivitiesNavbar = () => {
         className={styles.navItem}
         activeClassName={styles.navItem_active}
       >
-        系隊/讀書會
+        讀書會 / 系隊
+      </NavItem>
+      <NavItem
+        pathTo={`${path.activities}/camp`}
+        className={styles.navItem}
+        activeClassName={styles.navItem_active}
+      >
+        營隊活動
+      </NavItem>
+      <NavItem
+        pathTo={`${path.activities}/visits`}
+        className={styles.navItem}
+        activeClassName={styles.navItem_active}
+      >
+        企業參訪
+      </NavItem>
+      <NavItem
+        pathTo={`${path.activities}/exhibition`}
+        className={styles.navItem}
+        activeClassName={styles.navItem_active}
+      >
+        專題展覽
       </NavItem>
     </div>
   );

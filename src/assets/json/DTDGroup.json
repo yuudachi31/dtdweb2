@@ -1,11 +1,10 @@
 [
-    
     {
         "id":0,
         "category":"DTDGroup",
-        "title":"數位男排",
-        "photo":"/assets/images/activities/dtd_boy_volleyball.jpg",
-        "description":"我們的球風自由奔放，打球氣氛輕鬆愉快，也有許多學長可以分享經驗，在運動的同時還可以互相交流一起進步， 我們的實力穩定在學校前四強隊伍，並於2021年拿下校長盃冠軍，也在2021年全美盃拿下殿軍，歡迎喜歡打球的你加入，加入數位男排讓大學生活更加精采！"
+        "title":"畫匣子",
+        "photo":"/assets/images/activities/drawings.jpg",
+        "description":"畫匣子為本系的學術社團，在課後的時間提供學生一個學習電腦繪圖的平台，近期多改為線上教學以便社員能及時在線上交流每個節日畫匣子都會舉辦線下的賀卡交換活動，目的是為了讓喜愛畫圖的同學有更多的互動，促進系上各年級的認識。"
     },
     {
         "id":1,
@@ -24,15 +23,16 @@
     {
         "id":3,
         "category":"DTDGroup",
-        "title":"數位女排",
-        "photo":"/assets/images/activities/dtd_girl_volleyball.png",
-        "description":""
+        "title":"數位男排",
+        "photo":"/assets/images/activities/dtd_boy_volleyball.jpg",
+        "description":"我們的球風自由奔放，打球氣氛輕鬆愉快，也有許多學長可以分享經驗，在運動的同時還可以互相交流一起進步， 我們的實力穩定在學校前四強隊伍，並於2021年拿下校長盃冠軍，也在2021年全美盃拿下殿軍，歡迎喜歡打球的你加入，加入數位男排讓大學生活更加精采！"
     },
     {
         "id":4,
         "category":"DTDGroup",
-        "title":"畫匣子",
-        "photo":"/assets/images/activities/drawings.jpg",
-        "description":"畫匣子為本系的學術社團，在課後的時間提供學生一個學習電腦繪圖的平台，近期多改為線上教學以便社員能及時在線上交流每個節日畫匣子都會舉辦線下的賀卡交換活動，目的是為了讓喜愛畫圖的同學有更多的互動，促進系上各年級的認識。"
+        "title":"數位女排",
+        "photo":"/assets/images/activities/dtd_girl_volleyball.png",
+        "description":""
     }
+    
 ]
