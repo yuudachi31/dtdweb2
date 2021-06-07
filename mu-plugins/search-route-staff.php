@@ -42,7 +42,7 @@
             $mainQuery->the_post();
 
             $groupID = 0;
-            switch(get_field('grouptitle')){
+            switch(get_field('groupTitle')){
                case "專任教師/互動科技領域":
                   $groupID = 0; break;
                case "專任教師/遊戲設計領域":
@@ -72,7 +72,7 @@
                $top_sort_index = $i;
                $t = array();
                for($j = $i + 1; $j < count($results[$groupID]['list']); $j++){
-                  if($results[$groupID]['list'][$j]['sort_weight'] > $results[$groupID]['list'][$top_sort_index]['sort_weight']){
+                  if($results[$groupID]['list'][$j]['sortWeight'] > $results[$groupID]['list'][$top_sort_index]['sortWeight']){
                      $top_sort_index = $j;
                   }
                }
@@ -95,10 +95,10 @@
    function ReturnStaffCollection(){
       $collection = array(
          'id' => get_the_ID(),
-         'groupTitle' => get_field('grouptitle'),
-         'sort_weight' => get_field('sort_weight'),
-         'teacherName' => get_field('teachername'),
-         'englishName' => get_field('englishname'),
+         'groupTitle' => get_field('groupTitle'),
+         'sortWeight' => get_field('sortWeight'),
+         'teacherName' => get_field('teacherName'),
+         'englishName' => get_field('englishName'),
          'title' => get_field('title'),
          'phone' => get_field('phone'),
          'room' => get_field('room'),
@@ -107,6 +107,6 @@
          'website' => get_field('website'),
          'skill' => get_field('skill'),
          'email' => get_field('email'),
-         'imgUrl' => get_field('imgurl')['url'],);
+         'imgUrl' => get_field('imgUrl')['url'],);
       return $collection;
    }
