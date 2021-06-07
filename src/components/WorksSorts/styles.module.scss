@@ -9,7 +9,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding-top: $dtd-secondary-spacing;
-  padding-bottom: $dtd-main-spcing;
+  padding-bottom: $dtd-section-spacing;
 }
 .sorttitle {
   display: flex;
@@ -18,6 +18,7 @@
   color: $dtd-text-color;
   background-color: $dtd-main-bg-color;
   padding: 0 16px 8px 16px;
+  margin-bottom: 16px;
   cursor: default;
   &:hover {
     box-shadow: 0 2px 0 #85b6dd;
@@ -31,5 +32,6 @@
   align-items: center;
   color: $dtd-text-color;
   padding: 0 16px 8px 16px;
+  margin-bottom: 16px;
   cursor: default;
 }

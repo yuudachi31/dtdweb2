@@ -81,6 +81,14 @@ a {
   & img {
     width: 100%;
     border-radius: 5px 5px 0 0;
+    transition: ease-in-out 0.3s;
+  }
+  &:hover img {
+    opacity: 0.6;
+    transition: ease-in-out 0.3s;
+  }
+  &:hover a {
+    color: $dtd-main-color;
   }
 }
 .worksBox_content {
@@ -103,9 +111,6 @@ a {
   align-items: center;
   color: #85b6dd;
   margin-left: 12px;
-  &:hover {
-    color: $dtd-main-color;
-  }
 }
 .worksBox_content__linktext {
   margin-left: 12px;

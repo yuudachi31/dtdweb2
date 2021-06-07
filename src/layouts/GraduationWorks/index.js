@@ -112,7 +112,21 @@ const GraduationWorks = () => {
               {graduationWorksShow.map((workslist) =>
                 workslist.sortList.map((work) => (
                   <div className={styles.worksBox} key={work.id}>
-                    <img src={work.workImgUrl} />
+                    <Link
+                      to={
+                        path.graduationWorks +
+                        '/' +
+                        workslist.sortTitle +
+                        '/' +
+                        work.workTitle +
+                        '?workId=' +
+                        work.id +
+                        '&sort=' +
+                        worksSortActiveItem
+                      }
+                    >
+                      <img src={work.workImgUrl} />
+                    </Link>
                     <div className={styles.worksBox_content}>
                       <div className={styles.worksBox_content__title}>
                         {work.workTitle}
