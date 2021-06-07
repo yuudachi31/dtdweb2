@@ -80,6 +80,11 @@ a {
   & img {
     width: 100%;
     border-radius: 5px 5px 0 0;
+    transition: ease-in-out 0.3s;
+  }
+  &:hover img {
+    opacity: 0.6;
+    transition: ease-in-out 0.3s;
   }
 }
 .worksBox_content {
