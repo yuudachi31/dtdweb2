@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 //css
 import styles from './styles.module.scss';
+//path
+import linkPath from '../../utils/path';
 //data
 import {
   getGraduationWorksShow,
@@ -18,15 +20,15 @@ const SortsList = (prop) => {
 
   const Click = (sort, e) => {
     e.preventDefault();
-    if (path == '/graduationWorks') {
+    if (path == linkPath.graduationWorks) {
       sort == '所有'
         ? getGraduationWorks(dispatch)
         : getGraduationWorksShow(dispatch, { sort });
-    } else if (path == '/courseWorks') {
+    } else if (path == linkPath.courseWorks) {
       sort == '所有'
         ? getCourseWorks(dispatch)
         : getCourseWorksShow(dispatch, { sort });
-    } else if (path == '/cooperationWorks') {
+    } else if (path == linkPath.goodWorks) {
       sort == '所有'
         ? getGoodWorks(dispatch)
         : getGoodWorksShow(dispatch, { sort });
