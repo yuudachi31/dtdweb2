@@ -1,11 +1,11 @@
 <?php
 
-   function cooperateProjectSearchResults($data) {
+   function excellentProjectSearchResults($data) {
       
       $workType = ($data['workType']) ;
 
       $mainQuery = new WP_Query(array(
-         'post_type' => 'cooperation_projects',
+         'post_type' => 'excellent_projects',
          'posts_per_page' => -1, //ALL
          'p' => $data['postID'],  //用PostID搜尋特定文章
       ));
@@ -14,7 +14,7 @@
       if($data['postID'] != null){
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
-            $results = ReturnCooperateProjectCollection();
+            $results = ExcellentProject_ReturnCollection();
          }
          return $results;
       }
@@ -30,10 +30,10 @@
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
 
-            if(CooperateProject_IsPostHasTheTaxonomy($workType)){
-               $collection = ReturnCooperateProjectCollection();
+            if(ExcellentProject_IsPostHasTheTaxonomy($workType)){
+               $collection = ExcellentProject_ReturnCollection();
 
-               $results[0]['sortList'] = RandomInsertCooperateProjectCollection($results[0]['sortList'], $collection);
+               $results[0]['sortList'] = ExcellentProject_RandomInsertCollection($results[0]['sortList'], $collection);
             }
          }
          return $results;
@@ -52,7 +52,7 @@
          for($i = 0; $i < count($taxonomy); $i++){
             array_push($results, array(
              'sortId' => $taxonomy[$i]->term_id,
-             'sortTitle' => $taxonomy[$i]->name,
+             'sortTitle' => ExcellentProject_ReturnFiltedTaxonomyName($taxonomy[$i]->name),
              'sortList' => array()
             ));
           }
@@ -60,11 +60,11 @@
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
 
-            $collection = ReturnCooperateProjectCollection();
+            $collection = ExcellentProject_ReturnCollection();
 
             for($i = 0; $i < count($results); $i++){
-               if(CooperateProject_IsPostHasTheTaxonomy($results[$i]['sortTitle'])){
-                  $results[$i]['sortList'] = RandomInsertCooperateProjectCollection($results[$i]['sortList'], $collection);
+               if(ExcellentProject_IsPostHasTheTaxonomy($results[$i]['sortTitle'])){
+                  $results[$i]['sortList'] = ExcellentProject_RandomInsertCollection($results[$i]['sortList'], $collection);
                }
             }
          }
@@ -83,7 +83,7 @@
    }
 
    //統整作品輸出格式
-   function ReturnCooperateProjectCollection(){
+   function ExcellentProject_ReturnCollection(){
 
       $collection = array(
          'id' => get_the_ID(),
@@ -122,7 +122,7 @@
    }
 
    //無法直接插入在某index資料會出問題，因此使用此函式
-   function RandomInsertCooperateProjectCollection($array, $collection){
+   function ExcellentProject_RandomInsertCollection($array, $collection){
       
       //先插在最後一項
       array_push($array, $collection);
@@ -143,15 +143,21 @@
       return $array;
    }
 
-   function CooperateProject_IsPostHasTheTaxonomy($findTaxonomy){
+   function ExcellentProject_IsPostHasTheTaxonomy($findTaxonomy){
       $isExist = false;
 
       //取出此Post擁有的分類
       $taxonomyArray = get_the_terms(get_the_ID(),'taxonomy_workType');
 
       foreach($taxonomyArray as $eachTaxonomy){
-         if($eachTaxonomy->name == $findTaxonomy) $isExist = true;
+         if(ExcellentProject_ReturnFiltedTaxonomyName($eachTaxonomy->name) == $findTaxonomy) $isExist = true;
       }
 
       return $isExist;
+   }
+
+   //因為wp後台自訂的作品分類名為A-XXX，為了只回傳分類名稱，依據特定符號為切割點，並回傳切割後的尾端部分
+   function ExcellentProject_ReturnFiltedTaxonomyName($name){
+      $splittedString = mb_split("-", $name);
+      return $splittedString[count($splittedString)-1];
    }

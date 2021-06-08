@@ -28,9 +28,9 @@
 
             $sortTitle = get_field('sortTitle');
 
-            $collection = ReturnGraduateProjectCollection();
+            $collection = GraduateProject_ReturnCollection();
             //將collection放入對應的年份
-            $results[$gradRange[1] - $sortTitle]['sortList'] = RandomInsertGraduateProjectCollection($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
+            $results[$gradRange[1] - $sortTitle]['sortList'] = GraduateProject_RandomInsertCollection($results[$gradRange[1] - $sortTitle]['sortList'], $collection);
          }
          //刪除空白沒有資料的年份
          for($i = $gradRange[1] - $gradRange[0]; $i >= 0; $i--){
@@ -46,7 +46,7 @@
 
             $mainQuery->the_post();
 
-            $results = ReturnGraduateProjectCollection();
+            $results = GraduateProject_ReturnCollection();
          }
       }
       
@@ -54,7 +54,7 @@
    }
 
    //統整作品輸出格式
-   function ReturnGraduateProjectCollection(){
+   function GraduateProject_ReturnCollection(){
       $collection = array(
          'id' => get_the_ID(),
          'workTitle' => get_field('workTitle'),
@@ -93,7 +93,7 @@
    }
 
    //無法直接插入在某index資料會出問題，因此使用此函式
-   function RandomInsertGraduateProjectCollection($array, $collection){
+   function GraduateProject_RandomInsertCollection($array, $collection){
       
       //先插在最後一項
       array_push($array, $collection);
