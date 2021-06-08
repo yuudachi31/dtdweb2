@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 //components
 import Loading from '../Loading';

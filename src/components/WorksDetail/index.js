@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 //bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Row } from 'react-bootstrap';
 //css
 import styles from './styles.module.scss';

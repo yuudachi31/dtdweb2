@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import styles from './styles.module.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DocsGroup = (prop) => {
   const [docsdetail, setDocsDetail] = useState([]);
