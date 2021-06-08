@@ -57,27 +57,27 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '課程專題',
-            'add_new' => '新增專題',
-            'edit_item' => '編輯專題',
-            'all_items' => '全部專題',
+            'name' => '課程作品',
+            'add_new' => '新增作品',
+            'edit_item' => '編輯作品',
+            'all_items' => '全部作品',
             'singular_name' => 'class_projects'
       ),
       'menu_icon' => 'dashicons-archive'
    ));     
 
-   register_post_type('cooperation_projects', array(
+   register_post_type('excellent_projects', array(
       'show_in_rest' => true,
-      'rewrite' => array('slug' => 'cooperation_projects'),
+      'rewrite' => array('slug' => 'excellent_projects'),
       'has_archive' => true,
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '合作成果',
-            'add_new' => '新增成果',
-            'edit_item' => '編輯成果',
-            'all_items' => '全部成果',
-            'singular_name' => 'cooperation_projects'
+            'name' => '優良作品',
+            'add_new' => '新增作品',
+            'edit_item' => '編輯作品',
+            'all_items' => '全部作品',
+            'singular_name' => 'excellent_projects'
       ),
       'menu_icon' => 'dashicons-image-filter'
    ));     
@@ -88,10 +88,10 @@ add_action('init', 'prefix_register_dtd_routes_projects');
 //建立custom post-type中的分類
 function create_taxonomies() 
 {
-  register_taxonomy('taxonomy_workType',array('class_projects', 'cooperation_projects' ), array(
+  register_taxonomy('taxonomy_workType',array('class_projects', 'excellent_projects' ), array(
     'hierarchical' => true,
     'labels' => array(
-      'name' => '成果分類',
+      'name' => '作品分類',
       'all_items' => '全部',
       'edit_item' => '編輯', 
     ),

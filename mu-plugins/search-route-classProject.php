@@ -14,11 +14,11 @@
       if($data['postID'] != null){
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
-            $collection = ReturnClassProjectCollection();
+            $collection = ClassProject_ReturnCollection();
          }
          return $collection;
       }
-      //如果要求特定課程
+      //如果要求特定作品分類
       else if($workType != null){
 
          $results = array();
@@ -31,9 +31,9 @@
             $mainQuery->the_post();
 
             if(ClassProject_IsPostHasTheTaxonomy($workType)){
-               $collection = ReturnClassProjectCollection();
+               $collection = ClassProject_ReturnCollection();
 
-               $results[0]['sortList'] = RandomInsertClassProjectCollection($results[0]['sortList'], $collection);
+               $results[0]['sortList'] = ClassProject_RandomInsertCollection($results[0]['sortList'], $collection);
             }
          }
          return $results;
@@ -51,7 +51,7 @@
          for($i = 0; $i < count($taxonomy); $i++){
            array_push($results, array(
             'sortId' => $taxonomy[$i]->term_id,
-            'sortTitle' => $taxonomy[$i]->name,
+            'sortTitle' => ClassProject_ReturnFiltedTaxonomyName($taxonomy[$i]->name),
             'sortList' => array()
            ));
          }
@@ -59,16 +59,16 @@
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
    
-            $collection = ReturnClassProjectCollection();
+            $collection = ClassProject_ReturnCollection();
    
             for($i = 0; $i < count($results); $i++){
                if(ClassProject_IsPostHasTheTaxonomy($results[$i]['sortTitle'])){
-                  $results[$i]['sortList'] = RandomInsertClassProjectCollection($results[$i]['sortList'], $collection);
+                  $results[$i]['sortList'] = ClassProject_RandomInsertCollection($results[$i]['sortList'], $collection);
                }
             }
          }
          
-         //消除沒有作品的課程項目
+         //消除沒有作品的作品類型
          for($i = count($results) - 1; $i >= 0; $i--){
             if(count($results[$i]['sortList']) == 0){
                array_splice($results, $i, 1);
@@ -80,7 +80,7 @@
    }
 
    //統整作品輸出格式
-   function ReturnClassProjectCollection(){
+   function ClassProject_ReturnCollection(){
       $collection = array(
          'id' => get_the_ID(),
          'workTitle' => get_field('workTitle'),
@@ -119,7 +119,7 @@
    }
 
    //無法直接插入在某index資料會出問題，因此使用此函式
-   function RandomInsertClassProjectCollection($array, $collection){
+   function ClassProject_RandomInsertCollection($array, $collection){
       
       //先插在最後一項
       array_push($array, $collection);
@@ -147,8 +147,14 @@
       $taxonomyArray = get_the_terms(get_the_ID(),'taxonomy_workType');
 
       foreach($taxonomyArray as $eachTaxonomy){
-         if($eachTaxonomy->name == $findTaxonomy) $isExist = true;
+         if(ClassProject_ReturnFiltedTaxonomyName($eachTaxonomy->name) == $findTaxonomy) $isExist = true;
       }
 
       return $isExist;
+   }
+
+   //因為wp後台自訂的作品分類名為A-XXX，為了只回傳分類名稱，依據特定符號為切割點，並回傳切割後的尾端部分
+   function ClassProject_ReturnFiltedTaxonomyName($name){
+      $splittedString = mb_split("-", $name);
+      return $splittedString[count($splittedString)-1];
    }
