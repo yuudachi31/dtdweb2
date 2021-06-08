@@ -124,7 +124,7 @@ export const setWorksSort = async (dispatch, options) => {
       works.map((work) => worksSortArray.push(work.sortTitle));
     } else if (path === '/goodWorks') {
       worksSortArray[0] = '所有';
-      url = `${BASE_URL}/cooperateProject`;
+      url = `${BASE_URL}/excellentProject`;
       response = await axios.get(url);
       works = response.data;
       works.map((work) => worksSortArray.push(work.sortTitle));
@@ -312,7 +312,7 @@ export const getCourseWorksDetail = async (dispatch, options) => {
 export const getGoodWorks = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    const url = `${BASE_URL}/cooperateProject`;
+    const url = `${BASE_URL}/excellentProject`;
     const response = await axios.get(url);
     const works = response.data;
     var worksSortArray = ['所有'];
@@ -341,7 +341,7 @@ export const getGoodWorksShow = async (dispatch, options) => {
   const { sort = 'C-遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    const url = `${BASE_URL}/cooperateProject?workType=${sort}`;
+    const url = `${BASE_URL}/excellentProject?workType=${sort}`;
     const response = await axios.get(url);
     const works = response.data;
 
@@ -365,7 +365,7 @@ export const getGoodWorksDetail = async (dispatch, options) => {
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    const url = `${BASE_URL}/cooperateProject?postID=${workId}`;
+    const url = `${BASE_URL}/excellentProject?postID=${workId}`;
     const response = await axios.get(url);
     const worksDetail = response.data;
 
