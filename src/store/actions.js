@@ -263,7 +263,7 @@ export const getCourseWorks = async (dispatch) => {
 };
 //取得指定分類課程作品資料
 export const getCourseWorksShow = async (dispatch, options) => {
-  const { sort = 'C-遊戲設計' } = options;
+  const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     const url = `${BASE_URL}/classProject?workType=${sort}`;
@@ -286,7 +286,7 @@ export const getCourseWorksShow = async (dispatch, options) => {
 };
 //取得單筆課程作品資料
 export const getCourseWorksDetail = async (dispatch, options) => {
-  const { workId = 0, sort = 'C-遊戲設計' } = options;
+  const { workId = 0, sort = '遊戲設計' } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -338,7 +338,7 @@ export const getGoodWorks = async (dispatch) => {
 };
 //取得指定分類優良作品資料
 export const getGoodWorksShow = async (dispatch, options) => {
-  const { sort = 'C-遊戲設計' } = options;
+  const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     const url = `${BASE_URL}/excellentProject?workType=${sort}`;
@@ -361,7 +361,7 @@ export const getGoodWorksShow = async (dispatch, options) => {
 };
 //取得單筆優良作品資料
 export const getGoodWorksDetail = async (dispatch, options) => {
-  const { workId = 0 } = options;
+  const { workId = 0, sort = '遊戲設計' } = options;
 
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -373,6 +373,10 @@ export const getGoodWorksDetail = async (dispatch, options) => {
       type: SET_GOODWORKS_DETAIL,
       payload: worksDetail,
     });
+    dispatch({
+      type: SET_WORKSSORT_ACTIVEITEM,
+      payload: sort,
+    }); //紀錄作品分類
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
