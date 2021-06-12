@@ -21,18 +21,18 @@ const ActivityDetail = (prop) => {
     Scroll.scroller.scrollTo('top');
   }, []);
 
-  const activitiesCategoryCookie = JSON.parse(
+  const activitiesCategoryLocalStorage = JSON.parse(
     localStorage.getItem('activitiesCategory'),
   );
 
-  const activity = activitiesCategoryCookie.find(
+  const activity = activitiesCategoryLocalStorage.find(
     (x) => x.title === prop.match.params.activityTitle,
   );
 
   const { uiDispatch } = useContext(UIStoreContext);
 
   useEffect(() => {
-    setPageContent(uiDispatch, activitiesCategoryCookie);
+    setPageContent(uiDispatch, activitiesCategoryLocalStorage);
     if (activity.category === 'DTDActivities') {
       setActiveNavItem(uiDispatch, `${path.activities}`);
     } else {

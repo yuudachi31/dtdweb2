@@ -23,7 +23,6 @@ const Activities = (prop) => {
   const {
     uiState: {
       activitiesPage: { activitiesCategory },
-      activitiesNavBar: { activeItem },
     },
     uiDispatch,
   } = useContext(UIStoreContext);
@@ -32,7 +31,6 @@ const Activities = (prop) => {
 
   /*判斷是從哪頁進入系上活動來設定系上活動的內容*/
   useEffect(() => {
-    console.log('geturl = ' + prop.match.url);
     if (geturlid.search(/#/i) !== -1) {
       //從ActivityDetail頁回到系上活動，會直接到content的區塊
       Scroll.scroller.scrollTo('content');
@@ -54,7 +52,6 @@ const Activities = (prop) => {
       );
       setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
     }
-    console.log('activeItem' + activeItem);
   }, []);
 
   return (

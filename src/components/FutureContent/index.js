@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import works from '../../assets/images/future/works.png';
 import Future from '../../assets/json/future.json';
 
 const FutureContent = () => {
@@ -14,7 +13,7 @@ const FutureContent = () => {
               <div className={styles.content} key={list.id}>
                 <div className={styles.content_img}>
                   <img
-                    src={works}
+                    src={list.imgUrl}
                     alt=""
                     className={styles.content_img__size}
                   ></img>
