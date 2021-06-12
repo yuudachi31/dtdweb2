@@ -1,44 +1,55 @@
-@import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/color.scss';
 
 .container {
   position: relative;
   width: 100vw;
-  height: 124px;
+  height: 162px;
   background-color: $dtd-main-bg-color;
 }
 
-.pageNumber_box {
+.pageNumber_pageNumberBlock {
   position: absolute;
   left: 50%;
-  top: 28px;
+  top: 64px;
   transform: translateX(-50%);
   display: flex;
 }
 
-.pageNumber_number {
-  font-size: $dtd-hint-size;
-  padding: 0 12px;
+.pageNumberBlock_btn__hover:hover {
+  color: $dtd-main-color;
+  text-decoration: none;
+}
+
+.pageNumberBlock_chevron {
+  margin: 0 6px;
+  padding: 0 6px;
   border: none;
   background-color: $dtd-main-bg-color;
   color: $dtd-submenu-text-color;
 }
+.pageNumberBlock_chevron__disabled {
+  color: $dtd-hint-text-color;
+  cursor: default;
+  &:hover {
+    color: $dtd-hint-text-color;
+    text-decoration: none;
+  }
+}
 
-.pageNumber_arrow {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  height: 12px;
-  padding: 0 12px;
+.pageNumberBlock_number {
+  font-size: $dtd-hint-size;
+  font-weight: bold;
+  margin: 0 6px;
+  padding: 1px 6px 0 6px;
   border: none;
   background-color: $dtd-main-bg-color;
-  margin-top: 5px;
+  color: $dtd-submenu-text-color;
 }
-
-.pageNumber_arrow__leftArrowImg {
-  background-image: url(../../assets/images/announcement/leftArrow.png);
-}
-
-.pageNumber_arrow__rightArrowImg {
-  background-image: url(../../assets/images/announcement/rightArrow.png);
+.pageNumberBlock_number__selected {
+  color: $dtd-main-color;
+  &:hover {
+    color: $dtd-main-color;
+    text-decoration: none;
+  }
 }

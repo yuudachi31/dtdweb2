@@ -1,0 +1,35 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
+
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-submenu-text-color;
+}
+
+//worksContainer
+.worksContainer {
+  min-height: 100vh;
+  margin: 0 $dtd-margin-desktop;
+  padding-top: 27px;
+  padding-bottom: $dtd-index-main-spacing;
+}
+@media (max-width: $dtd-media-tablet) {
+  .worksContainer {
+    margin: 0 $dtd-margin-tablet;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .worksContainer {
+    margin: 0 $dtd-margin-phone;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .worksContainer {
+    margin: 0 $dtd-margin-phone-small;
+  }
+}

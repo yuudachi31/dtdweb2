@@ -3,39 +3,51 @@ import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
-//componemt&路徑
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+//bootstrap
+import { Col, Row } from 'react-bootstrap';
+//componemts
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Loading from '../../components/Loading';
+//path
 import path from '../../utils/path';
-//設計
+//css
 import styles from './styles.module.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Col, Row } from 'react-bootstrap';
-//取資料
-import { getStaffDetail } from '../../store/actions';
-import { StoreContext } from '../../store/reducer';
-//圖片匯入
+//icons
 import leftArrow from '../../assets/images/icons/icon_leftarrow.png';
 import phoneIcon from '../../assets/images/icons/icon_phone.png';
 import emailIcon from '../../assets/images/icons/icon_email.png';
+//data
+import { getStaff, getStaffDetail } from '../../store/actions';
+import { StoreContext } from '../../store/reducer';
 
 const StaffDetail = () => {
   const location = useLocation();
-  const { groupid, teacherid } = QueryString.parse(location.search);
+  const { groupid, staffpath } = QueryString.parse(location.search);
   const {
     state: {
       staffDetail,
+      staff,
       requestdata: { loading },
     },
     dispatch,
   } = useContext(StoreContext);
 
   useEffect(() => {
-    console.log('useEffect work');
-    const groupid2 = parseInt(groupid);
-    const teacherid2 = parseInt(teacherid);
-    getStaffDetail(dispatch, { groupid2, teacherid2 });
+    getStaffDetail(dispatch, { staffpath });
     Scroll.scroller.scrollTo('top');
+    if (staff.length == 0) {
+      getStaff(dispatch);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (loading) {
+      disableBodyScroll('body');
+    } else {
+      enableBodyScroll('body');
+    }
   }, [loading]);
 
   return (
@@ -45,11 +57,13 @@ const StaffDetail = () => {
           <Helmet>
             <meta charSet="utf-8" />
             <title>教學團隊-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的教室團隊" />
+            <meta name="description" content="數位科技設計學系的教學團隊" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.staffDetail}></div>
+            <div className={styles.staffContainer}>
+              <Loading />
+            </div>
             <Footer />
           </div>
         </Fragment>
@@ -57,48 +71,48 @@ const StaffDetail = () => {
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>{staffDetail.teachername}-國立臺北教育大學</title>
-            <meta name="description" content="數位科技設計學系的教室團隊" />
+            <title>{staffDetail.teacherName}-國立臺北教育大學</title>
+            <meta name="description" content="數位科技設計學系的教學團隊" />
           </Helmet>
           <div className={styles.container} id="top">
             <Header />
-            <div className={styles.staffDetail}>
+            <div className={styles.staffContainer}>
               {/* 教師名字 */}
-              <Row className={styles.staffDetail_titleBar}>
+              <Row className={styles.staffContainer_titleBar}>
                 <Link
                   to={path.staff + '#group' + groupid}
-                  className={styles.staffDetail_titleBar__backBtn}
+                  className={styles.staffContainer_titleBar__backBtn}
                 >
                   <img src={leftArrow} />
                 </Link>
-                <div className={styles.staffDetail_titleBar__name}>
-                  {staffDetail.teachername.search(/（/i) == -1
-                    ? staffDetail.teachername
-                    : staffDetail.teachername.substring(
+                <div className={styles.staffContainer_titleBar__name}>
+                  {staffDetail.teacherName.search(/（/i) == -1
+                    ? staffDetail.teacherName
+                    : staffDetail.teacherName.substring(
                         0,
-                        staffDetail.teachername.search(/（/i),
+                        staffDetail.teacherName.search(/（/i),
                       )}
                 </div>
               </Row>
               {/* 教師資訊 */}
-              <Row className={styles.staffDetail_contentBar}>
+              <Row className={styles.staffContainer_contentBar}>
                 {/* 教師頭像 */}
                 <Col
                   lg={3}
                   md={12}
                   sm={12}
                   xs={12}
-                  className={styles.staffDetail_contentBar__box}
+                  className={styles.staffContainer_contentBar__box}
                 >
-                  <div className={styles.staffDetail_contentBar__img}>
-                    <img src={'../' + staffDetail.imgurl} />
+                  <div className={styles.staffContainer_contentBar__img}>
+                    <img src={staffDetail.imgUrl} />
                   </div>
                 </Col>
                 <Col
                   lg={9}
                   md={12}
                   sm={12}
-                  className={styles.staffDetail_contentBar__content}
+                  className={styles.staffContainer_contentBar__content}
                 >
                   {/* 職稱 */}
                   <div>
@@ -108,12 +122,12 @@ const StaffDetail = () => {
                       : '兼任' + staffDetail.title}
                   </div>
                   {/* 電話與email */}
-                  <Row className={styles.contactBar}>
+                  <Row className={styles.content_contactBar}>
                     <Col
                       xl={3}
                       lg={4}
                       md={5}
-                      className={styles.contactBar_contactBox}
+                      className={styles.content_contactBar__contactBox}
                     >
                       <img src={phoneIcon} />
                       {staffDetail.phone != '' ? (
@@ -131,26 +145,22 @@ const StaffDetail = () => {
                           校內分機：{staffDetail.phone}
                         </a>
                       ) : (
-                        <div className={styles.contactBar_contactBox__hint}>
-                          校內分機：無
-                        </div>
+                        <div>校內分機：無</div>
                       )}
                     </Col>
-                    <Col className={styles.contactBar_contactBox}>
+                    <Col className={styles.content_contactBar__contactBox}>
                       <img src={emailIcon} />
                       {staffDetail.email != '' ? (
                         <a href={'mailto:' + staffDetail.email}>
                           電子信箱：{staffDetail.email}
                         </a>
                       ) : (
-                        <div className={styles.contactBar_contactBox__hint}>
-                          電子信箱：無
-                        </div>
+                        <div>電子信箱：無</div>
                       )}
                     </Col>
                   </Row>
-                  <div className={styles.contactLine}></div>
-                  <div className={styles.contactDetail}>
+                  <div className={styles.content_contactLine}></div>
+                  <div className={styles.content_contactDetail}>
                     {/* 辦公室or研究室 */}
                     <div>
                       <strong>
@@ -185,7 +195,11 @@ const StaffDetail = () => {
                       <strong>
                         {staffDetail.title != '助教' ? '學歷：' : ''}
                       </strong>
-                      {staffDetail.education}
+                      {staffDetail.title != '助教'
+                        ? staffDetail.education != ''
+                          ? staffDetail.education
+                          : '無'
+                        : ''}
                     </div>
                     {/* 專長（助教除外） */}
                     <div>

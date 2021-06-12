@@ -2,27 +2,36 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/color.scss';
 @import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
 
 .container {
-  // min-height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
 }
+
 //staffContainer
 .staffContainer {
   min-height: 100vh;
-  margin: 0 10%;
+  margin: 0 $dtd-margin-desktop;
+  padding-bottom: $dtd-secondary-spacing;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-@media (max-width: $dtd-media-desktop) {
+@media (max-width: $dtd-media-tablet) {
   .staffContainer {
-    margin: 0 4.8% $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-tablet;
   }
 }
 @media (max-width: $dtd-media-phone) {
   .staffContainer {
-    margin: 0 6% $dtd-secondary-spacing;
+    margin: 0 $dtd-margin-phone;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .staffContainer {
+    margin: 0 $dtd-margin-phone-small;
   }
 }

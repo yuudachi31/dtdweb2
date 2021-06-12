@@ -2,128 +2,31 @@
 @import '../../styles/font.scss';
 @import '../../styles/spacing.scss';
 @import '../../styles/media.scss';
-@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../../styles/pageMargin.scss';
 
-.homePage_bgc {
-  background-color: $dtd-main-bg-color;
-}
 .container {
   width: 100vw;
-  padding: 0 10%;
+  background-color: $dtd-main-bg-color;
 }
-.section {
-  width: 100%;
-  margin-top: $dtd-index-main-spacing;
-  &.section_news {
-    display: flex;
-    justify-content: space-between;
-    margin-top: $dtd-main-spcing;
-  }
-  &.section_link {
-    margin-bottom: $dtd-index-main-spacing;
-  }
-}
-h1 {
-  font-size: $dtd-h1-size;
-  color: $dtd-text-color;
-}
-p {
-  font-size: $dtd-p-size;
-  color: $dtd-text-color;
-}
-hr {
-  border-top: 1px solid #e8e8e8;
-  margin-bottom: 30px;
-}
-span {
-  font-size: $dtd-hint-size;
-  color: $dtd-submenu-text-color;
-}
-.newsContent {
-  width: 45%;
-}
-.news {
-  margin-bottom: $dtd-secondary-spacing;
-}
-.news_top {
-  margin-top: 15px;
-}
-.news_p {
-  font-weight: bold;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 5px;
-}
-.news_span {
-  margin-top: 20px;
-}
-.news_button {
-  border: none;
-  color: #fff;
-  background-color: #85b6dd;
-  border-radius: 5px;
-  padding: 8px 25px;
-}
-.news_button:hover {
-  background-color: $dtd-main-color;
-}
-.link {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-}
-.link_img {
-  display: flex;
-  justify-content: center;
-}
-.link_img__size {
-  width: 100%;
-  border-radius: 5px;
-}
-.link_p {
-  text-align: center;
-  margin-top: 10px;
-}
-.link_a__textdecnone:hover {
-  text-decoration: none;
+.homeContainer {
+  min-height: 100vh;
+  padding: 0 $dtd-margin-desktop;
 }
 
 @media (max-width: $dtd-media-tablet) {
-  .container {
-    padding: 0 4.8%;
-  }
-  .carousel_img__rwdHeight {
-    height: 30vh;
-    object-fit: cover;
-  }
-  .link_img__size {
-    width: 85%;
+  .homeContainer {
+    padding: 0 $dtd-margin-tablet;
   }
 }
+
 @media (max-width: $dtd-media-phone) {
-  .container {
-    padding: 0 6%;
+  .homeContainer {
+    padding: 0 $dtd-margin-phone;
   }
-  .carousel_img__rwdHeight {
-    height: 25vh;
-    object-fit: cover;
-  }
-  .section_news {
-    display: flex;
-    flex-direction: column;
-  }
-  .newsContent {
-    width: 100%;
-  }
-  .news_button_mb {
-    margin-bottom: 40px;
-  }
-  .admissionContent {
-    padding: 3% 10%;
-  }
-  .link_img__size {
-    width: 70%;
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .homeContainer {
+    padding: 0 $dtd-margin-phone-small;
   }
 }

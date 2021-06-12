@@ -1,124 +1,289 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+// 設計
 import styles from './styles.module.scss';
+// 路徑
 import path from '../../utils/path';
-
+// 圖片匯入
+import logo from '../../assets/images/header/DTD.png';
+// icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
+// uiStore
 import {
   clickHamburgerMenu,
   clickHamburgerTitle,
   clickHamburgerLink,
+  setNewsLoadState,
 } from '../../uiStore/actions';
-
 import { UIStoreContext } from '../../uiStore/reducer';
 
 const Header = () => {
-  const { state, dispatch } = useContext(UIStoreContext);
+  const { uiState, uiDispatch } = useContext(UIStoreContext);
 
   return (
-    <div className={styles.container}>
-      <Link to={path.home} className={styles.logo}></Link>
-      <div className={styles.nav}>
+    <div className={styles.header}>
+      <Link to={path.home} onClick={() => clickHamburgerLink(uiDispatch)}>
+        <img className={styles.header_logo__width} src={logo}></img>
+      </Link>
+      <div className={styles.header_nav}>
+        {/* navbar */}
+        {/* 關於數位 */}
+        <button className={styles.nav_dropdownMenu}>
+          <div
+            className={`${styles.dropdownMenu_title} ${styles.dropdownMenu_title__borderRight}`}
+          >
+            關於數位
+          </div>
+          <ul className={styles.dropdownMenu_pageList}>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.intro} className={styles.pageBox_page}>
+                本系簡介
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.staff} className={styles.pageBox_page}>
+                教學團隊
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.activities} className={styles.pageBox_page}>
+                系上活動
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.future} className={styles.pageBox_page}>
+                修課與未來發展
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.teams} className={styles.pageBox_page}>
+                系網團隊
+              </Link>
+            </li>
+          </ul>
+        </button>
+
+        {/* 最新消息 */}
+        <button className={styles.nav_dropdownMenu}>
+          <div
+            className={`${styles.dropdownMenu_title} ${styles.dropdownMenu_title__borderRight}`}
+          >
+            最新消息
+          </div>
+          <ul className={styles.dropdownMenu_pageList}>
+            <li className={styles.pageList_pageBox}>
+              <Link
+                to={path.announcements}
+                className={styles.pageBox_page}
+                onClick={() =>
+                  setNewsLoadState(uiDispatch, { loadState: true })
+                }
+              >
+                系務公告
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link
+                to={path.achievements}
+                className={styles.pageBox_page}
+                onClick={() =>
+                  setNewsLoadState(uiDispatch, { loadState: true })
+                }
+              >
+                師生榮譽榜
+              </Link>
+            </li>
+          </ul>
+        </button>
+
+        {/* 招生資訊 */}
+        <button className={styles.nav_dropdownMenu}>
+          <div
+            className={`${styles.dropdownMenu_title} ${styles.dropdownMenu_title__borderRight}`}
+          >
+            招生資訊
+          </div>
+          <ul className={styles.dropdownMenu_pageList}>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.college} className={styles.pageBox_page}>
+                學士班
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.master} className={styles.pageBox_page}>
+                碩士班
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.inservice} className={styles.pageBox_page}>
+                在職碩士班
+              </Link>
+            </li>
+          </ul>
+        </button>
+
+        {/* 作品展示 */}
+        <button className={styles.nav_dropdownMenu}>
+          <div
+            className={`${styles.dropdownMenu_title} ${styles.dropdownMenu_title__borderRight}`}
+          >
+            作品展示
+          </div>
+          <ul className={styles.dropdownMenu_pageList}>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.graduationWorks} className={styles.pageBox_page}>
+                畢業專題
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.courseWorks} className={styles.pageBox_page}>
+                課程作品
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.goodWorks} className={styles.pageBox_page}>
+                優良作品
+              </Link>
+            </li>
+          </ul>
+        </button>
+
+        {/* 下載專區 */}
+        <button className={styles.nav_dropdownMenu}>
+          <div className={styles.dropdownMenu_title}>下載專區</div>
+          <ul className={styles.dropdownMenu_pageList}>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.rules} className={styles.pageBox_page}>
+                辦法規章
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.downloads} className={styles.pageBox_page}>
+                表格下載
+              </Link>
+            </li>
+          </ul>
+        </button>
+
         {/* hamburgerMenu */}
         <button
           className={
-            state.hamburgerMenu
-              ? `${styles.nav_hamMenu} ${styles.nav_hamMenu__color}`
+            uiState.hamburgerMenuState
+              ? `${styles.nav_hamMenu} ${styles.hamMenu_icon__selectedColor}`
               : styles.nav_hamMenu
           }
-          onClick={() => clickHamburgerMenu(dispatch)}
+          onClick={() => clickHamburgerMenu(uiDispatch)}
         >
-          <FontAwesomeIcon className={styles.nav_hamMenu__size} icon={faBars} />
+          <FontAwesomeIcon
+            className={styles.hamMenu_icon__size}
+            icon={faBars}
+          />
         </button>
         <ul
           className={
-            state.hamburgerMenu
-              ? styles.nav_hamMenuDropdown
-              : styles.nav_hamMenuDropdown__close
+            uiState.hamburgerMenuState
+              ? styles.hamMenu_hamDropdownMenu
+              : styles.hamMenu_hamDropdownMenu__close
           }
         >
+          {/* 關於數位 */}
           <li>
             <button
-              className={styles.nav_hamTitle}
-              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 0 })}
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 0 })}
             >
               <p>關於數位</p>
               <ul
                 className={
-                  state.hamburgerTitle[0]
-                    ? styles.nav_hamTitleDropdown
-                    : styles.nav_hamTitleDropdown__close
+                  uiState.hamburgerTitleState[0]
+                    ? styles.hamTitleDropdownMenu_hamPageList
+                    : styles.hamTitleDropdownMenu_hamPageList__close
                 }
               >
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.intro}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     本系簡介
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
                     to={path.staff}
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     教學團隊
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.activities}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     系上活動
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.future}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    未來發展
+                    修課與未來發展
+                  </Link>
+                </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.teams}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    系網團隊
                   </Link>
                 </li>
               </ul>
             </button>
           </li>
 
+          {/* 最新消息 */}
           <li>
             <button
-              className={styles.nav_hamTitle}
-              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 1 })}
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 1 })}
             >
               <p>最新消息</p>
               <ul
                 className={
-                  state.hamburgerTitle[1]
-                    ? styles.nav_hamTitleDropdown
-                    : styles.nav_hamTitleDropdown__close
+                  uiState.hamburgerTitleState[1]
+                    ? styles.hamTitleDropdownMenu_hamPageList
+                    : styles.hamTitleDropdownMenu_hamPageList__close
                 }
               >
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to={path.news}
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.announcements}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => {
+                      clickHamburgerLink(uiDispatch);
+                      setNewsLoadState(uiDispatch, { loadState: true });
+                    }}
                   >
-                    系所公告
+                    系務公告
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to={path.honors}
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.achievements}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => {
+                      clickHamburgerLink(uiDispatch);
+                      setNewsLoadState(uiDispatch, { loadState: true });
+                    }}
                   >
                     師生榮譽榜
                   </Link>
@@ -127,121 +292,124 @@ const Header = () => {
             </button>
           </li>
 
+          {/* 招生資訊 */}
           <li>
             <button
-              className={styles.nav_hamTitle}
-              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 2 })}
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 2 })}
             >
               <p>招生資訊</p>
               <ul
                 className={
-                  state.hamburgerTitle[2]
-                    ? styles.nav_hamTitleDropdown
-                    : styles.nav_hamTitleDropdown__close
+                  uiState.hamburgerTitleState[2]
+                    ? styles.hamTitleDropdownMenu_hamPageList
+                    : styles.hamTitleDropdownMenu_hamPageList__close
                 }
               >
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.college}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     學士班
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.master}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     碩士班
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.inservice}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    在職專班
+                    在職碩士班
                   </Link>
                 </li>
               </ul>
             </button>
           </li>
 
+          {/* 作品展示 */}
           <li>
             <button
-              className={styles.nav_hamTitle}
-              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 3 })}
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 3 })}
             >
               <p>作品展示</p>
               <ul
                 className={
-                  state.hamburgerTitle[3]
-                    ? styles.nav_hamTitleDropdown
-                    : styles.nav_hamTitleDropdown__close
+                  uiState.hamburgerTitleState[3]
+                    ? styles.hamTitleDropdownMenu_hamPageList
+                    : styles.hamTitleDropdownMenu_hamPageList__close
                 }
               >
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.graduationWorks}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     畢業專題
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.courseWorks}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     課程作品
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to="/"
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    to={path.goodWorks}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    合作成果
+                    優良作品
                   </Link>
                 </li>
               </ul>
             </button>
           </li>
 
+          {/* 下載專區 */}
           <li>
             <button
-              className={styles.nav_hamTitle}
-              onClick={() => clickHamburgerTitle(dispatch, { clickTitle: 4 })}
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 4 })}
             >
               <p>下載專區</p>
               <ul
                 className={
-                  state.hamburgerTitle[4]
-                    ? styles.nav_hamTitleDropdown
-                    : styles.nav_hamTitleDropdown__close
+                  uiState.hamburgerTitleState[4]
+                    ? styles.hamTitleDropdownMenu_hamPageList
+                    : styles.hamTitleDropdownMenu_hamPageList__close
                 }
               >
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
                     to={path.rules}
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     辦法規章
                   </Link>
                 </li>
-                <li className={styles.nav_hamLinkBox}>
+                <li className={styles.hamPageList_hamPageBox}>
                   <Link
                     to={path.downloads}
-                    className={styles.nav_hamLink}
-                    onClick={() => clickHamburgerLink(dispatch)}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     表格下載
                   </Link>
@@ -250,118 +418,6 @@ const Header = () => {
             </button>
           </li>
         </ul>
-        {/* navbar */}
-        <button className={styles.nav_dropdown}>
-          <div
-            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
-          >
-            關於數位
-          </div>
-          <ul className={styles.nav_dropmenu}>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                本系簡介
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to={path.staff} className={styles.nav_link}>
-                教學團隊
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                系上活動
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                未來發展
-              </Link>
-            </li>
-          </ul>
-        </button>
-        <button className={styles.nav_dropdown}>
-          <div
-            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
-          >
-            最新消息
-          </div>
-          <ul className={styles.nav_dropmenu}>
-            <li className={styles.nav_linkBox}>
-              <Link to={path.news} className={styles.nav_link}>
-                系所公告
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to={path.honors} className={styles.nav_link}>
-                師生榮譽榜
-              </Link>
-            </li>
-          </ul>
-        </button>
-        <button className={styles.nav_dropdown}>
-          <div
-            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
-          >
-            招生資訊
-          </div>
-          <ul className={styles.nav_dropmenu}>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                學士班
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                碩士班
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                在職專班
-              </Link>
-            </li>
-          </ul>
-        </button>
-        <button className={styles.nav_dropdown}>
-          <div
-            className={`${styles.nav_title} ${styles.nav_title__borderRight}`}
-          >
-            作品展示
-          </div>
-          <ul className={styles.nav_dropmenu}>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                畢業專題
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                課程作品
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to="/" className={styles.nav_link}>
-                合作成果
-              </Link>
-            </li>
-          </ul>
-        </button>
-        <button className={styles.nav_dropdown}>
-          <div className={styles.nav_title}>下載專區</div>
-          <ul className={styles.nav_dropmenu}>
-            <li className={styles.nav_linkBox}>
-              <Link to={path.rules} className={styles.nav_link}>
-                辦法規章
-              </Link>
-            </li>
-            <li className={styles.nav_linkBox}>
-              <Link to={path.downloads} className={styles.nav_link}>
-                表格下載
-              </Link>
-            </li>
-          </ul>
-        </button>
       </div>
     </div>
   );

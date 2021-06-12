@@ -1,0 +1,105 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+
+.container {
+  width: 100%;
+  color: $dtd-text-color;
+  margin-bottom: $dtd-index-main-spacing;
+}
+.titleBar {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: $dtd-secondary-color;
+  display: flex;
+  align-items: center;
+  padding-left: $dtd-secondary-spacing;
+  font-size: $dtd-h2-size;
+}
+.section {
+  margin: 0 $dtd-secondary-spacing $dtd-section-spacing;
+}
+.content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: $dtd-section-spacing;
+  .content_img {
+    margin-right: $dtd-staff-rwd-spacing;
+  }
+}
+
+.description {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .description_h2 {
+    font-size: $dtd-h2-size;
+    font-weight: bold;
+    margin-bottom: 14px;
+  }
+  .explain {
+    display: flex;
+    font-size: $dtd-p-size;
+  }
+  .description_spanContent {
+    display: flex;
+    .description_spanContentLeft {
+      width: 240px;
+    }
+    .description_span {
+      margin-top: 16px;
+    }
+  }
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .description {
+    .description_spanContent {
+      .description_spanContentLeft {
+        width: 200px;
+      }
+    }
+  }
+}
+@media (max-width: 915px) {
+  .content {
+    .content_img {
+      margin-right: $dtd-section-spacing;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    margin: 0 auto $dtd-section-spacing auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content {
+    width: 316px;
+    flex-direction: column;
+    align-items: flex-start;
+    .content_img {
+      margin-right: 0;
+    }
+  }
+  .description {
+    margin-top: $dtd-secondary-spacing;
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .description {
+    height: 100%;
+  }
+  .description_spanContent {
+    flex-direction: column;
+    margin-top: 16px;
+  }
+}

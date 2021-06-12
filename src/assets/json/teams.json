@@ -1,0 +1,128 @@
+[
+    {
+        "gradeTitle": 2021,
+        "gradeList": [
+            {
+                "groupId": "2-0",
+                "title": "前端程式",
+                "list": [
+                    {
+                        "id": 0,
+                        "memberName": "郭昀甄",
+                        "imgUrl": "assets/images/teams/2021/teams2021_j.png"
+                    },
+                    {
+                        "id": 1,
+                        "memberName": "陳鈺文",
+                        "imgUrl": "assets/images/teams/2021/teams2021_h.png"
+                    },
+                    {
+                        "id": 2,
+                        "memberName": "潘佑萱",
+                        "imgUrl": "assets/images/teams/2021/teams2021_u.png"
+                    }
+                ]
+            },
+            {
+                "groupId": "2-1",
+                "title": "後端程式",
+                "list": [
+                    {
+                        "id": 0,
+                        "memberName": "謝育哲",
+                        "imgUrl": "assets/images/teams/2021/teams2021_m.png"
+                    },
+                    {
+                        "id": 1,
+                        "memberName": "沈桓民",
+                        "imgUrl": "assets/images/teams/2021/teams2021_r.png"
+                    }
+                ]
+            },
+            {
+                "groupId": "2-2",
+                "title": "UI",
+                "list": [
+                    {
+                        "id": 0,
+                        "memberName": "陳穎融",
+                        "imgUrl": "assets/images/teams/2021/teams2021_l.png"
+                    },
+                    {
+                        "id": 1,
+                        "memberName": "李淯萱",
+                        "imgUrl": "assets/images/teams/2021/teams2021_s.png"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "gradeTitle": 2017,
+        "gradeList": [
+            {
+                "groupId": "1-0",
+                "title": "企劃",
+                "list": [
+                    {
+                        "id": 0,
+                        "memberName": "李忠謹",
+                        "imgUrl": "assets/images/teams/2017/teams2017_a.png"
+                    }
+                ]
+            },
+            {
+                "groupId": "1-1",
+                "title": "程式設計",
+                "list": [
+                    {
+                        "id": 0,
+                        "memberName": "葉昆銘",
+                        "imgUrl": "assets/images/teams/2017/teams2017_b.png"
+                    },
+                    {
+                        "id": 1,
+                        "memberName": "周韋廷",
+                        "imgUrl": "assets/images/teams/2017/teams2017_c.png"
+                    },
+                    {
+                        "id": 2,
+                        "memberName": "陳彥樺",
+                        "imgUrl": "assets/images/teams/2017/teams2017_d.png"
+                    },
+                    {
+                        "id": 3,
+                        "memberName": "陳寶桁",
+                        "imgUrl": "assets/images/teams/2017/teams2017_e.png"
+                    },
+                    {
+                        "id": 4,
+                        "memberName": "韓皓光",
+                        "imgUrl": "assets/images/teams/2017/teams2017_f.png"
+                    }
+                ]
+            },
+            {
+                "groupId": "1-2",
+                "title": "美術設計",
+                "list": [
+                    {
+                        "id": 0,
+                        "memberName": "董奕伶",
+                        "imgUrl": "assets/images/teams/2017/teams2017_g.png"
+                    },
+                    {
+                        "id": 1,
+                        "memberName": "李怡青",
+                        "imgUrl": "assets/images/teams/2017/teams2017_h.png"
+                    },
+                    {
+                        "id": 2,
+                        "memberName": "江宛庭",
+                        "imgUrl": "assets/images/teams/2017/teams2017_i.png"
+                    }
+                ]
+            }
+        ]
+    }
+]

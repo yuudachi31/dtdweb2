@@ -1,13 +1,16 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
-//路徑
-import path from '../../utils/path';
-//設計
-import styles from './styles.module.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+//bootstrap
 import { Col, Row } from 'react-bootstrap';
-//取職員資料
+//components
+import Loading from '../Loading';
+//path
+import path from '../../utils/path';
+//css
+import styles from './styles.module.scss';
+//data
 import { getStaff } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
@@ -19,32 +22,49 @@ const StaffGroup = () => {
     },
     dispatch,
   } = useContext(StoreContext);
-  const geturlid = window.location.href;
+
+  //get url
+  const getUrlId = window.location.href;
+
   useEffect(() => {
     getStaff(dispatch);
-    if (geturlid.search(/#/i) != -1) {
-      console.log(geturlid.slice(geturlid.search(/#/i) + 1));
-      Scroll.scroller.scrollTo(geturlid.slice(geturlid.search(/#/i) + 1));
-    }
   }, []);
+
+  useEffect(() => {
+    if (getUrlId.search(/#/i) != -1) {
+      Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
+        offset: -32,
+      });
+    }
+    if (loading) {
+      disableBodyScroll('body');
+    } else {
+      enableBodyScroll('body');
+    }
+  }, [loading]);
+
   return (
     <>
       {loading ? (
-        <div className={styles.container}></div>
+        <div className={styles.container}>
+          <Loading />
+        </div>
       ) : (
         <div className={styles.container}>
           {staff.map((group) => (
             <div
-              className={styles.container}
+              className={styles.staffContainer}
               key={group.groupid}
               id={'group' + group.groupid}
             >
-              <div className={styles.staffGroupName}>{group.title}</div>
-              <Row className={styles.staffBar}>
+              <div className={styles.staffContainer_staffGroupName}>
+                {group.title}
+              </div>
+              <Row className={styles.staffContainer_staffBar}>
                 {group.list.map((tea) => (
                   <Col
                     key={tea.id}
-                    className={styles.staffBar_staffBox}
+                    className={styles.staffContainer_staffBar__staffBox}
                     xl={3}
                     lg={6}
                     md={6}
@@ -54,22 +74,22 @@ const StaffGroup = () => {
                       to={
                         path.staff +
                         '/' +
-                        tea.englishname +
+                        tea.englishName +
                         '?groupid=' +
                         group.groupid +
-                        '&teacherid=' +
-                        tea.id
+                        '&staffpath=' +
+                        (tea.teacherName.search(/（/i) == -1
+                          ? tea.teacherName
+                          : tea.teacherName.slice(
+                              0,
+                              tea.teacherName.search(/（/i),
+                            ))
                       }
-                      className={styles.staffBar_staffBox__img}
                     >
-                      <img src={tea.imgurl} />
+                      <img src={tea.imgUrl} />
                     </Link>
-                    <div className={styles.staffBar_staffBox__content}>
-                      {tea.title}
-                    </div>
-                    <div className={styles.staffBar_staffBox__content}>
-                      {tea.teachername}
-                    </div>
+                    <div>{tea.title}</div>
+                    <div>{tea.teacherName}</div>
                   </Col>
                 ))}
               </Row>

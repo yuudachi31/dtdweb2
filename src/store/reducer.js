@@ -3,49 +3,65 @@ import PropTypes from 'prop-types';
 
 import {
   SET_NEWS,
-  SET_NEWS_DETAIL,
-  SET_HONOR_DETAIL,
-  SET_HONORS,
+  SET_NEW_DETAIL,
   SET_STAFF,
   SET_STAFF_DETAIL,
+  SET_WORKS_SORT,
+  SET_WORKSSORT_ACTIVEITEM,
+  SET_GRADUATONWORKS_SHOW,
+  SET_GRADUATONWORKS_DETAIL,
+  SET_COURSEWORKS_SHOW,
+  SET_COURSEWORKS_DETAIL,
+  SET_GOODWORKS_SHOW,
+  SET_GOODWORKS_DETAIL,
   BEGIN_DATA_REQUEST,
   SUCCESS_DATA_REQUEST,
   FAIL_DATA_REQUEST,
+  SET_BANNER,
+  SET_HOME_NEWS,
 } from './actionTypes';
 
 export const StoreContext = createContext();
 
 const initialState = {
   news: [],
-  newsDetail: {},
-  honors: [],
-  honorDetail: {},
+  newDetail: {},
   staff: [],
   staffDetail: {},
+  worksSort: ['所有'],
+  worksSortActiveItem: '所有',
+  graduationWorksShow: [],
+  graduationWorksDetail: {},
+  courseWorksShow: [],
+  courseWorksDetail: {},
+  goodWorksShow: [],
+  goodWorksDetail: {},
   requestdata: { loading: false, error: null },
+  banner: [],
+  homeNews: [],
 };
 
 function reducer(state, action) {
   switch (action.type) {
+    case SET_BANNER:
+      return {
+        ...state,
+        banner: action.payload,
+      };
+    case SET_HOME_NEWS:
+      return {
+        ...state,
+        homeNews: action.payload,
+      };
     case SET_NEWS:
       return {
         ...state,
         news: action.payload,
       };
-    case SET_NEWS_DETAIL:
+    case SET_NEW_DETAIL:
       return {
         ...state,
-        newsDetail: action.payload,
-      };
-    case SET_HONORS:
-      return {
-        ...state,
-        honors: action.payload,
-      };
-    case SET_HONOR_DETAIL:
-      return {
-        ...state,
-        honorDetail: action.payload,
+        newDetail: action.payload,
       };
     case SET_STAFF:
       return {
@@ -56,6 +72,46 @@ function reducer(state, action) {
       return {
         ...state,
         staffDetail: action.payload,
+      };
+    case SET_WORKS_SORT:
+      return {
+        ...state,
+        worksSort: action.payload,
+      };
+    case SET_WORKSSORT_ACTIVEITEM:
+      return {
+        ...state,
+        worksSortActiveItem: action.payload,
+      };
+    case SET_GRADUATONWORKS_SHOW:
+      return {
+        ...state,
+        graduationWorksShow: action.payload,
+      };
+    case SET_GRADUATONWORKS_DETAIL:
+      return {
+        ...state,
+        graduationWorksDetail: action.payload,
+      };
+    case SET_COURSEWORKS_SHOW:
+      return {
+        ...state,
+        courseWorksShow: action.payload,
+      };
+    case SET_COURSEWORKS_DETAIL:
+      return {
+        ...state,
+        courseWorksDetail: action.payload,
+      };
+    case SET_GOODWORKS_SHOW:
+      return {
+        ...state,
+        goodWorksShow: action.payload,
+      };
+    case SET_GOODWORKS_DETAIL:
+      return {
+        ...state,
+        goodWorksDetail: action.payload,
       };
     case BEGIN_DATA_REQUEST:
       return {
