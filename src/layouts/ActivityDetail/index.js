@@ -77,7 +77,9 @@ const ActivityDetail = (prop) => {
               ></img>
             </div>
             <div className={styles.descriptionSection}>
-              <div className={styles.descriptionSection_title}>活動介紹：</div>
+              <div className={styles.descriptionSection_title}>
+                {activity.category === 'visits' ? `企業介紹：` : `活動介紹：`}
+              </div>
               <div className={styles.descriptionSection_content}>
                 {activity.description}
               </div>
