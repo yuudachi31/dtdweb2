@@ -2,8 +2,36 @@
     {
         "id":0,
         "category":"visits",
-        "title":"企業參訪",
-        "photo":"/assets/images/activities/poor.jpg",
-        "description":""
+        "title":"雷亞｜RAYARK",
+        "photo":"/assets/images/activities/rayark.jpg",
+        "description":"雷亞遊戲於2011年9月，由六位共同創辦人所成立，目前總部位於台北，並且擁有日本東京的據點。從移動平台為遊戲開發的起點，迄今已拓展至多遊戲平台，作品類型涵蓋音樂節奏、休閒趣味、科幻動作以及策略RPG等類型，同時也致力以多元形式傳遞作品於不同層次的感動。雷亞遊戲不斷深入遊戲內涵，嘗試拓展遊戲帶來更多可能性，將感動長久留存在玩家心中。"
+    },
+    {
+        "id":1,
+        "category":"visits",
+        "title":"Google",
+        "photo":"/assets/images/activities/Google.jpg",
+        "description":"Google公司（英語：Google Inc.），是一家美國的跨國科技企業，業務範圍涵蓋網際網路搜尋、雲端運算、廣告技術等領域，開發並提供大量基於網際網路的產品與服務，其主要利潤來自於AdWords等廣告服務。"
+    },
+    {
+        "id":2,
+        "category":"visits",
+        "title":"鈊象電子",
+        "photo":"/assets/images/activities/IGS.jpg",
+        "description":"鈊象電子股份有限公司，簡稱IGS，是台灣一家電子公司，創立於1989年11月10日，以製作電子遊戲軟體為主要業務。其著名遊戲作品有《三國戰紀》系列、《明星三缺一》系列、《唯舞獨尊》等。"
+    },
+    {
+        "id":3,
+        "category":"visits",
+        "title":"華碩",
+        "photo":"/assets/images/activities/ASUS.jpg",
+        "description":"華碩電腦股份有限公司，公司成立於1989年4月1日。是台灣的國際品牌公司，也是全球最大的主機板製造商，並為全球第四大筆記型電腦公司，同時亦為顯示卡、桌上型電腦、通訊產品、光碟機等產品的領導廠商。"
+    },
+    {
+        "id":4,
+        "category":"visits",
+        "title":"遊戲橘子",
+        "photo":"/assets/images/activities/orange.jpg",
+        "description":"遊戲橘子數位科技股份有限公司，簡稱遊戲橘子，成立於1995年6月12日，為台灣一家網路遊戲公司，創辦人為劉柏園（亦為現任執行長），以經營網路遊戲「天堂」而崛起。2002年5月21日在櫃買中心上櫃交易。"
     }
 ]
