@@ -114,7 +114,7 @@ const CourseWorks = () => {
                   <div className={styles.worksBox} key={work.id}>
                     <Link
                       to={
-                        path.graduationWorks +
+                        path.courseWorks +
                         '/' +
                         workslist.sortTitle.slice(
                           workslist.sortTitle.search(/-/i) + 1,
