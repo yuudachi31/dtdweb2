@@ -9,9 +9,16 @@
          'meta_value' => $data['graduateYear'], //當request帶有graduateYear=XXX，只顯示XXX學年組的文章
       ));
 
+      //要求回傳單一筆文章
+      if($data['postID']){
+         if($mainQuery->have_posts()) {
+            $mainQuery->the_post();
+            $results = GraduateProject_ReturnCollection();
+         }
+         return $results;
+      }
       //如果沒有要求特定文章，就回傳全部文章或是單獨某個學年組的文章
-      if($data['postID'] == null){
-
+      else{
          $gradRange = [100, 150];
 
          $results = array();
@@ -39,18 +46,8 @@
                $results = array_values($results);
             }
          }
+         return $results;
       }
-      //要求回傳單一筆文章
-      else{
-         while($mainQuery->have_posts()) {
-
-            $mainQuery->the_post();
-
-            $results = GraduateProject_ReturnCollection();
-         }
-      }
-      
-      return $results;
    }
 
    //統整作品輸出格式

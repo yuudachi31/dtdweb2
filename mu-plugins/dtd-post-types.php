@@ -88,7 +88,8 @@ add_action('init', 'prefix_register_dtd_routes_projects');
 //建立custom post-type中的分類
 function create_taxonomies() 
 {
-  register_taxonomy('taxonomy_workType',array('class_projects', 'excellent_projects' ), array(
+   //class_projects、excellent_projects使用同一組分類項目
+   register_taxonomy('taxonomy_workType',array('class_projects', 'excellent_projects' ), array(
     'hierarchical' => true,
     'labels' => array(
       'name' => '作品分類',
@@ -101,7 +102,7 @@ function create_taxonomies()
     'public' => true,
     'query_var' => true,
     'rewrite' => array( 'slug' => 'taxonomy_workType' ),
-  ));
+   ));
 }
 add_action( 'init', 'create_taxonomies');
 
