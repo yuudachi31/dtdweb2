@@ -21,17 +21,18 @@
   margin-bottom: 16px;
   cursor: default;
   &:hover {
-    box-shadow: 0 2px 0 #85b6dd;
+    border-bottom: solid 2px #85b6dd;
+    margin-bottom: 14px;
   }
 }
 .sorttitle_selected {
   background-color: $dtd-main-bg-color;
-  box-shadow: 0 2px 0 $dtd-main-color;
+  border-bottom: solid 2px $dtd-main-color;
   display: flex;
   justify-content: center;
   align-items: center;
   color: $dtd-text-color;
   padding: 0 16px 8px 16px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   cursor: default;
 }
