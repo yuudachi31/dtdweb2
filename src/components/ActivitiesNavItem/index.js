@@ -35,7 +35,6 @@ const ActivitiesNavItem = (prop) => {
   };
 
   const onClick = () => {
-    setPageContent(uiDispatch, []);
     setPageContent(uiDispatch, getJSON(pathTo));
     setActiveNavItem(uiDispatch, pathTo);
   };
