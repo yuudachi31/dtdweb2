@@ -31,10 +31,6 @@ export const setNewsLoadState = (uiDispatch, options) => {
 export const setPageContent = (uiDispatch, activitiesCategory) => {
   uiDispatch({
     type: constants.SET_PAGE_CONTENT,
-    payload: [],
-  });
-  uiDispatch({
-    type: constants.SET_PAGE_CONTENT,
     payload: activitiesCategory,
   });
   localStorage.setItem(
