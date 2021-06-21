@@ -73,10 +73,10 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '優良作品',
-            'add_new' => '新增作品',
-            'edit_item' => '編輯作品',
-            'all_items' => '全部作品',
+            'name' => '研究成果',
+            'add_new' => '新增成果',
+            'edit_item' => '編輯成果',
+            'all_items' => '全部成果',
             'singular_name' => 'excellent_projects'
       ),
       'menu_icon' => 'dashicons-image-filter'
