@@ -15,7 +15,7 @@
                 },
                 {
                     "imgUrl":"assets/images/index/HomePage-collaboration.png",
-                    "title":"優良作品",
+                    "title":"研究成果",
                     "path":"/goodWorks"
                 }
             ]
@@ -32,7 +32,7 @@
                 },
                 {
                     "imgUrl":"assets/images/index/works.png",
-                    "title":"作品展示",
+                    "title":"畢業專題",
                     "path":"/graduationWorks"
                 },
                 {
