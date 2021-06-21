@@ -143,7 +143,7 @@ const Header = () => {
             </li>
             <li className={styles.pageList_pageBox}>
               <Link to={path.goodWorks} className={styles.pageBox_page}>
-                優良作品
+                研究成果
               </Link>
             </li>
           </ul>
@@ -375,7 +375,7 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    優良作品
+                    研究成果
                   </Link>
                 </li>
               </ul>
