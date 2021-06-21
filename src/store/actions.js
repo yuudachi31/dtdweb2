@@ -336,7 +336,7 @@ export const getGoodWorks = async (dispatch) => {
     console.log(error);
   }
 };
-//取得指定分類優良作品資料
+//取得指定分類研究成果資料
 export const getGoodWorksShow = async (dispatch, options) => {
   const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
@@ -359,7 +359,7 @@ export const getGoodWorksShow = async (dispatch, options) => {
     console.log(error);
   }
 };
-//取得單筆優良作品資料
+//取得單筆研究成果資料
 export const getGoodWorksDetail = async (dispatch, options) => {
   const { workId = 0, sort = '遊戲設計' } = options;
 
