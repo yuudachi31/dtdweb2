@@ -63,7 +63,7 @@ const Activities = (prop) => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner />
+        <Banner bannerNumber={4} />
         <div className={styles.activityContainer} id="content">
           <PageTitle title="系上活動" />
           <Navbar />

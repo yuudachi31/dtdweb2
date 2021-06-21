@@ -19,7 +19,7 @@ const Staff = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner />
+        <Banner bannerNumber={4} />
         <div className={styles.staffContainer}>
           <PageTitle title="教學團隊" />
           <StaffGroup />

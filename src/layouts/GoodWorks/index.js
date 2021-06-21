@@ -87,7 +87,7 @@ const GoodWorks = () => {
       </Helmet>
       <div className={styles.container} id="top">
         <Header />
-        <Banner />
+        <Banner bannerNumber={1} />
         <div className={styles.goodWorksContainer} id="content">
           <PageTitle title="優良作品" />
           {worksSort.length > 1 ? (

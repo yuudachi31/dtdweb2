@@ -21,7 +21,7 @@ const Teams = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner />
+        <Banner bannerNumber={4} />
         {teamsJson.map((grade) => (
           <div className={styles.teamsContainer} key={grade.gradeTitle}>
             <PageTitle title={'系網團隊 ' + grade.gradeTitle} />
