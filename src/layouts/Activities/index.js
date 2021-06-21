@@ -3,10 +3,6 @@ import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
 
-import path from '../../utils/path';
-import DTDActivities from '../../assets/json/DTDActivities.json';
-import DTDGroup from '../../assets/json/DTDGroup.json';
-
 /* component */
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -14,45 +10,40 @@ import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Navbar from '../../components/ActivitiesNavbar';
 import ActivitiesContent from '../../components/ActivitiesContent';
+import { getJSON } from '../../components/GetJson';
 
 /* uiStore */
 import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
-const Activities = (prop) => {
+const Activities = () => {
   const {
     uiState: {
       activitiesPage: { activitiesCategory },
+      activitiesNavBar: { activeItem },
     },
     uiDispatch,
   } = useContext(UIStoreContext);
 
-  const geturlid = window.location.href;
+  const geturl = window.location.href;
 
-  /*判斷是從哪頁進入系上活動來設定系上活動的內容*/
+  const urlSetReducer = () => {
+    const x = location.pathname;
+    setPageContent(uiDispatch, getJSON(x));
+    setActiveNavItem(uiDispatch, x);
+  };
+
   useEffect(() => {
-    if (geturlid.search(/#/i) !== -1) {
+    urlSetReducer();
+    if (geturl.search(/#/i) !== -1) {
       //從ActivityDetail頁回到系上活動，會直接到content的區塊
       Scroll.scroller.scrollTo('content');
-      setPageContent(
-        uiDispatch,
-        JSON.parse(localStorage.getItem('activitiesCategory')),
-      );
-      setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
-    } else if (prop.match.url === path.activities) {
-      setPageContent(uiDispatch, DTDActivities);
-      setActiveNavItem(uiDispatch, path.activities);
-    } else if (prop.match.url === `${path.activities}/DTDGroup`) {
-      setPageContent(uiDispatch, DTDGroup);
-      setActiveNavItem(uiDispatch, `${path.activities}/DTDGroup`);
-    } else {
-      setPageContent(
-        uiDispatch,
-        JSON.parse(localStorage.getItem('activitiesCategory')),
-      );
-      setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
     }
   }, []);
+
+  useEffect(() => {
+    urlSetReducer();
+  }, [activeItem]);
 
   return (
     <Fragment>
