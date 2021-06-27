@@ -13,7 +13,6 @@
 
 //teamsContainer
 .teamsContainer {
-  min-height: 100vh;
   margin: 0 $dtd-margin-desktop;
   display: flex;
   flex-direction: column;
@@ -35,6 +34,37 @@
   }
 }
 
+.teamsContainer_content {
+  width: 100%;
+  text-align: justify;
+  color: $dtd-submenu-text-color;
+  margin-top: $dtd-main-spcing;
+}
+.teamsContainer_link {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: -32px;
+  margin-top: 16px;
+  & a {
+    background-color: #85b6dd;
+    color: #fff;
+    width: 112px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+  }
+  & a:hover {
+    background-color: $dtd-main-color;
+  }
+  & a:active {
+    box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}
 //隔出與footer的間距
 .teamsContainer_bottomSpace {
   height: $dtd-index-main-spacing;
