@@ -21,12 +21,12 @@ const Home = () => {
 
   const {
     state: {
-      requestdata: { loading },
+      requestdata: { homeHasBanner, homeHasNews, loading },
     },
   } = useContext(StoreContext);
 
   useEffect(() => {
-    if (loading) {
+    if (loading && !homeHasBanner && !homeHasNews) {
       disableBodyScroll('body');
     } else {
       enableBodyScroll('body');
