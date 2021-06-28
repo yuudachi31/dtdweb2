@@ -36,7 +36,12 @@ const initialState = {
   courseWorksDetail: {},
   goodWorksShow: [],
   goodWorksDetail: {},
-  requestdata: { loading: false, error: null },
+  requestdata: {
+    homeHasBanner: false,
+    homeHasNews: false,
+    loading: false,
+    error: null,
+  },
   banner: [],
   homeNews: [],
 };
@@ -47,11 +52,19 @@ function reducer(state, action) {
       return {
         ...state,
         banner: action.payload,
+        requestdata: {
+          ...state.requestdata,
+          homeHasBanner: true,
+        },
       };
     case SET_HOME_NEWS:
       return {
         ...state,
         homeNews: action.payload,
+        requestdata: {
+          ...state.requestdata,
+          homeHasNews: true,
+        },
       };
     case SET_NEWS:
       return {

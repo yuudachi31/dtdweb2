@@ -1,11 +1,7 @@
-import React, { Fragment, useContext, useEffect } from 'react';
+import React, { Fragment, useContext, useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
-
-import path from '../../utils/path';
-import DTDActivities from '../../assets/json/DTDActivities.json';
-import DTDGroup from '../../assets/json/DTDGroup.json';
 
 /* component */
 import Header from '../../components/Header';
@@ -14,45 +10,48 @@ import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Navbar from '../../components/ActivitiesNavbar';
 import ActivitiesContent from '../../components/ActivitiesContent';
+import { getJSON } from '../../components/GetJson';
 
 /* uiStore */
 import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
-const Activities = (prop) => {
+const Activities = () => {
   const {
     uiState: {
       activitiesPage: { activitiesCategory },
+      activitiesNavBar: { activeItem },
     },
     uiDispatch,
   } = useContext(UIStoreContext);
 
-  const geturlid = window.location.href;
+  const geturl = window.location.href;
+  const x = location.pathname;
+  const [finishPageContent, setfinishPageContent] = useState(false);
 
-  /*判斷是從哪頁進入系上活動來設定系上活動的內容*/
+  const urlSetReducer = () => {
+    setPageContent(uiDispatch, getJSON(x));
+    setActiveNavItem(uiDispatch, x);
+  };
+
   useEffect(() => {
-    if (geturlid.search(/#/i) !== -1) {
-      //從ActivityDetail頁回到系上活動，會直接到content的區塊
+    urlSetReducer();
+    if (geturl.search(/#/i) !== -1) {
       Scroll.scroller.scrollTo('content');
-      setPageContent(
-        uiDispatch,
-        JSON.parse(localStorage.getItem('activitiesCategory')),
-      );
-      setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
-    } else if (prop.match.url === path.activities) {
-      setPageContent(uiDispatch, DTDActivities);
-      setActiveNavItem(uiDispatch, path.activities);
-    } else if (prop.match.url === `${path.activities}/DTDGroup`) {
-      setPageContent(uiDispatch, DTDGroup);
-      setActiveNavItem(uiDispatch, `${path.activities}/DTDGroup`);
-    } else {
-      setPageContent(
-        uiDispatch,
-        JSON.parse(localStorage.getItem('activitiesCategory')),
-      );
-      setActiveNavItem(uiDispatch, localStorage.getItem('activeItem'));
     }
   }, []);
+
+  useEffect(() => {
+    setPageContent(uiDispatch, getJSON(x));
+  }, [activeItem]);
+
+  useEffect(() => {
+    if (getJSON(x) === activitiesCategory) {
+      setfinishPageContent(true);
+    } else {
+      setfinishPageContent(false);
+    }
+  }, [activitiesCategory]);
 
   return (
     <Fragment>
@@ -67,7 +66,11 @@ const Activities = (prop) => {
         <div className={styles.activityContainer} id="content">
           <PageTitle title="系上活動" />
           <Navbar />
-          <ActivitiesContent activitiesCategory={activitiesCategory} />
+          {finishPageContent ? (
+            <ActivitiesContent activitiesCategory={activitiesCategory} />
+          ) : (
+            <></>
+          )}
         </div>
         <Footer />
       </div>
