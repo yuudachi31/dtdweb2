@@ -3,35 +3,35 @@
         "id":0,
         "category":"DTDGroup",
         "title":"畫匣子",
-        "photo":"/assets/images/activities/drawings.jpg",
+        "photo":"assets/images/activities/drawings.jpg",
         "description":"畫匣子為本系的學術社團，在課後的時間提供學生一個學習電腦繪圖的平台，近期多改為線上教學以便社員能及時在線上交流每個節日畫匣子都會舉辦線下的賀卡交換活動，目的是為了讓喜愛畫圖的同學有更多的互動，促進系上各年級的認識。"
     },
     {
         "id":1,
         "category":"DTDGroup",
         "title":"數位男籃",
-        "photo":"/assets/images/activities/dtd_boy_basketball.jpg",
+        "photo":"assets/images/activities/dtd_boy_basketball.jpg",
         "description":"這是數位男籃，是我們在充實的大學生活中不可少的重要元素，歡笑和汗水是我們喜歡這裡的原因，拚勁和努力是我們在大學匆匆四年間留給自己和大家共同的回憶，我們有完整的球隊體系，歷屆學長們的經驗傳承，只要是喜歡籃球的你，都能夠加入數位男籃這個大家庭，一起四處征戰，讓你的大學生活增添更多色彩。"
     },
     {
         "id":2,
         "category":"DTDGroup",
         "title":"數位女籃",
-        "photo":"/assets/images/activities/dtd_girl_basketball.jpg",
+        "photo":"assets/images/activities/dtd_girl_basketball.jpg",
         "description":"總是充滿歡笑聲的數位女籃，就算沒有經驗也能和大家一起開心的打球，透過教練的指導，讓我們對於籃球有更進一步的了解，透過學姊們的幫助，能夠在練習的過程中得到很多經驗，曾於2020各系隊友誼賽中拿下冠軍，雖然練球時總是球場上最吵鬧的一群人，但是比賽時可是比何人都更拚更努力的，歡迎大家加入數位女籃，一起在大學生活中留下歡樂的回憶！"
     },
     {
         "id":3,
         "category":"DTDGroup",
         "title":"數位男排",
-        "photo":"/assets/images/activities/dtd_boy_volleyball.jpg",
+        "photo":"assets/images/activities/dtd_boy_volleyball.jpg",
         "description":"我們的球風自由奔放，打球氣氛輕鬆愉快，也有許多學長可以分享經驗，在運動的同時還可以互相交流一起進步， 我們的實力穩定在學校前四強隊伍，並於2021年拿下校長盃冠軍，也在2021年全美盃拿下殿軍，歡迎喜歡打球的你加入，加入數位男排讓大學生活更加精采！"
     },
     {
         "id":4,
         "category":"DTDGroup",
         "title":"數位女排",
-        "photo":"/assets/images/activities/dtd_girl_volleyball.jpg",
+        "photo":"assets/images/activities/dtd_girl_volleyball.jpg",
         "description":"數位女排平時總是充滿歡笑，打球的氛圍非常愉快，即便沒有經驗，也會有教練細心的指導，過程中還可以認識系上的學長學姊們，還不趕快加入數位女排，豐富你的大學生活！"
     }
     

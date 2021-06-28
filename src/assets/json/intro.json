@@ -25,7 +25,7 @@
     "classrooms":[
         {
             "classroom_id":1,
-            "classroom_img":"/assets/images/intro/classrooms/E811.jpg",
+            "classroom_img":"assets/images/intro/classrooms/E811.jpg",
             "classroom_name":"數位互動設計實驗室",
             "classroom_info":
             [
@@ -41,7 +41,7 @@
         },
         {
             "classroom_id":2,
-            "classroom_img":"/assets/images/intro/classrooms/E812.jpg",
+            "classroom_img":"assets/images/intro/classrooms/E812.jpg",
             "classroom_name":"多媒體設計實驗室",
             "classroom_info":
             [
@@ -57,7 +57,7 @@
         },
         {
             "classroom_id":3,
-            "classroom_img":"/assets/images/intro/classrooms/E813.jpg",
+            "classroom_img":"assets/images/intro/classrooms/E813.jpg",
             "classroom_name":"手繪創意設計工作室",
             "classroom_info":
             [
@@ -73,7 +73,7 @@
         },
         {
             "classroom_id":4,
-            "classroom_img":"/assets/images/intro/classrooms/E814.jpg",
+            "classroom_img":"assets/images/intro/classrooms/E814.jpg",
             "classroom_name":"數位娛樂設計實驗室",
             "classroom_info":
             [
@@ -89,7 +89,7 @@
         },
         {
             "classroom_id":5,
-            "classroom_img":"/assets/images/intro/classrooms/E134-33.jpg",
+            "classroom_img":"assets/images/intro/classrooms/E134-33.jpg",
             "classroom_name":"互動設計研究室",
             "classroom_info":
             [
