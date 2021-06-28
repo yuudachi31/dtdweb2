@@ -3,14 +3,14 @@
         "id":0,
         "category":"exhibition",
         "title":"校內展",
-        "photo":"/assets/images/activities/exhibition.jpg",
+        "photo":"assets/images/activities/exhibition.jpg",
         "description":"為展現應屆畢業生及研究生之專題結果，數位系每學期會舉辦校內展，除了與全校師生分享過程及討論技術，也對外宣傳本系文化，使系上發揚光大。"
     },
     {
         "id":1,
         "category":"exhibition",
         "title":"數位週",
-        "photo":"/assets/images/activities/DTDWeek.jpg",
+        "photo":"assets/images/activities/DTDWeek.jpg",
         "description":"數位週是數位系的傳統活動，以宣傳數位系為主，讓全校認識數位系本身，並舉辦數位盃體育、電競比賽，讓數位系全體師生共同參與，提供成員交流感情的契機。"
     }
 ]
