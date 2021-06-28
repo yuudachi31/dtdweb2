@@ -34,7 +34,7 @@ const Teams = () => {
           </div>
           <div className={styles.teamsContainer_link}>
             <a
-              href="https://dtd.ntue.edu.tw/gdlab/"
+              href="http://dtd.ntue.edu.tw/gdlab/?p=1663"
               target="_blank"
               rel="noreferrer"
             >
