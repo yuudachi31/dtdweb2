@@ -23,18 +23,18 @@ const IndexBannerNews = () => {
     state: {
       banner,
       homeNews,
-      requestdata: { loading },
+      requestdata: { homeHasBanner, homeHasNews, loading },
     },
     dispatch,
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getHomeData(dispatch);
+    getHomeData(dispatch, homeHasBanner, homeHasNews);
   }, []);
 
   return (
     <>
-      {loading ? (
+      {loading && !homeHasBanner && !homeHasNews ? (
         <Loading />
       ) : (
         <>
