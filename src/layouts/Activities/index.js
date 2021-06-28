@@ -25,28 +25,30 @@ const Activities = () => {
     uiDispatch,
   } = useContext(UIStoreContext);
 
-  const geturl = window.location.href;
-  const x = location.pathname;
+  var pathName;
+  if (location.hash.substring(1).includes('#')) {
+    pathName = location.hash.substring(1).replace('#content', '');
+  } else {
+    pathName = location.hash.substring(1);
+  }
   const [finishPageContent, setfinishPageContent] = useState(false);
 
   const urlSetReducer = () => {
-    setPageContent(uiDispatch, getJSON(x));
-    setActiveNavItem(uiDispatch, x);
+    setPageContent(uiDispatch, getJSON(pathName));
+    setActiveNavItem(uiDispatch, pathName);
   };
 
   useEffect(() => {
     urlSetReducer();
-    if (geturl.search(/#/i) !== -1) {
-      Scroll.scroller.scrollTo('content');
-    }
+    Scroll.scroller.scrollTo('content');
   }, []);
 
   useEffect(() => {
-    setPageContent(uiDispatch, getJSON(x));
+    setPageContent(uiDispatch, getJSON(pathName));
   }, [activeItem]);
 
   useEffect(() => {
-    if (getJSON(x) === activitiesCategory) {
+    if (getJSON(pathName) === activitiesCategory) {
       setfinishPageContent(true);
     } else {
       setfinishPageContent(false);
