@@ -38,10 +38,7 @@ a {
   height: 65px;
 }
 .worksContainer_titleBar__backBtn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // margin: 0 $dtd-secondary-spacing;
+  padding: 9px 22px 9px 0;
   & img {
     width: 30px;
     height: 30px;
@@ -49,11 +46,9 @@ a {
 }
 .worksContainer_titleBar__name {
   border-left: 1px solid rgba(0, 0, 0, 0.08);
-  height: 48px;
-  display: flex;
-  align-items: center;
-  padding-left: 36px;
+  padding: 9px 0 9px 36px;
   font-size: $dtd-h1-size;
+  color: $dtd-text-color;
 }
 
 //作品資訊
