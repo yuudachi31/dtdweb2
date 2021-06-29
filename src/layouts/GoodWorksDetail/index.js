@@ -19,7 +19,7 @@ import { StoreContext } from '../../store/reducer';
 
 const GoodWorksDetail = () => {
   const location = useLocation();
-  const { workId } = QueryString.parse(location.search);
+  const { workId, sort } = QueryString.parse(location.search);
   const {
     state: {
       goodWorksDetail,
@@ -29,7 +29,7 @@ const GoodWorksDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getGoodWorksDetail(dispatch, { workId });
+    getGoodWorksDetail(dispatch, { workId, sort });
     Scroll.scroller.scrollTo('top');
   }, []);
 

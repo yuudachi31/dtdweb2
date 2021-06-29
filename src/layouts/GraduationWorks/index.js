@@ -49,7 +49,7 @@ const GraduationWorks = () => {
 
   useEffect(() => {
     setWorksSort(dispatch, { sort: worksSortActiveItem, path: '/' });
-    if (getUrlId.search(/#/i) != -1) {
+    if (getUrlId.search(/#content/i) != -1) {
       Scroll.scroller.scrollTo('content');
       if (worksSortActiveItem == '所有') {
         getGraduationWorks(dispatch);

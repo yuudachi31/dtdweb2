@@ -51,6 +51,8 @@ const Admissions = (prop) => {
                     ) : (
                       <a
                         href={infoDetail.info_URL}
+                        target="_blank"
+                        rel="noreferrer"
                         className={styles.infoRow_document}
                       >
                         {infoDetail.info_content}
@@ -97,6 +99,8 @@ const Admissions = (prop) => {
                     </div>
                     <a
                       className={`${styles.regulationsItem_document} ${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize}`}
+                      target="_blank"
+                      rel="noreferrer"
                       href={regulationsDocument.document_URL}
                     >
                       <FontAwesomeIcon
