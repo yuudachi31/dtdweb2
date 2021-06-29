@@ -25,7 +25,12 @@ const IndexContent = () => {
                 key={list.title}
                 className={styles.eventBlock}
               >
-                <a href={list.path} className={styles.link_a__textdecnone}>
+                <a
+                  href={list.path}
+                  target={list.id === 3 ? '' : `"_blank"`}
+                  rel="noreferrer"
+                  className={styles.link_a__textdecnone}
+                >
                   <div className={styles.eventLink_img}>
                     <img
                       src={list.imgUrl}
@@ -77,7 +82,16 @@ const IndexContent = () => {
         <Row className={styles.link}>
           {indexContent.link.map((link) => (
             <Col sm={2} xs={6} key={link.title} className={styles.linkBlock}>
-              <a href={link.path} className={styles.link_a__textdecnone}>
+              <a
+                href={link.path}
+                target={
+                  link.id === 2 || link.id === 4 || link.id === 5
+                    ? ''
+                    : `"_blank"`
+                }
+                rel="noreferrer"
+                className={styles.link_a__textdecnone}
+              >
                 <div className={styles.link_img}>
                   <img src={link.imgUrl} alt="" />
                 </div>
