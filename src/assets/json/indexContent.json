@@ -15,8 +15,8 @@
                 },
                 {
                     "imgUrl":"assets/images/index/HomePage-collaboration.png",
-                    "title":"優良作品",
-                    "path":"/goodWorks"
+                    "title":"研究成果",
+                    "path":"#/goodWorks"
                 }
             ]
         }
@@ -32,7 +32,7 @@
                 },
                 {
                     "imgUrl":"assets/images/index/works.png",
-                    "title":"作品展示",
+                    "title":"畢業專題",
                     "path":"/graduationWorks"
                 },
                 {
@@ -57,7 +57,7 @@
         {
             "imgUrl":"assets/images/index/StudyGroup.png",
             "title":"讀書會",
-            "path":"/activities/DTDGroup"
+            "path":"#/activities/DTDGroup"
         },
         {
             "imgUrl":"assets/images/index/Fan.png",
@@ -67,12 +67,12 @@
         {
             "imgUrl":"assets/images/index/TeachGroup.png",
             "title":"教學團隊",
-            "path":"/staff"
+            "path":"#/staff"
         },
         {
             "imgUrl":"assets/images/index/WebGroup.png",
             "title":"系網團隊",
-            "path":"/teams"
+            "path":"#/teams"
         },
         {
             "imgUrl":"assets/images/index/Ntue.png",

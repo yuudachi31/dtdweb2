@@ -87,7 +87,7 @@ const GraduationWorks = () => {
       </Helmet>
       <div className={styles.container} id="top">
         <Header />
-        <Banner />
+        <Banner bannerNumber={1} />
         <div className={styles.graduationWorksContainer} id="content">
           <PageTitle title="畢業專題" />
           {worksSort.length > 0 ? (

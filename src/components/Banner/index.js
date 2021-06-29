@@ -1,12 +1,22 @@
 import styles from './styles.module.scss';
 
-import banner from '../../assets/images/banners/banner_4.jpg';
-const Banner = () => {
+import banner_1 from '../../assets/images/banners/banner_1.jpg';
+import banner_2 from '../../assets/images/banners/banner_2.jpg';
+import banner_4 from '../../assets/images/banners/banner_4.jpg';
+const Banner = (prop) => {
   return (
     <div className={styles.container}>
-      {/* <div className={`${styles.banner} ${styles.banner__image}`}></div> */}
       <div className={styles.banner}>
-        <img src={banner} className={styles.banner_img} />
+        <img
+          src={
+            prop.bannerNumber == 1
+              ? banner_1
+              : prop.bannerNumber == 2
+              ? banner_2
+              : banner_4
+          }
+          className={styles.banner_img}
+        />
       </div>
     </div>
   );

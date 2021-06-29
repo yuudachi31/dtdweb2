@@ -73,10 +73,10 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '優良作品',
-            'add_new' => '新增作品',
-            'edit_item' => '編輯作品',
-            'all_items' => '全部作品',
+            'name' => '研究成果',
+            'add_new' => '新增成果',
+            'edit_item' => '編輯成果',
+            'all_items' => '全部成果',
             'singular_name' => 'excellent_projects'
       ),
       'menu_icon' => 'dashicons-image-filter'
@@ -88,7 +88,8 @@ add_action('init', 'prefix_register_dtd_routes_projects');
 //建立custom post-type中的分類
 function create_taxonomies() 
 {
-  register_taxonomy('taxonomy_workType',array('class_projects', 'excellent_projects' ), array(
+   //class_projects、excellent_projects使用同一組分類項目
+   register_taxonomy('taxonomy_workType',array('class_projects', 'excellent_projects' ), array(
     'hierarchical' => true,
     'labels' => array(
       'name' => '作品分類',
@@ -101,7 +102,7 @@ function create_taxonomies()
     'public' => true,
     'query_var' => true,
     'rewrite' => array( 'slug' => 'taxonomy_workType' ),
-  ));
+   ));
 }
 add_action( 'init', 'create_taxonomies');
 

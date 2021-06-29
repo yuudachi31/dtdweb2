@@ -18,7 +18,7 @@ const Achievements = () => {
         <meta name="description" content="數位科技設計學系的師生榮譽榜" />
       </Helmet>
       <Header />
-      <Banner />
+      <Banner bannerNumber={2} />
       <div className={styles.container}>
         <News pageStyle="achievements" />
       </div>

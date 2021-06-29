@@ -23,18 +23,18 @@ const IndexBannerNews = () => {
     state: {
       banner,
       homeNews,
-      requestdata: { loading },
+      requestdata: { homeHasBanner, homeHasNews, loading },
     },
     dispatch,
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getHomeData(dispatch);
+    getHomeData(dispatch, homeHasBanner, homeHasNews);
   }, []);
 
   return (
     <>
-      {loading ? (
+      {loading && !homeHasBanner && !homeHasNews ? (
         <Loading />
       ) : (
         <>
@@ -42,13 +42,23 @@ const IndexBannerNews = () => {
             <Carousel indicators={false} controls={false}>
               {banner.map((bannerImg) => (
                 <Carousel.Item interval={5000} key={bannerImg.id}>
-                  <a href={bannerImg.link === null ? `/` : `${bannerImg.link}`}>
-                    <img
-                      className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
-                      src={bannerImg.bannerUrl}
-                      alt="First slide"
-                    />
-                  </a>
+                  {bannerImg.link === '' ? (
+                    <Link to={path.home}>
+                      <img
+                        className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
+                        src={bannerImg.bannerUrl}
+                        alt="First slide"
+                      />
+                    </Link>
+                  ) : (
+                    <a href={`${bannerImg.link}`}>
+                      <img
+                        className={`d-block w-100 ${styles.carousel_img__rwdHeight}`}
+                        src={bannerImg.bannerUrl}
+                        alt="First slide"
+                      />
+                    </a>
+                  )}
                 </Carousel.Item>
               ))}
             </Carousel>

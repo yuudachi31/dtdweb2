@@ -18,7 +18,7 @@ const Announcements = () => {
         <meta name="description" content="數位科技設計學系的系務公告" />
       </Helmet>
       <Header />
-      <Banner />
+      <Banner bannerNumber={2} />
       <div className={styles.container}>
         <News pageStyle="announcements" />
       </div>

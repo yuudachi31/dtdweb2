@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 import {
   SET_NEWS,
   SET_NEW_DETAIL,
@@ -20,9 +21,6 @@ import {
 } from './actionTypes';
 
 const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
-
-// import bannerjson from '../assets/json/banner.json';
-// import newsjson from '../assets/json/news.json';
 
 export const getNews = async (dispatch, options) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
@@ -336,7 +334,7 @@ export const getGoodWorks = async (dispatch) => {
     console.log(error);
   }
 };
-//取得指定分類優良作品資料
+//取得指定分類研究成果資料
 export const getGoodWorksShow = async (dispatch, options) => {
   const { sort = '遊戲設計' } = options;
   dispatch({ type: BEGIN_DATA_REQUEST });
@@ -359,7 +357,7 @@ export const getGoodWorksShow = async (dispatch, options) => {
     console.log(error);
   }
 };
-//取得單筆優良作品資料
+//取得單筆研究成果資料
 export const getGoodWorksDetail = async (dispatch, options) => {
   const { workId = 0, sort = '遊戲設計' } = options;
 
@@ -383,7 +381,7 @@ export const getGoodWorksDetail = async (dispatch, options) => {
   }
 };
 
-export const getHomeData = async (dispatch) => {
+export const getHomeData = async (dispatch, homeHasBanner, homeHasNews) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     //從後台取資料
@@ -393,15 +391,17 @@ export const getHomeData = async (dispatch) => {
     const newsResponse = await axios.get(newsUrl);
     const banner = bannerResponse.data;
     const homeNews = newsResponse.data;
-    dispatch({
-      type: SET_BANNER,
-      payload: banner,
-    });
-    dispatch({
-      type: SET_HOME_NEWS,
-      payload: homeNews,
-    });
-    dispatch({ type: SUCCESS_DATA_REQUEST });
+    if (!homeHasBanner && !homeHasNews) {
+      dispatch({
+        type: SET_BANNER,
+        payload: banner,
+      });
+      dispatch({
+        type: SET_HOME_NEWS,
+        payload: homeNews,
+      });
+      dispatch({ type: SUCCESS_DATA_REQUEST });
+    }
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
   }

@@ -32,7 +32,7 @@ const Intro = () => {
         <meta name="description" content="數位科技設計學系的本系簡介" />
       </Helmet>
       <Header />
-      <Banner />
+      <Banner bannerNumber={4} />
       <>
         {introDetail.about_content &&
         introDetail.concepts &&

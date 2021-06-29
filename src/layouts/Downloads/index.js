@@ -21,7 +21,7 @@ const Download = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner />
+        <Banner bannerNumber={2} />
         <div className={styles.downloadContainer}>
           <PageTitle title="表格下載" />
           <DocsGroup json={downloadJson} />

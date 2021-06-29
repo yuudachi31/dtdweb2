@@ -21,7 +21,7 @@ const Rules = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner />
+        <Banner bannerNumber={2} />
         <div className={styles.rulesContainer}>
           <PageTitle title="辦法規章" />
           <DocsGroup json={rulesJson} />

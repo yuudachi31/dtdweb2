@@ -11,13 +11,14 @@
       ));
 
       //要求回傳單一筆文章
-      if($data['postID'] != null){
-         while($mainQuery->have_posts()) {
+      if($data['postID']){
+         if($mainQuery->have_posts()) {
             $mainQuery->the_post();
             $results = ExcellentProject_ReturnCollection();
          }
          return $results;
       }
+
       //如果要求特定作品分類
       else if($workType != null){
 
@@ -30,14 +31,15 @@
          while($mainQuery->have_posts()) {
             $mainQuery->the_post();
 
+            //如果這篇文章有特定的分類標籤
             if(ExcellentProject_IsPostHasTheTaxonomy($workType)){
                $collection = ExcellentProject_ReturnCollection();
-
                $results[0]['sortList'] = ExcellentProject_RandomInsertCollection($results[0]['sortList'], $collection);
             }
          }
          return $results;
       }
+
       //全部文章
       else{
       
@@ -69,7 +71,7 @@
             }
          }
 
-         //消除沒有作品的作品類型
+         //消除沒有作品的分類項目
          for($i = count($results) - 1; $i >= 0; $i--){
             if(count($results[$i]['sortList']) == 0){
                array_splice($results, $i, 1);
@@ -77,9 +79,7 @@
          }
 
          return $results;
-      }
-      
-      
+      } 
    }
 
    //統整作品輸出格式
@@ -121,7 +121,7 @@
       return $collection;
    }
 
-   //無法直接插入在某index資料會出問題，因此使用此函式
+   //在隨機的index插入作品
    function ExcellentProject_RandomInsertCollection($array, $collection){
       
       //先插在最後一項
@@ -156,7 +156,7 @@
       return $isExist;
    }
 
-   //因為wp後台自訂的作品分類名為A-XXX，為了只回傳分類名稱，依據特定符號為切割點，並回傳切割後的尾端部分
+   //因為wp後台自訂的作品分類名為A-分類名、B-分類名，為了只回傳分類名稱，依據特定符號為切割點，並回傳切割後的尾端部分
    function ExcellentProject_ReturnFiltedTaxonomyName($name){
       $splittedString = mb_split("-", $name);
       return $splittedString[count($splittedString)-1];

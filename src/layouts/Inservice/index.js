@@ -18,7 +18,7 @@ const Inservice = () => {
         <meta name="description" content="數位科技設計學系的在職碩士班" />
       </Helmet>
       <Header />
-      <Banner />
+      <Banner bannerNumber={4} />
       <div className={styles.container}>
         <PageTitle title="在職碩士班" />
         <Admissions index={2} />

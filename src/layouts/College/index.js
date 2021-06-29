@@ -18,7 +18,7 @@ const College = () => {
         <meta name="description" content="數位科技設計學系的學士班" />
       </Helmet>
       <Header />
-      <Banner />
+      <Banner bannerNumber={4} />
       <div className={styles.container}>
         <PageTitle title="學士班" />
         <Admissions index={0} />

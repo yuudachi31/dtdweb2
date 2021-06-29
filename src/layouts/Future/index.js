@@ -19,7 +19,7 @@ const Future = () => {
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner />
+        <Banner bannerNumber={4} />
         <div className={styles.futureContainer}>
           <PageTitle title="修課與未來發展" />
           <FutureContent />
