@@ -17,8 +17,8 @@ const Intro = () => {
   const geturlid = window.location.href;
   useEffect(() => {
     setIntroDetail(introjson);
-    if (geturlid.search(/#/i) != -1) {
-      Scroll.scroller.scrollTo(geturlid.slice(geturlid.search(/#/i) + 1));
+    if (geturlid.search(/#classroom/) != -1) {
+      Scroll.scroller.scrollTo('classroom');
     } else {
       window.scrollTo(0, 0);
     }

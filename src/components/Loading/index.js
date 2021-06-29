@@ -10,7 +10,7 @@ const Loading = () => {
         <FontAwesomeIcon
           className={styles.loadingBlock_icon}
           icon={faSpinner}
-          // spin
+          spin
         />
         <p className={styles.loadingBlock_text}>Loading . . .</p>
       </div>
