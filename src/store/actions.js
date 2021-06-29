@@ -20,7 +20,7 @@ import {
   SET_HOME_NEWS,
 } from './actionTypes';
 
-const BASE_URL = 'http://dtd.ntue.edu.tw:8080/wp-json/dtd/v1';
+const BASE_URL = 'https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1';
 
 export const getNews = async (dispatch, options) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
