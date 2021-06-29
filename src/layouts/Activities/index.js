@@ -38,9 +38,15 @@ const Activities = () => {
     setActiveNavItem(uiDispatch, pathName);
   };
 
+  const getUrlId = window.location.href;
+
   useEffect(() => {
     urlSetReducer();
-    Scroll.scroller.scrollTo('content');
+    if (getUrlId.search(/#content/i) != -1) {
+      Scroll.scroller.scrollTo('content');
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   useEffect(() => {
