@@ -4,16 +4,19 @@
             "title": "活動公告 / Event",
             "list":[
                 {
+                    "id": 1,
                     "imgUrl":"assets/images/index/HomePage-yodex.png",
                     "title":"新一代設計展",
                     "path":"https://www.facebook.com/ntuedtd110/"
                 },
                 {
+                    "id": 2,
                     "imgUrl":"assets/images/index/HomePage-camp.png",
                     "title":"數位營",
                     "path":"https://www.facebook.com/ntuedtdcamp/"
                 },
                 {
+                    "id": 3,
                     "imgUrl":"assets/images/index/HomePage-collaboration.png",
                     "title":"研究成果",
                     "path":"#/goodWorks"
@@ -50,31 +53,37 @@
     ],
     "link":[
         {
+            "id": 1,
             "imgUrl":"assets/images/index/Job.png",
             "title":"就業分析",
             "path":"http://polomilky.github.io/paperwebsite/"
         },
-        {
+        {   
+            "id": 2,
             "imgUrl":"assets/images/index/StudyGroup.png",
             "title":"讀書會",
             "path":"#/activities/DTDGroup"
         },
         {
+            "id": 3,
             "imgUrl":"assets/images/index/Fan.png",
             "title":"粉絲團",
             "path":"https://www.facebook.com/ntuedtd/?ref=ts&fref=ts"
         },
         {
+            "id": 4,
             "imgUrl":"assets/images/index/TeachGroup.png",
             "title":"教學團隊",
             "path":"#/staff"
         },
         {
+            "id": 5,
             "imgUrl":"assets/images/index/WebGroup.png",
             "title":"系網團隊",
             "path":"#/teams"
         },
         {
+            "id": 6,
             "imgUrl":"assets/images/index/Ntue.png",
             "title":"國北教大",
             "path":"https://www.ntue.edu.tw/"
