@@ -31,8 +31,8 @@ const StaffGroup = () => {
   }, []);
 
   useEffect(() => {
-    if (getUrlId.search(/#/i) != -1) {
-      Scroll.scroller.scrollTo(getUrlId.slice(getUrlId.search(/#/i) + 1), {
+    if (getUrlId.search(/#group/i) != -1) {
+      Scroll.scroller.scrollTo(`group${getUrlId.slice(-1)}`, {
         offset: -32,
       });
     }
