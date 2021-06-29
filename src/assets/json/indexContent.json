@@ -62,7 +62,7 @@
             "id": 2,
             "imgUrl":"assets/images/index/StudyGroup.png",
             "title":"讀書會",
-            "path":"#/activities/DTDGroup"
+            "path":"#/activities/DTDGroup#content"
         },
         {
             "id": 3,
