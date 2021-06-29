@@ -12,17 +12,21 @@ const WorksDetail = (prop) => {
   return (
     <div className={styles.worksContainer}>
       {/* 作品名稱 */}
-      <Row className={styles.worksContainer_titleBar}>
+      <div className={styles.worksContainer_titleBar}>
+        {/* <Col lg={1} md={1} sm={2} xs={2}> */}
         <Link
           to={path + '#content'}
           className={styles.worksContainer_titleBar__backBtn}
         >
           <img src={leftArrow} />
         </Link>
+        {/* </Col> */}
+        {/* <Col lg={11} md={11} sm={10} xs={10}> */}
         <div className={styles.worksContainer_titleBar__name}>
           {worksDetail.workTitle}
         </div>
-      </Row>
+        {/* </Col> */}
+      </div>
       {/* 作品資訊 */}
       <Row className={styles.worksContainer_contentBar}>
         {/* 作品相片 */}
