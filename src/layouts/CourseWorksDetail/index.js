@@ -3,7 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //componemts
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -30,14 +29,14 @@ const CourseWorksDetail = () => {
 
   useEffect(() => {
     getCourseWorksDetail(dispatch, { workId, sort });
-    Scroll.scroller.scrollTo('top');
   }, []);
 
   useEffect(() => {
     if (loading) {
-      disableBodyScroll('body');
+      Scroll.scroller.scrollTo('top');
+      document.body.style.overflow = 'hidden';
     } else {
-      enableBodyScroll('body');
+      document.body.style.overflow = 'scroll';
     }
   }, [loading]);
 

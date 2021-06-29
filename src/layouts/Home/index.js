@@ -2,7 +2,6 @@ import React, { Fragment, useEffect, useContext } from 'react';
 import { Helmet } from 'react-helmet';
 import styles from './styles.module.scss';
 import * as Scroll from 'react-scroll';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 /* store */
 import { StoreContext } from '../../store/reducer';
@@ -27,9 +26,9 @@ const Home = () => {
 
   useEffect(() => {
     if (loading && !homeHasBanner && !homeHasNews) {
-      disableBodyScroll('body');
+      document.body.style.overflow = 'hidden';
     } else {
-      enableBodyScroll('body');
+      document.body.style.overflow = 'scroll';
     }
   }, [loading]);
 

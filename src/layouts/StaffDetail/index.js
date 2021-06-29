@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as QueryString from 'query-string';
 import * as Scroll from 'react-scroll';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //bootstrap
 import { Col, Row } from 'react-bootstrap';
 //componemts
@@ -36,7 +35,6 @@ const StaffDetail = () => {
 
   useEffect(() => {
     getStaffDetail(dispatch, { staffpath });
-    Scroll.scroller.scrollTo('top');
     if (staff.length == 0) {
       getStaff(dispatch);
     }
@@ -44,9 +42,10 @@ const StaffDetail = () => {
 
   useEffect(() => {
     if (loading) {
-      disableBodyScroll('body');
+      Scroll.scroller.scrollTo('top');
+      document.body.style.overflow = 'hidden';
     } else {
-      enableBodyScroll('body');
+      document.body.style.overflow = 'scroll';
     }
   }, [loading]);
 

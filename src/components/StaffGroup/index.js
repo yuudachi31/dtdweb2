@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import * as Scroll from 'react-scroll';
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //bootstrap
 import { Col, Row } from 'react-bootstrap';
 //components
@@ -37,9 +36,9 @@ const StaffGroup = () => {
       });
     }
     if (loading) {
-      disableBodyScroll('body');
+      document.body.style.overflow = 'hidden';
     } else {
-      enableBodyScroll('body');
+      document.body.style.overflow = 'scroll';
     }
   }, [loading]);
 
