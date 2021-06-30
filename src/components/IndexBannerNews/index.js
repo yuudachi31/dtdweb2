@@ -82,11 +82,15 @@ const IndexBannerNews = () => {
                         }/newinfo?id=${newsDetail.id}`}
                         className={styles.link_a__textdecnone}
                       >
-                        <p className={styles.news_p}>
-                          {newsDetail.isLatest === true
-                            ? `［最新］${newsDetail.title}`
-                            : `${newsDetail.title}`}
-                        </p>
+                        <div
+                          className={styles.news_p}
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              newsDetail.isLatest === true
+                                ? `［最新］${newsDetail.title}`
+                                : `${newsDetail.title}`,
+                          }}
+                        ></div>
                       </Link>
                       <hr className={styles.news_p}></hr>
                       <span className={styles.news_span}>
