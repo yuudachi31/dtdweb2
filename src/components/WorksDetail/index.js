@@ -12,7 +12,7 @@ const WorksDetail = (prop) => {
   return (
     <div className={styles.worksContainer}>
       {/* 作品名稱 */}
-      <Row className={styles.worksContainer_titleBar}>
+      <div className={styles.worksContainer_titleBar}>
         <Link
           to={path + '#content'}
           className={styles.worksContainer_titleBar__backBtn}
@@ -22,7 +22,7 @@ const WorksDetail = (prop) => {
         <div className={styles.worksContainer_titleBar__name}>
           {worksDetail.workTitle}
         </div>
-      </Row>
+      </div>
       {/* 作品資訊 */}
       <Row className={styles.worksContainer_contentBar}>
         {/* 作品相片 */}
