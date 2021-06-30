@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 // 設計
 import styles from './styles.module.scss';
@@ -18,11 +18,38 @@ import {
 } from '../../uiStore/actions';
 import { UIStoreContext } from '../../uiStore/reducer';
 
+const useOnClickOutside = (ref, handler) => {
+  const { uiDispatch } = useContext(UIStoreContext);
+
+  useEffect(() => {
+    const listener = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        console.log('outside');
+        clickHamburgerLink(uiDispatch);
+        return;
+      }
+
+      handler(event);
+    };
+
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [ref, handler]);
+};
+
 const Header = () => {
+  const ref = useRef(null);
+  const handler = useCallback(() => {}, []);
   const { uiState, uiDispatch } = useContext(UIStoreContext);
+  useOnClickOutside(ref, handler);
 
   return (
-    <div className={styles.header}>
+    <div className={styles.header} ref={ref}>
       <Link to={path.home} onClick={() => clickHamburgerLink(uiDispatch)}>
         <img className={styles.header_logo__width} src={logo}></img>
       </Link>
