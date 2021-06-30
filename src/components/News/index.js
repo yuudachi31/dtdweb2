@@ -80,19 +80,21 @@ const News = (prop) => {
                 >
                   <div
                     className={`${styles.newBox_title} ${styles.newBox_text_ellipsis}`}
-                  >
-                    {newContent.isLatest
-                      ? `［最新］${newContent.title}`
-                      : newContent.title}
-                  </div>
+                    dangerouslySetInnerHTML={{
+                      __html: newContent.isLatest
+                        ? `［最新］${newContent.title}`
+                        : newContent.title,
+                    }}
+                  ></div>
                   <div
                     className={`${styles.newBox_content} ${styles.newBox_text_ellipsis}`}
-                  >
-                    {newContent.content
-                      .replace(/<li>|<p>/g, ' ')
-                      .replace(/<[^>]*>?/gm, '')
-                      .replace(/&nbsp;/g, '')}
-                  </div>
+                    dangerouslySetInnerHTML={{
+                      __html: newContent.content
+                        .replace(/<li>|<p>/g, ' ')
+                        .replace(/<[^>]*>?/gm, '')
+                        .replace(/&nbsp;/g, ''),
+                    }}
+                  ></div>
                 </Link>
               </div>
             ))}

@@ -44,7 +44,10 @@ const NewDetail = (prop) => {
             >
               <img className={styles.backBtn_img__width} src={leftArrow} />
             </Link>
-            <div className={styles.titleBar_title}>{prop.title}</div>
+            <div
+              className={styles.titleBar_title}
+              dangerouslySetInnerHTML={{ __html: prop.title }}
+            ></div>
           </div>
           <div
             ref={ref}
