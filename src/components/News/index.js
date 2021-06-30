@@ -31,6 +31,12 @@ const News = (prop) => {
 
   useEffect(() => {
     if (loading) {
+      if (newsLoadState) {
+        window.scrollTo(0, 0);
+        setNewsLoadState(uiDispatch, { loadState: false });
+      } else {
+        Scroll.scroller.scrollTo('pageTitle');
+      }
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'scroll';
@@ -42,12 +48,6 @@ const News = (prop) => {
       clickNumber: page == undefined ? 1 : page,
       pageStyle: prop.pageStyle,
     });
-    if (newsLoadState) {
-      window.scrollTo(0, 0);
-      setNewsLoadState(uiDispatch, { loadState: false });
-    } else {
-      Scroll.scroller.scrollTo('pageTitle');
-    }
   }, [page]);
 
   return (
