@@ -46,7 +46,7 @@
                 {
                     "imgUrl":"assets/images/index/classroom.png",
                     "title":"教室導覽",
-                    "path":"/intro#classroom"
+                    "path":"/intro"
                 }
             ]
         }

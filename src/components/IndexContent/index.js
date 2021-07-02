@@ -62,7 +62,17 @@ const IndexContent = () => {
                 key={list.title}
                 className={styles.admissionBlock}
               >
-                <Link to={list.path} className={styles.link_a__textdecnone}>
+                <Link
+                  to={
+                    list.title === '教室導覽'
+                      ? {
+                          pathname: list.path,
+                          state: { prevPath: location.pathname },
+                        }
+                      : list.path
+                  }
+                  className={styles.link_a__textdecnone}
+                >
                   <div className={styles.link_img}>
                     <img
                       src={list.imgUrl}

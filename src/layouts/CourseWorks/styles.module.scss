@@ -44,29 +44,32 @@ a {
 //Masonry css
 .worksArea {
   display: flex;
-  width: 100%;
+  width: 102.5%;
 }
 .worksArea_column {
-  margin-right: 2.5%;
-  &:last-child {
-    margin-right: 0;
-  }
+  padding-right: 1.25%;
+  padding-left: 1.25%;
 }
 @media (max-width: $dtd-media-tablet) {
+  .worksArea {
+    width: 100%;
+  }
   .worksArea_column {
-    margin-right: 10%;
+    padding-left: 0%;
+    padding-right: 5%;
     &:last-child {
-      margin-right: 0;
+      padding-right: 0;
+      padding-left: 5%;
     }
   }
 }
 @media (max-width: $dtd-media-phone) {
   .worksArea_column {
-    margin-right: 3%;
-    margin-left: 3%;
+    padding-right: 3%;
+    padding-left: 3%;
     &:last-child {
-      margin-right: 3%;
-      margin-left: 3%;
+      padding-right: 3%;
+      padding-left: 3%;
     }
   }
 }

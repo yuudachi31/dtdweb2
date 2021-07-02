@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 // 設計
 import styles from './styles.module.scss';
@@ -20,13 +20,30 @@ import { UIStoreContext } from '../../uiStore/reducer';
 
 const Header = () => {
   const { uiState, uiDispatch } = useContext(UIStoreContext);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const listener = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        clickHamburgerLink(uiDispatch);
+      }
+    };
+
+    document.addEventListener('mousedown', listener);
+    document.addEventListener('touchstart', listener);
+
+    return () => {
+      document.removeEventListener('mousedown', listener);
+      document.removeEventListener('touchstart', listener);
+    };
+  }, [ref]);
 
   return (
     <div className={styles.header}>
       <Link to={path.home} onClick={() => clickHamburgerLink(uiDispatch)}>
         <img className={styles.header_logo__width} src={logo}></img>
       </Link>
-      <div className={styles.header_nav}>
+      <div className={styles.header_nav} ref={ref}>
         {/* navbar */}
         {/* 關於數位 */}
         <button className={styles.nav_dropdownMenu}>

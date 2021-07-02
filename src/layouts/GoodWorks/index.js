@@ -115,9 +115,7 @@ const GoodWorks = () => {
                       to={
                         path.goodWorks +
                         '/' +
-                        workslist.sortTitle.slice(
-                          workslist.sortTitle.search(/-/i) + 1,
-                        ) +
+                        workslist.sortTitle +
                         '/' +
                         work.workTitle +
                         '?workId=' +
@@ -136,9 +134,7 @@ const GoodWorks = () => {
                         to={
                           path.goodWorks +
                           '/' +
-                          workslist.sortTitle.slice(
-                            workslist.sortTitle.search(/-/i) + 1,
-                          ) +
+                          workslist.sortTitle +
                           '/' +
                           work.workTitle +
                           '?workId=' +

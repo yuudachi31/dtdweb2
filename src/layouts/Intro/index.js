@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import * as Scroll from 'react-scroll';
 import Carousel from 'react-bootstrap/Carousel';
@@ -13,16 +14,21 @@ import Footer from '../../components/Footer';
 import introjson from '../../assets/json/intro.json';
 
 const Intro = () => {
+  let history = useHistory();
   const [introDetail, setIntroDetail] = useState({});
-  const geturlid = window.location.href;
+
   useEffect(() => {
     setIntroDetail(introjson);
-    if (geturlid.search(/#classroom/) != -1) {
+    if (
+      history.location.state !== undefined &&
+      history.location.state.prevPath === '/' &&
+      introDetail.classrooms
+    ) {
       Scroll.scroller.scrollTo('classroom');
     } else {
       window.scrollTo(0, 0);
     }
-  }, [introDetail]);
+  }, [introDetail, history.location.state]);
 
   return (
     <Fragment>
