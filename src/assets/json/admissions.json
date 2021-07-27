@@ -6,15 +6,11 @@
         [
             {
                 "info_title":"招生人數：",
-                "info_content":"1班43人"
+                "info_content":"1班42人"
             },
             {
                 "info_title":"入學方式：",
-                "info_content":"繁星推甄 / 個人申請 / 考試分發 / 特殊選材"
-            },
-            {
-                "info_title":"入學對象：",
-                "info_content":"依該學年度大學甄選入學或大學入學考試招生簡章資格。"
+                "info_content":"繁星推甄 / 個人申請 / 考試分發 / 特殊選才"
             },
             {
                 "info_title":"平日上課時間：",
@@ -28,17 +24,6 @@
             {
                 "info_title":"備註：",
                 "info_content":"詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。"
-            }
-        ],
-        "regulations_rules":
-        [
-            {
-                "rule_title": "1. 畢業學分數128學分",
-                "rule_content": "1. 含校共同課程10學分(102學年度入學生為8學分) \n\n2. 跨領域課程18學分(102學年度入學生為20學分) \n\n3. 系專業課程必修51學分及選修39學分，彈性課程10學分"
-            },
-            {
-                "rule_title": "2. 畢修通識課程28學分",
-                "rule_content": "請至通識中心依入學年度查詢"
             }
         ],
         "regulations_documents":
