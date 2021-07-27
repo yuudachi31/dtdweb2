@@ -16,7 +16,7 @@ const Admissions = (prop) => {
   return (
     <>
       {admissionsDetail.info &&
-      admissionsDetail.regulations_rules &&
+      // admissionsDetail.regulations_rules &&
       admissionsDetail.regulations_documents ? (
         <>
           <div className={styles.admissions_titleBar}>入學資訊</div>
@@ -66,23 +66,24 @@ const Admissions = (prop) => {
           <div className={styles.admissions_titleBar}>修課規定</div>
           <div className={styles.admissions_regulationsBlock}>
             <div className={styles.regulationsBlock_regulationsBox}>
-              {admissionsDetail.regulations_rules.map((regulationsRule) => (
-                <div
-                  className={styles.regulationsBox_regulationsItem__margin}
-                  key={regulationsRule.rule_title}
-                >
+              {admissionsDetail.regulations_rules &&
+                admissionsDetail.regulations_rules.map((regulationsRule) => (
                   <div
-                    className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                    className={styles.regulationsBox_regulationsItem__margin}
+                    key={regulationsRule.rule_title}
                   >
-                    {regulationsRule.rule_title}
+                    <div
+                      className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                    >
+                      {regulationsRule.rule_title}
+                    </div>
+                    <div
+                      className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
+                    >
+                      {regulationsRule.rule_content}
+                    </div>
                   </div>
-                  <div
-                    className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
-                  >
-                    {regulationsRule.rule_content}
-                  </div>
-                </div>
-              ))}
+                ))}
             </div>
             <div className={styles.regulationsBlock_divisionLine}></div>
             <div className={styles.regulationsBlock_regulationsBox}>
