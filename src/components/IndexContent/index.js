@@ -27,7 +27,7 @@ const IndexContent = () => {
               >
                 <a
                   href={list.path}
-                  target={list.id === 3 ? '' : `"_blank"`}
+                  target="_blank"
                   rel="noreferrer"
                   className={styles.link_a__textdecnone}
                 >
