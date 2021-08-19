@@ -38,7 +38,9 @@ const IndexContent = () => {
                       className={styles.eventLink_img__size}
                     />
                   </div>
-                  <div className={styles.link_p}>{list.title}</div>
+                  <div className={`${styles.link_p} ${styles.link_p__style}`}>
+                    {list.title}
+                  </div>
                 </a>
               </Col>
             ))}
