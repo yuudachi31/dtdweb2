@@ -46,7 +46,14 @@ hr {
   color: $dtd-text-color;
   text-align: center;
   margin-top: 10px;
-  white-space: pre;
+  white-space: pre-line;
+  &.link_p__style {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 .link_a__textdecnone:hover {
   text-decoration: none;
@@ -79,5 +86,12 @@ hr {
   }
   .link_img__size {
     width: 70%;
+  }
+  .link_p {
+    &.link_p__style {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
   }
 }
