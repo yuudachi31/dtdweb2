@@ -52,29 +52,29 @@
         }
     ],
     "link":[
-        {
-            "id": 1,
-            "imgUrl":"assets/images/index/Job.png",
-            "title":"就業分析",
-            "path":"http://polomilky.github.io/paperwebsite/"
-        },
         {   
-            "id": 2,
+            "id": 1,
             "imgUrl":"assets/images/index/StudyGroup.png",
             "title":"讀書會",
             "path":"#/activities/DTDGroup#content"
         },
         {
-            "id": 3,
-            "imgUrl":"assets/images/index/Fan.png",
-            "title":"粉絲團",
-            "path":"https://www.facebook.com/ntuedtd/?ref=ts&fref=ts"
-        },
-        {
-            "id": 4,
+            "id": 2,
             "imgUrl":"assets/images/index/TeachGroup.png",
             "title":"教學團隊",
             "path":"#/staff"
+        },
+        {
+            "id": 3,
+            "imgUrl":"assets/images/index/facebook.png",
+            "title":"數位系",
+            "path":"https://www.facebook.com/dtdtoygame"
+        },
+        {
+            "id": 4,
+            "imgUrl":"assets/images/index/facebook.png",
+            "title":"系學會",
+            "path":"https://www.facebook.com/ntuedtd/?ref=ts&fref=ts"
         },
         {
             "id": 5,

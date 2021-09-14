@@ -97,7 +97,7 @@ const IndexContent = () => {
               <a
                 href={link.path}
                 target={
-                  link.id === 2 || link.id === 4 || link.id === 5
+                  link.id === 1 || link.id === 2 || link.id === 5
                     ? ''
                     : `"_blank"`
                 }
