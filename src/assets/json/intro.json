@@ -30,12 +30,12 @@
             "classroom_info":
             [
                 {
-                    "info_title":"教室地點：",
+                    "info_title":"教室位置：",
                     "info_content":"創意館 1F E811"
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"本教室為本系專業電腦課程使用"
+                    "info_content":"本教室為本系師生研討使用"
                 }
             ]
         },
@@ -46,12 +46,12 @@
             "classroom_info":
             [
                 {
-                    "info_title":"教室地點：",
+                    "info_title":"教室位置：",
                     "info_content":"創意館 1F E812"
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"本教室為本系專業電腦課程使用"
+                    "info_content":"本教室為本系專業電腦（APPLE MINI）課程使用"
                 }
             ]
         },
@@ -62,12 +62,12 @@
             "classroom_info":
             [
                 {
-                    "info_title":"教室地點：",
+                    "info_title":"教室位置：",
                     "info_content":"創意館 1F E813"
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"本教室為本系專業手繪設計課程使用"
+                    "info_content":"本教室為本系VR/AR互動體驗相關課程使用"
                 }
             ]
         },
@@ -78,28 +78,28 @@
             "classroom_info":
             [
                 {
-                    "info_title":"教室地點：",
+                    "info_title":"教室位置：",
                     "info_content":"創意館 1F E814"
                 },
                 {
                     "info_title":"教室簡介：",
-                    "info_content":"本教室為本系專業電腦（APPLE MINI）課程使用"
+                    "info_content":"本教室為本系專業電腦課程使用"
                 }
             ]
         },
         {
             "classroom_id":5,
-            "classroom_img":"/assets/images/intro/classrooms/E134-33.jpg",
+            "classroom_img":"/assets/images/intro/classrooms/aisle.jpg",
             "classroom_name":"互動設計研究室",
             "classroom_info":
             [
                 {
-                    "info_title":"教室地點：",
-                    "info_content":"134-33 號"
+                    "info_title":"場地位置：",
+                    "info_content":"創意館一樓走廊"
                 },
                 {
-                    "info_title":"教室簡介：",
-                    "info_content":"提供本系學生研究與討論空間"
+                    "info_title":"場地簡介：",
+                    "info_content":"本場地提供本系學生研討及休憩空間"
                 }
             ]
         }
