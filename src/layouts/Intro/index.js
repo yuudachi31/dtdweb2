@@ -10,6 +10,9 @@ import Header from '../../components/Header';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import Footer from '../../components/Footer';
+// icon匯入
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 // 資料匯入
 import introjson from '../../assets/json/intro.json';
 
@@ -59,7 +62,20 @@ const Intro = () => {
                 allowFullScreen
               ></iframe>
               <div className={styles.aboutBlock_content}>
-                {introDetail.about_content}
+                <div>{introDetail.about_content}</div>
+                <a
+                  href={introDetail.experience_share_URL}
+                  className={styles.aboutBlock_experienceShare}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div className={styles.experienceShare_icon}>
+                    <FontAwesomeIcon icon={faExternalLinkAlt} />
+                  </div>
+                  <div className={styles.experienceShare_content}>
+                    {introDetail.experience_share}
+                  </div>
+                </a>
               </div>
             </div>
             <PageTitle title="教育理念" />

@@ -25,6 +25,33 @@
 .aboutBlock_content {
   width: 50%;
   font-size: $dtd-p-size;
+  line-height: 150%;
+}
+.aboutBlock_experienceShare {
+  display: flex;
+  color: $dtd-main-color;
+  
+  &:hover {
+    color: $dtd-main-color;
+    margin-bottom: -4px;
+    
+    .experienceShare_icon {
+      padding-bottom: 3px;
+      border-bottom: 1px $dtd-main-color solid;
+    }
+    .experienceShare_content {
+      text-decoration: none;
+      padding-bottom: 3px;
+      border-bottom: 1px $dtd-main-color solid;
+    }
+  }
+}
+
+.experienceShare_icon {
+  padding-right: 8px;
+}
+.experienceShare_content {
+  font-weight: bold;
 }
 
 .intro_conceptBlock {
