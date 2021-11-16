@@ -33,7 +33,9 @@
         "list": [
             {
                 "docName": "碩博學位論文比對",
-                "docUrl": "http://papercheck.ntue.edu.tw/",
+                "docUrl": "https://www.turnitin.com/login_page.asp?lang=zh_tw",
+                "docName2": "教育訓練影片及操作手冊",
+                "docUrl2": "https://orad.ntue.edu.tw/zh_tw/7/AAA111",
                 "remarks": ""
             },
             {
@@ -74,21 +76,21 @@
             },
             {
                 "docName": "申請口試流程表及手續檢核表",
-                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/04/master1-3.pdf",
+                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/11/master1-3.pdf",
                 "remarks": ""
             },
             {
                 "docName": "申請口試同意書(.doc)",
-                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/04/master1-23.doc",
+                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/11/master1-13.doc",
                 "docName2": "(.odt)",
-                "docUrl2": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/04/master1-23.odt",
+                "docUrl2": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/11/master1-13.odt",
                 "remarks": ""
             },
             {
                 "docName": "時地通知書(.doc)",
-                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2018/11/master1-15.doc",
+                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/11/master1-15.doc",
                 "docName2": "(.odt)",
-                "docUrl2": "https://dtd.ntue.edu.tw/wp-content/uploads/2018/11/master1-15.odt",
+                "docUrl2": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/11/master1-15.odt",
                 "remarks": ""
             },
             {
@@ -157,7 +159,7 @@
             },
             {
                 "docName": "懶人包",
-                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/04/master1-26.rar",
+                "docUrl": "https://dtd.ntue.edu.tw/wp-content/uploads/2021/11/master1-6.rar",
                 "remarks": ""
             }
         ]
