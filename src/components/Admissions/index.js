@@ -105,7 +105,7 @@ const Admissions = (prop) => {
                       href={regulationsDocument.document_URL}
                     >
                       <FontAwesomeIcon
-                        className={styles.document_icon_margin}
+                        className={styles.document_icon__margin}
                         icon={faExternalLinkAlt}
                       />
                       <div className={styles.admissions_content__fontSize}>
