@@ -30,10 +30,11 @@
 .aboutBlock_experienceShare {
   display: flex;
   color: $dtd-main-color;
+  margin-bottom: 4px;
   
   &:hover {
     color: $dtd-main-color;
-    margin-bottom: -4px;
+    margin-bottom: 0;
     
     .experienceShare_icon {
       padding-bottom: 3px;
