@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { getJSON } from '../../components/GetJson';
+
 /* uiStore */
 import { UIStoreContext } from '../../uiStore/reducer';
 import { setPageContent, setActiveNavItem } from '../../uiStore/actions';
@@ -10,8 +12,13 @@ const ActivitiesNavItem = (prop) => {
   const { uiState, uiDispatch } = useContext(UIStoreContext);
 
   const onClick = () => {
-    setPageContent(uiDispatch, []);
-    setActiveNavItem(uiDispatch, pathTo);
+    if (pathTo == localStorage.getItem('activeItem')) {
+      setPageContent(uiDispatch, getJSON(pathTo));
+      setActiveNavItem(uiDispatch, pathTo);
+    } else {
+      setPageContent(uiDispatch, []);
+      setActiveNavItem(uiDispatch, pathTo);
+    }
   };
 
   return (
