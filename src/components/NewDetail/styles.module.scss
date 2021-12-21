@@ -46,52 +46,60 @@
   letter-spacing: 0;
   color: #626262;
 
-  & > p {
+  p {
     margin: 0 0 15px;
   }
-  & > ul {
+
+  ul {
     color: #737e86;
+    li {
+      margin-bottom: 10px;
+      list-style: disc outside;
+    }
   }
-  & > ul li {
-    margin-bottom: 10px;
-    list-style: disc outside;
-  }
-  & > .wp-block-file {
+
+  .wp-block-file {
     margin-bottom: 1.5em;
+    * +.wp-block-file__button {
+      margin-left: 0.75em;
+    }
   }
-  & > .wp-block-file * + .wp-block-file__button {
-    margin-left: 0.75em;
-  }
-  & > a {
+
+  a {
     color: #2991d6;
   }
-  & > strong {
+
+  strong {
     font-weight: bold;
   }
-  & > table {
+
+  table {
     width: 100%;
     margin-bottom: 15px;
     border-collapse: collapse;
     border-spacing: 0;
     border-radius: 5px;
   }
-  & > table td {
+
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+  }
+
+  tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+  }
+  
+  td {
     border-color: rgba(0, 0, 0, 0.08);
     padding: 10px;
     text-align: center;
     border-width: 1px;
     border-style: solid;
     vertical-align: middle;
-  }
-  & > tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
-  }
-  & > tr {
-    display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
   }
 }
 
