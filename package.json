@@ -1,5 +1,5 @@
 {
-  "homepage": "/wp-content/themes/dtd-theme/DTD-official-website/build",
+  "homepage": "./wp-content/themes/dtd-theme/DTD-official-website/build",
   "name": "react-eslint-stylelint",
   "version": "0.1.0",
   "private": true,
