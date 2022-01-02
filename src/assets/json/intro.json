@@ -28,7 +28,7 @@
         {
             "classroom_id":1,
             "classroom_img":"assets/images/intro/classrooms/E811.jpg",
-            "classroom_name":"數位互動設計實驗室",
+            "classroom_name":"Project Based Learning Lab",
             "classroom_info":
             [
                 {
@@ -44,7 +44,7 @@
         {
             "classroom_id":2,
             "classroom_img":"assets/images/intro/classrooms/E812.jpg",
-            "classroom_name":"多媒體設計實驗室",
+            "classroom_name":"Multimedia Design Lab",
             "classroom_info":
             [
                 {
@@ -60,7 +60,7 @@
         {
             "classroom_id":3,
             "classroom_img":"assets/images/intro/classrooms/E813.jpg",
-            "classroom_name":"Meta Reality Laboratory",
+            "classroom_name":"Meta Reality Lab",
             "classroom_info":
             [
                 {
@@ -76,7 +76,7 @@
         {
             "classroom_id":4,
             "classroom_img":"assets/images/intro/classrooms/E814.jpg",
-            "classroom_name":"數位娛樂設計實驗室",
+            "classroom_name":"5G Open Innovation Lab",
             "classroom_info":
             [
                 {
@@ -91,8 +91,24 @@
         },
         {
             "classroom_id":5,
+            "classroom_img":"assets/images/intro/classrooms/E805.jpg",
+            "classroom_name":"Calm Technology Seminar Room",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 B1 E805"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":""
+                }
+            ]
+        },
+        {
+            "classroom_id":6,
             "classroom_img":"/assets/images/intro/classrooms/aisle.jpg",
-            "classroom_name":"互動設計研究室",
+            "classroom_name":"Digital Creative Forum",
             "classroom_info":
             [
                 {
