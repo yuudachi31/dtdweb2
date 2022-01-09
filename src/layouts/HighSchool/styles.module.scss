@@ -1,0 +1,147 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/color.scss';
+@import '../../styles/font.scss';
+@import '../../styles/pageMargin.scss';
+@import '../../styles/component.scss';
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: $dtd-main-bg-color;
+  color: $dtd-text-color;
+  
+}
+
+//teamsContainer
+.teamsContainer {
+  margin: 0 $dtd-margin-desktop;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: $dtd-media-tablet) {
+  .teamsContainer {
+    margin: 0 $dtd-margin-tablet;
+  }
+}
+@media (max-width: $dtd-media-phone) {
+  .teamsContainer {
+    margin: 0 $dtd-margin-phone;
+  }
+}
+@media (max-width: $dtd-media-phone-small) {
+  .teamsContainer {
+    margin: 0 $dtd-margin-phone-small;
+  }
+}
+
+.teamsContainer_content {
+  width: 80%;
+  text-align: justify;
+  color: $dtd-submenu-text-color;
+  margin-top: $dtd-main-spcing;
+  letter-spacing: 0.1em;
+  line-height: 30px;
+  
+}
+.teamsContainer_link {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  & a {
+    background-color: #7678E7;
+    color: #fff;
+    width: 112px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 14px;
+    z-index: 10;
+  }
+  & a:hover {
+    background-color: rgba(116, 118, 231,0.6);
+  }
+  & a:active {
+    box-shadow: inset 0 4px 4px rgba(116, 118, 231,0.6);
+  }
+}
+
+
+.highSchool_banner{
+  width: 100vw;
+}
+
+.highSchool_QA{
+  margin-top: $dtd-index-main-spacing;
+  width: 100vw;
+  height: 518px;
+  background-color: #F0F5EE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.highSchool_QA_title{
+  font-size: $dtd-h2-size;
+  font-weight: bold;
+  color: #444444;
+  margin-top: 48px;
+}
+.highSchool_QA_content{
+  width: 100%;
+  display: flex;
+  justify-content:space-between;
+  //background-color: #7678E7;
+  margin-top: 48px;
+  margin-bottom: 48px;
+
+}
+.highSchool_QA_detail{
+  padding: 0 80px;
+}
+.highSchool_detailQ{
+  width: 269px;
+  height:69px;
+  display: flex;
+  justify-content:center;
+  padding-top:17px ;
+  font-weight: bold;
+  font-size: $dtd-p-size;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+
+}
+.highSchool_detailA{
+  margin-top: 48px;
+  width: 320px;
+  letter-spacing: 0.1em;
+  line-height: 30px;
+
+}
+.highSchool_line{
+  height: 354px;
+  width: 0px;
+  border-left: 0.5px solid #444444;
+
+}
+.teamsContainer_bottomSpace {
+  height: $dtd-index-main-spacing;
+}
+.highSchool_flex{
+  display: flex;
+  margin-top: 36px;
+}
+.highSchool_ml{
+  margin-left: 32px;
+}
+.hightSchool_a{
+  letter-spacing: 0.1em;
+  font-size: 16px;
+  //margin-bottom: 16px;
+  background-color: #7678E7;
+}

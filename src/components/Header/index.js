@@ -78,6 +78,11 @@ const Header = () => {
                 系網團隊
               </Link>
             </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.highSchool} className={styles.pageBox_page}>
+                高中生專區
+              </Link>
+            </li>
           </ul>
         </button>
 
