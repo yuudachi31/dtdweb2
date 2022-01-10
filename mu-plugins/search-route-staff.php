@@ -4,7 +4,7 @@
       $mainQuery = new WP_Query(array(
          'post_type' => 'staff',
          'posts_per_page' => -1, //ALL
-         'p' => sanitize_text_field($data['post_id'])
+         'p' => sanitize_text_field($data['staff_id'])
       ));
 
       //取得全體資料
