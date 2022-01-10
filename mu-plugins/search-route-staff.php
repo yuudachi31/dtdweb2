@@ -4,12 +4,19 @@
       $mainQuery = new WP_Query(array(
          'post_type' => 'staff',
          'posts_per_page' => -1, //ALL
-         's' => sanitize_text_field($data['term'])
+         'p' => sanitize_text_field($data['post_id'])
       ));
 
       //取得全體資料
-      if($mainQuery->post_count > 1){
-         
+      if($mainQuery->post_count == 1){
+         $mainQuery->the_post();
+         $results = ReturnStaffCollection();
+
+         return $results;
+      }
+      //單獨一筆老師資料
+      else{
+
          $results = array(
             array(
                'groupid' => 0,
@@ -81,13 +88,6 @@
                $results[$groupID]['list'][$i] = $t;
             }
          }
-
-         return $results;
-      }
-      //單獨一筆老師資料
-      else{
-         $mainQuery->the_post();
-         $results = ReturnStaffCollection();
          return $results;
       }
    }
