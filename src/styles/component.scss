@@ -1,3 +1,33 @@
+//1280
+@mixin xl_1280{
+  @media(max-width:1280px){
+    @content;
+  }
+}
+//1199
+@mixin xl{
+  @media(max-width:$dtd-media-desktop){
+    @content;
+  }
+}
+//991
+@mixin lg{
+  @media(max-width:$dtd-media-tablet){
+    @content;
+  }
+}
+//575
+@mixin md{
+    @media(max-width:$dtd-media-phone){
+      @content;
+    }
+  }
+//375
+@mixin sm {
+  @media (max-width:$dtd-media-phone-small) {
+    @content;
+  }
+}
 .title {
     width: 100%;
     height: 54px;

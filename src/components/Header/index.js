@@ -268,6 +268,15 @@ const Header = () => {
                     系網團隊
                   </Link>
                 </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.highSchool}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    高中生專區
+                  </Link>
+                </li>
               </ul>
             </button>
           </li>
