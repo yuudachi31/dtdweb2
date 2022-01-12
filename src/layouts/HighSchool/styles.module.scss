@@ -262,3 +262,30 @@
 .highSchool_ml32{
   margin-left: 32px;
 }
+
+//輪播圖
+.carousel-control-next-icon{
+  background-color: #7678E7;
+  color: #444444;
+}
+.highSchool_carousel{
+  width: 518px;
+  margin-top: 64px;
+  @include md{
+    width:325px;
+  }
+}
+.highSchool_carousel_title{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.highSchool_carousel_item{
+  width: 518px;
+  height:344px;
+  object-fit: cover;
+  @include md{
+    width:325px;
+    height:199px;
+  }
+}

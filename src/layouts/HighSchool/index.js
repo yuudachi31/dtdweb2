@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
+import Carousel from 'react-bootstrap/Carousel';
 //componemt
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -13,6 +14,7 @@ import styles from './styles.module.scss';
 //image
 import banner from '../../assets/images/highSchool/highSchoolBanner.png';
 import chatBubble from '../../assets/images/highSchool/chatBubble.png';
+
 //icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -42,7 +44,83 @@ const HighSchool = () => {
               &ensp;&ensp;&ensp;了解更多
             </Link>
           </div>
-          {/* <div className={styles.title}>系上活動</div> */}
+          <div className={styles.title}>系上活動</div>
+          {/* 輪播圖 */}
+          <Carousel className={styles.highSchool_carousel}>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>耶誕晚會</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/newStudent.JPG"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>窮斯盃</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/poor.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>系卡</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/KTV.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>數位男籃</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/dtd_boy_basketball.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>數位女籃</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/dtd_girl_basketball.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>數位男排</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/dtd_boy_volleyball.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>數位女排</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/dtd_girl_volleyball.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>數位營</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/camp.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+              <p className={styles.highSchool_carousel_title}>企業參訪</p>
+              <img
+                className={styles.highSchool_carousel_item}
+                src="assets/images/activities/Google.jpg"
+                alt="First slide"
+              />
+            </Carousel.Item>
+          </Carousel>
+          {/* 輪播圖 */}
           <div className={styles.highSchool_QA}>
             <p className={styles.highSchool_QA_title}>常見問題 / Q＆A</p>
             <div className={styles.highSchool_QA_content}>
