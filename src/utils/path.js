@@ -6,7 +6,6 @@ export default {
   activities: '/activities',
   future: '/future',
   teams: '/teams',
-  highSchool: '/highSchool',
   // 最新消息
   announcements: '/announcements',
   achievements: '/achievements',
