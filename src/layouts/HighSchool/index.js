@@ -51,7 +51,7 @@ const HighSchool = () => {
               <p className={styles.highSchool_carousel_title}>耶誕晚會</p>
               <img
                 className={styles.highSchool_carousel_item}
-                src="assets/images/activities/newStudent.JPG"
+                src="assets/images/activities/Xmax.jpg"
                 alt="First slide"
               />
             </Carousel.Item>
