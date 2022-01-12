@@ -4,5 +4,6 @@
   "semi": true,
   "singleQuote": true,
   "useTabs": false,
-  "quoteProps": "preserve"
+  "quoteProps": "preserve",
+  "endOfLine": "auto"
 }
