@@ -24,7 +24,7 @@ import { StoreContext } from '../../store/reducer';
 
 const StaffDetail = () => {
   const location = useLocation();
-  const { groupid, staffpath } = QueryString.parse(location.search);
+  const { groupid, id } = QueryString.parse(location.search);
   const {
     state: {
       staffDetail,
@@ -35,7 +35,7 @@ const StaffDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getStaffDetail(dispatch, { staffpath });
+    getStaffDetail(dispatch, id);
     Scroll.scroller.scrollTo('top');
     if (staff.length == 0) {
       getStaff(dispatch);
