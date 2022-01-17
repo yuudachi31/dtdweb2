@@ -12,7 +12,7 @@ import path from '../../utils/path';
 //css
 import styles from './styles.module.scss';
 //image
-import banner from '../../assets/images/highSchool/highSchoolBanner.png';
+import banner from '../../assets/images/highSchool/banner_1920.png';
 import chatBubble from '../../assets/images/highSchool/chatBubble.png';
 
 //icons
@@ -170,7 +170,7 @@ const HighSchool = () => {
             <div className={styles.highSchool_flex}>
               <p className={styles.highSchool_infoW}>入學方式:</p>
               <p className={styles.highSchool_ml}>
-                繁星推甄 / 個人申請 / 考試分發 / 特殊選才
+                繁星推甄 / 個人申請(一般組、APCS組) / 考試分發
               </p>
             </div>
             <div className={styles.highSchool_flex}>
