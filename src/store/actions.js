@@ -18,6 +18,8 @@ import {
   FAIL_DATA_REQUEST,
   SET_BANNER,
   SET_HOME_NEWS,
+  SET_FORM_DOWNLOAD,
+  SET_RULES_DOWNLOAD,
 } from './actionTypes';
 
 const BASE_URL = 'https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1';
@@ -80,11 +82,9 @@ export const getStaff = async (dispatch) => {
 };
 //取得單筆教職員資料
 export const getStaffDetail = async (dispatch, options) => {
-  const { staffpath = '范丙林' } = options;
-
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
-    const url = `${BASE_URL}/staff?term=${staffpath}`;
+    const url = `${BASE_URL}/staff?staff_id=${options}`;
     const response = await axios.get(url);
     const staffDetail = response.data;
 
@@ -404,5 +404,40 @@ export const getHomeData = async (dispatch, homeHasBanner, homeHasNews) => {
     }
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+
+// 取得表單下載資料
+export const getFormDownload = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    const formDownloadUrl = `${BASE_URL}/formDownload`;
+    const formDownloadResponse = await axios.get(formDownloadUrl);
+    const formDownload = formDownloadResponse.data.content;
+
+    dispatch({
+      type: SET_FORM_DOWNLOAD,
+      payload: formDownload,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+
+//取得規章辦法下載
+export const getRulesDownload = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    const rulesDownloadUrl = `${BASE_URL}/page`;
+    const rulesDownloadResponse = await axios.get(rulesDownloadUrl);
+    const rulesDownload = rulesDownloadResponse.data.content;
+    dispatch({
+      type: SET_RULES_DOWNLOAD,
+      payload: rulesDownload,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST });
   }
 };

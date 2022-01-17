@@ -82,7 +82,9 @@ const StaffGroup = () => {
                           : tea.teacherName.slice(
                               0,
                               tea.teacherName.search(/（/i),
-                            ))
+                            )) +
+                        '&id=' +
+                        tea.id
                       }
                     >
                       <img src={tea.imgUrl} />

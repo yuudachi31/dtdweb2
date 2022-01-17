@@ -19,6 +19,8 @@ import {
   FAIL_DATA_REQUEST,
   SET_BANNER,
   SET_HOME_NEWS,
+  SET_FORM_DOWNLOAD,
+  SET_RULES_DOWNLOAD,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -27,7 +29,7 @@ const initialState = {
   news: [],
   newDetail: {},
   staff: [],
-  staffDetail: {},
+  staffDetail: [],
   worksSort: ['所有'],
   worksSortActiveItem: '所有',
   graduationWorksShow: [],
@@ -44,6 +46,8 @@ const initialState = {
   },
   banner: [],
   homeNews: [],
+  formDownloadContent: [],
+  ruleDownloadContent: [],
 };
 
 function reducer(state, action) {
@@ -144,6 +148,16 @@ function reducer(state, action) {
           loading: false,
           error: action.payload,
         },
+      };
+    case SET_FORM_DOWNLOAD:
+      return {
+        ...state,
+        formDownloadContent: action.payload,
+      };
+    case SET_RULES_DOWNLOAD:
+      return {
+        ...state,
+        ruleDownloadContent: action.payload,
       };
     default:
       return state;

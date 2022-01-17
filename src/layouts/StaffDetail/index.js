@@ -23,7 +23,7 @@ import { StoreContext } from '../../store/reducer';
 
 const StaffDetail = () => {
   const location = useLocation();
-  const { groupid, staffpath } = QueryString.parse(location.search);
+  const { groupid, id } = QueryString.parse(location.search);
   const {
     state: {
       staffDetail,
@@ -34,7 +34,8 @@ const StaffDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getStaffDetail(dispatch, { staffpath });
+    getStaffDetail(dispatch, id);
+    Scroll.scroller.scrollTo('top');
     if (staff.length == 0) {
       getStaff(dispatch);
     }
@@ -70,7 +71,12 @@ const StaffDetail = () => {
         <Fragment>
           <Helmet>
             <meta charSet="utf-8" />
-            <title>{staffDetail.teacherName}-國立臺北教育大學</title>
+            <title>
+              {staffDetail.teacherName == undefined
+                ? ``
+                : staffDetail.teacherName}
+              -國立臺北教育大學
+            </title>
             <meta name="description" content="數位科技設計學系的教學團隊" />
           </Helmet>
           <div className={styles.container} id="top">
@@ -85,12 +91,16 @@ const StaffDetail = () => {
                   <img src={leftArrow} />
                 </Link>
                 <div className={styles.staffContainer_titleBar__name}>
-                  {staffDetail.teacherName.search(/（/i) == -1
-                    ? staffDetail.teacherName
-                    : staffDetail.teacherName.substring(
-                        0,
-                        staffDetail.teacherName.search(/（/i),
-                      )}
+                  {staffDetail.teacherName == undefined ? (
+                    <></>
+                  ) : staffDetail.teacherName.search(/（/i) == -1 ? (
+                    staffDetail.teacherName
+                  ) : (
+                    staffDetail.teacherName.substring(
+                      0,
+                      staffDetail.teacherName.search(/（/i),
+                    )
+                  )}
                 </div>
               </Row>
               {/* 教師資訊 */}
@@ -133,12 +143,16 @@ const StaffDetail = () => {
                         <a
                           href={
                             'tel:+886-2-2732-1104' +
-                            (staffDetail.phone.search(/、/i) == -1
-                              ? staffDetail.phone
-                              : staffDetail.phone.substring(
-                                  0,
-                                  staffDetail.phone.search(/、/i),
-                                ))
+                            (staffDetail.phone == undefined ? (
+                              <></>
+                            ) : staffDetail.phone.search(/、/i) == -1 ? (
+                              staffDetail.phone
+                            ) : (
+                              staffDetail.phone.substring(
+                                0,
+                                staffDetail.phone.search(/、/i),
+                              )
+                            ))
                           }
                         >
                           校內分機：{staffDetail.phone}
