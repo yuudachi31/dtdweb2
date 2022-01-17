@@ -75,8 +75,9 @@
 .highSchool_banner{
   width: 100vw;
   object-fit: cover;
+  height:400px;
   @include lg{
-    height:345px;
+    height:276px;
   }
   @include md{
     height:200px;
@@ -202,6 +203,7 @@
 .highSchool_ml{
   width: 80%;
   margin-left: 32px;
+  margin-bottom: 16px;
   @include lg{
     margin-left: 8px;
   }
