@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // 設計
 import styles from './styles.module.scss';
 // icon匯入
@@ -49,14 +50,25 @@ const Admissions = (prop) => {
                     {infoDetail.info_URL == undefined ? (
                       infoDetail.info_content
                     ) : (
-                      <a
-                        href={infoDetail.info_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={styles.infoRow_document}
-                      >
-                        {infoDetail.info_content}
-                      </a>
+                      <>
+                        {infoDetail.info_content == '高中生專區' ? (
+                          <Link
+                            to={infoDetail.info_URL}
+                            className={styles.infoRow_document}
+                          >
+                            {infoDetail.info_content}
+                          </Link>
+                        ) : (
+                          <a
+                            href={infoDetail.info_URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={styles.infoRow_document}
+                          >
+                            {infoDetail.info_content}
+                          </a>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
