@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
@@ -12,7 +12,7 @@ import path from '../../utils/path';
 //css
 import styles from './styles.module.scss';
 //image
-import banner from '../../assets/images/highSchool/banner_1920.png';
+import banner from '../../assets/images/highSchool/highSchoolBanner.png';
 import chatBubble from '../../assets/images/highSchool/chatBubble.png';
 
 //icons
@@ -20,9 +20,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const HighSchool = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
   return (
     <Fragment>
       <Helmet>
@@ -173,7 +170,7 @@ const HighSchool = () => {
             <div className={styles.highSchool_flex}>
               <p className={styles.highSchool_infoW}>入學方式:</p>
               <p className={styles.highSchool_ml}>
-                繁星推甄 / 個人申請(一般組、APCS組) / 考試分發
+                繁星推甄 / 個人申請 / 考試分發 / 特殊選才
               </p>
             </div>
             <div className={styles.highSchool_flex}>
@@ -201,7 +198,18 @@ const HighSchool = () => {
             <div className={styles.highSchool_flex}>
               <p className={styles.highSchool_infoW}>備註:</p>
               <p className={styles.highSchool_ml}>
-                詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。
+                1. 詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。
+                <br></br>
+                <br></br>
+                2.
+                本系申請入學第二階段之創意素描筆試項目主要是經由簡易的素描瞭解考生針對考題的即興創意創作，其重點在於創意構圖的呈現，而非單純的擬真素描呈現。
+                <br></br>
+                <br></br>
+                創意素描歷年考題參考：
+                <br></br>
+                <br></br>110：「今天我們要慶祝…」 <br></br>109：「窗外的世界」
+                <br></br>108：「神秘的地洞裡有...」 <br></br>107：「玩具去旅行」
+                <br></br>106：「外星寶寶的玩具」
               </p>
             </div>
             <div className={styles.highSchool_info_btn}>
@@ -230,6 +238,27 @@ const HighSchool = () => {
                 </a>
               </div>
             </div>
+          </div>
+          <div className={styles.title}>其他</div>
+          <div className={styles.highSchoolContainer_content}>
+            <div className={styles.highSchool_others_title}>
+              國際知名聲樂家簡文秀教授捐贈母校國立臺北教育大學新臺幣2000萬元創設「若竹菁英學苑」培育菁英人才!
+            </div>
+            <p>
+              國際知名聲樂家，同時也是國立臺北教育大學傑出校友簡文秀教授，為支持母校培育菁英學子，捐款新臺幣2000萬元於國北教大創設「若竹菁英學苑」，秉持全人教育精神及創新思維的教育理念，為國家社會培育兼具專業能力與品格的頂尖人才。並優先針對本校藝術設計、文化創意
+              、數位設計 、 運動競技等領域提供各項補助經費與資源。
+            </p>
+          </div>
+          <div className={styles.highSchoolContainer_link}>
+            <Link
+              to={
+                path.announcements + '/newinfo?previous=announcements&id=4408'
+              }
+              className={styles.pageBox_page}
+            >
+              <FontAwesomeIcon icon={faAngleRight} />
+              &ensp;&ensp;&ensp;了解更多
+            </Link>
           </div>
         </div>
         <section className={styles.highSchoolContainer_bottomSpace}></section>

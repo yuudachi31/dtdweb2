@@ -10,7 +10,6 @@
   width: 100vw;
   background-color: $dtd-main-bg-color;
   color: $dtd-text-color;
-  
 }
 
 //highSchoolContainer
@@ -44,7 +43,6 @@
   letter-spacing: 0.1em;
   line-height: 30px;
   max-width: 1024px;
-  
 }
 .highSchoolContainer_link {
   width: 100%;
@@ -52,7 +50,7 @@
   justify-content: center;
   margin-top: 16px;
   & a {
-    background-color: #7678E7;
+    background-color: #7678e7;
     color: #fff;
     width: 112px;
     height: 32px;
@@ -64,77 +62,73 @@
     z-index: 10;
   }
   & a:hover {
-    background-color: rgba(116, 118, 231,0.6);
+    background-color: rgba(116, 118, 231, 0.6);
   }
   & a:active {
-    box-shadow: inset 0 4px 4px rgba(116, 118, 231,0.6);
+    box-shadow: inset 0 4px 4px rgba(116, 118, 231, 0.6);
   }
 }
 
-
-.highSchool_banner{
+.highSchool_banner {
   width: 100vw;
   object-fit: cover;
-  height:400px;
-  @include lg{
-    height:276px;
+  @include lg {
+    height: 345px;
   }
-  @include md{
-    height:200px;
+  @include md {
+    height: 200px;
   }
-  @include sm{
-    height:160px;
+  @include sm {
+    height: 160px;
   }
 }
 
-.highSchool_QA{
+.highSchool_QA {
   margin-top: $dtd-index-main-spacing;
   width: 100vw;
-  background-color: #F0F5EE;
+  background-color: #f0f5ee;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
-.highSchool_QA_title{
+.highSchool_QA_title {
   font-size: $dtd-h2-size;
   font-weight: bold;
   color: #444444;
   margin-top: 48px;
 }
-.highSchool_QA_content{
+.highSchool_QA_content {
   width: 80%;
   display: flex;
   margin-top: 48px;
   margin-bottom: 48px;
   max-width: 1152px;
-  @include xl_1280{
+  @include xl_1280 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-
 }
-.highSchool_QA_detail{
+.highSchool_QA_detail {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-right:40px;
-  @include xl_1280{
-    padding-right:0px;
+  padding-right: 40px;
+  @include xl_1280 {
+    padding-right: 0px;
   }
 }
-.highSchool_detailQ{
+.highSchool_detailQ {
   //width: 269px;
   //height:69px;
   width: 327px;
-  height:83px;
+  height: 83px;
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   display: flex;
   align-items: center;
-  padding-top:17px;
+  padding-top: 17px;
   padding-left: 30px;
   padding-bottom: 30px;
   padding-right: 19px;
@@ -142,108 +136,102 @@
   font-size: $dtd-p-size;
   line-height: 21px;
   letter-spacing: 0.1em;
-
 }
-.highSchool_detailA{
+.highSchool_detailA {
   margin-top: 48px;
   width: 320px;
   letter-spacing: 0.1em;
   line-height: 30px;
-  @include xl_1280{
+  @include xl_1280 {
     width: 500px;
-    margin-bottom:60px ;
+    margin-bottom: 60px;
   }
-  @include lg{
+  @include lg {
     width: 480px;
   }
-  @include md{
+  @include md {
     width: 325px;
   }
-  @include sm{
+  @include sm {
     width: 325px;
   }
-
-
 }
-.highSchool_line{
+.highSchool_line {
   border-left: 0.5px solid #444444;
   padding-right: 40px;
-  @include xl_1280{
+  @include xl_1280 {
     width: 700px;
     padding: 0px;
     border-left: 0;
-    border-bottom:0.5px solid #444444 ;
+    border-bottom: 0.5px solid #444444;
     margin-bottom: 60px;
   }
-  @include lg{
+  @include lg {
     width: 500px;
   }
-  @include md{
+  @include md {
     width: 325px;
   }
-  @include sm{
+  @include sm {
     width: 325px;
   }
-
-
 }
 .highSchoolContainer_bottomSpace {
   height: $dtd-index-main-spacing;
 }
-.highSchool_flex{
+.highSchool_flex {
   display: flex;
-  @include sm{
+  @include sm {
     flex-direction: column;
   }
 }
-.highSchool_infoW{
+.highSchool_infoW {
   width: 20%;
-  width:160px;
+  width: 160px;
 }
-.highSchool_ml{
+.highSchool_ml {
   width: 80%;
   margin-left: 32px;
-  margin-bottom: 16px;
-  @include lg{
+  @include lg {
     margin-left: 8px;
   }
-  @include sm{
+  @include sm {
     width: 100%;
-    margin-left:0;
+    margin-left: 0;
   }
 }
-.hightSchool_a{
+.hightSchool_a {
   width: 80%;
   display: flex;
   flex-direction: column;
   margin-left: 32px;
   letter-spacing: 0.1em;
   font-size: 16px;
-  @include lg{
+  @include lg {
     margin-left: 8px;
   }
-  @include sm{
+  @include sm {
     width: 100%;
-    margin-left:0;
+    margin-left: 0;
   }
 }
-.hightSchool_a_{
+.hightSchool_a_ {
   width: fit-content;
-  color:#4A8299;
+  color: #4a8299;
   font-weight: bold;
   margin-bottom: 16px;
   border-bottom: 1px solid white;
   &:hover {
-    color:#4A8299;
-    border-bottom: 1px solid #4A8299;
+    color: #4a8299;
+    border-bottom: 1px solid #4a8299;
   }
 }
-.highSchool_info_btn{
+.highSchool_info_btn {
   width: 100%;
   display: flex;
   margin-top: 16px;
   & a {
-    background-color: #7678E7;
+    background-color: #7678e7;
     color: #fff;
     width: 112px;
     height: 32px;
@@ -255,40 +243,55 @@
     z-index: 10;
   }
   & a:hover {
-    background-color: rgba(116, 118, 231,0.6);
+    background-color: rgba(116, 118, 231, 0.6);
   }
   & a:active {
-    box-shadow: inset 0 4px 4px rgba(116, 118, 231,0.6);
+    box-shadow: inset 0 4px 4px rgba(116, 118, 231, 0.6);
   }
 }
-.highSchool_ml32{
+.highSchool_ml32 {
   margin-left: 32px;
 }
 
+.highSchool_others_title {
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  color: #444444;
+  align-items: center;
+  padding-top: 17px;
+  // padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 19px;
+  font-weight: bold;
+  font-size: $dtd-p-size;
+  line-height: 21px;
+  letter-spacing: 0.1em;
+}
+
 //輪播圖
-.carousel-control-next-icon{
-  background-color: #7678E7;
+.carousel-control-next-icon {
+  background-color: #7678e7;
   color: #444444;
 }
-.highSchool_carousel{
+.highSchool_carousel {
   width: 518px;
   margin-top: 64px;
-  @include md{
-    width:325px;
+  @include md {
+    width: 325px;
   }
 }
-.highSchool_carousel_title{
+.highSchool_carousel_title {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 16px;
 }
-.highSchool_carousel_item{
+.highSchool_carousel_item {
   width: 518px;
-  height:344px;
+  height: 344px;
   object-fit: cover;
-  @include md{
-    width:325px;
-    height:199px;
+  @include md {
+    width: 325px;
+    height: 199px;
   }
 }
