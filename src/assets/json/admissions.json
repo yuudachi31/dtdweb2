@@ -2,37 +2,40 @@
     {
         "degreeImg": "assets/images/admissions/collegeIcon.png",
         "degreeName": "數位科技設計學系",
-        "info":
-        [
+        "info": [
             {
-                "info_title":"招生人數：",
-                "info_content":"1班42人"
+                "info_title": "招生人數：",
+                "info_content": "1班42人"
             },
             {
-                "info_title":"入學方式：",
-                "info_content":"繁星推甄 / 個人申請 / 考試分發"
+                "info_title": "入學方式：",
+                "info_content": "繁星推甄 / 個人申請 / 考試分發"
             },
             {
-                "info_title":"平日上課時間：",
-                "info_content":"星期一至五：上午08:20至下午17:20，遇課程需求或排至晚間18:30至20:00"
+                "info_title": "平日上課時間：",
+                "info_content": "星期一至五：上午08:20至下午17:20，遇課程需求或排至晚間18:30至20:00"
             },
             {
-                "info_title":"相關資訊連結：",
-                "info_content":"學士班招生資訊",
-                "info_URL":"https://exam.ntue.edu.tw/"
+                "info_title": "相關資訊連結：",
+                "info_content": "學士班招生資訊",
+                "info_URL": "https://exam.ntue.edu.tw/"
             },
             {
-                "info_title":"",
-                "info_content":"高中生專區",
-                "info_URL":"/highSchool"
+                "info_title": "",
+                "info_content": "高中生專區",
+                "info_URL": "/highSchool"
             },
             {
-                "info_title":"備註：",
-                "info_content":"1. 詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。\n\n2. 本系申請入學第二階段之創意素描筆試項目主要是經由簡易的素描瞭解考生針對考題的即興創意創作，其重點在於創意構圖的呈現，而非單純的擬真素描呈現。\n\n    創意素描歷年考題參考：\n\n110：「今天我們要慶祝…」\n109：「窗外的世界」\n108：「神秘的地洞裡有...」\n107：「玩具去旅行」\n106：「外星寶寶的玩具」"
+                "info_title": "",
+                "info_content": "第二階段筆試內容說明",
+                "info_URL": "https://dtd.ntue.edu.tw/wp-content/uploads/2022/02/數位科技設計學系申請入學第二階段筆試內容說明.pdf"
+            },
+            {
+                "info_title": "備註：",
+                "info_content": "詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。"
             }
         ],
-        "regulations_documents":
-        [
+        "regulations_documents": [
             {
                 "document_title": "課程計畫表",
                 "document_name": "請至「教務處課務組」依入學年度查詢",
@@ -43,48 +46,45 @@
     {
         "degreeImg": "assets/images/admissions/masterIcon.png",
         "degreeName": "玩具與遊戲設計碩士班",
-        "info":
-        [
+        "info": [
             {
-                "info_title":"招生人數：",
-                "info_content":"1班27人"
+                "info_title": "招生人數：",
+                "info_content": "1班27人"
             },
             {
-                "info_title":"入學方式：",
-                "info_content":"推薦甄試 / 招生考試"
+                "info_title": "入學方式：",
+                "info_content": "推薦甄試 / 招生考試"
             },
             {
-                "info_title":"入學對象：",
-                "info_content":"於以立案之本國大學或獨立學院畢業或符合教育部頒大學辦理國外學歷採認辦法之國外大學或獨立學院畢業得有學士學位以上（含應屆畢業生）或具有同等學力資格者。"
+                "info_title": "入學對象：",
+                "info_content": "於以立案之本國大學或獨立學院畢業或符合教育部頒大學辦理國外學歷採認辦法之國外大學或獨立學院畢業得有學士學位以上（含應屆畢業生）或具有同等學力資格者。"
             },
             {
-                "info_title":"平日上課時間：",
-                "info_content":"星期一至五：上午08:10至下午18:20"
+                "info_title": "平日上課時間：",
+                "info_content": "星期一至五：上午08:10至下午18:20"
             },
             {
-                "info_title":"相關資訊連結：",
-                "info_content":"碩士班招生資訊",
-                "info_URL":"https://exam.ntue.edu.tw/"
+                "info_title": "相關資訊連結：",
+                "info_content": "碩士班招生資訊",
+                "info_URL": "https://exam.ntue.edu.tw/"
             },
             {
-                "info_title":"下載：",
-                "info_content":"推薦函格式",
-                "info_URL":"https://dtd.ntue.edu.tw/wp-content/uploads/2018/01/recommendation.pdf"
+                "info_title": "下載：",
+                "info_content": "推薦函格式",
+                "info_URL": "https://dtd.ntue.edu.tw/wp-content/uploads/2018/01/recommendation.pdf"
             },
             {
-                "info_title":"備註：",
-                "info_content":"詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。"
+                "info_title": "備註：",
+                "info_content": "詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。"
             }
         ],
-        "regulations_rules":
-        [
+        "regulations_rules": [
             {
                 "rule_title": "1. 畢業學分數34學分",
                 "rule_content": "1. 碩士班學生至少修畢34學分(含)以上，其包括必修4學分，選修30學分。 \n\n2. 畢業前須通過本系碩士班學術參與表現考核要點之相關規定，考核標準請參閱各學年度學生手冊。 \n\n3. 可跨校所班修習相關課程至多8學分，本部分課程之修習需經系主任同意後修習，並得計入畢業學分。"
             }
         ],
-        "regulations_documents":
-        [
+        "regulations_documents": [
             {
                 "document_title": "課程計畫表",
                 "document_name": "請至「教務處課務組」依入學年度查詢",
@@ -95,48 +95,45 @@
     {
         "degreeImg": "assets/images/admissions/inserveIcon.png",
         "degreeName": "玩具與遊戲設計碩士\n在職專班(周末假日班)",
-        "info":
-        [
+        "info": [
             {
-                "info_title":"招生人數：",
-                "info_content":"依各學年簡章為準"
+                "info_title": "招生人數：",
+                "info_content": "依各學年簡章為準"
             },
             {
-                "info_title":"入學方式：",
-                "info_content":"一、國內外大學校院畢業獲有學士學位或合於「入學大學同等學力認定標準」有關碩士班報考資格者。 \n\n二、具備至少1個月以上現仍在職工作年資（檢附服務年資證明書，工作年資計算至報名截止日止。） \n\n或具有1 年（含）以上服務年資（檢附服務年資證明書，依證明書起訖日期計算）。在學期間之兼職、工讀、鐘點計時之工作，不計入年資。"
+                "info_title": "入學方式：",
+                "info_content": "一、國內外大學校院畢業獲有學士學位或合於「入學大學同等學力認定標準」有關碩士班報考資格者。 \n\n二、具備至少1個月以上現仍在職工作年資（檢附服務年資證明書，工作年資計算至報名截止日止。） \n\n或具有1 年（含）以上服務年資（檢附服務年資證明書，依證明書起訖日期計算）。在學期間之兼職、工讀、鐘點計時之工作，不計入年資。"
             },
             {
-                "info_title":"入學對象：",
-                "info_content":"依該學年度大學甄選入學或大學入學考試招生簡章資格。"
+                "info_title": "入學對象：",
+                "info_content": "依該學年度大學甄選入學或大學入學考試招生簡章資格。"
             },
             {
-                "info_title":"平日上課時間：",
-                "info_content":"週末假日班：以週六上午08:10至下午17:20為原則"
+                "info_title": "平日上課時間：",
+                "info_content": "週末假日班：以週六上午08:10至下午17:20為原則"
             },
             {
-                "info_title":"相關資訊連結：",
-                "info_content":"碩士在職專班招生資訊",
-                "info_URL":"https://academic.ntue.edu.tw/files/11-1007-99.php"
+                "info_title": "相關資訊連結：",
+                "info_content": "碩士在職專班招生資訊",
+                "info_URL": "https://academic.ntue.edu.tw/files/11-1007-99.php"
             },
             {
-                "info_title":"下載：",
-                "info_content":"推薦函格式",
-                "info_URL":"https://dtd.ntue.edu.tw/wp-content/uploads/2018/01/recommendation.pdf"
+                "info_title": "下載：",
+                "info_content": "推薦函格式",
+                "info_URL": "https://dtd.ntue.edu.tw/wp-content/uploads/2018/01/recommendation.pdf"
             },
             {
-                "info_title":"備註：",
-                "info_content":"詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。"
+                "info_title": "備註：",
+                "info_content": "詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。"
             }
         ],
-        "regulations_rules":
-        [
+        "regulations_rules": [
             {
                 "rule_title": "1. 畢業學分數32學分",
                 "rule_content": "1. 碩士在職專班學生選修32學分，總計32學分(不含論文)，成績及格，並完成本系碩士班修業補充規則之規定及通過碩士論文口試，方得畢業。 \n\n2. 在學期間至少2年，每學期修習學分上限及下限依學校規定為準，畢業學分至少須修滿32學分。 \n\n3. 在校期間除在本系修習課程以外，亦得跨日夜間及暑期、跨所及跨校進行選修，惟須事先申請核准，合計最多不超過9學分。"
             }
         ],
-        "regulations_documents":
-        [
+        "regulations_documents": [
             {
                 "document_title": "選課說明",
                 "document_name": "請至「進修推廣處」查詢",
