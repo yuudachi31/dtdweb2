@@ -193,23 +193,20 @@ const HighSchool = () => {
                 >
                   學習歷程檔案準備指引
                 </a>
+                <a
+                  className={styles.hightSchool_a_}
+                  href="https://dtd.ntue.edu.tw/wp-content/uploads/2022/02/數位科技設計學系申請入學第二階段筆試內容說明.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  第二階段筆試內容說明
+                </a>
               </div>
             </div>
             <div className={styles.highSchool_flex}>
               <p className={styles.highSchool_infoW}>備註:</p>
               <p className={styles.highSchool_ml}>
-                1. 詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。
-                <br></br>
-                <br></br>
-                2.
-                本系申請入學第二階段之創意素描筆試項目主要是經由簡易的素描瞭解考生針對考題的即興創意創作，其重點在於創意構圖的呈現，而非單純的擬真素描呈現。
-                <br></br>
-                <br></br>
-                創意素描歷年考題參考：
-                <br></br>
-                <br></br>110：「今天我們要慶祝…」 <br></br>109：「窗外的世界」
-                <br></br>108：「神秘的地洞裡有...」 <br></br>107：「玩具去旅行」
-                <br></br>106：「外星寶寶的玩具」
+                詳情請參照招生簡章，以簡章資料為準，本表僅供參考用。
               </p>
             </div>
             <div className={styles.highSchool_info_btn}>
