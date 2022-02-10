@@ -25,7 +25,7 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '教職員',
+            'name' => '教職員頁面',
             'add_new' => '新增教職員',
             'edit_item' => '編輯教職員',
             'all_items' => '全部教職員',
@@ -41,7 +41,7 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '畢業專題',
+            'name' => '畢業專題頁面',
             'add_new' => '新增專題',
             'edit_item' => '編輯專題',
             'all_items' => '全部專題',
@@ -57,7 +57,7 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '課程作品',
+            'name' => '課程作品頁面',
             'add_new' => '新增作品',
             'edit_item' => '編輯作品',
             'all_items' => '全部作品',
@@ -73,7 +73,7 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '研究成果',
+            'name' => '研究成果頁面',
             'add_new' => '新增成果',
             'edit_item' => '編輯成果',
             'all_items' => '全部成果',
