@@ -1,14 +1,5 @@
 <?php
 
-   //Tell WordPress to only load the basics
-   define('SHORTINIT',1);
-
-   //get path of wp-load.php and load it
-   require_once $_SERVER['DOCUMENT_ROOT'] . '/wp-load.php';
-
-   // register global database
-   global $wpdb;
-
    //表格下載頁面
    function formDownloadSearchResults($data) {
 
