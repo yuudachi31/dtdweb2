@@ -51,5 +51,18 @@
         ));
     }
 
+    function wprc_add_acf_posts_endpoint( $allowed_endpoints ) {
+        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
+             ! in_array( 'page', $allowed_endpoints[ 'dtd/v1' ] ) ) {
+            $allowed_endpoints[ 'dtd/v1' ][] = 'page';
+        }
+        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
+             ! in_array( 'formDownload', $allowed_endpoints[ 'dtd/v1' ] ) ) {
+            $allowed_endpoints[ 'dtd/v1' ][] = 'formDownload';
+        }
+        return $allowed_endpoints;
+    }
+    add_filter( 'wp_rest_cache/allowed_endpoints', 'wprc_add_acf_posts_endpoint', 10, 1);
+
     add_action('rest_api_init', 'dtd_custom_route');
 
