@@ -66,13 +66,17 @@
              ! in_array( 'page', $allowed_endpoints[ 'dtd/v1' ] ) ) {
             $allowed_endpoints[ 'dtd/v1' ][] = 'page';
         }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
+        else if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
              ! in_array( 'formDownload', $allowed_endpoints[ 'dtd/v1' ] ) ) {
             $allowed_endpoints[ 'dtd/v1' ][] = 'formDownload';
         }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
+        else if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
              ! in_array( 'post/announcementsPage', $allowed_endpoints[ 'dtd/v1' ] ) ) {
             $allowed_endpoints[ 'dtd/v1' ][] = 'post/announcementsPage';
+        }
+        else if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
+             ! in_array( 'post', $allowed_endpoints[ 'dtd/v1' ] ) ) {
+            $allowed_endpoints[ 'dtd/v1' ][] = 'post';
         }
         return $allowed_endpoints;
     }
