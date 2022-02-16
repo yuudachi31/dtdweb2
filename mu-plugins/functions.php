@@ -70,6 +70,10 @@
              ! in_array( 'formDownload', $allowed_endpoints[ 'dtd/v1' ] ) ) {
             $allowed_endpoints[ 'dtd/v1' ][] = 'formDownload';
         }
+        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
+             ! in_array( 'post/announcementsPage', $allowed_endpoints[ 'dtd/v1' ] ) ) {
+            $allowed_endpoints[ 'dtd/v1' ][] = 'post/announcementsPage';
+        }
         return $allowed_endpoints;
     }
     add_filter( 'wp_rest_cache/allowed_endpoints', 'wprc_add_acf_posts_endpoint', 10, 1);
