@@ -2,7 +2,6 @@
 
     require ('search-route-homePage.php');
     require ('search-route-post.php');
-    require ('search-route-banner.php');
     require ('search-route-staff.php');
     require ('search-route-graduateProject.php');
     require ('search-route-classProject.php');
@@ -15,17 +14,9 @@
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'homeSearchResults'
         ));
-        register_rest_route('dtd/v1', 'banner', array(
-            'methods' => WP_REST_SERVER::READABLE,
-            'callback' => 'bannerSearchResults'
-        ));
         register_rest_route('dtd/v1', 'post', array(
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'postSearchResults'
-        ));
-        register_rest_route('dtd/v1', 'post/homePage', array(
-            'methods' => WP_REST_SERVER::READABLE,
-            'callback' => 'postHomePageSearchResults'
         ));
         register_rest_route('dtd/v1', 'post/achievementsPage', array(
             'methods' => WP_REST_SERVER::READABLE,

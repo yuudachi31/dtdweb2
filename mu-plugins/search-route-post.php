@@ -47,67 +47,6 @@
       }
    }
 
-
-   //首頁最新系務公告、師生榮譽榜 各取五筆
-   function postHomePageSearchResults($data) {
-
-      //引數 (default = 5))
-      $postPerGroup = ( $data['postPerGroup'] ) ? $data['postPerGroup'] : 5;
-
-      $results = array(
-         array(
-            'groupId' => 0,
-            'title' => '系務公告 / Announcement',
-            'list' => array()
-         ),
-         array(
-            'groupId' => 1,
-            'title' => '師生榮譽榜 / Achievement',
-            'list' => array()
-         ),
-      );
-
-      //將系務公告的post放入result
-      $mainQuery = new WP_Query(array(
-         'post_type' => 'post',
-         'category_name' => 'announcement',
-         'ignore_sticky_posts' => true,   //設定至頂無效
-         'posts_per_page' => $postPerGroup,
-      ));
-
-      while($mainQuery->have_posts()) {
-         $mainQuery->the_post();
-
-         array_push($results[0]['list'], array(
-            'id' => get_the_ID(),
-            'title' => get_the_title(),
-            'date' => get_the_date('Y/m/d'),
-            'isLatest' => IsWithinSevenDays(),
-         ));
-      }
-
-      //將師生榮譽的post放入result
-      $mainQuery = new WP_Query(array(
-         'post_type' => 'post',
-         'category_name' => 'achievement',
-         'ignore_sticky_posts' => true,   //設定至頂無效
-         'posts_per_page' => $postPerGroup,
-      ));
-
-      while($mainQuery->have_posts()) {
-         $mainQuery->the_post();
-
-         array_push($results[1]['list'], array(
-            'id' => get_the_ID(),
-            'title' => get_the_title(),
-            'date' => get_the_date('Y/m/d'),
-            'isLatest' => IsWithinSevenDays(),
-         ));
-      }
-
-      return $results;
-   }
-
    //師生榮譽榜葉面文章，預設一頁20筆
    function postAchievementsPageSearchResults($data) {
       $page = ( $data['page'] ) ? $data['page'] : 1;
