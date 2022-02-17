@@ -387,12 +387,13 @@ export const getHomeData = async (dispatch, homeHasBanner, homeHasNews) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
     //從後台取資料
-    const bannerUrl = `${BASE_URL}/banner`;
-    const newsUrl = `${BASE_URL}/post/homePage`;
-    const bannerResponse = await axios.get(bannerUrl);
-    const newsResponse = await axios.get(newsUrl);
-    const banner = bannerResponse.data;
-    const homeNews = newsResponse.data;
+    const homeUrl = `${BASE_URL}/homePage?postPerGroup=5`;
+    const homeResponse = await axios.get(homeUrl);
+    const homeData = homeResponse.data;
+    const banner = homeData.banner;
+    const homeNews = [];
+    homeNews.push(homeData.announcement);
+    homeNews.push(homeData.achievement);
     if (!homeHasBanner && !homeHasNews) {
       dispatch({
         type: SET_BANNER,
