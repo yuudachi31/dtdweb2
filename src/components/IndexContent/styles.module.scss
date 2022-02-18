@@ -100,4 +100,17 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 48px;
+ 
+}
+.indexContent_video_{
+  
+  @include lg {
+     width: 469px;
+     height: 264px;
+   }
+   @include md {
+     width: 325px;
+     height: 183px;
+   }
 }

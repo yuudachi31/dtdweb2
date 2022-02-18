@@ -47,8 +47,8 @@ const HighSchool = () => {
           <div className={styles.title}>招生影片</div>
           <iframe
             className={styles.highSchool_video}
-            width="560"
-            height="315"
+            width="768"
+            height="432"
             src="https://www.youtube.com/embed/hIz634BMZp4"
             title="YouTube video player"
             frameBorder="0"

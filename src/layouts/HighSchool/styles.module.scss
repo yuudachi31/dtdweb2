@@ -277,10 +277,15 @@
   color: #444444;
 }
 .highSchool_carousel {
-  width: 518px;
+  width: 768px;
   margin-top: 64px;
+  @include lg {
+    width: 469px;
+    height: 312px;
+  }
   @include md {
     width: 325px;
+    height: 216px;
   }
 }
 .highSchool_carousel_title {
@@ -290,18 +295,27 @@
   margin-bottom: 16px;
 }
 .highSchool_carousel_item {
-  width: 518px;
-  height: 344px;
+  width: 768px;
+  height: 510px;
   object-fit: cover;
+  @include lg {
+    width: 469px;
+    height: 312px;
+  }
   @include md {
     width: 325px;
-    height: 199px;
+    height: 216px;
   }
 }
 //宣傳影片
 .highSchool_video{
   margin-top: 48px;
+  @include lg {
+    width: 469px;
+    height: 264px;
+  }
   @include md {
     width: 325px;
+    height: 183px;
   }
 }

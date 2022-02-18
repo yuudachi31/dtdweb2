@@ -13,12 +13,13 @@ const IndexContent = () => {
   return (
     <>
       <div className={styles.section}>
-        <h1>招生影片 / Admissions Videos</h1>
+        <h1>招生影片 / Admissions Video</h1>
         <hr></hr>
         <div className={styles.indexContent_video}>
           <iframe
-            width="560"
-            height="315"
+            className={styles.indexContent_video_}
+            width="768"
+            height="432"
             src="https://www.youtube.com/embed/hIz634BMZp4"
             title="YouTube video player"
             frameBorder="0"
