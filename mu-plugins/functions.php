@@ -61,55 +61,5 @@
         ));
     }
 
-    function wprc_add_acf_posts_endpoint( $allowed_endpoints ) {
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'homePage', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'homePage';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'banner', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'banner';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'post/announcementsPage', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'post/announcementsPage';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'post/achievementsPage', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'post/achievementsPage';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'post', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'post';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'staff', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'staff';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'graduateProject', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'graduateProject';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'classProject', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'classProject';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'excellentProject', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'excellentProject';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'page', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'page';
-        }
-        if ( ! isset( $allowed_endpoints[ 'dtd/v1' ] ) || 
-             ! in_array( 'formDownload', $allowed_endpoints[ 'dtd/v1' ] ) ) {
-            $allowed_endpoints[ 'dtd/v1' ][] = 'formDownload';
-        }
-        return $allowed_endpoints;
-    }
-    
-    add_filter( 'wp_rest_cache/allowed_endpoints', 'wprc_add_acf_posts_endpoint', 10, 1);
-
     add_action('rest_api_init', 'dtd_custom_route');
 
