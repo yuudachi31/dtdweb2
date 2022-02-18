@@ -298,3 +298,10 @@
     height: 199px;
   }
 }
+//宣傳影片
+.highSchool_video{
+  margin-top: 48px;
+  @include md {
+    width: 325px;
+  }
+}

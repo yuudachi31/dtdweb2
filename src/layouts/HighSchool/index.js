@@ -44,6 +44,17 @@ const HighSchool = () => {
               &ensp;&ensp;&ensp;了解更多
             </Link>
           </div>
+          <div className={styles.title}>招生影片</div>
+          <iframe
+            className={styles.highSchool_video}
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/hIz634BMZp4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
           <div className={styles.title}>系上活動</div>
           {/* 輪播圖 */}
           <Carousel className={styles.highSchool_carousel}>

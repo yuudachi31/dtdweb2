@@ -3,6 +3,7 @@
 @import '../../styles/spacing.scss';
 @import '../../styles/media.scss';
 @import 'bootstrap/dist/css/bootstrap.min.css';
+@import '../../styles/component.scss';
 
 .section {
   width: 100%;
@@ -94,4 +95,9 @@ hr {
       display: block;
     }
   }
+}
+.indexContent_video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

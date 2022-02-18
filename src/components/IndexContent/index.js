@@ -12,6 +12,21 @@ import indexContent from '../../assets/json/indexContent.json';
 const IndexContent = () => {
   return (
     <>
+      <div className={styles.section}>
+        <h1>招生影片 / Admissions Videos</h1>
+        <hr></hr>
+        <div className={styles.indexContent_video}>
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/hIz634BMZp4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       {indexContent.event.map((event) => (
         <div className={styles.section} id="event" key={event.title}>
           <h1>{event.title}</h1>
