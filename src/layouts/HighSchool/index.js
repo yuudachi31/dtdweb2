@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
@@ -20,6 +20,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 
 const HighSchool = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Fragment>
       <Helmet>
@@ -198,7 +201,7 @@ const HighSchool = () => {
                 </Link>
                 <a
                   className={styles.hightSchool_a_}
-                  href="https://dtd.ntue.edu.tw/wp-content/uploads/2022/01/學習歷程檔案準備指引.pdf"
+                  href="https://dtd.ntue.edu.tw/wp-content/uploads/2022/02/數位系書審準備指引建議公告格式.pdf"
                   target="_blank"
                   rel="noreferrer"
                 >
