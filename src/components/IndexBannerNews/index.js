@@ -3,8 +3,11 @@ import styles from './styles.module.scss';
 import { Link } from 'react-router-dom';
 import path from '../../utils/path';
 
+import Skeleton from '@mui/material/Skeleton';
+import Stack from '@mui/material/Stack';
+
 /* compontent */
-import Loading from '../Loading';
+//import Loading from '../Loading';
 
 /* react-bootstrap 輪播 */
 import Carousel from 'react-bootstrap/Carousel';
@@ -35,11 +38,51 @@ const IndexBannerNews = () => {
   return (
     <>
       {loading && !homeHasBanner && !homeHasNews ? (
-        <Loading />
+        <Stack spacing={1}>
+          <div className={styles.carousel_img__rwdHeight}>
+            <Skeleton variant="rectangular" height="100%" />
+          </div>
+          <div className={styles.container}>
+            <div className={`${styles.section} ${styles.section_news}`}>
+              <div className={styles.newsContent}>
+                <Stack spacing={2}>
+                  <Stack spacing={1}>
+                    <Skeleton variant="text" height={30} />
+                    <Skeleton variant="text" height={20} width="60%" />
+                  </Stack>
+                  <Stack spacing={1}>
+                    <Skeleton variant="text" height={30} />
+                    <Skeleton variant="text" height={20} width="60%" />
+                  </Stack>
+                  <Stack spacing={1}>
+                    <Skeleton variant="text" height={30} />
+                    <Skeleton variant="text" height={20} width="60%" />
+                  </Stack>
+                </Stack>
+              </div>
+              <div className={styles.newsContent}>
+                <Stack spacing={2}>
+                  <Stack spacing={1}>
+                    <Skeleton variant="text" height={30} />
+                    <Skeleton variant="text" height={20} width="60%" />
+                  </Stack>
+                  <Stack spacing={1}>
+                    <Skeleton variant="text" height={30} />
+                    <Skeleton variant="text" height={20} width="60%" />
+                  </Stack>
+                  <Stack spacing={1}>
+                    <Skeleton variant="text" height={30} />
+                    <Skeleton variant="text" height={20} width="60%" />
+                  </Stack>
+                </Stack>
+              </div>
+            </div>
+          </div>
+        </Stack>
       ) : (
         <>
           <div>
-            <Carousel indicators={false} controls={false}>
+            <Carousel>
               {banner.map((bannerImg) => (
                 <Carousel.Item interval={5000} key={bannerImg.id}>
                   {bannerImg.link === '' ? (
@@ -128,3 +171,9 @@ const IndexBannerNews = () => {
 };
 
 export default IndexBannerNews;
+
+// { loading && !homeHasBanner && !homeHasNews ? (
+//     <Loading />
+//   ) : (
+
+//   )}
