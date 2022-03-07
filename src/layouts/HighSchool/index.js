@@ -184,7 +184,7 @@ const HighSchool = () => {
             <div className={styles.highSchool_flex}>
               <p className={styles.highSchool_infoW}>入學方式:</p>
               <p className={styles.highSchool_ml}>
-                繁星推甄 / 個人申請 / 考試分發 / 特殊選才
+                繁星推甄 / 個人申請 / 考試分發
               </p>
             </div>
             <div className={styles.highSchool_flex}>
