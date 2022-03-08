@@ -185,6 +185,8 @@ const HighSchool = () => {
               <p className={styles.highSchool_infoW}>入學方式:</p>
               <p className={styles.highSchool_ml}>
                 繁星推甄 / 個人申請 / 考試分發 / 特殊選才
+                <br />
+                本系結合資訊、互動與視覺設計課程以培育優異的數位科技設計跨領域研發專才為目的。並以多元的招生管道招收不同背景之學生，入學後不分組均為同班上課使用同一課程架構。
               </p>
             </div>
             <div className={styles.highSchool_flex}>
