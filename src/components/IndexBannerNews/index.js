@@ -82,7 +82,7 @@ const IndexBannerNews = () => {
       ) : (
         <>
           <div>
-            <Carousel>
+            <Carousel controls={false}>
               {banner.map((bannerImg) => (
                 <Carousel.Item interval={5000} key={bannerImg.id}>
                   {bannerImg.link === '' ? (
@@ -171,9 +171,3 @@ const IndexBannerNews = () => {
 };
 
 export default IndexBannerNews;
-
-// { loading && !homeHasBanner && !homeHasNews ? (
-//     <Loading />
-//   ) : (
-
-//   )}
