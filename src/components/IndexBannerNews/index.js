@@ -81,7 +81,7 @@ const IndexBannerNews = () => {
         </Stack>
       ) : (
         <>
-          <div className={styles.carousel_main}>
+          <div>
             <Carousel controls={false}>
               {banner.map((bannerImg) => (
                 <Carousel.Item interval={5000} key={bannerImg.id}>
