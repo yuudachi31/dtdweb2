@@ -19,7 +19,15 @@ clientsClaim();
 // Their URLs are injected into the manifest variable below.
 // This variable must be present somewhere in your service worker file,
 // even if you decide not to use precaching. See https://cra.link/PWA
+
 precacheAndRoute(self.__WB_MANIFEST);
+
+precacheAndRoute([
+  {url: '/index.php', revision: '383676'},
+  {url: '/styles/app.0c9a31.css', revision: null},
+  {url: '/scripts/app.0d5770.js', revision: null},
+  // ... other entries ...
+]);
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
