@@ -20,14 +20,14 @@ clientsClaim();
 // This variable must be present somewhere in your service worker file,
 // even if you decide not to use precaching. See https://cra.link/PWA
 
-//precacheAndRoute(self.__WB_MANIFEST);
+precacheAndRoute(self.__WB_MANIFEST);
 
-precacheAndRoute([
-  {url: 'https://dtd.ntue.edu.tw/demo/wp-content/themes/dtd-theme/DTD-official-website/build/wp-content/themes/dtd-theme/DTD-official-website/build/index.html', revision: '383676'},
-  {url: '/styles/app.0c9a31.css', revision: null},
-  {url: '/scripts/app.0d5770.js', revision: null},
-  // ... other entries ...
-]);
+// precacheAndRoute([
+//   {url: 'https://dtd.ntue.edu.tw/demo/wp-content/themes/dtd-theme/DTD-official-website/build/wp-content/themes/dtd-theme/DTD-official-website/build/index.html', revision: '383676'},
+//   {url: '/styles/app.0c9a31.css', revision: null},
+//   {url: '/scripts/app.0d5770.js', revision: null},
+//   // ... other entries ...
+// ]);
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
