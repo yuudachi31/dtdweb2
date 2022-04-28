@@ -16,6 +16,7 @@
     "@wordpress/block-library": "^2.28.7",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
+    "copyfiles": "^2.4.1",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-prettier": "^3.3.1",
     "node-sass": "^4.14.1",
@@ -50,12 +51,14 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run copyIndexPhp && npm run copyAssets && npm run copyMuPlugins",
+    "build": "react-scripts build && npm run copyIndexPhp && npm run copyAssets && npm run copyMuPlugins && npm run copyServiceWorker && npm run copyStatic",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "copyIndexPhp": "copy /y build\\index.html ..\\index.php && copy /y build\\service-worker.js ..\\service-worker.js",
+    "copyIndexPhp": "copy /y build\\index.html ..\\index.php",
     "copyAssets": "Xcopy /E /Y build\\assets\\* ..\\..\\..\\..\\assets",
-    "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins"
+    "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins",
+    "copyServiceWorker": "copy /y build\\service-worker.js ..\\service-worker.js",
+    "copyStatic": "Xcopy /E /Y build\\static\\* ..\\..\\..\\..\\static"
   },
   "eslintConfig": {
     "extends": [
