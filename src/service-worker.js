@@ -83,6 +83,60 @@ registerRoute(
         ],
     })
 );
+registerRoute(
+  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/classProject"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-classProject",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
+registerRoute(
+  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/excellentProject"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-excellentProject",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
+
+registerRoute(
+  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/formDownload"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-formDownload",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
+registerRoute(
+  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/page"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-page",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
+
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
