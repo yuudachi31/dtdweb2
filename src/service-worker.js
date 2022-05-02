@@ -25,7 +25,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 precacheAndRoute([
   {url: '/index.php', revision: '383676'},
   {url: './manifest.json', revision: '1111'},
-  {url: '/service-worker.js', revision: '1111'},
+  {url: './service-worker.js', revision: '1111'},
   // ... other entries ...
 ]);
 
