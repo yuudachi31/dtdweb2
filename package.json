@@ -1,5 +1,4 @@
 {
-  "homepage": "./wp-content/themes/dtd-theme/DTD-official-website/build",
   "name": "react-eslint-stylelint",
   "version": "0.1.0",
   "private": true,
@@ -55,6 +54,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "copyIndexPhp": "copy /y build\\index.html ..\\index.php",
+    "copyIndexHtml": "copy /y build\\index.html ..\\..\\..\\..\\..\\..\\index.html",
     "copyAssets": "Xcopy /E /Y build\\assets\\* ..\\..\\..\\..\\assets",
     "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins",
     "copyServiceWorker": "copy /y build\\service-worker.js ..\\service-worker.js",
