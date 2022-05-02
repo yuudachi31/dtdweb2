@@ -1,4 +1,5 @@
 {
+  "homepage": "./",
   "name": "react-eslint-stylelint",
   "version": "0.1.0",
   "private": true,
@@ -55,9 +56,9 @@
     "eject": "react-scripts eject",
     "copyIndexPhp": "copy /y build\\index.html ..\\index.php",
     "copyIndexHtml": "copy /y build\\index.html ..\\..\\..\\..\\index.html",
-    "copyManifest": "copy /y build\\manifest.json ..\\..\\..\\..\\..\\manifest.json",
-    "copyServiceWorker": "copy /y build\\service-worker.js ..\\..\\..\\..\\..\\service-worker.js",
-    "copyStatic": "Xcopy build\\static\\*.* ..\\..\\..\\..\\..\\static\\ /S /E /Y",
+    "copyManifest": "copy /y build\\manifest.json ..\\..\\..\\..\\manifest.json",
+    "copyServiceWorker": "copy /y build\\service-worker.js ..\\..\\..\\..\\service-worker.js",
+    "copyStatic": "Xcopy build\\static\\*.* ..\\..\\..\\..\\static\\ /S /E /Y",
     "copyAssets": "Xcopy /E /Y build\\assets\\* ..\\..\\..\\..\\assets",
     "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins"
   },
