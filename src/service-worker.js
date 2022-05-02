@@ -70,19 +70,19 @@ registerRoute(
   })
 );
 
-// registerRoute(
-//     new RegExp("https://fastapi-heroku-2021.herokuapp.com/api/v1/products"),
-//     new StaleWhileRevalidate({
-//         cacheName: "cache-productsAPI",
-//         plugins: [
-//             new ExpirationPlugin({
-//                 maxAgeSeconds: 60 * 60,
-//                 maxEntries: 50,
-//                 purgeOnQuotaError: true,
-//             }),
-//         ],
-//     })
-// );
+registerRoute(
+    new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/graduateProject"),
+    new StaleWhileRevalidate({
+        cacheName: "cache-graduateProject",
+        plugins: [
+            new ExpirationPlugin({
+                maxAgeSeconds: 60 * 60,
+                maxEntries: 50,
+                purgeOnQuotaError: true,
+            }),
+        ],
+    })
+);
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
