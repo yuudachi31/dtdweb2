@@ -58,7 +58,7 @@
     "copyAssets": "Xcopy /E /Y build\\assets\\* ..\\..\\..\\..\\assets",
     "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins",
     "copyServiceWorker": "copy /y build\\service-worker.js ..\\service-worker.js",
-    "copyStatic": "Xcopy /S /E /Y build\\static\\* ..\\..\\..\\..\\static"
+    "copyStatic": "Xcopy build\\static\\*.* ..\\..\\..\\..\\static /S /E /Y"
   },
   "eslintConfig": {
     "extends": [
