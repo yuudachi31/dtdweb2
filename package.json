@@ -63,7 +63,7 @@
     "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins",
     "copyLogoS": "copy /y build\\logo192.png ..\\..\\..\\..\\logo192.png",
     "copyLogoL": "copy /y build\\logo512.png ..\\..\\..\\..\\logo512.png",
-    "copyFavicon": "copy /y build\\favicon.ico ..\\..\\..\\..\\favicon.ico"
+    "copyFavicon": "copy /y build\\favicon.ico ..\\favicon.ico"
   },
   "eslintConfig": {
     "extends": [
