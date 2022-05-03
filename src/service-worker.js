@@ -69,9 +69,48 @@ registerRoute(
     ],
   })
 );
+registerRoute(
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/homePage"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-homePage",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
+registerRoute(
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/staff"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-staff",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
+registerRoute(
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/post"),
+  new StaleWhileRevalidate({
+      cacheName: "cache-post",
+      plugins: [
+          new ExpirationPlugin({
+              maxAgeSeconds: 60 * 60,
+              maxEntries: 50,
+              purgeOnQuotaError: true,
+          }),
+      ],
+  })
+);
 
 registerRoute(
-    new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/graduateProject"),
+    new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/graduateProject"),
     new StaleWhileRevalidate({
         cacheName: "cache-graduateProject",
         plugins: [
@@ -84,7 +123,7 @@ registerRoute(
     })
 );
 registerRoute(
-  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/classProject"),
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/classProject"),
   new StaleWhileRevalidate({
       cacheName: "cache-classProject",
       plugins: [
@@ -97,7 +136,7 @@ registerRoute(
   })
 );
 registerRoute(
-  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/excellentProject"),
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/excellentProject"),
   new StaleWhileRevalidate({
       cacheName: "cache-excellentProject",
       plugins: [
@@ -111,7 +150,7 @@ registerRoute(
 );
 
 registerRoute(
-  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/formDownload"),
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/formDownload"),
   new StaleWhileRevalidate({
       cacheName: "cache-formDownload",
       plugins: [
@@ -123,8 +162,9 @@ registerRoute(
       ],
   })
 );
+
 registerRoute(
-  new RegExp("http://dtd.ntue.edu.tw/wp-json/dtd/v1/page"),
+  new RegExp("https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1/page"),
   new StaleWhileRevalidate({
       cacheName: "cache-page",
       plugins: [
