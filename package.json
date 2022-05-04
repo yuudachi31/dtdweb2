@@ -51,7 +51,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && npm run copyIndexPhp && npm run copyAssets && npm run copyMuPlugins && npm run copyServiceWorker && npm run copyStatic && npm run copyIndexHtml && npm run copyManifest && npm run copyLogoS && npm run copyLogoL && npm run copyFavicon",
+    "build": "react-scripts build && npm run copyIndexPhp && npm run copyAssets && npm run copyMuPlugins && npm run copyServiceWorker && npm run copyStatic && npm run copyIndexHtml && npm run copyManifest && npm run copyLogoS && npm run copyLogoL && npm run copyFavicon && npm run copyServiceWorkerMap",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "copyIndexPhp": "copy /y build\\index.html ..\\index.php",
@@ -63,7 +63,8 @@
     "copyMuPlugins": "Xcopy /E /Y mu-plugins\\* ..\\..\\..\\mu-plugins",
     "copyLogoS": "copy /y build\\logo192.png ..\\..\\..\\..\\logo192.png",
     "copyLogoL": "copy /y build\\logo512.png ..\\..\\..\\..\\logo512.png",
-    "copyFavicon": "copy /y build\\favicon.ico ..\\favicon.ico"
+    "copyFavicon": "copy /y build\\favicon.ico ..\\favicon.ico",
+    "copyServiceWorkerMap": "copy /y build\\service-worker.js.map ..\\..\\..\\..\\service-worker.js.map"
   },
   "eslintConfig": {
     "extends": [
