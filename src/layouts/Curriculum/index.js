@@ -7,22 +7,22 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
-import FutureContent from '../../components/FutureContent';
+import CurriculumContent from '../../components/CurriculumContent';
 
-const Future = () => {
+const Curriculum = () => {
   return (
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>未來發展-國立臺北教育大學</title>
+        <title>各年級課表-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的未來發展" />
       </Helmet>
       <div className={styles.container}>
         <Header />
-        <Banner bannerNumber={4} />
+        <Banner />
         <div className={styles.futureContainer}>
-          <PageTitle title="未來發展" />
-          <FutureContent />
+          <PageTitle title="各年級課表" />
+          <CurriculumContent />
         </div>
         <Footer />
       </div>
@@ -30,4 +30,4 @@ const Future = () => {
   );
 };
 
-export default Future;
+export default Curriculum;
