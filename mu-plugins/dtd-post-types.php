@@ -81,6 +81,37 @@ function prefix_register_dtd_routes_projects() {
       ),
       'menu_icon' => 'dashicons-image-filter'
    ));     
+
+   register_post_type('curriculums', array(
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'curriculums'),
+      'has_archive' => true,
+      'supports' => array('title', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
+            'name' => '各年級課表頁面',
+            'add_new' => '新增課表',
+            'edit_item' => '編輯課表',
+            'all_items' => '全部課表',
+            'singular_name' => 'curriculums'
+      ),
+      'menu_icon' => 'dashicons-category'
+   ));  
+   register_post_type('structure', array(
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'structure'),
+      'has_archive' => true,
+      'supports' => array('title', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
+            'name' => '各年度課程架構',
+            'add_new' => '新增課程架構',
+            'edit_item' => '編輯課程架構',
+            'all_items' => '全部課程架構',
+            'singular_name' => 'structure'
+      ),
+      'menu_icon' => 'dashicons-category'
+   ));  
 }
 add_action('init', 'prefix_register_dtd_routes_projects');
 
