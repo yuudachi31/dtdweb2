@@ -8,7 +8,9 @@
     require ('search-route-excellentProject.php');
     require ('search-route-page.php');
     require ('search-route-formDownload.php');
-    
+    require ('search-route-curriculums.php');
+    require ('search-route-structure.php');
+
     function dtd_custom_route() {
         register_rest_route('dtd/v1', 'homePage', array(
             'methods' => WP_REST_SERVER::READABLE,
@@ -49,6 +51,14 @@
         register_rest_route('dtd/v1', 'formDownload', array(
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'formDownloadSearchResults'
+        ));
+        register_rest_route('dtd/v1', 'curriculums', array(
+            'methods' => WP_REST_SERVER::READABLE,
+            'callback' => 'curriculumsSearchResults'
+        ));
+        register_rest_route('dtd/v1', 'structure', array(
+            'methods' => WP_REST_SERVER::READABLE,
+            'callback' => 'structureSearchResults'
         ));
     }
 
