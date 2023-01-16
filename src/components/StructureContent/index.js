@@ -87,7 +87,7 @@ const StructureContent = () => {
         </div>
       </div>
 
-      {/* 手機 */}
+      {/* 手機版 */}
       <div className={styles.dropdownMenu}>
         <div className={styles.nav_dropdownMenu}>
           <div
