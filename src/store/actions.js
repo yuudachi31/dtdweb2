@@ -445,7 +445,7 @@ export const getRulesDownload = async (dispatch) => {
   }
 };
 
-//取得年級學期課表資料
+//取得年級課表資料
 export const getCurriculum = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
@@ -464,7 +464,7 @@ export const getCurriculum = async (dispatch) => {
   }
 };
 
-//取得學年課程架構資料
+//取得課程架構資料
 export const getStructure = async (dispatch) => {
   dispatch({ type: BEGIN_DATA_REQUEST });
   try {
