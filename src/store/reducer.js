@@ -21,6 +21,8 @@ import {
   SET_HOME_NEWS,
   SET_FORM_DOWNLOAD,
   SET_RULES_DOWNLOAD,
+  SET_CURRICULUM,
+  SET_STRUCTURE,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -158,6 +160,16 @@ function reducer(state, action) {
       return {
         ...state,
         ruleDownloadContent: action.payload,
+      };
+    case SET_CURRICULUM:
+      return {
+        ...state,
+        curriculum: action.payload,
+      };
+    case SET_STRUCTURE:
+      return {
+        ...state,
+        structure: action.payload,
       };
     default:
       return state;

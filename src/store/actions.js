@@ -20,6 +20,8 @@ import {
   SET_HOME_NEWS,
   SET_FORM_DOWNLOAD,
   SET_RULES_DOWNLOAD,
+  SET_CURRICULUM,
+  SET_STRUCTURE,
 } from './actionTypes';
 
 const BASE_URL = 'https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1';
@@ -440,5 +442,43 @@ export const getRulesDownload = async (dispatch) => {
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
     dispatch({ type: FAIL_DATA_REQUEST });
+  }
+};
+
+//取得年級課表資料
+export const getCurriculum = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    const url = `${BASE_URL}/curriculums`;
+    const response = await axios.get(url);
+    const curriculum = response.data;
+
+    dispatch({
+      type: SET_CURRICULUM,
+      payload: curriculum,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+
+//取得課程架構資料
+export const getStructure = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    const url = `${BASE_URL}/structure`;
+    const response = await axios.get(url);
+    const structure = response.data;
+
+    dispatch({
+      type: SET_STRUCTURE,
+      payload: structure,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
   }
 };

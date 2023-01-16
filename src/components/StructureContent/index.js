@@ -1,12 +1,35 @@
-import React, { useState } from 'react';
-import styles from './styles.module.scss';
-
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
-
-const CurriculumContent = () => {
+//css
+import styles from './styles.module.scss';
+//data
+import { getStructure } from '../../store/actions';
+import { StoreContext } from '../../store/reducer';
+const StructureContent = () => {
   const [collegeopen, setCollegeopen] = useState(false);
   const [mastergeopen, setMasteropen] = useState(false);
   const [inservicegeopen, setInserviceopen] = useState(false);
+  //暫時預設為大學部最新課表
+  const [pdfurl, setPdfurl] = useState(4784);
+  const {
+    state: {
+      structure,
+      requestdata: { loading },
+    },
+    dispatch,
+  } = useContext(StoreContext);
+
+  useEffect(() => {
+    getStructure(dispatch);
+  }, []);
+
+  useEffect(() => {
+    if (loading) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'scroll';
+    }
+  }, [loading]);
 
   return (
     <div className={styles.container}>
@@ -14,30 +37,53 @@ const CurriculumContent = () => {
       <div className={styles.titleFrame}>
         <div className={styles.titleBar}>大學部</div>
         <div className={styles.docsBar}>
-          <div className={styles.docsBar_docsBox}>
-            <Link className={styles.docsBar_docsBox__remarks}>110學年度</Link>
-          </div>
-          <div className={styles.docsBar_docsBox}>
-            <Link className={styles.docsBar_docsBox__remarks}>111學年度</Link>
-          </div>
+          {structure?.map(
+            (group) =>
+              group.structureCategory === '大學部' && (
+                <div key={group.id} className={styles.docsBar_docsBox}>
+                  <Link
+                    className={styles.docsBar_docsBox__remarks}
+                    onClick={() => setPdfurl(group.id)}
+                  >
+                    {group.title}
+                  </Link>
+                </div>
+              ),
+          )}
         </div>
+
         <div className={styles.titleBar}>碩士班</div>
         <div className={styles.docsBar}>
-          <div className={styles.docsBar_docsBox}>
-            <Link className={styles.docsBar_docsBox__remarks}>110學年度</Link>
-          </div>
-          <div className={styles.docsBar_docsBox}>
-            <Link className={styles.docsBar_docsBox__remarks}>111學年度</Link>
-          </div>
+          {structure?.map(
+            (group) =>
+              group.structureCategory === '碩士班' && (
+                <div key={group.id} className={styles.docsBar_docsBox}>
+                  <Link
+                    className={styles.docsBar_docsBox__remarks}
+                    onClick={() => setPdfurl(group.id)}
+                  >
+                    {group.title}
+                  </Link>
+                </div>
+              ),
+          )}
         </div>
+
         <div className={styles.titleBar}>在職碩士班</div>
         <div className={styles.docsBar}>
-          <div className={styles.docsBar_docsBox}>
-            <Link className={styles.docsBar_docsBox__remarks}>110學年度</Link>
-          </div>
-          <div className={styles.docsBar_docsBox}>
-            <Link className={styles.docsBar_docsBox__remarks}>111學年度</Link>
-          </div>
+          {structure?.map(
+            (group) =>
+              group.structureCategory === '在職碩士班' && (
+                <div key={group.id} className={styles.docsBar_docsBox}>
+                  <Link
+                    className={styles.docsBar_docsBox__remarks}
+                    onClick={() => setPdfurl(group.id)}
+                  >
+                    {group.title}
+                  </Link>
+                </div>
+              ),
+          )}
         </div>
       </div>
 
@@ -61,16 +107,19 @@ const CurriculumContent = () => {
           {collegeopen ? (
             <div className={styles.dropdown_item}>
               <div className={styles.docsBar}>
-                <div className={styles.docsBar_docsBox}>
-                  <Link className={styles.docsBar_docsBox__remarks}>
-                    110學年度
-                  </Link>
-                </div>
-                <div className={styles.docsBar_docsBox}>
-                  <Link className={styles.docsBar_docsBox__remarks}>
-                    111學年度
-                  </Link>
-                </div>
+                {structure?.map(
+                  (group) =>
+                    group.structureCategory === '大學部' && (
+                      <div key={group.id} className={styles.docsBar_docsBox}>
+                        <Link
+                          className={styles.docsBar_docsBox__remarks}
+                          onClick={() => setPdfurl(group.id)}
+                        >
+                          {group.title}
+                        </Link>
+                      </div>
+                    ),
+                )}
               </div>
             </div>
           ) : null}
@@ -94,16 +143,19 @@ const CurriculumContent = () => {
           {mastergeopen ? (
             <div className={styles.dropdown_item}>
               <div className={styles.docsBar}>
-                <div className={styles.docsBar_docsBox}>
-                  <Link className={styles.docsBar_docsBox__remarks}>
-                    110學年度
-                  </Link>
-                </div>
-                <div className={styles.docsBar_docsBox}>
-                  <Link className={styles.docsBar_docsBox__remarks}>
-                    111學年度
-                  </Link>
-                </div>
+                {structure?.map(
+                  (group) =>
+                    group.structureCategory === '碩士班' && (
+                      <div key={group.id} className={styles.docsBar_docsBox}>
+                        <Link
+                          className={styles.docsBar_docsBox__remarks}
+                          onClick={() => setPdfurl(group.id)}
+                        >
+                          {group.title}
+                        </Link>
+                      </div>
+                    ),
+                )}
               </div>
             </div>
           ) : null}
@@ -127,16 +179,19 @@ const CurriculumContent = () => {
           {inservicegeopen ? (
             <div className={styles.dropdown_item}>
               <div className={styles.docsBar}>
-                <div className={styles.docsBar_docsBox}>
-                  <Link className={styles.docsBar_docsBox__remarks}>
-                    110學年度
-                  </Link>
-                </div>
-                <div className={styles.docsBar_docsBox}>
-                  <Link className={styles.docsBar_docsBox__remarks}>
-                    111學年度
-                  </Link>
-                </div>
+                {structure?.map(
+                  (group) =>
+                    group.structureCategory === '在職碩士班' && (
+                      <div key={group.id} className={styles.docsBar_docsBox}>
+                        <Link
+                          className={styles.docsBar_docsBox__remarks}
+                          onClick={() => setPdfurl(group.id)}
+                        >
+                          {group.title}
+                        </Link>
+                      </div>
+                    ),
+                )}
               </div>
             </div>
           ) : null}
@@ -145,15 +200,21 @@ const CurriculumContent = () => {
 
       {/* 課表連結 */}
       <div className={styles.fileFrame}>
-        <iframe
-          className={styles.iframe}
-          loading="lazy"
-          src="https://drive.google.com/file/d/1gTeC0o3JOjBxSO1cE1KClD9zoL3x56X6/preview"
-          allow="autoplay"
-        ></iframe>
+        {structure?.map(
+          (group) =>
+            group.id === pdfurl && (
+              <iframe
+                key={group.id}
+                className={styles.iframe}
+                loading="lazy"
+                src={group.curriculumUrl}
+                allow="autoplay"
+              ></iframe>
+            ),
+        )}
       </div>
     </div>
   );
 };
 
-export default CurriculumContent;
+export default StructureContent;
