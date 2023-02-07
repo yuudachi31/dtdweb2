@@ -207,7 +207,7 @@ const StructureContent = () => {
                 key={group.id}
                 className={styles.iframe}
                 loading="lazy"
-                src={group.curriculumUrl}
+                src={group.structureUrl}
                 allow="autoplay"
               ></iframe>
             ),
