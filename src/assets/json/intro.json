@@ -26,7 +26,7 @@
     ],
     "classrooms":[
         {
-            "classroom_id":1,
+            "classroom_id":"1",
             "classroom_img":"assets/images/intro/classrooms/E811.jpg",
             "classroom_name":"Project Based Learning Lab",
             "classroom_info":
@@ -42,7 +42,7 @@
             ]
         },
         {
-            "classroom_id":2,
+            "classroom_id":"2",
             "classroom_img":"assets/images/intro/classrooms/E812.jpg",
             "classroom_name":"Multimedia Design Lab",
             "classroom_info":
@@ -58,7 +58,7 @@
             ]
         },
         {
-            "classroom_id":3,
+            "classroom_id":"3",
             "classroom_img":"assets/images/intro/classrooms/E813.jpg",
             "classroom_name":"Meta Reality Lab",
             "classroom_info":
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "classroom_id":4,
+            "classroom_id":"4",
             "classroom_img":"assets/images/intro/classrooms/E814.jpg",
             "classroom_name":"5G Open Innovation Lab",
             "classroom_info":
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "classroom_id":5,
+            "classroom_id":"5",
             "classroom_img":"assets/images/intro/classrooms/E805.jpg",
             "classroom_name":"Calm Technology Seminar Room",
             "classroom_info":
@@ -106,7 +106,7 @@
             ]
         },
         {
-            "classroom_id":6,
+            "classroom_id":"6",
             "classroom_img":"/assets/images/intro/classrooms/aisle.jpg",
             "classroom_name":"Digital Creative Forum",
             "classroom_info":
