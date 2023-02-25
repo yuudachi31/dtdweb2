@@ -26,8 +26,8 @@
     ],
     "classrooms":[
         {
-            "classroom_id":"1",
-            "classroom_img":"assets/images/intro/classrooms/E811.jpg",
+            "classroom_id":"1-1",
+            "classroom_img":"assets/images/intro/classrooms/E811-1.jpg",
             "classroom_name":"Project Based Learning Lab",
             "classroom_info":
             [
@@ -42,8 +42,40 @@
             ]
         },
         {
-            "classroom_id":"2",
-            "classroom_img":"assets/images/intro/classrooms/E812.jpg",
+            "classroom_id":"1-2",
+            "classroom_img":"assets/images/intro/classrooms/E811-2.jpg",
+            "classroom_name":"Project Based Learning Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E811"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系師生研討使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"2-1",
+            "classroom_img":"assets/images/intro/classrooms/E812-1.jpg",
+            "classroom_name":"Multimedia Design Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E812"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系專業電腦（APPLE MINI）課程使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"2-2",
+            "classroom_img":"assets/images/intro/classrooms/E812-2.jpg",
             "classroom_name":"Multimedia Design Lab",
             "classroom_info":
             [
@@ -59,7 +91,7 @@
         },
         {
             "classroom_id":"3",
-            "classroom_img":"assets/images/intro/classrooms/E813.jpg",
+            "classroom_img":"assets/images/intro/classrooms/E813.png",
             "classroom_name":"Meta Reality Lab",
             "classroom_info":
             [
