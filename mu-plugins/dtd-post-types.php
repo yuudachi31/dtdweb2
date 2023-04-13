@@ -112,6 +112,21 @@ function prefix_register_dtd_routes_projects() {
       ),
       'menu_icon' => 'dashicons-category'
    ));  
+   register_post_type('admissions', array(
+      'show_in_rest' => true,
+      'rewrite' => array('slug' => 'admissions'),
+      'has_archive' => true,
+      'supports' => array('title', 'thumbnail'),
+      'public' => true,
+      'labels' => array(
+            'name' => '招生資訊頁面',
+            'add_new' => '新增招生資訊',
+            'edit_item' => '編輯招生資訊',
+            'all_items' => '全部招生資訊',
+            'singular_name' => 'admissions'
+      ),
+      'menu_icon' => 'dashicons-buddicons-buddypress-logo'
+   ));
 }
 add_action('init', 'prefix_register_dtd_routes_projects');
 
