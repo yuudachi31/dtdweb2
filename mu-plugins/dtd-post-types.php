@@ -104,7 +104,7 @@ function prefix_register_dtd_routes_projects() {
       'supports' => array('title', 'thumbnail'),
       'public' => true,
       'labels' => array(
-            'name' => '各年度課程架構',
+            'name' => '各年度課架構',
             'add_new' => '新增課程架構',
             'edit_item' => '編輯課程架構',
             'all_items' => '全部課程架構',
@@ -115,7 +115,6 @@ function prefix_register_dtd_routes_projects() {
 
 }
 add_action('init', 'prefix_register_dtd_routes_projects');
-
 
 //建立custom post-type中的分類
 function create_taxonomies() 

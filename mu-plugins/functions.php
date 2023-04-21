@@ -11,6 +11,7 @@
     require ('search-route-curriculums.php');
     require ('search-route-structure.php');
    
+    
     function dtd_custom_route() {
         register_rest_route('dtd/v1', 'homePage', array(
             'methods' => WP_REST_SERVER::READABLE,
