@@ -7,6 +7,8 @@ export default {
   future: '/future',
   teams: '/teams',
   highSchool: '/highSchool',
+  curriculum: '/curriculum',
+  structure: '/structure',
   // 最新消息
   announcements: '/announcements',
   achievements: '/achievements',

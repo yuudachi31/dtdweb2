@@ -17,6 +17,8 @@ import ActivityDetailPage from '../layouts/ActivityDetail';
 import FuturePage from '../layouts/Future';
 import TeamsPage from '../layouts/Teams';
 import HighSchoolPage from '../layouts/HighSchool';
+import CurriculumPage from '../layouts/Curriculum';
+import StructurePage from '../layouts/Structure';
 // 最新消息
 import AnnouncementsPage from '../layouts/Announcements';
 import AnnouncementDetailPage from '../layouts/AnnouncementDetail';
@@ -68,6 +70,8 @@ const Routes = () => {
             <Route exact path={path.teams} component={TeamsPage} />
             <Route exact path={path.highSchool} component={HighSchoolPage} />
 
+            <Route exact path={path.curriculum} component={CurriculumPage} />
+            <Route exact path={path.structure} component={StructurePage} />
             {/* 最新消息 */}
             <Route
               exact
