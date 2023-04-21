@@ -70,7 +70,7 @@ const Header = () => {
             </li>
             <li className={styles.pageList_pageBox}>
               <Link to={path.future} className={styles.pageBox_page}>
-                修課與未來發展
+                未來發展
               </Link>
             </li>
             <li className={styles.pageList_pageBox}>
@@ -81,6 +81,16 @@ const Header = () => {
             <li className={styles.pageList_pageBox}>
               <Link to={path.highSchool} className={styles.pageBox_page}>
                 高中生專區
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.curriculum} className={styles.pageBox_page}>
+                各年級課表
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.structure} className={styles.pageBox_page}>
+                課程架構
               </Link>
             </li>
           </ul>
@@ -256,7 +266,7 @@ const Header = () => {
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
-                    修課與未來發展
+                    未來發展
                   </Link>
                 </li>
                 <li className={styles.hamPageList_hamPageBox}>
@@ -275,6 +285,24 @@ const Header = () => {
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
                     高中生專區
+                  </Link>
+                </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.curriculum}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    各年級課表
+                  </Link>
+                </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.structure}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    課程架構
                   </Link>
                 </li>
               </ul>

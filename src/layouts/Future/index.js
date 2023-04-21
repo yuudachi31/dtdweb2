@@ -14,14 +14,14 @@ const Future = () => {
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>修課與未來發展-國立臺北教育大學</title>
+        <title>未來發展-國立臺北教育大學</title>
         <meta name="description" content="數位科技設計學系的未來發展" />
       </Helmet>
       <div className={styles.container}>
         <Header />
         <Banner bannerNumber={4} />
         <div className={styles.futureContainer}>
-          <PageTitle title="修課與未來發展" />
+          <PageTitle title="未來發展" />
           <FutureContent />
         </div>
         <Footer />

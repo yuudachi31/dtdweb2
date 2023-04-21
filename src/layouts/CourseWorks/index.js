@@ -124,7 +124,7 @@ const CourseWorks = () => {
                         worksSortActiveItem
                       }
                     >
-                      <img src={work.workImgUrl} />
+                      <img src={work.workImgUrl} loading="lazy" />
                     </Link>
                     <div className={styles.worksBox_content}>
                       <div className={styles.worksBox_content__title}>
