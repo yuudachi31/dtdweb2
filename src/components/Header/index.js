@@ -280,7 +280,7 @@ const Header = () => {
                 </li>
                 <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to={path.curriculum}
+                    to={path.highSchool}
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
@@ -289,7 +289,7 @@ const Header = () => {
                 </li>
                 <li className={styles.hamPageList_hamPageBox}>
                   <Link
-                    to={path.highSchool}
+                    to={path.curriculum}
                     className={styles.hamPageBox_hamPage}
                     onClick={() => clickHamburgerLink(uiDispatch)}
                   >
