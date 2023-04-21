@@ -64,6 +64,7 @@
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'admissionsSearchResults'
         ));
+        
     }
 
     add_action('rest_api_init', 'dtd_custom_route');
