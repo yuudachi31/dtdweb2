@@ -60,10 +60,7 @@
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'structureSearchResults'
         ));
-        register_rest_route('dtd/v1', 'admissions', array(
-            'methods' => WP_REST_SERVER::READABLE,
-            'callback' => 'admissionsSearchResults'
-        ));
+       
         
     }
 
