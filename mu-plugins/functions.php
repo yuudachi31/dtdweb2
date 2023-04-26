@@ -10,7 +10,7 @@
     require ('search-route-formDownload.php');
     require ('search-route-curriculums.php');
     require ('search-route-structure.php');
-   
+    require ('search-route-admissions.php');
     
     function dtd_custom_route() {
         register_rest_route('dtd/v1', 'homePage', array(
@@ -61,7 +61,10 @@
             'methods' => WP_REST_SERVER::READABLE,
             'callback' => 'structureSearchResults'
         ));
-       
+        register_rest_route('dtd/v1', 'admissions', array(
+            'methods' => WP_REST_SERVER::READABLE,
+            'callback' => 'admissionsSearchResults'
+        ));
         
     }
 
