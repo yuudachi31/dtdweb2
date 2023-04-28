@@ -120,9 +120,9 @@ function admissionsSearchResults($data)
                    ),  
                    
                    array(
-                      'info_title' => get_field('admission')['master']['info']['info_6']['info_title'],
-                      'info_content' => get_field('admission')['master']['info']['info_6']['info_content'],
-                      'info_URL' =>get_field('admission')['master']['info']['info_6']['info_URL']
+                      'info_title' => get_field('admission')['master']['info']['info_8']['info_title'],
+                      'info_content' => get_field('admission')['master']['info']['info_8']['info_content'],
+                    
                    ) 
                     ),
                     'regulations_rules'=> array(
@@ -136,45 +136,45 @@ function admissionsSearchResults($data)
                     )
                     ),
                     array(
-                     'degreeImg' => get_field('admission')['university']['degreeImg'],
-                     'degreeName' => get_field('admission')['university']['degreeName'],
+                     'degreeImg' => get_field('admission')['ptmaster']['degreeImg'],
+                     'degreeName' => get_field('admission')['ptmaster']['degreeName'],
                        'info' => array(
                         array(
-                           'info_title' => get_field('admission')['master']['info']['info_1']['info_title'],
-                           'info_content' => get_field('admission')['master']['info']['info_1']['info_content']
+                           'info_title' => get_field('admission')['ptmaster']['info']['info_1']['info_title'],
+                           'info_content' => get_field('admission')['ptmaster']['info']['info_1']['info_content']
                         ),
                         array(
-                          'info_title' => get_field('admission')['master']['info']['info_2']['info_title'],
-                          'info_content' => get_field('admission')['master']['info']['info_2']['info_content']
+                          'info_title' => get_field('admission')['ptmaster']['info']['info_2']['info_title'],
+                          'info_content' => get_field('admission')['ptmaster']['info']['info_2']['info_content']
                        ),
                        array(
-                         'info_title' => get_field('admission')['master']['info']['info_5']['info_title'],
-                         'info_content' => get_field('admission')['master']['info']['info_5']['info_content'],
+                         'info_title' => get_field('admission')['ptmaster']['info']['info_5']['info_title'],
+                         'info_content' => get_field('admission')['ptmaster']['info']['info_5']['info_content'],
                       ), 
                        array(
-                          'info_title' => get_field('admission')['master']['info']['info_3']['info_title'],
-                          'info_content' => get_field('admission')['master']['info']['info_3']['info_content']
+                          'info_title' => get_field('admission')['ptmaster']['info']['info_3']['info_title'],
+                          'info_content' => get_field('admission')['ptmaster']['info']['info_3']['info_content']
                        ), 
                        array(
-                          'info_title' => get_field('admission')['master']['info']['info_4']['info_title'],
-                          'info_content' => get_field('admission')['master']['info']['info_4']['info_content'],
-                          'info_URL' =>get_field('admission')['master']['info']['info_4']['info_URL']
+                          'info_title' => get_field('admission')['ptmaster']['info']['info_4']['info_title'],
+                          'info_content' => get_field('admission')['ptmaster']['info']['info_4']['info_content'],
+                          'info_URL' =>get_field('admission')['ptmaster']['info']['info_4']['info_URL']
                        ),  
                        
                        array(
-                          'info_title' => get_field('admission')['master']['info']['info_6']['info_title'],
-                          'info_content' => get_field('admission')['master']['info']['info_6']['info_content'],
-                          'info_URL' =>get_field('admission')['master']['info']['info_6']['info_URL']
+                          'info_title' => get_field('admission')['ptmaster']['info']['info_8']['info_title'],
+                          'info_content' => get_field('admission')['ptmaster']['info']['info_8']['info_content'],
+                          
                        ) 
                           ),
                           'regulations_rules'=> array(
-                            'rule_title' => get_field('admission')['university']['regulations']['regulations_rules']['rule_title'],
-                               'rule_content' => get_field('admission')['university']['regulations']['regulations_rules']['rule_content']
+                            'rule_title' => get_field('admission')['ptmaster']['regulations']['regulations_rules']['rule_title'],
+                               'rule_content' => get_field('admission')['ptmaster']['regulations']['regulations_rules']['rule_content']
                           ),
                           'regulations_documents' => array(
-                            'document_title' => get_field('admission')['university']['regulations']['regulations_documents']['document_title'],
-                            'document_name' => get_field('admission')['university']['regulations']['regulations_documents']['document_name'],
-                            'document_URL' => get_field('admission')['university']['regulations']['regulations_documents']['document_URL'],
+                            'document_title' => get_field('admission')['ptmaster']['regulations']['regulations_documents']['document_title'],
+                            'document_name' => get_field('admission')['ptmaster']['regulations']['regulations_documents']['document_name'],
+                            'document_URL' => get_field('admission')['ptmaster']['regulations']['regulations_documents']['document_URL'],
                           )
                           ),
 
