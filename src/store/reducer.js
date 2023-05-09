@@ -23,6 +23,7 @@ import {
   SET_RULES_DOWNLOAD,
   SET_CURRICULUM,
   SET_STRUCTURE,
+  SET_ADMISSION,
 } from './actionTypes';
 
 export const StoreContext = createContext();
@@ -170,6 +171,11 @@ function reducer(state, action) {
       return {
         ...state,
         structure: action.payload,
+      };
+    case SET_ADMISSION:
+      return {
+        ...state,
+        admission: action.payload,
       };
     default:
       return state;
