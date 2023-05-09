@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 // 設計
 import styles from './styles.module.scss';
 // icon匯入
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 //components
 import Loading from '../Loading';
 //data
@@ -41,10 +41,10 @@ const Admissions = (prop) => {
     }
   }, [loading]);
 
-  const propertyValues = Object.values(
-    admission?.[0]?.['all']?.[1].regulations_rules,
-  );
-  console.log(propertyValues);
+  // const propertyValues = Object.values(
+  //   admission?.[0]?.['all']?.[1].regulations_rules,
+  // );
+  // console.log(propertyValues);
 
   // const regulationsRules = admission?.[0]?.['all']?.[
   //   prop.index
@@ -73,7 +73,7 @@ const Admissions = (prop) => {
       ) : (
         <>
           {admission?.[0]?.['all']?.[prop.index].info &&
-          admission?.[0]?.['all']?.[prop.index].regulations_rules &&
+          // admission?.[0]?.['all']?.[prop.index].regulations_rules &&
           admission?.[0]?.['all']?.[prop.index].regulations_documents ? (
             <>
               <div className={styles.admissions_titleBar}>入學資訊</div>
@@ -134,7 +134,73 @@ const Admissions = (prop) => {
                 </div>
               </div>
               <div className={styles.admissions_titleBar}>修課規定</div>
-              <div className={styles.admissions_regulationsBlock}></div>
+              <div className={styles.admissions_regulationsBlock}>
+                {admission?.[0]?.['all']?.[prop.index].regulations_rules &&
+                  admission?.[0]?.['all']?.[prop.index].regulations_rules.map(
+                    (regulationsRule) => (
+                      <>
+                        <div className={styles.regulationsBlock_regulationsBox}>
+                          <div
+                            className={
+                              styles.regulationsBox_regulationsItem__margin
+                            }
+                            key={regulationsRule.rule_title}
+                          >
+                            <div
+                              className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                            >
+                              {regulationsRule.rule_title}
+                            </div>
+                            <div
+                              className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
+                            >
+                              {regulationsRule.rule_content}
+                            </div>
+                          </div>
+                        </div>
+                      </>
+                    ),
+                  )}
+                {admission?.[0]?.['all']?.[prop.index].regulations_rules.map(
+                  (text) =>
+                    text.rule_title !== '' && (
+                      <div
+                        key={text.rule_title}
+                        className={styles.regulationsBlock_divisionLine}
+                      ></div>
+                    ),
+                )}
+                <div className={styles.regulationsBlock_regulationsBox}>
+                  {admission?.[0]?.['all']?.[
+                    prop.index
+                  ].regulations_documents.map((regulationsDocument) => (
+                    <div
+                      className={styles.regulationsBox_regulationsItem__margin}
+                      key={regulationsDocument.document_title}
+                    >
+                      <div
+                        className={`${styles.regulationsItem_title} ${styles.admissions_content__fontSize}`}
+                      >
+                        {regulationsDocument.document_title}
+                      </div>
+                      <a
+                        className={`${styles.regulationsItem_document} ${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        href={regulationsDocument.document_URL}
+                      >
+                        <FontAwesomeIcon
+                          className={styles.document_icon__margin}
+                          icon={faExternalLinkAlt}
+                        />
+                        <div className={styles.admissions_content__fontSize}>
+                          {regulationsDocument.document_name}
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </>
           ) : (
             <></>
