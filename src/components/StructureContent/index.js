@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 //css
 import styles from './styles.module.scss';
+//components
+import Loading from '../Loading';
 //data
 import { getStructure } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
@@ -32,188 +34,205 @@ const StructureContent = () => {
   }, [loading]);
 
   return (
-    <div className={styles.container}>
-      {/* 電腦與平板左邊欄 */}
-      <div className={styles.titleFrame}>
-        <div className={styles.titleBar}>大學部</div>
-        <div className={styles.docsBar}>
-          {structure?.map(
-            (group) =>
-              group.structureCategory === '大學部' && (
-                <div key={group.id} className={styles.docsBar_docsBox}>
-                  <Link
-                    className={styles.docsBar_docsBox__remarks}
-                    onClick={() => setPdfurl(group.id)}
-                  >
-                    {group.title}
-                  </Link>
-                </div>
-              ),
-          )}
+    <>
+      {loading ? (
+        <div className={styles.container}>
+          <Loading />
         </div>
+      ) : (
+        <div className={styles.container}>
+          {/* 電腦與平板左邊欄 */}
+          <div className={styles.titleFrame}>
+            <div className={styles.titleBar}>大學部</div>
+            <div className={styles.docsBar}>
+              {structure?.map(
+                (group) =>
+                  group.structureCategory === '大學部' && (
+                    <div key={group.id} className={styles.docsBar_docsBox}>
+                      <Link
+                        className={styles.docsBar_docsBox__remarks}
+                        onClick={() => setPdfurl(group.id)}
+                      >
+                        {group.title}
+                      </Link>
+                    </div>
+                  ),
+              )}
+            </div>
 
-        <div className={styles.titleBar}>碩士班</div>
-        <div className={styles.docsBar}>
-          {structure?.map(
-            (group) =>
-              group.structureCategory === '碩士班' && (
-                <div key={group.id} className={styles.docsBar_docsBox}>
-                  <Link
-                    className={styles.docsBar_docsBox__remarks}
-                    onClick={() => setPdfurl(group.id)}
-                  >
-                    {group.title}
-                  </Link>
-                </div>
-              ),
-          )}
-        </div>
+            <div className={styles.titleBar}>碩士班</div>
+            <div className={styles.docsBar}>
+              {structure?.map(
+                (group) =>
+                  group.structureCategory === '碩士班' && (
+                    <div key={group.id} className={styles.docsBar_docsBox}>
+                      <Link
+                        className={styles.docsBar_docsBox__remarks}
+                        onClick={() => setPdfurl(group.id)}
+                      >
+                        {group.title}
+                      </Link>
+                    </div>
+                  ),
+              )}
+            </div>
 
-        <div className={styles.titleBar}>在職碩士班</div>
-        <div className={styles.docsBar}>
-          {structure?.map(
-            (group) =>
-              group.structureCategory === '在職碩士班' && (
-                <div key={group.id} className={styles.docsBar_docsBox}>
-                  <Link
-                    className={styles.docsBar_docsBox__remarks}
-                    onClick={() => setPdfurl(group.id)}
-                  >
-                    {group.title}
-                  </Link>
-                </div>
-              ),
-          )}
-        </div>
-      </div>
-
-      {/* 手機 */}
-      <div className={styles.dropdownMenu}>
-        <div className={styles.nav_dropdownMenu}>
-          <div
-            className={styles.dropdown_button}
-            onClick={() => {
-              setCollegeopen(!collegeopen);
-              setMasteropen(false);
-              setInserviceopen(false);
-            }}
-            type="button"
-          >
-            大學部
-            <div className={styles.toggle}>
-              <div className="dropdown-toggle"></div>
+            <div className={styles.titleBar}>在職碩士班</div>
+            <div className={styles.docsBar}>
+              {structure?.map(
+                (group) =>
+                  group.structureCategory === '在職碩士班' && (
+                    <div key={group.id} className={styles.docsBar_docsBox}>
+                      <Link
+                        className={styles.docsBar_docsBox__remarks}
+                        onClick={() => setPdfurl(group.id)}
+                      >
+                        {group.title}
+                      </Link>
+                    </div>
+                  ),
+              )}
             </div>
           </div>
-          {collegeopen ? (
-            <div className={styles.dropdown_item}>
-              <div className={styles.docsBar}>
-                {structure?.map(
-                  (group) =>
-                    group.structureCategory === '大學部' && (
-                      <div key={group.id} className={styles.docsBar_docsBox}>
-                        <Link
-                          className={styles.docsBar_docsBox__remarks}
-                          onClick={() => setPdfurl(group.id)}
-                        >
-                          {group.title}
-                        </Link>
-                      </div>
-                    ),
-                )}
-              </div>
-            </div>
-          ) : null}
-        </div>
 
-        <div className={styles.nav_dropdownMenu}>
-          <div
-            className={styles.dropdown_button}
-            onClick={() => {
-              setMasteropen(!mastergeopen);
-              setCollegeopen(false);
-              setInserviceopen(false);
-            }}
-            type="button"
-          >
-            碩士班
-            <div className={styles.toggle}>
-              <div className="dropdown-toggle"></div>
+          {/* 手機 */}
+          <div className={styles.dropdownMenu}>
+            <div className={styles.nav_dropdownMenu}>
+              <div
+                className={styles.dropdown_button}
+                onClick={() => {
+                  setCollegeopen(!collegeopen);
+                  setMasteropen(false);
+                  setInserviceopen(false);
+                }}
+                type="button"
+              >
+                大學部
+                <div className={styles.toggle}>
+                  <div className="dropdown-toggle"></div>
+                </div>
+              </div>
+              {collegeopen ? (
+                <div className={styles.dropdown_item}>
+                  <div className={styles.docsBar}>
+                    {structure?.map(
+                      (group) =>
+                        group.structureCategory === '大學部' && (
+                          <div
+                            key={group.id}
+                            className={styles.docsBar_docsBox}
+                          >
+                            <Link
+                              className={styles.docsBar_docsBox__remarks}
+                              onClick={() => setPdfurl(group.id)}
+                            >
+                              {group.title}
+                            </Link>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+
+            <div className={styles.nav_dropdownMenu}>
+              <div
+                className={styles.dropdown_button}
+                onClick={() => {
+                  setMasteropen(!mastergeopen);
+                  setCollegeopen(false);
+                  setInserviceopen(false);
+                }}
+                type="button"
+              >
+                碩士班
+                <div className={styles.toggle}>
+                  <div className="dropdown-toggle"></div>
+                </div>
+              </div>
+              {mastergeopen ? (
+                <div className={styles.dropdown_item}>
+                  <div className={styles.docsBar}>
+                    {structure?.map(
+                      (group) =>
+                        group.structureCategory === '碩士班' && (
+                          <div
+                            key={group.id}
+                            className={styles.docsBar_docsBox}
+                          >
+                            <Link
+                              className={styles.docsBar_docsBox__remarks}
+                              onClick={() => setPdfurl(group.id)}
+                            >
+                              {group.title}
+                            </Link>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                </div>
+              ) : null}
+            </div>
+
+            <div className={styles.nav_dropdownMenu}>
+              <div
+                className={styles.dropdown_button}
+                onClick={() => {
+                  setInserviceopen(!inservicegeopen);
+                  setMasteropen(false);
+                  setCollegeopen(false);
+                }}
+                type="button"
+              >
+                在職碩士班
+                <div className={styles.toggle}>
+                  <div className="dropdown-toggle"></div>
+                </div>
+              </div>
+              {inservicegeopen ? (
+                <div className={styles.dropdown_item}>
+                  <div className={styles.docsBar}>
+                    {structure?.map(
+                      (group) =>
+                        group.structureCategory === '在職碩士班' && (
+                          <div
+                            key={group.id}
+                            className={styles.docsBar_docsBox}
+                          >
+                            <Link
+                              className={styles.docsBar_docsBox__remarks}
+                              onClick={() => setPdfurl(group.id)}
+                            >
+                              {group.title}
+                            </Link>
+                          </div>
+                        ),
+                    )}
+                  </div>
+                </div>
+              ) : null}
             </div>
           </div>
-          {mastergeopen ? (
-            <div className={styles.dropdown_item}>
-              <div className={styles.docsBar}>
-                {structure?.map(
-                  (group) =>
-                    group.structureCategory === '碩士班' && (
-                      <div key={group.id} className={styles.docsBar_docsBox}>
-                        <Link
-                          className={styles.docsBar_docsBox__remarks}
-                          onClick={() => setPdfurl(group.id)}
-                        >
-                          {group.title}
-                        </Link>
-                      </div>
-                    ),
-                )}
-              </div>
-            </div>
-          ) : null}
-        </div>
 
-        <div className={styles.nav_dropdownMenu}>
-          <div
-            className={styles.dropdown_button}
-            onClick={() => {
-              setInserviceopen(!inservicegeopen);
-              setMasteropen(false);
-              setCollegeopen(false);
-            }}
-            type="button"
-          >
-            在職碩士班
-            <div className={styles.toggle}>
-              <div className="dropdown-toggle"></div>
-            </div>
+          {/* 課表連結 */}
+          <div className={styles.fileFrame}>
+            {structure?.map(
+              (group) =>
+                group.id === pdfurl && (
+                  <iframe
+                    key={group.id}
+                    className={styles.iframe}
+                    loading="lazy"
+                    src={group.structureUrl}
+                    allow="autoplay"
+                  ></iframe>
+                ),
+            )}
           </div>
-          {inservicegeopen ? (
-            <div className={styles.dropdown_item}>
-              <div className={styles.docsBar}>
-                {structure?.map(
-                  (group) =>
-                    group.structureCategory === '在職碩士班' && (
-                      <div key={group.id} className={styles.docsBar_docsBox}>
-                        <Link
-                          className={styles.docsBar_docsBox__remarks}
-                          onClick={() => setPdfurl(group.id)}
-                        >
-                          {group.title}
-                        </Link>
-                      </div>
-                    ),
-                )}
-              </div>
-            </div>
-          ) : null}
         </div>
-      </div>
-
-      {/* 課表連結 */}
-      <div className={styles.fileFrame}>
-        {structure?.map(
-          (group) =>
-            group.id === pdfurl && (
-              <iframe
-                key={group.id}
-                className={styles.iframe}
-                loading="lazy"
-                src={group.structureUrl}
-                allow="autoplay"
-              ></iframe>
-            ),
-        )}
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
