@@ -83,11 +83,13 @@ const Admissions = (prop) => {
                     src={admission?.[0]?.['all']?.[prop.index].degreeImg}
                     className={styles.degreeBox_img__width}
                   ></img>
+
                   <div
                     className={`${styles.degreeBox_name} ${styles.admissions_content__preLine}`}
-                  >
-                    {admission?.[0]?.['all']?.[prop.index].degreeName}
-                  </div>
+                    dangerouslySetInnerHTML={{
+                      __html: admission?.[0]?.['all']?.[prop.index].degreeName,
+                    }}
+                  ></div>
                 </div>
                 <div className={styles.infoBlock_infoBox}>
                   {admission?.[0]?.['all']?.[prop.index].info.map(
@@ -105,7 +107,11 @@ const Admissions = (prop) => {
                           className={`${styles.infoRow_content} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
                         >
                           {infoDetail.info_URL == undefined ? (
-                            infoDetail.info_content
+                            <div
+                              dangerouslySetInnerHTML={{
+                                __html: infoDetail.info_content,
+                              }}
+                            ></div>
                           ) : (
                             <>
                               {infoDetail.info_content == '高中生專區' ? (
@@ -151,11 +157,13 @@ const Admissions = (prop) => {
                             >
                               {regulationsRule.rule_title}
                             </div>
+                            <div></div>
                             <div
                               className={`${styles.regulationsItem_content__marginLeft} ${styles.admissions_content__fontSize} ${styles.admissions_content__preLine}`}
-                            >
-                              {regulationsRule.rule_content}
-                            </div>
+                              dangerouslySetInnerHTML={{
+                                __html: regulationsRule.rule_content,
+                              }}
+                            ></div>
                           </div>
                         </div>
                       </>
