@@ -22,6 +22,7 @@ import {
   SET_RULES_DOWNLOAD,
   SET_CURRICULUM,
   SET_STRUCTURE,
+  SET_ADMISSION,
 } from './actionTypes';
 
 const BASE_URL = 'https://dtd.ntue.edu.tw/index.php/wp-json/dtd/v1';
@@ -475,6 +476,25 @@ export const getStructure = async (dispatch) => {
     dispatch({
       type: SET_STRUCTURE,
       payload: structure,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+    console.log(error);
+  }
+};
+
+//取得招生資訊
+export const getAdmission = async (dispatch) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  try {
+    const url = `${BASE_URL}/admissions`;
+    const response = await axios.get(url);
+    const admission = response.data;
+
+    dispatch({
+      type: SET_ADMISSION,
+      payload: admission,
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
