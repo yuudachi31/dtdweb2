@@ -63,7 +63,7 @@ const AdmissionsEnglish = (prop) => {
   // });
 
   const admissionsinfo = admissionsjsonEnglish;
-  console.log(admissionsinfo[0].all[0].category);
+  //console.log(admissionsinfo[0].all[0].category);
   return (
     <>
       {loading ? (
