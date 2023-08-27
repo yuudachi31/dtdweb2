@@ -23,4 +23,6 @@ export default {
   // 下載專區
   rules: '/rules',
   downloads: '/downloads',
+  //english page
+  english: '/english',
 };
