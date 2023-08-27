@@ -38,6 +38,8 @@ import GoodWorksDetailPage from '../layouts/GoodWorksDetail';
 // 下載專區
 import RulesPage from '../layouts/Rules';
 import DownloadsPage from '../layouts/Downloads';
+//english
+import EnglishPage from '../layouts/English';
 
 const Routes = () => {
   return (
@@ -123,6 +125,8 @@ const Routes = () => {
             {/* 下載專區 */}
             <Route exact path={path.rules} component={RulesPage} />
             <Route exact path={path.downloads} component={DownloadsPage} />
+            {/* 英文版 */}
+            <Route exact path={path.english} component={EnglishPage} />
           </Switch>
         </Router>
       </StoreProvider>

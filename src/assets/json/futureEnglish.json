@@ -1,0 +1,71 @@
+[
+    {
+        "groupid":0,
+        "grouptitle":"升學",
+        "list": [
+            {
+               "id":0,
+               "title": "研究所",
+               "imgUrl": "assets/images/future/Job-research.png",
+               "description": "國內外資訊或數位科技相關研究所",
+               "lesson": ["＃玩具與遊戲設計碩士班", "＃資訊工程碩士班", "＃多媒體工程研究所"]
+            }
+        ]
+    },
+    {
+        "groupid":1,
+        "grouptitle":"就業",
+        "list": [
+            {
+               "id":0,
+               "title": "工程師",
+               "imgUrl": "assets/images/future/Job-engineer.png",
+               "description": "前端工程師、遊戲工程師、後端工程師、APP工程師",
+               "lesson": [""]
+            },
+            {
+               "id":1,
+               "title": "UI / UX 設計師",
+               "imgUrl": "assets/images/future/Job-uiux.png",
+               "description": "使用者經驗設計師、使用者介面設計師",
+               "lesson": [""]
+            },
+            {
+                "id":2,
+                "title": "平面設計師",
+                "imgUrl": "assets/images/future/Job-graphic.png",
+                "description": "平面文宣、海報、DM、目錄設計",
+                "lesson": [""]
+             },
+             {
+                "id":3,
+                "title": "影片動畫師",
+                "imgUrl": "assets/images/future/Job-video.png",
+                "description": "影片剪輯、影片特效、動畫製作",
+                "lesson": [""]
+             },
+             {
+                "id":4,
+                "title": "遊戲美術",
+                "imgUrl": "assets/images/future/Job-art.png",
+                "description": "遊戲角色設計、遊戲場景設計、3D建模",
+                "lesson": [""]
+             },
+             {
+                "id":5,
+                "title": "互動設計師",
+                "imgUrl": "assets/images/future/Job-interaction.png",
+                "description": "互動裝置設計、虛擬實境設計、擴增實境設計",
+                "lesson": [""]
+             },
+             {
+               "id":6,
+               "title": "遊戲企劃師",
+               "imgUrl": "assets/images/future/Job-plan.png",
+               "description": "構思遊戲內容、跨部門溝通、遊戲測試",
+               "lesson": [""]
+            }
+             
+        ]
+    }
+]

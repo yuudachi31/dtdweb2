@@ -1,0 +1,184 @@
+@import '../../styles/media.scss';
+@import '../../styles/spacing.scss';
+@import '../../styles/font.scss';
+@import '../../styles/color.scss';
+
+.admissions_titleBar {
+  width: 100%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: $dtd-secondary-color;
+  display: flex;
+  align-items: center;
+  padding-left: $dtd-secondary-spacing;
+  font-size: $dtd-h2-size;
+}
+
+.admissions_content__fontSize {
+  font-size: $dtd-p-size;
+}
+.admissions_content__preLine {
+  white-space: pre-line;
+}
+
+.admissions_infoBlock {
+  margin: $dtd-section-spacing 0;
+  padding: 0 $dtd-secondary-spacing;
+  display: flex;
+}
+
+.infoBlock_degreeBox {
+  width: 206px;
+  text-align: center;
+}
+
+.degreeBox_img__width {
+  width: 160px;
+}
+.degreeBox_name {
+  font-size: $dtd-h2-size;
+  margin-top: $dtd-secondary-spacing;
+}
+
+.infoBlock_infoBox {
+  width: calc(100% - 304px);
+  margin-left: 113px;
+  margin-bottom: -$dtd-p-size;
+}
+
+.infoBox_infoRow {
+  display: flex;
+  margin-bottom: $dtd-p-size;
+}
+
+.infoRow_title {
+  width: 112px;
+}
+.infoRow_content {
+  width: calc(100% - 112px);
+  padding-left: 6.1%;
+}
+.infoRow_document {
+  color: $dtd-main-color;
+  &:hover {
+    color: $dtd-main-color;
+    text-decoration: none;
+    padding-bottom: 3px;
+    border-bottom: 1px $dtd-main-color solid;
+  }
+}
+
+.admissions_regulationsBlock {
+  margin: $dtd-section-spacing 0 $dtd-index-main-spacing 0;
+  padding: 0 $dtd-secondary-spacing;
+}
+
+.regulationsBlock_regulationsBox {
+  display: flex;
+  margin-right: -168px;
+}
+
+.regulationsBox_regulationsItem__margin {
+  margin-right: 168px;
+}
+.regulationsItem_title {
+  font-weight: bold;
+  margin-bottom: $dtd-p-size;
+}
+.regulationsItem_content__marginLeft {
+  margin-left: 24px;
+}
+
+.regulationsBlock_divisionLine {
+  height: 1px;
+  background-color: $dtd-hint-text-color;
+  margin: $dtd-secondary-spacing 0;
+}
+
+.regulationsItem_document {
+  display: flex;
+  color: $dtd-text-color;
+  &:hover {
+    color: $dtd-main-color;
+    text-decoration: none;
+  }
+}
+
+.document_icon__margin {
+  margin-top: 2.5px;
+  margin-right: 8px;
+}
+
+@media (max-width: $dtd-media-tablet) {
+  .infoBlock_infoBox {
+    width: calc(92.2% - 206px);
+    margin-left: 7.8%;
+  }
+
+  .infoRow_content {
+    padding-left: 8.3%;
+  }
+
+  .regulationsBlock_regulationsBox {
+    margin-right: 0;
+    justify-content: space-between;
+  }
+
+  .regulationsBox_regulationsItem__margin {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .admissions_infoBlock {
+    display: block;
+  }
+
+  .infoBlock_degreeBox {
+    width: 100%;
+    margin-bottom: $dtd-main-spcing;
+  }
+  .infoBlock_infoBox {
+    width: 100%;
+    margin: 0;
+  }
+
+  .infoRow_content {
+    padding-left: 7%;
+  }
+
+  .regulationsBlock_regulationsBox {
+    display: block;
+    margin-right: 0;
+  }
+
+  .regulationsBox_regulationsItem__margin {
+    margin-right: 0;
+    margin-bottom: $dtd-secondary-spacing;
+  }
+}
+
+@media (max-width: $dtd-media-phone) {
+  .admissions_infoBlock {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: $dtd-media-phone-small) {
+  .infoBox_infoRow {
+    display: block;
+    margin-bottom: $dtd-secondary-spacing;
+  }
+  .infoRow_title {
+    width: 100%;
+    margin-bottom: $dtd-p-size;
+  }
+  .infoRow_content {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .admissions_regulationsBlock {
+    padding: 0 8px;
+  }
+}
