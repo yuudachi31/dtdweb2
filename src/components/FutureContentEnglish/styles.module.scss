@@ -49,7 +49,7 @@
   .description_spanContent {
     display: flex;
     .description_spanContentLeft {
-      width: 240px;
+      width: 360px;
     }
     .description_span {
       margin-top: 16px;
@@ -61,7 +61,7 @@
   .description {
     .description_spanContent {
       .description_spanContentLeft {
-        width: 200px;
+        width: 240px;
       }
     }
   }
@@ -76,7 +76,7 @@
 
 @media (max-width: 768px) {
   .section {
-    margin: 0 auto $dtd-section-spacing auto;
+    margin: 0 auto 110px auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,5 +101,9 @@
   .description_spanContent {
     flex-direction: column;
     margin-top: 16px;
+  }
+  .section {
+    margin: 0 auto $dtd-secondary-spacing auto;
+    
   }
 }

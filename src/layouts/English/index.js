@@ -21,11 +21,11 @@ const English = () => {
       <Header />
       <Banner bannerNumber={4} />
       <div className={styles.container}>
-        <PageTitle title="未來發展Future" />
+        <PageTitle title="Future Developments" />
         <FutureContentEnglish />
       </div>
       <div className={styles.container}>
-        <PageTitle title="招生資訊" />
+        <PageTitle title="Admissions Information" />
         <AdmissionsE index={0} />
         <AdmissionsE index={1} />
         <AdmissionsE index={2} />

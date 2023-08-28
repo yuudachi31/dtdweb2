@@ -1,68 +1,68 @@
 [
     {
         "groupid":0,
-        "grouptitle":"升學",
+        "grouptitle":"What comes next?",
         "list": [
             {
                "id":0,
-               "title": "研究所",
+               "title": "Graduate School",
                "imgUrl": "assets/images/future/Job-research.png",
-               "description": "國內外資訊或數位科技相關研究所",
-               "lesson": ["＃玩具與遊戲設計碩士班", "＃資訊工程碩士班", "＃多媒體工程研究所"]
+               "description": "Domestic and International research institutes related to information and digital technology",
+               "lesson": ["＃Master Program in Toy and Game Design", "＃Master of Information Engineering", "＃Institute of Multimedia Engineering"]
             }
         ]
     },
     {
         "groupid":1,
-        "grouptitle":"就業",
+        "grouptitle":"Careers",
         "list": [
             {
                "id":0,
-               "title": "工程師",
+               "title": "Engineer",
                "imgUrl": "assets/images/future/Job-engineer.png",
-               "description": "前端工程師、遊戲工程師、後端工程師、APP工程師",
+               "description": "Front-end Engineer, Game Engineer, Back-end Engineer, App Engineer",
                "lesson": [""]
             },
             {
                "id":1,
-               "title": "UI / UX 設計師",
+               "title": "UI / UX designer",
                "imgUrl": "assets/images/future/Job-uiux.png",
-               "description": "使用者經驗設計師、使用者介面設計師",
+               "description": "User Experience Designer, User Interface Designer",
                "lesson": [""]
             },
             {
                 "id":2,
-                "title": "平面設計師",
+                "title": "Graphic Designer",
                 "imgUrl": "assets/images/future/Job-graphic.png",
-                "description": "平面文宣、海報、DM、目錄設計",
+                "description": "Publicity Handouts, Posters, Digital Marketing, Catalog Design",
                 "lesson": [""]
              },
              {
                 "id":3,
-                "title": "影片動畫師",
+                "title": "Video Animator",
                 "imgUrl": "assets/images/future/Job-video.png",
-                "description": "影片剪輯、影片特效、動畫製作",
+                "description": "Video Editing, Video Special Effects, Animation Production",
                 "lesson": [""]
              },
              {
                 "id":4,
-                "title": "遊戲美術",
+                "title": "Game Artist",
                 "imgUrl": "assets/images/future/Job-art.png",
-                "description": "遊戲角色設計、遊戲場景設計、3D建模",
+                "description": "Game Character Design, Game Scene Design, 3D Modeling",
                 "lesson": [""]
              },
              {
                 "id":5,
-                "title": "互動設計師",
+                "title": "Interactivity Designer",
                 "imgUrl": "assets/images/future/Job-interaction.png",
-                "description": "互動裝置設計、虛擬實境設計、擴增實境設計",
+                "description": "Interactive Installation Design, Virtual Reality Design, Augmented Reality Design",
                 "lesson": [""]
              },
              {
                "id":6,
-               "title": "遊戲企劃師",
+               "title": "Game Business Manager",
                "imgUrl": "assets/images/future/Job-plan.png",
-               "description": "構思遊戲內容、跨部門溝通、遊戲測試",
+               "description": "Conception of Game Content, Cross-Departmental Communication, Game Testing",
                "lesson": [""]
             }
              

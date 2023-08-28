@@ -7,22 +7,25 @@ const FooterEnglish = () => {
     <div className={styles.footer}>
       <div className={`${styles.footer_content} ${styles.footer_leftContent}`}>
         <p className={styles.footer_p__font}>
-          English國立臺北教育大學數位科技設計學系(含玩具與遊戲設計碩士班)版權所有
-        </p>
-        <p className={styles.footer_p__font}>
           National Taipei University of Education Department of Digital
           Technology Design(Master Program in Toy and Game Design)All Rights
           Reserved.
         </p>
+        {/* <p className={styles.footer_p__font}>
+          National Taipei University of Education Department of Digital
+          Technology Design(Master Program in Toy and Game Design)All Rights
+          Reserved.
+        </p> */}
       </div>
       <div className={`${styles.footer_content} ${styles.footer_rightContent}`}>
         <p
           className={`${styles.footer_p__font} ${styles.footer_p__lineheight}`}
         >
-          系所電話：(02)2732-1104分機62478 / 63533 <br />
-          傳真及專線：(02)2735-5912 <br />
+          Tel：(02)2732-1104 ext.62478 / 63533 <br />
+          Fax：(02)2735-5912 <br />
           E-Mail： toygame@tea.ntue.edu.tw <br />
-          系辦公室地址：10671 台北市大安區和平東路2段134號&emsp;科學館5樓B507室
+          Address：No.134, Sec. 2, Heping E. Rd., Da-an District, Taipei City
+          106&emsp;－－Science Building classroom B507
         </p>
       </div>
     </div>
