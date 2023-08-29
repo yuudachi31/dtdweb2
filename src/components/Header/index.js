@@ -183,7 +183,11 @@ const Header = () => {
 
         {/* 下載專區 */}
         <button className={styles.nav_dropdownMenu}>
-          <div className={styles.dropdownMenu_title}>下載專區</div>
+          <div
+            className={`${styles.dropdownMenu_title} ${styles.dropdownMenu_title__borderRight}`}
+          >
+            下載專區
+          </div>
           <ul className={styles.dropdownMenu_pageList}>
             <li className={styles.pageList_pageBox}>
               <Link to={path.rules} className={styles.pageBox_page}>
@@ -196,6 +200,11 @@ const Header = () => {
               </Link>
             </li>
           </ul>
+        </button>
+        <button className={styles.nav_dropdownMenu}>
+          <Link to={path.english}>
+            <div className={styles.dropdownMenu_title_english}>English</div>
+          </Link>
         </button>
 
         {/* hamburgerMenu */}
@@ -474,6 +483,16 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
+            </button>
+          </li>
+          <li>
+            <button
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 4 })}
+            >
+              <Link to={path.english}>
+                <p>English</p>
+              </Link>
             </button>
           </li>
         </ul>

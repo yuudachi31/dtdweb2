@@ -18,6 +18,9 @@
 .header_logo__width {
   width: 243px;
 }
+.header_logo__width_english {
+  width: 50px;
+}
 .header_nav {
   display: flex;
   font-size: $dtd-p-size;
@@ -53,10 +56,44 @@
     }
   }
 }
+.nav_dropdownMenu_english {
+  position: relative;
+  text-align: center;
+  height: 90px;
+  padding: 0;
+  border: none;
+  background-color: #fff;
+  color: $dtd-text-color;
 
+  & .dropdownMenu_pageList {
+    display: none;
+  }
+  &:hover {
+    color: $dtd-main-color;
+
+    & .dropdownMenu_pageList {
+      display: block;
+      position: absolute;
+      width: 192px;
+      left: 0;
+      top: 90px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      background-color: $dtd-submenu-bg-color;
+      border-radius: 6px;
+      z-index: 1;
+    }
+  }
+}
 .dropdownMenu_title {
   width: 100%;
   padding: 0 $dtd-secondary-spacing;
+}
+.dropdownMenu_title_english {
+  width: 100%;
+  padding: 0 $dtd-secondary-spacing;
+  color:#444
 }
 .dropdownMenu_title__borderRight {
   border-right: 1px $dtd-hint-text-color solid;

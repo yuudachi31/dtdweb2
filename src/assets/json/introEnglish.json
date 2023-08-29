@@ -1,0 +1,171 @@
+{
+    "about_content":"The continuous development and innovative application of new information technology has brought about major changes in peoples’ viewpoints towards digital technology, which in turn has significantly impacted the current and future job market, leading to an urgent demand for people talented in the fields of digital technology and visual design. Talents cross-trained in these fields are not only highly irreplaceable, but will also enjoy more competitive advantages in the future. In view of these benefits and the needs of the market, the National Taipei University of Education is actively cultivating talents in its students by investing resources and pursuing a forward-looking and open approach towards education. The establishment of the Department of Digital Technology Design in August 2006 was the humble beginning of our school’s attempts at promoting these cross-disciplinary talents. At that time, our school began to recruit high school students into this department, combining a solid core of theoretical technology, information, and design classes with solid hands-on and practical lessons, with additional special training available as well. After students gain knowledge and skills in this cross-disciplinary field and graduate from the program, they are awarded the title of “Bachelor of Design”.    ",
+    "experience_share":"前往 IOH 聽學長姐的經驗分享",
+    "experience_share_URL":"https://ioh.tw/talks/%E5%8C%97%E6%95%99%E5%A4%A7%E6%95%B8%E4%BD%8D%E7%A7%91%E6%8A%80%E8%A8%AD%E8%A8%88%E5%AD%B8%E7%B3%BB-%E9%83%AD%E6%98%80%E7%94%84-jennifer-guo-tw-study-ntue-bde",
+    "concepts":[
+        {
+            "concept_img":"assets/images/intro/concepts/foresight.png",
+            "concept_title":"Forward-Looking",
+            "concept_content":"This department focuses on the trends of future technological development, including the Internet of Things (IoT), Virtual Reality (VR), Augmented Reality (AR), and other specialized courses."
+        },
+        {
+            "concept_img":"assets/images/intro/concepts/open.png",
+            "concept_title":"Open-Minded",
+            "concept_content":"The department encourages students to innovate and experiment with the applications of science and technology, allowing them to integrate technology into their lives and create added value in their fields."
+        },
+        {
+            "concept_img":"assets/images/intro/concepts/integration.png",
+            "concept_title":"Cross-Field Integration",
+            "concept_content":"Students study in both the fields of art and programming. Art and programming complement one another and allow for the development of remarkably innovative software and hardware. "
+        },
+        {
+            "concept_img":"assets/images/intro/concepts/resource.png",
+            "concept_title":"Resources",
+            "concept_content":"The department supplies Apple Mac computers, computer-assisted drawing hardware, and other related hardware to all students."
+        }
+    ],
+    "classrooms":[
+        {
+            "classroom_id":"1-1",
+            "classroom_img":"assets/images/intro/classrooms/E811-1.jpg",
+            "classroom_name":"Project Based Learning Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E811"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系師生研討使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"1-2",
+            "classroom_img":"assets/images/intro/classrooms/E811-2.jpg",
+            "classroom_name":"Project Based Learning Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E811"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系師生研討使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"2-1",
+            "classroom_img":"assets/images/intro/classrooms/E812-1.jpg",
+            "classroom_name":"Multimedia Design Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E812"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系專業電腦（APPLE MINI）課程使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"2-2",
+            "classroom_img":"assets/images/intro/classrooms/E812-2.jpg",
+            "classroom_name":"Multimedia Design Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E812"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系專業電腦（APPLE MINI）課程使用"
+                }
+            ]
+        },
+        {
+
+            "classroom_id":"3",
+            "classroom_img":"assets/images/intro/classrooms/E813.png",
+            "classroom_name":"Meta Reality Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E813"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系 VR/AR 互動體驗相關課程使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"4",
+            "classroom_img":"assets/images/intro/classrooms/E814.jpg",
+            "classroom_name":"5G Open Innovation Lab",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 1F E814"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本教室為本系專業電腦課程使用"
+                }
+            ]
+        },
+        {
+            "classroom_id":"5",
+            "classroom_img":"assets/images/intro/classrooms/E805.jpg",
+            "classroom_name":"Calm Technology Seminar Room",
+            "classroom_info":
+            [
+                {
+                    "info_title":"教室位置：",
+                    "info_content":"創意館 B1 E805"
+                },
+                {
+                    "info_title":"教室簡介：",
+                    "info_content":"本系師生互動研討空間"
+                }
+            ]
+        },
+        {
+            "classroom_id":"6",
+            "classroom_img":"/assets/images/intro/classrooms/aisle.jpg",
+            "classroom_name":"Digital Creative Forum",
+            "classroom_info":
+            [
+                {
+                    "info_title":"場地位置：",
+                    "info_content":"創意館 1F 走廊"
+                },
+                {
+                    "info_title":"場地簡介：",
+                    "info_content":"本場地提供本系學生研討及休憩空間"
+                }
+            ]
+        }
+    ],
+    "works":[
+        "assets/images/intro/works/work1.png",
+        "assets/images/intro/works/work2.png",
+        "assets/images/intro/works/work3.jpg",
+        "assets/images/intro/works/work4.png",
+        "assets/images/intro/works/work5.png",
+        "assets/images/intro/works/work6.jpg",
+        "assets/images/intro/works/work7.png",
+        "assets/images/intro/works/work8.png",
+        "assets/images/intro/works/work9.png"
+        
+    ]
+}
+ 
