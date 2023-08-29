@@ -3,23 +3,28 @@ import { Helmet } from 'react-helmet';
 // 設計
 import styles from './styles.module.scss';
 // components
-import Header from '../../components/Header';
+import EnglishHeader from '../../components/Header/EnglishHeader';
 import Banner from '../../components/Banner';
 import PageTitle from '../../components/PageTitle';
 import AdmissionsE from '../../components/AdmissionsEnglish';
 import FooterEnglish from '../../components/FooterEnglish';
 import FutureContentEnglish from '../../components/FutureContentEnglish';
-
+import IntroEnglish from '../../components/IntroEnglish';
 const English = () => {
   return (
     <Fragment>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Ntue DTD English Web Page</title>
-        <meta name="description" content="數位科技設計學系的學士班" />
+        <meta
+          name="description"
+          content="National Taipei university of education - digital technology design"
+        />
       </Helmet>
-      <Header />
+      <EnglishHeader />
       <Banner bannerNumber={4} />
+      <IntroEnglish />
+
       <div className={styles.container}>
         <PageTitle title="Future Developments" />
         <FutureContentEnglish />
