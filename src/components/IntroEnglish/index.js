@@ -9,7 +9,6 @@ import styles from './styles.module.scss';
 // import Header from '../Header';
 // import Banner from '../Banner';
 import PageTitle from '../PageTitle';
-import Footer from '../Footer';
 
 // 資料匯入
 import introjson from '../../assets/json/introEnglish.json';
@@ -38,7 +37,7 @@ const Intro = () => {
         introDetail.concepts &&
         introDetail.classrooms ? (
           <div className={styles.container}>
-            <PageTitle title="本系簡介" />
+            <PageTitle title="Department Introduction" />
             <div
               className={`${styles.intro_block__marginTop} ${styles.intro_aboutBlock}`}
             >
@@ -46,7 +45,7 @@ const Intro = () => {
                 <div>{introDetail.about_content}</div>
               </div>
             </div>
-            <PageTitle title="教育理念" />
+            <PageTitle title="Educational Philosophy" />
             <div
               className={`${styles.intro_block__marginTop} ${styles.intro_conceptBlock}`}
             >
@@ -66,7 +65,7 @@ const Intro = () => {
               ))}
             </div>
             <div id="classroom">
-              <PageTitle title="教室導覽" />
+              <PageTitle title="Classroom Tour" />
               <div className={styles.intro_block__marginTop}>
                 {/* 教室資訊輪播 */}
                 <div className={styles.intro_classroomCarousel}>
@@ -122,8 +121,8 @@ const Intro = () => {
                 </div>
               </div>
             </div>
-            <div id="works-gallery">
-              <PageTitle title="作品展示" />
+            <div id="works-gallery" className={styles.works_gallery}>
+              <PageTitle title="Gallery" />
               <div className={styles.intro_block__marginTop}>
                 {/* 作品資訊輪播 */}
                 <div className={styles.intro_worksCarousel}>
@@ -139,25 +138,6 @@ const Intro = () => {
                   </Carousel>
                 </div>
                 {/* 教室資訊區塊 */}
-                <div className={styles.intro_classroomBlock}>
-                  {introDetail.classrooms.map((classroom) => (
-                    <div key={classroom.classroom_id}>
-                      <img
-                        src={classroom.classroom_img}
-                        className={styles.classroomBlock_img}
-                      />
-                      <div className={styles.classroomBlock_classroomBlockInfo}>
-                        <div
-                          className={
-                            styles.classroomBlockInfo_classroomBlockName
-                          }
-                        >
-                          {classroom.classroom_name}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
               </div>
             </div>
           </div>
@@ -165,7 +145,6 @@ const Intro = () => {
           <div className={styles.container}></div>
         )}
       </>
-      <Footer />
     </Fragment>
   );
 };

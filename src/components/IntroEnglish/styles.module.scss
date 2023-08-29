@@ -183,6 +183,8 @@
   .classroomCarousel_img {
     height: 310px;
   }
+
+ 
 }
 
 @media (max-width: $dtd-media-phone) {
@@ -210,6 +212,7 @@
   .intro_classroomCarousel {
     display: none;
   }
+ 
   .intro_classroomBlock {
     width: 100%;
     display: block;
@@ -246,10 +249,18 @@
   .classroomBlockRow_content {
     width: calc(100% - 86px);
   }
+  .intro_worksCarousel {
+  
+    height: 310px;
+    
+  }
 }
 
 @media (max-width: $dtd-media-phone-small) {
   .container {
     padding: 0 $dtd-margin-phone-small;
+  }
+  .works_gallery{
+    display: none;
   }
 }

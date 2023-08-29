@@ -5,7 +5,7 @@ import styles from './styles.module.scss';
 // 路徑
 import path from '../../utils/path';
 // 圖片匯入
-import logo from '../../assets/images/header/DTD.png';
+import logo from '../../assets/images/header/DTD_icon.png';
 // icon匯入
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <div className={styles.header}>
       <Link to={path.home} onClick={() => clickHamburgerLink(uiDispatch)}>
-        <img className={styles.header_logo__width} src={logo}></img>
+        <img className={styles.header_logo__width_english} src={logo}></img>
       </Link>
       <div className={styles.header_nav} ref={ref}>
         {/* navbar */}

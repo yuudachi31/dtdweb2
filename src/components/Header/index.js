@@ -485,6 +485,16 @@ const Header = () => {
               </ul>
             </button>
           </li>
+          <li>
+            <button
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 4 })}
+            >
+              <Link to={path.english}>
+                <p>English</p>
+              </Link>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
