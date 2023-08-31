@@ -9,6 +9,8 @@ import logo from '../../assets/images/header/DTD.png';
 // icon匯入
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+// import { faFighterJet } from '@fortawesome/free-solid-svg-icons';
+// import { FaEarthAmericas } from '@react-icons/all-files';
 // uiStore
 import {
   clickHamburgerMenu,
@@ -201,13 +203,22 @@ const Header = () => {
             </li>
           </ul>
         </button>
-        <button className={styles.nav_dropdownMenu}>
+        <button className={styles.nav_dropdownMenu_english}>
           <Link to={path.english}>
             <div className={styles.dropdownMenu_title_english}>English</div>
           </Link>
         </button>
 
         {/* hamburgerMenu */}
+        {/* <FontAwesomeIcon
+          className={styles.hamMenu_icon__size}
+          icon={faFighterJet}
+        />
+        <FontAwesomeIcon
+          className={styles.hamMenu_icon__size}
+          icon="fa-solid fa-earth-americas"
+        /> */}
+
         <button
           className={
             uiState.hamburgerMenuState
