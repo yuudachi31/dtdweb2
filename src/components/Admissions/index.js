@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // 設計
 import styles from './styles.module.scss';
 // icon匯入
@@ -10,9 +10,7 @@ import Loading from '../Loading';
 //data
 import { getAdmission } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
-// import admissionsjson from '../../assets/json/admissions.json';
 const Admissions = (prop) => {
-  // const [admissionsDetail, setAdmissionsDetail] = useState({});
   const {
     state: {
       admission,
@@ -23,15 +21,9 @@ const Admissions = (prop) => {
 
   useEffect(() => {
     getAdmission(dispatch);
-    // setAdmissionsDetail(admission[0]['all'][prop.index]);
   }, []);
 
   console.log(typeof admission?.[0]?.['all']?.[0].info);
-
-  // useEffect(() => {
-  //   setAdmissionsDetail(admissionsjson[0]['all'][prop.index]);
-  //   window.scrollTo(0, 0);
-  // }, []);
 
   useEffect(() => {
     if (loading) {
@@ -40,29 +32,6 @@ const Admissions = (prop) => {
       document.body.style.overflow = 'scroll';
     }
   }, [loading]);
-
-  // const propertyValues = Object.values(
-  //   admission?.[0]?.['all']?.[1].regulations_rules,
-  // );
-  // console.log(propertyValues);
-
-  // const regulationsRules = admission?.[0]?.['all']?.[
-  //   prop.index
-  // ].regulations_rules.map((rules) => {
-  //   return (
-  //     <div
-  //       key={rules.rule_title}
-  //       className={styles.regulationsBlock_regulationsBox}
-  //     >
-  //       <div className={styles.regulationsBox_regulationsItem__margin}>
-  //         <div className={styles.regulationsItem_title}>{rules.rule_title}</div>
-  //         <div className={styles.regulationsItem_content__marginLeft}>
-  //           {rules.rule_content}
-  //         </div>
-  //       </div>
-  //     </div>
-  //   );
-  // });
 
   return (
     <>
@@ -73,7 +42,6 @@ const Admissions = (prop) => {
       ) : (
         <>
           {admission?.[0]?.['all']?.[prop.index].info &&
-          // admission?.[0]?.['all']?.[prop.index].regulations_rules &&
           admission?.[0]?.['all']?.[prop.index].regulations_documents ? (
             <>
               <div className={styles.admissions_titleBar}>入學資訊</div>
@@ -115,18 +83,12 @@ const Admissions = (prop) => {
                           ) : (
                             <>
                               {infoDetail.info_content == '高中生專區' ? (
-                                // <Link
-                                //   to={infoDetail.info_URL}
-                                //   className={styles.infoRow_document}
-                                // >
-                                //   {infoDetail.info_content}
-                                // </Link>
-                                <a
+                                <Link
+                                  to={infoDetail.info_URL}
                                   className={styles.infoRow_document}
-                                  href="https://dtd.ntue.edu.tw/highSchool"
                                 >
                                   {infoDetail.info_content}
-                                </a>
+                                </Link>
                               ) : (
                                 <a
                                   href={infoDetail.info_URL}

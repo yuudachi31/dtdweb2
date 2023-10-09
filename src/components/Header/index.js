@@ -75,26 +75,11 @@ const Header = () => {
                 未來發展
               </Link>
             </li>
-            <li className={styles.pageList_pageBox}>
+            {/* <li className={styles.pageList_pageBox}>
               <Link to={path.teams} className={styles.pageBox_page}>
                 系網團隊
               </Link>
-            </li>
-            <li className={styles.pageList_pageBox}>
-              <Link to={path.highSchool} className={styles.pageBox_page}>
-                高中生專區
-              </Link>
-            </li>
-            <li className={styles.pageList_pageBox}>
-              <Link to={path.curriculum} className={styles.pageBox_page}>
-                各年級課表
-              </Link>
-            </li>
-            <li className={styles.pageList_pageBox}>
-              <Link to={path.structure} className={styles.pageBox_page}>
-                課程架構
-              </Link>
-            </li>
+            </li> */}
           </ul>
         </button>
 
@@ -131,6 +116,27 @@ const Header = () => {
           </ul>
         </button>
 
+        {/* 課程課架 */}
+        <button className={styles.nav_dropdownMenu}>
+          <div
+            className={`${styles.dropdownMenu_title} ${styles.dropdownMenu_title__borderRight}`}
+          >
+            課程課架
+          </div>
+          <ul className={styles.dropdownMenu_pageList}>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.curriculum} className={styles.pageBox_page}>
+                各年級課表
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.structure} className={styles.pageBox_page}>
+                課程架構
+              </Link>
+            </li>
+          </ul>
+        </button>
+
         {/* 招生資訊 */}
         <button className={styles.nav_dropdownMenu}>
           <div
@@ -152,6 +158,11 @@ const Header = () => {
             <li className={styles.pageList_pageBox}>
               <Link to={path.inservice} className={styles.pageBox_page}>
                 在職碩士班
+              </Link>
+            </li>
+            <li className={styles.pageList_pageBox}>
+              <Link to={path.highSchool} className={styles.pageBox_page}>
+                高中生專區
               </Link>
             </li>
           </ul>
@@ -289,42 +300,6 @@ const Header = () => {
                     未來發展
                   </Link>
                 </li>
-                <li className={styles.hamPageList_hamPageBox}>
-                  <Link
-                    to={path.teams}
-                    className={styles.hamPageBox_hamPage}
-                    onClick={() => clickHamburgerLink(uiDispatch)}
-                  >
-                    系網團隊
-                  </Link>
-                </li>
-                <li className={styles.hamPageList_hamPageBox}>
-                  <Link
-                    to={path.highSchool}
-                    className={styles.hamPageBox_hamPage}
-                    onClick={() => clickHamburgerLink(uiDispatch)}
-                  >
-                    高中生專區
-                  </Link>
-                </li>
-                <li className={styles.hamPageList_hamPageBox}>
-                  <Link
-                    to={path.curriculum}
-                    className={styles.hamPageBox_hamPage}
-                    onClick={() => clickHamburgerLink(uiDispatch)}
-                  >
-                    各年級課表
-                  </Link>
-                </li>
-                <li className={styles.hamPageList_hamPageBox}>
-                  <Link
-                    to={path.structure}
-                    className={styles.hamPageBox_hamPage}
-                    onClick={() => clickHamburgerLink(uiDispatch)}
-                  >
-                    課程架構
-                  </Link>
-                </li>
               </ul>
             </button>
           </li>
@@ -371,16 +346,52 @@ const Header = () => {
             </button>
           </li>
 
-          {/* 招生資訊 */}
+          {/* 課程課架 */}
           <li>
             <button
               className={styles.hamDropdownMenu_hamTitleDropdownMenu}
               onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 2 })}
             >
-              <p>招生資訊</p>
+              <p>課程課架</p>
               <ul
                 className={
                   uiState.hamburgerTitleState[2]
+                    ? styles.hamTitleDropdownMenu_hamPageList
+                    : styles.hamTitleDropdownMenu_hamPageList__close
+                }
+              >
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.curriculum}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    各年級課表
+                  </Link>
+                </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.structure}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    課程架構
+                  </Link>
+                </li>
+              </ul>
+            </button>
+          </li>
+
+          {/* 招生資訊 */}
+          <li>
+            <button
+              className={styles.hamDropdownMenu_hamTitleDropdownMenu}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 3 })}
+            >
+              <p>招生資訊</p>
+              <ul
+                className={
+                  uiState.hamburgerTitleState[3]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
@@ -412,6 +423,15 @@ const Header = () => {
                     在職碩士班
                   </Link>
                 </li>
+                <li className={styles.hamPageList_hamPageBox}>
+                  <Link
+                    to={path.highSchool}
+                    className={styles.hamPageBox_hamPage}
+                    onClick={() => clickHamburgerLink(uiDispatch)}
+                  >
+                    高中生專區
+                  </Link>
+                </li>
               </ul>
             </button>
           </li>
@@ -420,12 +440,12 @@ const Header = () => {
           <li>
             <button
               className={styles.hamDropdownMenu_hamTitleDropdownMenu}
-              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 3 })}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 4 })}
             >
               <p>作品展示</p>
               <ul
                 className={
-                  uiState.hamburgerTitleState[3]
+                  uiState.hamburgerTitleState[4]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
@@ -465,12 +485,12 @@ const Header = () => {
           <li>
             <button
               className={styles.hamDropdownMenu_hamTitleDropdownMenu}
-              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 4 })}
+              onClick={() => clickHamburgerTitle(uiDispatch, { clickTitle: 5 })}
             >
               <p>下載專區</p>
               <ul
                 className={
-                  uiState.hamburgerTitleState[4]
+                  uiState.hamburgerTitleState[5]
                     ? styles.hamTitleDropdownMenu_hamPageList
                     : styles.hamTitleDropdownMenu_hamPageList__close
                 }
