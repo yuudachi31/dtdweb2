@@ -47,6 +47,7 @@ export const getNews = async (dispatch, options) => {
 };
 
 export const getNewDetail = async (dispatch, options) => {
+  //2023/10/18因為突然故障，postID撈不到資料 加寫getNewDetail2()來撈資料
   dispatch({ type: BEGIN_DATA_REQUEST });
   const { newID } = options;
 
@@ -58,6 +59,27 @@ export const getNewDetail = async (dispatch, options) => {
     dispatch({
       type: SET_NEW_DETAIL,
       payload: newDetail,
+    });
+    dispatch({ type: SUCCESS_DATA_REQUEST });
+  } catch (error) {
+    dispatch({ type: FAIL_DATA_REQUEST, payload: error });
+  }
+};
+export const getNewDetail2 = async (dispatch, options) => {
+  dispatch({ type: BEGIN_DATA_REQUEST });
+  const { newID } = options;
+
+  try {
+    const url = `${BASE_URL}/post?`;
+    const response = await axios.get(url);
+    console.log(response.data);
+    // response.data.filter((el) => el === newID);
+    console.log(response.data.filter((el) => el.id == newID));
+    const newDetail = response.data.filter((el) => el.id == newID);
+    console.log(newDetail[0]);
+    dispatch({
+      type: SET_NEW_DETAIL,
+      payload: newDetail[0],
     });
     dispatch({ type: SUCCESS_DATA_REQUEST });
   } catch (error) {
