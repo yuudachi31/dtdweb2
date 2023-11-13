@@ -1,5 +1,4 @@
 [
-    {"id":4937,"title":"各學制招生資訊","all":[
     {
         "degreeImg": "assets/images/admissions/collegeIcon.png",
         "degreeName": "數位科技設計學系",
@@ -136,5 +135,5 @@
                 "document_URL": "https://dice.ntue.edu.tw/about/detail/2/5"
             }
         ]
-    }]}
+    }
 ]

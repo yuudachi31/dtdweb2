@@ -7,7 +7,7 @@ export const UIStoreContext = createContext();
 
 const initialState = {
   hamburgerMenuState: false,
-  hamburgerTitleState: [false, false, false, false, false],
+  hamburgerTitleState: [false, false, false, false, false, false],
   pageNumberState: [],
   newsLoadState: true,
   activitiesPage: {
@@ -23,12 +23,12 @@ const reducer = (uiState, action) => {
       return {
         ...uiState,
         hamburgerMenuState: !uiState.hamburgerMenuState,
-        hamburgerTitleState: [false, false, false, false, false],
+        hamburgerTitleState: [false, false, false, false, false, false],
       };
     }
     case constants.CLICK_HAMBURGER_TITLE: {
       const hamburgerTitleStateArr = [];
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 6; i++) {
         if (i == action.payload) {
           hamburgerTitleStateArr.push(!uiState.hamburgerTitleState[i]);
         } else {
@@ -44,7 +44,7 @@ const reducer = (uiState, action) => {
       return {
         ...uiState,
         hamburgerMenuState: false,
-        hamburgerTitleState: [false, false, false, false, false],
+        hamburgerTitleState: [false, false, false, false, false, false],
       };
     }
 
