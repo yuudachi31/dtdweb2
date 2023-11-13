@@ -9,7 +9,7 @@ import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import NewDetail from '../../components/NewDetail';
 // store
-import { getNewDetail } from '../../store/actions';
+import { getNewDetail2 } from '../../store/actions';
 import { StoreContext } from '../../store/reducer';
 
 const AchievementDetail = () => {
@@ -24,7 +24,7 @@ const AchievementDetail = () => {
   } = useContext(StoreContext);
 
   useEffect(() => {
-    getNewDetail(dispatch, {
+    getNewDetail2(dispatch, {
       newID: id,
     });
   }, []);

@@ -2,6 +2,7 @@ import React, { Fragment, useContext, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { useLocation } from 'react-router-dom';
 import * as QueryString from 'query-string';
+// import { useHistory } from 'react-router-dom/cjs/react-router-dom';
 // 設計
 // import styles from './styles.module.scss';
 // components
@@ -14,6 +15,7 @@ import { StoreContext } from '../../store/reducer';
 
 const AnnouncementDetail = () => {
   const location = useLocation();
+  // const history = useHistory();
   const { previous, page, id } = QueryString.parse(location.search);
   const {
     state: {
@@ -27,6 +29,9 @@ const AnnouncementDetail = () => {
     getNewDetail2(dispatch, {
       newID: id,
     });
+    if (id == 5235) {
+      window.location.replace('https://toygame.ntue.edu.tw/');
+    }
   }, []);
 
   return (
